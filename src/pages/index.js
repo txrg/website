@@ -12,7 +12,7 @@ class RootIndex extends React.Component {
     return (
       <div style={{ background: '#fff' }}>
         <Helmet title={siteTitle} />
-        <Hero data={author.node} />
+        <Hero />
         <div className="wrapper">
           <h2 className="section-headline">Featured</h2>
           <p>List of content tagged featured (news, profile, page)</p>
