@@ -14,7 +14,7 @@ class BlogPostProfileDetailTemplateTemplate extends React.Component {
       <div style={{ background: '#fff' }}>
         <Helmet title={`${post.title} | ${siteTitle}`} />
         <div className={heroStyles.hero}>
-          <Img className={heroStyles.heroImage} alt={post.title} sizes={post.heroImage.sizes} />
+          <Img className={heroStyles.featureImage} alt={post.title} sizes={post.featureImage.sizes} />
         </div>
         <div className="wrapper">
           <h1 className="section-headline">{post.title}</h1>

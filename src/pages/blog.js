@@ -43,7 +43,7 @@ export const pageQuery = graphql`
           title
           slug
           publishDate(formatString: "MMMM Do, YYYY")
-          heroImage {
+          featureImage {
             sizes(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
               ...GatsbyContentfulSizes_withWebp
             }
