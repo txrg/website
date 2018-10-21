@@ -1,7 +1,6 @@
 import React from 'react'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import Hero from '../components/hero/hero'
 import ArticlePreview from '../components/article-preview/article-preview'
 
 class RootIndex extends React.Component {
@@ -12,7 +11,6 @@ class RootIndex extends React.Component {
     return (
       <div style={{ background: '#fff' }}>
         <Helmet title={siteTitle} />
-        <Hero />
         <div className="wrapper">
           <h2 className="section-headline">Featured</h2>
           <p>List of content tagged featured (news, profile, page)</p>
