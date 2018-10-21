@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 
 import heroStyles from '../components/hero/hero.module.css'
 
-class BlogPostTemplate extends React.Component {
+class BlogPostProfileDetailTemplateTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulBlogPost')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
@@ -36,23 +36,33 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default BlogPostTemplate
+export default ProfileDetailTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    contentfulBlogPost(slug: { eq: $slug }) {
-      title
-      publishDate(formatString: "MMMM Do, YYYY")
-      heroImage {
-        sizes(maxWidth: 1180, background: "rgb:000000") {
-          ...GatsbyContentfulSizes_withWebp
+query ProfileQuery {
+  allContentfulProfile {
+  
+    edges {
+      node {
+        __typename
+        name
+        type
+        homeTeam
+        details
+        children {
+          __typename
         }
-      }
-      body {
-        childMarkdownRemark {
-          html
+        bio {
+          id
+          internal {
+            type
+            mediaType
+            content
+            contentDigest
+            owner
+          }
         }
       }
     }
   }
-`
+}

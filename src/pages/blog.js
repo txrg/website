@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import styles from './blog.module.css'
-import ArticlePreview from '../components/article-preview'
+import ArticlePreview from '../components/article-preview/article-preview'
 
 class BlogIndex extends React.Component {
   render() {
