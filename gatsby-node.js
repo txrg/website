@@ -30,7 +30,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         const pages = result.data.allContentfulPage.edges
         pages.forEach((page, index) => {
           createPage({
-            path: `/${page.node.section}/${page.node.slug}/`,
+            path: page.node.section === page.node.slug ? `/${page.node.slug}/` : `/${page.node.section}/${page.node.slug}/`,
             component: pageView,
             context: {
               slug: page.node.slug
