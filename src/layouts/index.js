@@ -3,6 +3,7 @@ import Link from 'gatsby-link'
 import base from './base.css'
 import Navigation from '../components/navigation/navigation'
 import Header from '../components/header/header'
+import Footer from '../components/footer/footer'
 
 class Template extends React.Component {
   render() {
@@ -19,6 +20,7 @@ class Template extends React.Component {
         <Header />
         <Navigation />
         {children()}
+        <Footer />
       </div>
     )
   }
