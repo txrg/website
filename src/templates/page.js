@@ -4,13 +4,22 @@ import get from 'lodash/get'
 
 class PageTemplate extends React.Component {
   render() {
-    const page = get(this.props, 'data.contentfulPage')
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+    const page = get(this.props, 'data.contentfulPage');
+    const siteTitle = get(this.props, 'data.site.siteMetadata.title');
+    const pageSection = page.section
+
+    let subNav;
+    if (pageSection === 'about') {
+      subNav = "add about subnav here"
+    } else {
+        subNav = null;
+    }
 
     return (
       <div>
         <Helmet title={`${page.title} | ${siteTitle}`} />
         <div className="wrapper">
+          {subNav}
           <h1 className="section-headline">{page.title}</h1>
           <p
             style={{
