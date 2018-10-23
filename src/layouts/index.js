@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Navigation from '../components/navigation/navigation'
 import Header from '../components/header/header'
 import Footer from '../components/footer/footer'
 
@@ -20,8 +19,11 @@ class Template extends React.Component {
     return (
       <div>
         <Header />
-        <Navigation />
-        {children()}
+        <div className="main-content-wrapper section-padding-100">
+          <div className="container">
+            {children()}
+          </div>
+        </div>
         <Footer />
       </div>
     )

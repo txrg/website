@@ -3,16 +3,20 @@ import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 
 export default ({ article }) => (
-  <div>
-    <Img alt="" sizes={article.featureImage.sizes} />
-    <h3 className="previewTitle">
-      <Link to={`/blog/${article.slug}`}>{article.title}</Link>
-    </h3>
-    <small>{article.publishDate}</small>
-    <p
-      dangerouslySetInnerHTML={{
-        __html: article.description.childMarkdownRemark.html,
-      }}
-    />
+  <div className="single-blog-post">
+      <div className="post-thumbnail">
+        <Img alt="" sizes={article.featureImage.sizes} />
+      </div>
+      <div className="post-content">
+          <Link className="headline" to={`/blog/${article.slug}`}>{article.title}</Link>
+          <p
+            dangerouslySetInnerHTML={{
+              __html: article.description.childMarkdownRemark.html,
+            }}
+          />
+          <div className="post-meta">
+              <p><a href="#" className="post-date">{article.publishDate}</a></p>
+          </div>
+      </div>
   </div>
 )

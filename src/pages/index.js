@@ -15,36 +15,35 @@ class RootIndex extends React.Component {
       <div>
         <Helmet title={siteTitle} />
         <div className="wrapper">
-          <h2 className="section-headline">Events</h2>
-          <ul className="event-list">
+          <h2 className="section-headline">Events</h2>      
+          <div className="row">
             {events.map(({ node }) => {
               return (
-                <li key={node.id}>
+                <div key={node.id} className="col-12 col-md-6 col-lg-4">
                   {node.title} | {node.date} | {node.location}
-                </li>
+                </div>
               )
-            })}
-          </ul>
-
+            })} 
+          </div>
           <h2 className="section-headline">Featured</h2>
           <p>List of content tagged featured (news, profile, page)</p>
 
           
-          <ul className="article-list">
+          <div className="row">
             {posts.map(({ node }) => {
               return (
-                <li key={node.slug}>
+                <div key={node.slug} className="col-12 col-md-6 col-lg-4">
                   <ArticlePreview article={node} />
-                </li>
+                </div>
               )
             })}
-          </ul>
+          </div>
 
           <h2 className="section-headline">Sponsors</h2>
           <ul>
             {sponsors.map(({ node }) => {
               return (
-                <li key={node.id}>
+                <li key={node.id} className="col-12 col-md-6 col-lg-4">
                   <a href={node.link} target="_blank">
                   <Img alt={node.name} sizes={node.photo.sizes} />
                   </a>
