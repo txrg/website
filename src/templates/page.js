@@ -6,11 +6,19 @@ class PageTemplate extends React.Component {
   render() {
     const page = get(this.props, 'data.contentfulPage');
     const siteTitle = get(this.props, 'data.site.siteMetadata.title');
-    const pageSection = page.section
 
     let subNav;
-    if (pageSection === 'about') {
-      subNav = "add about subnav here"
+    if (page.section === 'about') {
+      subNav = (
+        <ul>
+            <li>About</li>
+            <li>Contact</li>
+            <li>History</li>
+            <li>Privacy Policy</li>
+            <li>FAQs</li>
+            <li>Derby 101</li>
+        </ul>
+      )
     } else {
         subNav = null;
     }

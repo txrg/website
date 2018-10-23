@@ -1,9 +1,11 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import base from './base.css'
 import Navigation from '../components/navigation/navigation'
 import Header from '../components/header/header'
 import Footer from '../components/footer/footer'
+
+import '../styles/index.scss';
+
 
 class Template extends React.Component {
   render() {
