@@ -8,6 +8,7 @@
     "url": "https://github.com/contentful/starter-gatsby-blog/issues"
   },
   "dependencies": {
+    "carbon-components": "^9.40.0",
     "contentful": "^7.0.5",
     "gatsby": "^1.9.277",
     "gatsby-image": "^1.0.55",
