@@ -12,7 +12,7 @@ class BlogIndex extends React.Component {
     return (
       <main>
         <Helmet title={siteTitle} />
-        <div className={styles.hero}>
+        <div>
           Blog
         </div>
         <div className="wrapper">
