@@ -1,13 +1,14 @@
 header {
     display: flex;
-    height: 100px;
     background: black;
     margin-bottom: $spacing-lg;
+    padding: $spacing-lg;
 }
 
 .logo {
     display: inline-block;
     align-items: center;
+    margin-right: $spacing-lg;
 }
 
 nav {
@@ -19,7 +20,7 @@ nav {
 }
 
 .nav-link {
-    padding: $spacing-md;
+    padding: $spacing-lg;
     margin: 0 $spacing-sm;
     color: white;
 }

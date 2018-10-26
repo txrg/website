@@ -26,8 +26,7 @@ class PageTemplate extends React.Component {
     return (
       <main>
         <Helmet title={`${page.title} | ${siteTitle}`} />
-        <div className="wrapper">
-          {subNav}
+        <div className="main-content">
           <h1 className="section-headline">{page.title}</h1>
           <p
             style={{
@@ -41,6 +40,9 @@ class PageTemplate extends React.Component {
               __html: page.pageContent.childMarkdownRemark.html,
             }}
           />
+        </div>
+        <div className="side-bar">
+          {subNav}
         </div>
       </main>
     )

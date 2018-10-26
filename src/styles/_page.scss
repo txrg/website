@@ -14,10 +14,14 @@ main {
 
 .side-bar {
     width: 25%;
+    padding: $spacing-lg;
+    outline: 1px dotted red;
 }
 
 .main-content {
     width: 75%;
+    padding: $spacing-lg;
+    outline: 1px dotted orange;
 }
 
 img {
@@ -39,5 +43,5 @@ img {
     outline: 1px dotted green;
     width: 50%;
     background: white;
-    padding: $spacing-md;
+    padding: $spacing-lg;
 }

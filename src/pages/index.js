@@ -40,14 +40,14 @@ class RootIndex extends React.Component {
           <section className="featured featured--blog">
             {blogs.map(({ node }) => {
               return (
-                <BlogPreview blog={node}  key={node.slug} />
+                <BlogPreview blog={node} key={node.slug} />
               )
             })}
           </section>
           <section className="featured featured--page">
             {pages.map(({ node }) => {
               return (
-                <PagePreview page={node}  key={node.slug} />
+                <PagePreview page={node} key={node.slug} />
               )
             })}
           </section>

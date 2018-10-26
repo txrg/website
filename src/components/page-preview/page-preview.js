@@ -8,7 +8,9 @@ export default ({ page }) => (
         <Img alt={page.title} sizes={page.featureImage.sizes} />
       </div>
       <div className="page__content">
-          <Link className="page__header" to={`/page/${page.slug}`}>{page.title}</Link>
+          <Link className="page__header" to={page.section === page.slug ? `/${page.slug}/` : `/${page.section}/${page.slug}/`}>
+            {page.title}
+          </Link>
           <p
             className="page__description"
             dangerouslySetInnerHTML={{
@@ -18,3 +20,4 @@ export default ({ page }) => (
       </div>
   </div>
 )
+
