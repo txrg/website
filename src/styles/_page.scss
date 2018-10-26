@@ -5,5 +5,39 @@
 body {
     line-height: 1.5;
     font-family: $font-family;
+    background: white;
 }
 
+main {
+    display: flex;
+}
+
+.side-bar {
+    width: 25%;
+}
+
+.main-content {
+    width: 75%;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+//---------------------------------------
+// Homepage
+//---------------------------------------
+.featured  {
+    outline: 1px dotted blue;
+    padding: $spacing-lg;
+    display: flex;
+}
+
+.featured .blog__preview,
+.featured .page__preview  {
+    outline: 1px dotted green;
+    width: 50%;
+    background: white;
+    padding: $spacing-md;
+}

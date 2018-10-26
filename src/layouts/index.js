@@ -18,9 +18,7 @@ class Template extends React.Component {
     return (
       <div>
         <Header />
-        <main>
-          {children()}
-        </main>
+        {children()}
         <Footer />
       </div>
     )

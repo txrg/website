@@ -1,0 +1,25 @@
+header {
+    display: flex;
+    height: 100px;
+    background: black;
+    margin-bottom: $spacing-lg;
+}
+
+.logo {
+    display: inline-block;
+    align-items: center;
+}
+
+nav {
+    justify-content: flex-end;
+}
+
+.navbar-nav {
+    display: flex;
+}
+
+.nav-link {
+    padding: $spacing-md;
+    margin: 0 $spacing-sm;
+    color: white;
+}

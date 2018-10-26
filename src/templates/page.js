@@ -24,7 +24,7 @@ class PageTemplate extends React.Component {
     }
 
     return (
-      <div>
+      <main>
         <Helmet title={`${page.title} | ${siteTitle}`} />
         <div className="wrapper">
           {subNav}
@@ -42,7 +42,7 @@ class PageTemplate extends React.Component {
             }}
           />
         </div>
-      </div>
+      </main>
     )
   }
 }

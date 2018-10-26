@@ -3,6 +3,7 @@ import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
 import BlogPreview from '../components/blog-preview/blog-preview'
+import PagePreview from '../components/page-preview/page-preview'
 
 class RootIndex extends React.Component {
   render() {
@@ -10,9 +11,11 @@ class RootIndex extends React.Component {
     const blogs = get(this, 'props.data.allContentfulBlogPost.edges')
     const events = get(this, 'props.data.allContentfulEvent.edges')
     const sponsors = get(this, 'props.data.allContentfulSponsor.edges')
+    const pages = get(this, 'props.data.allContentfulPage.edges')
+    const skaters = get(this, 'props.data.allContentfulProfile.edges')
 
     return (
-      <div>
+      <main>
         <Helmet title={siteTitle} />
 
         <div className="side-bar">
@@ -24,21 +27,29 @@ class RootIndex extends React.Component {
               </div>
             )
           })}
-
-          Add FeaturedSkater here
+          <h2>Featured Skater</h2>
+          {skaters.map(({ node }) => {
+            return (
+              <div key={node.id}>
+                {node.name}
+              </div>
+            )
+          })}
         </div>
         <div className="main-content">
           <section className="featured featured--blog">
             {blogs.map(({ node }) => {
               return (
-                <div key={node.slug}>
-                  <BlogPreview blog={node} />
-                </div>
+                <BlogPreview blog={node}  key={node.slug} />
               )
             })}
           </section>
           <section className="featured featured--page">
-
+            {pages.map(({ node }) => {
+              return (
+                <PagePreview page={node}  key={node.slug} />
+              )
+            })}
           </section>
         </div>
          
@@ -55,7 +66,7 @@ class RootIndex extends React.Component {
             })}
           </ul>
        </section>
-      </div>
+      </main>
     )
   }
 }
@@ -64,6 +75,26 @@ export default RootIndex
 
 export const pageQuery = graphql`
   query HomeQuery {
+    allContentfulProfile {
+      edges {
+        node {
+          name
+          homeTeam
+          type
+          bio {
+            childMarkdownRemark {
+              html
+            }
+          }
+          featured
+          photo {
+            sizes(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+              ...GatsbyContentfulSizes_withWebp
+             }
+          }
+        }
+      }
+    }
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {
@@ -76,6 +107,31 @@ export const pageQuery = graphql`
             }
           }
           description {
+            childMarkdownRemark {
+              html
+            }
+          }
+        }
+      }
+    }
+    allContentfulPage {
+      edges {
+        node {
+          title
+           slug
+          section
+          featured
+          featureImage {
+            sizes(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+              ...GatsbyContentfulSizes_withWebp
+             }
+          }
+          featureDescription {
+            childMarkdownRemark {
+              html
+            }
+          }
+          pageContent {
             childMarkdownRemark {
               html
             }

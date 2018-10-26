@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 
 export default () => (
   <header>
-    <Link className="navbar-brand" to="/">TXRG</Link>
+    <Link className="logo" to="/">TXRG</Link>
     <nav>
       <ul className="navbar-nav">
           <li className="nav-item active">
