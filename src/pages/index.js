@@ -90,15 +90,6 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulHomepage {
-      edges {
-        node {
-          featuredTiles {
-            __typename
-          }
-        }
-      }
-    }
     allContentfulSponsor {
       edges {
         node {
