@@ -2,48 +2,51 @@ import React from 'react'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
-import ArticlePreview from '../components/article-preview/article-preview'
+import BlogPreview from '../components/blog-preview/blog-preview'
 
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allContentfulBlogPost.edges')
+    const blogs = get(this, 'props.data.allContentfulBlogPost.edges')
     const events = get(this, 'props.data.allContentfulEvent.edges')
     const sponsors = get(this, 'props.data.allContentfulSponsor.edges')
 
     return (
       <div>
         <Helmet title={siteTitle} />
-        <div className="wrapper">
-          <h2 className="section-headline">Events</h2>      
-          <div className="row">
-            {events.map(({ node }) => {
-              return (
-                <div key={node.id} className="col-12 col-md-6 col-lg-4">
-                  {node.title} | {node.date} | {node.location}
-                </div>
-              )
-            })} 
-          </div>
-          <h2 className="section-headline">Featured</h2>
-          <p>List of content tagged featured (news, profile, page)</p>
 
-          
-          <div className="row">
-            {posts.map(({ node }) => {
+        <div className="side-bar">
+          <h2>Schedule</h2>      
+          {events.map(({ node }) => {
+            return (
+              <div key={node.id}>
+                {node.title} | {node.date} | {node.location}
+              </div>
+            )
+          })}
+
+          Add FeaturedSkater here
+        </div>
+        <div className="main-content">
+          <section className="featured featured--blog">
+            {blogs.map(({ node }) => {
               return (
-                <div key={node.slug} className="col-12 col-md-6 col-lg-4">
-                  <ArticlePreview article={node} />
+                <div key={node.slug}>
+                  <BlogPreview blog={node} />
                 </div>
               )
             })}
-          </div>
+          </section>
+          <section className="featured featured--page">
 
-          <h2 className="section-headline">Sponsors</h2>
+          </section>
+        </div>
+         
+        <section className="sponsor-list">  
           <ul>
             {sponsors.map(({ node }) => {
               return (
-                <li key={node.id} className="col-12 col-md-6 col-lg-4">
+                <li key={node.id}>
                   <a href={node.link} target="_blank">
                   <Img alt={node.name} sizes={node.photo.sizes} />
                   </a>
@@ -51,7 +54,7 @@ class RootIndex extends React.Component {
               )
             })}
           </ul>
-        </div>
+       </section>
       </div>
     )
   }
