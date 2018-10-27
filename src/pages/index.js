@@ -40,14 +40,18 @@ class RootIndex extends React.Component {
           <section className="featured featured--blog">
             {blogs.map(({ node }) => {
               return (
-                <BlogPreview blog={node} key={node.slug} />
+                <React.Fragment>
+                  {node.featured == 'Featured' ? <BlogPreview blog={node} key={node.slug} /> : null}        
+                </React.Fragment>
               )
             })}
           </section>
           <section className="featured featured--page">
             {pages.map(({ node }) => {
               return (
-                <PagePreview page={node} key={node.slug} />
+                <React.Fragment>
+                  {node.featured == 'Featured' ? <PagePreview page={node} key={node.slug} /> : null}   
+                </React.Fragment>   
               )
             })}
           </section>
@@ -101,6 +105,7 @@ export const pageQuery = graphql`
           title
           slug
           publishDate(formatString: "MMMM Do, YYYY")
+          featured
           featureImage {
             sizes(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
              ...GatsbyContentfulSizes_withWebp

@@ -27,14 +27,7 @@ class PageTemplate extends React.Component {
       <main>
         <Helmet title={`${page.title} | ${siteTitle}`} />
         <div className="main-content">
-          <h1 className="section-headline">{page.title}</h1>
-          <p
-            style={{
-              display: 'block',
-            }}
-          >
-            {page.publishDate}
-          </p>
+          <h1>{page.title}</h1>
           <div
             dangerouslySetInnerHTML={{
               __html: page.pageContent.childMarkdownRemark.html,

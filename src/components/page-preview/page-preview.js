@@ -8,15 +8,15 @@ export default ({ page }) => (
         <Img alt={page.title} sizes={page.featureImage.sizes} />
       </div>
       <div className="page__content">
-          <Link className="page__header" to={page.section === page.slug ? `/${page.slug}/` : `/${page.section}/${page.slug}/`}>
-            {page.title}
-          </Link>
-          <p
-            className="page__description"
-            dangerouslySetInnerHTML={{
-              __html: page.featureDescription.childMarkdownRemark.html,
-            }}
-          />
+        <Link className="page__header" to={page.section === page.slug ? `/${page.slug}/` : `/${page.section}/${page.slug}/`}>
+          {page.title}
+        </Link>
+        <p
+          className="page__description"
+          dangerouslySetInnerHTML={{
+            __html: page.featureDescription.childMarkdownRemark.html,
+          }}
+        />
       </div>
   </div>
 )

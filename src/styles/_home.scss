@@ -1,0 +1,13 @@
+//---------------------------------------
+// Homepage
+//---------------------------------------
+.featured  {
+    padding: $spacing-lg;
+    display: flex;
+}
+
+.featured > div {
+    width: 50%;
+    background: $bg-01;
+    padding: $spacing-lg;
+}

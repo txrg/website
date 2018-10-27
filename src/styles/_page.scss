@@ -31,17 +31,3 @@ img {
     max-width: 100%;
 }
 
-//---------------------------------------
-// Homepage
-//---------------------------------------
-.featured  {
-    padding: $spacing-lg;
-    display: flex;
-}
-
-.featured .blog__preview,
-.featured .page__preview  {
-    width: 50%;
-    background: $bg-01;
-    padding: $spacing-lg;
-}
