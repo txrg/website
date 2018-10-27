@@ -1,6 +1,8 @@
 footer {
     padding: $spacing-lg;
     margin-top: $spacing-lg;
-    background: black;
-    color: white;
+    background: $bg-01;
+    color: $text-01;
+    text-align: center;
+    font-size: 85%;
 }
