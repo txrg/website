@@ -1,9 +1,10 @@
 //---------------------------------------
-// Carbon Components
+// 🌍 Global
 //---------------------------------------
+@import url('https://fonts.googleapis.com/css?family=Krub:300,400,600');
 @import 'variables';
-@import 'carbon-components/scss/globals/scss/styles.scss';
 @import 'mixins';
+@import 'normalize';
 
 //---------------------------------------
 // Pages
