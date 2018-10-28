@@ -1,0 +1,40 @@
+.profile-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-list__item {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    background: black;
+    position: relative;
+    filter: grayscale(100%);
+
+    @include breakpoint(sm) {
+        width: 25%;
+    }
+
+    .profile__name {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: black;
+        color: white;
+        padding: $spacing-xs;
+        width: 100%;
+        opacity: 0;
+    }
+
+    &:hover {
+        filter: grayscale(0);
+
+        .profile__name { 
+            opacity: 1;
+        }
+    }
+
+}

@@ -15,23 +15,37 @@ class PageTemplate extends React.Component {
       <Layout location={this.props.location} >
         <main className="main--team">
           <Helmet title={`${team.title} | ${siteTitle}`} />
-        
+          <div className="main-content">
             <h1>{team.title}</h1>
             <div
                 dangerouslySetInnerHTML={{
                 __html: team.pageContent.childMarkdownRemark.html,
                 }}
             />
-
-            <ul>
+</div>
+            <ul className="profile-list">
                 {profiles.map(({ node }) => {
                     console.log(node.details);
                     return (
-                        <>
-                        {node.details != 'Retired' && (team.title === node.homeTeam || team.title === node.type) ? <Profile profile={node} key={node.id} /> : null }
-                        </>
+                        <li className="profile-list__item" key={node.id}>
+                        {node.details != 'Retired' && (team.title === node.homeTeam || team.title === node.type) ? <Profile profile={node} /> : null }
+                        </li>
                     )
                 })}
+                 <li className="profile-list__item"></li>
+                 <li className="profile-list__item"></li>
+                 <li className="profile-list__item"></li>
+                 <li className="profile-list__item"></li>
+                 <li className="profile-list__item"></li>
+                 <li className="profile-list__item"></li>
+                 <li className="profile-list__item"></li>
+                 <li className="profile-list__item"></li>
+                 <li className="profile-list__item"></li>
+                 <li className="profile-list__item"></li>
+                 <li className="profile-list__item"></li>
+                 <li className="profile-list__item"></li>
+                 <li className="profile-list__item"></li>
+                 <li className="profile-list__item"></li>
             </ul>
         </main>
       </Layout>
@@ -59,7 +73,7 @@ export const teamQuery = graphql`
             type
             details
             photo {
-              fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+              fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: SCALE) {
                 ...GatsbyContentfulFluid_tracedSVG
                }
             }
