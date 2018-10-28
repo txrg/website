@@ -59,8 +59,15 @@ class RootIndex extends React.Component {
           <section className="featured featured-skater">
             <h2>Featured Skater</h2>
             {profiles.map(({ node }) => {
-              return <Profile profile={node} key={node.id} />;
+              return (
+                <>
+                  {node.featured != null ?
+                  <Profile profile={node} key={node.id} />
+                  : null}
+                </>
+              )
             })}
+          
           </section>
 
           <section className="sponsor">
@@ -90,6 +97,7 @@ export const pageQuery = graphql`
           name
           homeTeam
           type
+          details
           bio {
             childMarkdownRemark {
               html
