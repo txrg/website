@@ -4,12 +4,23 @@
 .featured  {
     padding: $spacing-lg;
     display: flex;
+    border-bottom: 1px solid $ui-02;
 }
 
-.featured > div {
+//---------------------------------------
+// Featured Page + Blog
+//---------------------------------------
+.featured--items > div {
     width: 50%;
     background: $bg-01;
     padding: $spacing-lg;
+}
+
+//---------------------------------------
+// events
+//---------------------------------------
+.featured--evennts {
+    width: 100%;
 }
 
 //---------------------------------------

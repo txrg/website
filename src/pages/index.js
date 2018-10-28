@@ -22,8 +22,7 @@ class RootIndex extends React.Component {
       <main>
         <Helmet title={siteTitle} />
 
-        <div className="side-bar">
-          <h2>Schedule</h2>      
+        <section className="featured featured--events">
           {events.map(({ node }) => {
             return (
               <div key={node.id}>
@@ -31,17 +30,10 @@ class RootIndex extends React.Component {
               </div>
             )
           })}
-          <h2>Featured Skater</h2>
-          {skaters.map(({ node }) => {
-            return (
-              <div key={node.id}>
-                {node.name}
-              </div>
-            )
-          })}
-        </div>
-        <div className="main-content">
-          <section className="featured featured--blog">
+        </section>
+
+        
+          <section className="featured featured--items">
             {blogs.map(({ node }) => {
               const featuredBlog = node.featured;
               return (
@@ -50,8 +42,6 @@ class RootIndex extends React.Component {
                 </>
               )
             })}
-          </section>
-          <section className="featured featured--page">
             {pages.map(({ node }) => {
               const FeaturedPage = node.featured;
               return (
@@ -62,7 +52,17 @@ class RootIndex extends React.Component {
             })}
           </section>
           
-        </div>
+          <section className="featured featured-skater">
+            <h2>Featured Skater</h2>
+            {skaters.map(({ node }) => {
+              return (
+                <div key={node.id}>
+                  {node.name}
+                </div>
+              )
+            })}
+          </section>
+   
          
         <section className="sponsor">  
           <ul className="sponsor__list">
