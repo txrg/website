@@ -20,7 +20,7 @@ class RootIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} >
-      <main>
+      <main className="main--home">
         <Helmet title={siteTitle} />
 
         <section className="featured featured--events">

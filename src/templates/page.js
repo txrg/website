@@ -30,7 +30,7 @@ class PageTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} >
-        <main>
+        <main className="main--page">
           <Helmet title={`${page.title} | ${siteTitle}`} />
           <aside className="side-bar">
             <nav>
