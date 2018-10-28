@@ -2,6 +2,8 @@ import React from 'react'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
+import { graphql } from 'gatsby'
+import Layout from "../components/layout/layout"
 import BlogPreview from '../components/blog-preview/blog-preview'
 import PagePreview from '../components/page-preview/page-preview'
 
@@ -15,6 +17,7 @@ class RootIndex extends React.Component {
     const skaters = get(this, 'props.data.allContentfulProfile.edges')
 
     return (
+      <Layout location={this.props.location} >
       <main>
         <Helmet title={siteTitle} />
 
@@ -39,22 +42,25 @@ class RootIndex extends React.Component {
         <div className="main-content">
           <section className="featured featured--blog">
             {blogs.map(({ node }) => {
+              const featuredBlog = node.featured;
               return (
-                <React.Fragment>
-                  {node.featured == 'Featured' ? <BlogPreview blog={node} key={node.slug} /> : null}        
-                </React.Fragment>
+                <>
+                  {featuredBlog ? <BlogPreview blog={node} key={node.slug} /> : null}        
+                </>
               )
             })}
           </section>
           <section className="featured featured--page">
             {pages.map(({ node }) => {
+              const FeaturedPage = node.featured;
               return (
-                <React.Fragment>
-                  {node.featured == 'Featured' ? <PagePreview page={node} key={node.slug} /> : null}   
-                </React.Fragment>   
+                <>
+                  {FeaturedPage ? <PagePreview page={node} /> : null}   
+                </>   
               )
             })}
           </section>
+          
         </div>
          
         <section className="sponsor-list">  
@@ -62,8 +68,8 @@ class RootIndex extends React.Component {
             {sponsors.map(({ node }) => {
               return (
                 <li key={node.id}>
-                  <a href={node.link} target="_blank">
-                  <Img alt={node.name} sizes={node.photo.sizes} />
+                  <a href={node.link} target="_blank" rel="noopener noreferrer">
+                  <Img alt={node.name} fluid={node.photo.fluid} />
                   </a>
                 </li>
               )
@@ -71,6 +77,7 @@ class RootIndex extends React.Component {
           </ul>
        </section>
       </main>
+      </Layout>
     )
   }
 }
@@ -92,8 +99,8 @@ export const pageQuery = graphql`
           }
           featured
           photo {
-            sizes(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-              ...GatsbyContentfulSizes_withWebp
+            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+              ...GatsbyContentfulFluid_tracedSVG
              }
           }
         }
@@ -107,8 +114,8 @@ export const pageQuery = graphql`
           publishDate(formatString: "MMMM Do, YYYY")
           featured
           featureImage {
-            sizes(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-             ...GatsbyContentfulSizes_withWebp
+            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+             ...GatsbyContentfulFluid_tracedSVG
             }
           }
           description {
@@ -127,8 +134,8 @@ export const pageQuery = graphql`
           section
           featured
           featureImage {
-            sizes(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-              ...GatsbyContentfulSizes_withWebp
+            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+              ...GatsbyContentfulFluid_tracedSVG
              }
           }
           featureDescription {
@@ -160,8 +167,8 @@ export const pageQuery = graphql`
           name
           id
           photo {
-            sizes(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-              ...GatsbyContentfulSizes_withWebp
+            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+              ...GatsbyContentfulFluid_tracedSVG
              }
           }
           link

@@ -1,6 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
+import { graphql } from 'gatsby'
+import Layout from "../components/layout/layout"
 
 class PageTemplate extends React.Component {
   render() {
@@ -24,6 +26,7 @@ class PageTemplate extends React.Component {
     }
 
     return (
+      <Layout location={this.props.location} >
       <main>
         <Helmet title={`${page.title} | ${siteTitle}`} />
         <div className="main-content">
@@ -38,6 +41,7 @@ class PageTemplate extends React.Component {
           {subNav}
         </div>
       </main>
+      </Layout>
     )
   }
 }

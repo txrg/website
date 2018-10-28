@@ -1,7 +1,7 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
+import Layout from "../components/layout/layout"
 import BlogPreview from '../components/blog-preview/blog-preview'
 
 class BlogIndex extends React.Component {
@@ -10,24 +10,26 @@ class BlogIndex extends React.Component {
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
 
     return (
-      <main>
-        <Helmet title={siteTitle} />
-        <div>
-          Blog
-        </div>
-        <div className="wrapper">
-          <h2 className="section-headline">Recent articles</h2>
-          <ul className="article-list">
-            {posts.map(({ node }) => {
-              return (
-                <li key={node.slug}>
-                  <BlogPreview blog={node} />
-                </li>
-              )
-            })}
-          </ul>
-        </div>
-      </main>
+      <Layout location={this.props.location} >
+        <main>
+          <Helmet title={siteTitle} />
+          <div>
+            Blog
+          </div>
+          <div className="wrapper">
+            <h2 className="section-headline">Recent articles</h2>
+            <ul className="article-list">
+              {posts.map(({ node }) => {
+                return (
+                  <li key={node.slug}>
+                    <BlogPreview blog={node} />
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        </main>
+      </Layout>
     )
   }
 }
@@ -43,8 +45,8 @@ export const pageQuery = graphql`
           slug
           publishDate(formatString: "MMMM Do, YYYY")
           featureImage {
-            sizes(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-              ...GatsbyContentfulSizes_withWebp
+            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+              ...GatsbyContentfulFluid_tracedSVG
             }
           }
           description {

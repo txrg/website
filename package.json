@@ -1,36 +1,49 @@
 {
-  "name": "contentful-starter-gatsby-blog",
-  "description": "Contentful Gatsby Starter Blog",
-  "private": true,
-  "version": "0.0.1",
+  "name": "website",
+  "description": "Texas Rollergirls",
+  "version": "1.0.0",
   "author": "Alison Joseph <alisonejoseph@gmail.com>",
   "bugs": {
-    "url": "https://github.com/contentful/starter-gatsby-blog/issues"
+    "url": "https://github.com/txrg/website"
   },
   "dependencies": {
-    "carbon-components": "^9.40.0",
-    "contentful": "^7.0.5",
-    "gatsby": "^1.9.277",
-    "gatsby-image": "^1.0.55",
-    "gatsby-link": "^1.6.46",
-    "gatsby-plugin-react-helmet": "^1.0.8",
-    "gatsby-plugin-sass": "^1.0.26",
-    "gatsby-plugin-sharp": "^1.6.46",
-    "gatsby-source-contentful": "^1.3.54",
-    "gatsby-transformer-remark": "^1.7.44",
-    "lodash": "^4.17.10"
+    "gatsby-image": "^2.0.13",
+    "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-plugin-sass": "^2.0.1",
+    "gatsby-plugin-sharp": "^2.0.6",
+    "gatsby-source-contentful": "^2.0.2",
+    "gatsby-transformer-remark": "^2.1.6",
+    "gatsby-transformer-sharp": "^2.0.6",
+    "lodash": "^4.17.11",
+    "node-sass": "^4.9.4",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-helmet": "^5.2.0",
+    "sharp": "^0.21.0"
   },
-  "homepage": "https://github.com/contentful/starter-gatsby-blog#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "chalk": "^2.4.1",
+    "contentful-import": "^7.4.0",
+    "eslint": "^5.6.1",
+    "eslint-plugin-react": "^7.11.1",
+    "gatsby": "^2.0.18",
+    "gh-pages": "^2.0.1",
+    "inquirer": "^6.2.0",
+    "prettier": "^1.14.3",
+    "rimraf": "^2.6.2",
+    "yargs-parser": "^11.0.0"
+  },
+  "homepage": "https://github.com/contentful-userland/gatsby-contentful-starter#readme",
   "keywords": [
     "gatsby",
-    "contentful",
-    "starter"
+    "contentful"
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/contentful/starter-gatsby-blog.git"
+    "url": "git+https://github.com/contentful-userland/gatsby-contentful-starter.git"
   },
   "scripts": {
     "dev": "gatsby develop",

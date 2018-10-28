@@ -1,7 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
-import Img from 'gatsby-image'
+import { graphql } from 'gatsby'
+import Layout from "../components/layout/layout"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -9,7 +10,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
 
     return (
-      <div>
+      <Layout location={this.props.location} >
         <Helmet title={`${post.title} | ${siteTitle}`} />
         <div className="wrapper">
           <h1 className="section-headline">{post.title}</h1>
@@ -26,7 +27,7 @@ class BlogPostTemplate extends React.Component {
             }}
           />
         </div>
-      </div>
+      </Layout>
     )
   }
 }
@@ -39,8 +40,8 @@ export const pageQuery = graphql`
       title
       publishDate(formatString: "MMMM Do, YYYY")
       featureImage {
-        sizes(maxWidth: 1180, background: "rgb:000000") {
-          ...GatsbyContentfulSizes_withWebp
+        fluid(maxWidth: 1180, background: "rgb:000000") {
+          ...GatsbyContentfulFluid_tracedSVG
         }
       }
       body {
