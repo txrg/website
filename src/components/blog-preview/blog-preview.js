@@ -4,11 +4,12 @@ import Img from 'gatsby-image'
 
 export default ({ blog }) => (
   <div className="blog__preview">
+    <Link className="blog__header" to={`/blog/${blog.slug}`}>
       <div className="blog__thumbnail">
         <Img alt={blog.title} fluid={blog.featureImage.fluid} />
       </div>
       <div className="blog__content">
-          <Link className="blog__header" to={`/blog/${blog.slug}`}>{blog.title}</Link>
+          <h3 className="blog__title">{blog.title}</h3>
           <p
             className="blog__description"
             dangerouslySetInnerHTML={{
@@ -17,5 +18,6 @@ export default ({ blog }) => (
           />
           <p className="blog__date">{blog.publishDate}</p>
       </div>
+    </Link>
   </div>
 )

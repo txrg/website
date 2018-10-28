@@ -22,6 +22,8 @@ class RootIndex extends React.Component {
       <Layout location={this.props.location} >
       <main>
         <Helmet title={siteTitle} />
+        <section className="banner">
+        </section>
 
         <section className="featured featured--events">
           {events.map(({ node }) => {

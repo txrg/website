@@ -1,5 +1,16 @@
 //---------------------------------------
-// Homepage
+// Banner
+//---------------------------------------
+.banner {
+    background: $bg-dark url(../images/banner.png) center center/cover;
+    background-size: cover;
+    height: 500px;
+    //opacity: .3;
+}
+
+
+//---------------------------------------
+// Featured
 //---------------------------------------
 .featured  {
     padding: $spacing-lg;
@@ -11,9 +22,18 @@
 // Featured Page + Blog
 //---------------------------------------
 .featured--items > div {
-    width: 50%;
-    background: $bg-01;
+    width: 25%;
+    background: $bg-light;
     padding: $spacing-lg;
+
+    img {
+        
+
+        &:hover {
+            transition: $transition;
+            transform: scale(1.1);
+        }
+    }
 }
 
 //---------------------------------------
