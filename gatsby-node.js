@@ -5,6 +5,39 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
+    const teamView = path.resolve('./src/templates/team.js')
+    resolve(
+      graphql(
+        `
+          {
+            allContentfulTeam {
+              edges {
+                node {
+                  title
+                  slug
+                }
+              }
+            }
+          }
+          `
+      ).then(result => {
+        if (result.errors) {
+          console.log(result.errors)
+          reject(result.errors)
+        }
+
+        const teams = result.data.allContentfulTeam.edges
+        teams.forEach((team) => {
+          createPage({
+            path: team.node.slug,
+            component: teamView,
+            context: {
+              slug: team.node.slug
+            },
+          })
+        })
+      })
+    )
     const pageView = path.resolve('./src/templates/page.js')
     resolve(
       graphql(
