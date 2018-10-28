@@ -1,8 +1,8 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import get from 'lodash/get'
-import { graphql, Link } from 'gatsby'
-import Layout from "../components/layout/layout"
+import React from 'react';
+import Helmet from 'react-helmet';
+import get from 'lodash/get';
+import { graphql, Link } from 'gatsby';
+import Layout from '../components/layout/layout';
 
 class PageTemplate extends React.Component {
   render() {
@@ -14,17 +14,22 @@ class PageTemplate extends React.Component {
     const subNav = (
       <>
         {pages.map(({ node }) => {
-          const pageLink = node.section.toLowerCase().split(' ').join('-') === node.slug ? `/${node.slug}/` : `/${node.section}/${node.slug}/`
+          const pageLink =
+            node.section
+              .toLowerCase()
+              .split(' ')
+              .join('-') === node.slug
+              ? `/${node.slug}/`
+              : `/${node.section}/${node.slug}/`;
           return (
             <>
-              {page.section === node.section && page.section != 'who we are' ? 
+              {page.section === node.section && page.section != 'who we are' ? (
                 <li key={node.slug}>
-                  <Link to={pageLink}>{node.title}</Link> 
+                  <Link to={pageLink}>{node.title}</Link>
                 </li>
-                : null
-              }
+              ) : null}
             </>
-          )
+          );
         })}
       </>
     );
@@ -33,22 +38,21 @@ class PageTemplate extends React.Component {
       <>
         {teams.map(({ node }) => {
           console.log(page.section);
-           return (
+          return (
             <>
-              {page.section === 'who we are' ? 
+              {page.section === 'who we are' ? (
                 <li key={node.slug}>
-                  <Link to={node.slug}>{node.title}</Link> 
+                  <Link to={node.slug}>{node.title}</Link>
                 </li>
-                : null
-              }
+              ) : null}
             </>
-          )
+          );
         })}
       </>
     );
 
     return (
-      <Layout location={this.props.location} >
+      <Layout location={this.props.location}>
         <main className="main--page">
           <Helmet title={`${page.title} | ${siteTitle}`} />
           <aside className="side-bar">
@@ -69,11 +73,11 @@ class PageTemplate extends React.Component {
           </div>
         </main>
       </Layout>
-    )
+    );
   }
 }
 
-export default PageTemplate
+export default PageTemplate;
 
 export const pageQuery = graphql`
   query PageBySlug($slug: String!) {
@@ -104,4 +108,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

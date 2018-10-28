@@ -1,10 +1,16 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import React from 'react';
+import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 
 export default ({ page }) => (
   <div className="page__preview">
-    <Link className="page__header" to={page.section === page.slug ? `/${page.slug}/` : `/${page.section}/${page.slug}/`}>
+    <Link
+      className="page__header"
+      to={
+        page.section === page.slug
+          ? `/${page.slug}/`
+          : `/${page.section}/${page.slug}/`
+      }>
       <div className="page__thumbnail">
         <Img alt={page.title} sizes={page.featureImage.fluid} />
       </div>
@@ -19,5 +25,4 @@ export default ({ page }) => (
       </div>
     </Link>
   </div>
-)
-
+);

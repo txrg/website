@@ -1,9 +1,9 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import get from 'lodash/get'
-import { graphql, Link } from 'gatsby'
-import Layout from "../components/layout/layout"
-import Profile from '../components/profile-preview/profile-preview'
+import React from 'react';
+import Helmet from 'react-helmet';
+import get from 'lodash/get';
+import { graphql, Link } from 'gatsby';
+import Layout from '../components/layout/layout';
+import Profile from '../components/profile-preview/profile-preview';
 
 class PageTemplate extends React.Component {
   render() {
@@ -12,48 +12,53 @@ class PageTemplate extends React.Component {
     const profiles = get(this, 'props.data.allContentfulProfile.edges');
 
     return (
-      <Layout location={this.props.location} >
+      <Layout location={this.props.location}>
         <main className="main--team">
           <Helmet title={`${team.title} | ${siteTitle}`} />
           <div className="main-content">
             <h1>{team.title}</h1>
             <div
-                dangerouslySetInnerHTML={{
+              dangerouslySetInnerHTML={{
                 __html: team.pageContent.childMarkdownRemark.html,
-                }}
+              }}
             />
-</div>
-            <ul className="profile-list">
-                {profiles.map(({ node }) => {
-                    console.log(node.details);
-                    return (
-                        <li className="profile-list__item" key={node.id}>
-                        {node.details != 'Retired' && (team.title === node.homeTeam || team.title === node.type) ? <Profile profile={node} /> : null }
-                        </li>
-                    )
-                })}
-                 <li className="profile-list__item"></li>
-                 <li className="profile-list__item"></li>
-                 <li className="profile-list__item"></li>
-                 <li className="profile-list__item"></li>
-                 <li className="profile-list__item"></li>
-                 <li className="profile-list__item"></li>
-                 <li className="profile-list__item"></li>
-                 <li className="profile-list__item"></li>
-                 <li className="profile-list__item"></li>
-                 <li className="profile-list__item"></li>
-                 <li className="profile-list__item"></li>
-                 <li className="profile-list__item"></li>
-                 <li className="profile-list__item"></li>
-                 <li className="profile-list__item"></li>
-            </ul>
+          </div>
+          <ul className="profile-list">
+            {profiles.map(({ node }) => {
+              console.log(node.details);
+              return (
+                <>
+                  {node.details != 'Retired' &&
+                  (team.title === node.homeTeam || team.title === node.type) ? (
+                    <li className="profile-list__item" key={node.id}>
+                      <Profile profile={node} />
+                    </li>
+                  ) : null}
+                </>
+              );
+            })}
+            <li className="profile-list__item" />
+            <li className="profile-list__item" />
+            <li className="profile-list__item" />
+            <li className="profile-list__item" />
+            <li className="profile-list__item" />
+            <li className="profile-list__item" />
+            <li className="profile-list__item" />
+            <li className="profile-list__item" />
+            <li className="profile-list__item" />
+            <li className="profile-list__item" />
+            <li className="profile-list__item" />
+            <li className="profile-list__item" />
+            <li className="profile-list__item" />
+            <li className="profile-list__item" />
+          </ul>
         </main>
       </Layout>
-    )
+    );
   }
 }
 
-export default PageTemplate
+export default PageTemplate;
 
 export const teamQuery = graphql`
   query TeamBySlug($slug: String!) {
@@ -66,19 +71,19 @@ export const teamQuery = graphql`
       }
     }
     allContentfulProfile {
-        edges {
-          node {
-            name
-            homeTeam
-            type
-            details
-            photo {
-              fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: SCALE) {
-                ...GatsbyContentfulFluid_tracedSVG
-               }
+      edges {
+        node {
+          name
+          homeTeam
+          type
+          details
+          photo {
+            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: SCALE) {
+              ...GatsbyContentfulFluid_tracedSVG
             }
           }
         }
       }
+    }
   }
-`
+`;

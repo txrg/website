@@ -2,76 +2,75 @@
 // Banner
 //---------------------------------------
 .banner {
-    background: $bg-dark url(../images/banner.png) center center/cover;
-    background-size: cover;
-    height: 500px;
-    //opacity: .3;
+  background: $bg-dark url(../images/banner.png) center center/cover;
+  background-size: cover;
+  height: 500px;
+  //opacity: .3;
 }
-
 
 //---------------------------------------
 // Featured
 //---------------------------------------
-.featured  {
-    padding: $spacing-lg;
-    display: flex;
-    border-bottom: 1px solid $ui-02;
+.featured {
+  padding: $spacing-lg;
+  display: flex;
+  border-bottom: 1px solid $ui-02;
 }
 
 //---------------------------------------
 // Featured Page + Blog
 //---------------------------------------
 .featured--items > div {
-    * {
-        text-decoration: none;
-    }
-    width: 25%;
-    background: $bg-light;
-    padding: $spacing-md;
+  * {
+    text-decoration: none;
+  }
+  width: 25%;
+  background: $bg-light;
+  padding: $spacing-md;
 
-    &:hover .blog__title,
-    &:hover .page__title {
-        color: $hover;
-    }
+  &:hover .blog__title,
+  &:hover .page__title {
+    color: $hover;
+  }
 }
 
 .blog__description,
-.page__description{ 
-    font-size: 14px;
-    color: $text-02;
+.page__description {
+  font-size: 14px;
+  color: $text-02;
 }
 
 .blog__thumbnail,
 .page__thumbnail {
-    img {
-        &:hover {
-            //transition: $transition;
-            //transform: scale(1.1);
-        }
+  img {
+    &:hover {
+      //transition: $transition;
+      //transform: scale(1.1);
     }
+  }
 }
 
 //---------------------------------------
 // events
 //---------------------------------------
 .featured--evennts {
-    width: 100%;
+  width: 100%;
 }
 
 //---------------------------------------
 // Sponsors
 //---------------------------------------
 .sponsor {
-    width: 100%;
-    background: white;
+  width: 100%;
+  background: white;
 }
 
 .sponsor__list {
-    list-style: none;
-    margin: 0;
-    padding: $spacing-lg;
+  list-style: none;
+  margin: 0;
+  padding: $spacing-lg;
 }
 
 .sponsor__item {
-    width: 150px;
+  width: 150px;
 }
