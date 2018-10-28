@@ -9,6 +9,7 @@ class PageTemplate extends React.Component {
     const page = get(this.props, 'data.contentfulPage');
     const siteTitle = get(this.props, 'data.site.siteMetadata.title');
     const pages = get(this, 'props.data.allContentfulPage.edges');
+    const teams = get(this, 'props.data.allContentfulTeam.edges');
 
     const subNav = (
       <>
@@ -16,9 +17,27 @@ class PageTemplate extends React.Component {
           const pageLink = node.section.toLowerCase().split(' ').join('-') === node.slug ? `/${node.slug}/` : `/${node.section}/${node.slug}/`
           return (
             <>
-              {page.section === node.section ? 
+              {page.section === node.section && page.section != 'who we are' ? 
                 <li key={node.slug}>
                   <Link to={pageLink}>{node.title}</Link> 
+                </li>
+                : null
+              }
+            </>
+          )
+        })}
+      </>
+    );
+
+    const subNavTeam = (
+      <>
+        {teams.map(({ node }) => {
+          console.log(page.section);
+           return (
+            <>
+              {page.section === 'who we are' ? 
+                <li key={node.slug}>
+                  <Link to={node.slug}>{node.title}</Link> 
                 </li>
                 : null
               }
@@ -36,6 +55,7 @@ class PageTemplate extends React.Component {
             <nav>
               <ul>
                 {subNav}
+                {subNavTeam}
               </ul>
             </nav>
           </aside>
@@ -72,6 +92,14 @@ export const pageQuery = graphql`
           title
           slug
           section
+        }
+      }
+    }
+    allContentfulTeam {
+      edges {
+        node {
+          title
+          slug
         }
       }
     }
