@@ -21,6 +21,7 @@ class Template extends React.Component {
     return (
       <div>
         <Header />
+        <section className="banner" />
         {children}
         <Footer />
       </div>

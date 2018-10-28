@@ -16,7 +16,9 @@ export default ({ blog }) => (
               __html: blog.description.childMarkdownRemark.html,
             }}
           />
+          {/* 
           <p className="blog__date">{blog.publishDate}</p>
+          */} 
       </div>
     </Link>
   </div>

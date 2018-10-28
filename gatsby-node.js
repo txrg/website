@@ -28,9 +28,11 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         const pages = result.data.allContentfulPage.edges
+        
         pages.forEach((page, index) => {
+          const sectionName = page.node.section.toLowerCase().split(' ').join('-');
           createPage({
-            path: page.node.section === page.node.slug ? `/${page.node.slug}/` : `/${page.node.section}/${page.node.slug}/`,
+            path: sectionName === page.node.slug ? `/${page.node.slug}/` : `/${sectionName}/${page.node.slug}/`,
             component: pageView,
             context: {
               slug: page.node.slug

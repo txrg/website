@@ -1,7 +1,7 @@
 //-------------------------------------------
 // Font
 // ------------------------------------------
-$font-family: 'Krub', sans-serif;
+$font-family: 'Muli', sans-serif;
 
 //-------------------------------------------
 // Color
@@ -9,11 +9,14 @@ $font-family: 'Krub', sans-serif;
 $bg-dark: #000;
 $bg-light: #fff;
 
-$ui-01: red;
+$ui-01: #f42f2c;
 $ui-02: #000;
 
-$text: #000;
+$text-01: #000;
+$text-02: #777;
 $text-inverse: #fff;
+
+$hover: #f42f2c;
 
 //-------------------------------------------
 // Transitions

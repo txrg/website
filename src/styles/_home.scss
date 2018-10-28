@@ -22,16 +22,31 @@
 // Featured Page + Blog
 //---------------------------------------
 .featured--items > div {
+    * {
+        text-decoration: none;
+    }
     width: 25%;
     background: $bg-light;
-    padding: $spacing-lg;
+    padding: $spacing-md;
 
+    &:hover .blog__title,
+    &:hover .page__title {
+        color: $hover;
+    }
+}
+
+.blog__description,
+.page__description{ 
+    font-size: 14px;
+    color: $text-02;
+}
+
+.blog__thumbnail,
+.page__thumbnail {
     img {
-        
-
         &:hover {
-            transition: $transition;
-            transform: scale(1.1);
+            //transition: $transition;
+            //transform: scale(1.1);
         }
     }
 }

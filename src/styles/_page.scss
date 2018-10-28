@@ -6,20 +6,36 @@ body {
     line-height: 1.5;
     font-family: $font-family;
     background: $bg-light;
-    color: $text;
+    color: $text-01;
 }
 
 a {
-    color: $text;
+    color: $text-01;
 }
 
 main {
-    display: block;
+    display: flex;
+    flex-direction:  column;
+
+    @include breakpoint(sm) {
+        flex-direction: row;
+    }
 }
 
 .side-bar {
-    width: 300px;
+    flex-shrink: 0;
+    width: 100%;
     padding: $spacing-lg;
+    background: $bg-dark;
+    color: $text-inverse;
+
+    @include breakpoint(sm) {
+        width: 30%;
+    }
+
+    a {
+        color: $text-inverse;
+    }
 }
 
 .main-content {
@@ -30,3 +46,13 @@ img {
     max-width: 100%;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+h3 {
+    color: $text-01;
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: $spacing-md;
+}
