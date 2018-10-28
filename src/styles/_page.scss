@@ -15,15 +15,15 @@ a {
 
 main {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .side-bar {
-    width: 25%;
+    width: 300px;
     padding: $spacing-lg;
 }
 
 .main-content {
-    width: 75%;
     padding: $spacing-lg;
 }
 

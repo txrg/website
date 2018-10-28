@@ -6,6 +6,7 @@ import { graphql } from 'gatsby'
 import Layout from "../components/layout/layout"
 import BlogPreview from '../components/blog-preview/blog-preview'
 import PagePreview from '../components/page-preview/page-preview'
+import Sponsor from '../components/sponsor/sponsor'
 
 class RootIndex extends React.Component {
   render() {
@@ -45,7 +46,7 @@ class RootIndex extends React.Component {
               const featuredBlog = node.featured;
               return (
                 <>
-                  {featuredBlog ? <BlogPreview blog={node} key={node.slug} /> : null}        
+                  {featuredBlog ? <BlogPreview blog={node} key={node.id} /> : null}        
                 </>
               )
             })}
@@ -55,7 +56,7 @@ class RootIndex extends React.Component {
               const FeaturedPage = node.featured;
               return (
                 <>
-                  {FeaturedPage ? <PagePreview page={node} /> : null}   
+                  {FeaturedPage ? <PagePreview page={node} key={node.id} /> : null}   
                 </>   
               )
             })}
@@ -63,14 +64,12 @@ class RootIndex extends React.Component {
           
         </div>
          
-        <section className="sponsor-list">  
-          <ul>
+        <section className="sponsor">  
+          <ul className="sponsor__list">
             {sponsors.map(({ node }) => {
               return (
-                <li key={node.id}>
-                  <a href={node.link} target="_blank" rel="noopener noreferrer">
-                  <Img alt={node.name} fluid={node.photo.fluid} />
-                  </a>
+                <li className="sponsor__item" key={node.id}>
+                  <Sponsor sponsor={node}/>
                 </li>
               )
             })}

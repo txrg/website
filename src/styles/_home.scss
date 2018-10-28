@@ -11,3 +11,19 @@
     background: $bg-01;
     padding: $spacing-lg;
 }
+
+//---------------------------------------
+// Sponsors
+//---------------------------------------
+.sponsor {
+    width: 100%;
+    background: white;
+}
+
+.sponsor__list {
+    list-style: none;
+}
+
+.sponsor__item {
+    width: 150px;
+}
