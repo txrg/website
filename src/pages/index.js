@@ -7,6 +7,7 @@ import Layout from "../components/layout/layout"
 import BlogPreview from '../components/blog-preview/blog-preview'
 import PagePreview from '../components/page-preview/page-preview'
 import Sponsor from '../components/sponsor/sponsor'
+import Profile from '../components/profile-preview/profile-preview'
 
 class RootIndex extends React.Component {
   render() {
@@ -15,7 +16,7 @@ class RootIndex extends React.Component {
     const events = get(this, 'props.data.allContentfulEvent.edges')
     const sponsors = get(this, 'props.data.allContentfulSponsor.edges')
     const pages = get(this, 'props.data.allContentfulPage.edges')
-    const skaters = get(this, 'props.data.allContentfulProfile.edges')
+    const profiles = get(this, 'props.data.allContentfulProfile.edges')
 
     return (
       <Layout location={this.props.location} >
@@ -54,11 +55,9 @@ class RootIndex extends React.Component {
           
           <section className="featured featured-skater">
             <h2>Featured Skater</h2>
-            {skaters.map(({ node }) => {
+            {profiles.map(({ node }) => {
               return (
-                <div key={node.id}>
-                  {node.name}
-                </div>
+                <Profile profile={node} key={node.id} />
               )
             })}
           </section>
