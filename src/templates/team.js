@@ -17,11 +17,13 @@ class PageTemplate extends React.Component {
           <Helmet title={`${team.title} | ${siteTitle}`} />
           <div className="main-content">
             <h1>{team.title}</h1>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: team.pageContent.childMarkdownRemark.html,
-              }}
-            />
+            {team.pageContent ? (
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: team.pageContent.childMarkdownRemark.html,
+                }}
+              />
+            ) : null}
           </div>
           <ul className="profile-list">
             {profiles.map(({ node }) => {
@@ -37,20 +39,6 @@ class PageTemplate extends React.Component {
                 </>
               );
             })}
-            <li className="profile-list__item" />
-            <li className="profile-list__item" />
-            <li className="profile-list__item" />
-            <li className="profile-list__item" />
-            <li className="profile-list__item" />
-            <li className="profile-list__item" />
-            <li className="profile-list__item" />
-            <li className="profile-list__item" />
-            <li className="profile-list__item" />
-            <li className="profile-list__item" />
-            <li className="profile-list__item" />
-            <li className="profile-list__item" />
-            <li className="profile-list__item" />
-            <li className="profile-list__item" />
           </ul>
         </main>
       </Layout>

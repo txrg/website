@@ -29,7 +29,7 @@ exports.createPages = ({ graphql, actions }) => {
         const teams = result.data.allContentfulTeam.edges;
         teams.forEach(team => {
           createPage({
-            path: team.node.slug,
+            path: `/who-we-are/${team.node.slug}/`,
             component: teamView,
             context: {
               slug: team.node.slug,

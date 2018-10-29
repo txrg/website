@@ -61,13 +61,12 @@ class RootIndex extends React.Component {
             {profiles.map(({ node }) => {
               return (
                 <>
-                  {node.featured != null ?
-                  <Profile profile={node} key={node.id} />
-                  : null}
+                  {node.featured != null ? (
+                    <Profile profile={node} key={node.id} />
+                  ) : null}
                 </>
-              )
+              );
             })}
-          
           </section>
 
           <section className="sponsor">

@@ -20,7 +20,7 @@ class PageTemplate extends React.Component {
               .split(' ')
               .join('-') === node.slug
               ? `/${node.slug}/`
-              : `/${node.section}/${node.slug}/`;
+              : `/${node.section.toLowerCase().split(' ').join('-')}/${node.slug}/`;
           return (
             <>
               {page.section === node.section && page.section != 'who we are' ? (
@@ -37,12 +37,11 @@ class PageTemplate extends React.Component {
     const subNavTeam = (
       <>
         {teams.map(({ node }) => {
-          console.log(page.section);
           return (
             <>
               {page.section === 'who we are' ? (
                 <li key={node.slug}>
-                  <Link to={node.slug}>{node.title}</Link>
+                  <Link to={`/who-we-are/${node.slug}`}>{node.title}</Link>
                 </li>
               ) : null}
             </>
@@ -99,10 +98,11 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulTeam {
+    allContentfulTeam(sort: {fields: [order], order: ASC}) {
       edges {
         node {
           title
+          order
           slug
         }
       }
