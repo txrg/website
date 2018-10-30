@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import logo from '../../images/texasrollergirls.png';
 
 export default () => (
   <header>
     <Link className="logo" to="/">
-      TXRG
+      <img src={logo} alt="Texas Rollergirls" />
     </Link>
     <nav>
       <ul className="navbar-nav">
