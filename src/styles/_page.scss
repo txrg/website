@@ -7,18 +7,15 @@ body {
   font-family: $font-family;
   background: $bg-light;
   color: $text-01;
+  font-size: 16px;
 }
 
 body, input, textarea, select {
-  font-weight: 300;
-  color: #777;
-  line-height: 1.65em;
-  font-size: 15pt;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  text-transform: uppercase;
   color: #888;
 }
 
@@ -38,8 +35,6 @@ h2 {
 
 h3 {
   font-size: 1em;
-  letter-spacing: 2px;
-  margin: 0 0 1.25em 0;
 }
 
 a {
@@ -100,7 +95,7 @@ ul, ol, dl, table, blockquote {
 
 /* List */
 
-ul {
+.main-content ul {
   list-style: disc;
   padding-left: 1em;
 
@@ -114,7 +109,7 @@ ul {
   }
 }
 
-ol {
+.main-content ol {
   list-style: decimal;
   padding-left: 1em;
 
@@ -128,5 +123,82 @@ ol {
   }
 }
 
+//---------------------------------------
+// Page Layout
+//---------------------------------------
+.banner {
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 120px 0 70px 0;
+  position: relative;
+  background: $ui-01;
+  text-align: center;
 
+  h1 {
+    color: $text-inverse;
+    margin: 0;
+  }
+}
 
+.breadcrumb {
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+    color: $text-inverse;
+  }
+
+  >li+li:before {
+    padding: 0 5px;
+    content: "/\00a0";
+  }
+
+  a {
+    color: $text-inverse;
+  }
+}
+
+.main-page {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.side-bar {
+  flex: 1;
+  margin: $spacing-2xl $spacing-2xl $spacing-2xl 0;
+  padding: $spacing-md;
+  border: 1px solid #dedede;
+  box-shadow: $shadow;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  li {
+    list-style: none;
+    margin: 0;
+    display: block;
+    width: 100%;
+    list-style: none;
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 10px 0;
+  }
+}
+
+.main-content {
+  flex: 4;
+  padding: $spacing-md;
+}

@@ -49,10 +49,28 @@ class PageTemplate extends React.Component {
         })}
       </>
     );
+    
+    const sectionLink = `/${page.section.toLowerCase().split(' ').join('-')}/`;
+
+    const breadcrumb = (
+      <ol class="breadcrumb">
+          <li>
+              <a href="/">
+                  Home
+              </a>
+          </li>
+          <li class="active"><Link to={sectionLink}>{page.section}</Link></li>
+          <li class="active">{page.title}</li>
+      </ol>
+    );
 
     return (
       <Layout location={this.props.location}>
-        <main className="main--page">
+        <section className="banner">
+          <h1>{page.title}</h1>
+          {breadcrumb}
+        </section>
+        <main className="main-page">
           <Helmet title={`${page.title} | ${siteTitle}`} />
           <aside className="side-bar">
             <nav>
@@ -62,14 +80,11 @@ class PageTemplate extends React.Component {
               </ul>
             </nav>
           </aside>
-          <div className="main-content">
-            <h1>{page.title}</h1>
-            <div
+          <div className="main-content"
               dangerouslySetInnerHTML={{
                 __html: page.pageContent.childMarkdownRemark.html,
               }}
             />
-          </div>
         </main>
       </Layout>
     );
@@ -83,6 +98,7 @@ export const pageQuery = graphql`
     contentfulPage(slug: { eq: $slug }) {
       title
       section
+      slug
       pageContent {
         childMarkdownRemark {
           html

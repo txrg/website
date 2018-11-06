@@ -1,7 +1,7 @@
 //---------------------------------------
 // Banner
 //---------------------------------------
-.banner {
+.banner--homepage {
   background: $bg-dark url(../images/banner.png) center center/cover;
   background-size: cover;
   height: 500px;
@@ -24,8 +24,12 @@
   * {
     text-decoration: none;
   }
+
+  margin: 0 $spacing-md;
   width: 100%;
-  text-align: center;
+  background: #fff;
+  margin-bottom: 45px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.04), 0 2px 10px 0 rgba(0, 0, 0, 0.06);
 
   &:hover .blog__title,
   &:hover .page__title {
@@ -37,13 +41,18 @@
   }
 
   @include breakpoint(md) {
-    width: 33%;
+    width: 25%;
   }
 
   a {
     display: block;
-    padding: $spacing-md;
+    border: none;
   }
+}
+
+.blog__content,
+.page__content {
+  padding: $spacing-md;
 }
 
 .blog__description,
@@ -53,9 +62,7 @@
 
 .blog__thumbnail,
 .page__thumbnail {
-  margin: 0 0 $spacing-3xl 0;
-  border: solid 6px #ebebeb;
-  transition: opacity 0.25s ease-in-out;
+  
 
   img {
     &:hover {
