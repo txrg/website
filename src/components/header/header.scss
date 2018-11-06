@@ -1,7 +1,7 @@
 header {
   margin-bottom: $spacing-lg;
   padding: $spacing-lg 0;
-  position: absolute;
+  //position: absolute;
   left: 0;
   top: 0;
   right: 0;
@@ -14,6 +14,8 @@ header {
   text-align: center;
   margin: 0 auto;
   width: 200px;
+  height: auto;
+  display: none;
 }
 
 nav {

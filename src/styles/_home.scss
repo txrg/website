@@ -14,7 +14,7 @@
 .featured {
   padding: $spacing-lg;
   display: flex;
-  border-bottom: 1px solid $ui-02;
+  flex-wrap: wrap;
 }
 
 //---------------------------------------
@@ -24,28 +24,42 @@
   * {
     text-decoration: none;
   }
-  width: 25%;
-  background: $bg-light;
-  padding: $spacing-md;
+  width: 100%;
+  text-align: center;
 
   &:hover .blog__title,
   &:hover .page__title {
     color: $hover;
   }
+
+  @include breakpoint(sm) {
+    width: 50%;
+  }
+
+  @include breakpoint(md) {
+    width: 33%;
+  }
+
+  a {
+    display: block;
+    padding: $spacing-md;
+  }
 }
 
 .blog__description,
 .page__description {
-  font-size: 14px;
   color: $text-02;
 }
 
 .blog__thumbnail,
 .page__thumbnail {
+  margin: 0 0 $spacing-3xl 0;
+  border: solid 6px #ebebeb;
+  transition: opacity 0.25s ease-in-out;
+
   img {
     &:hover {
-      //transition: $transition;
-      //transform: scale(1.1);
+      opacity: .9;
     }
   }
 }
