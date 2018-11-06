@@ -1,3 +1,7 @@
+.main--home {
+  max-width: $max-width;
+  margin: 0 auto;
+}
 //---------------------------------------
 // Banner
 //---------------------------------------
@@ -15,6 +19,12 @@
   padding: $spacing-lg;
   display: flex;
   flex-wrap: wrap;
+
+  > div {
+    max-width: $max-width;
+    margin: 0 auto;
+    color: $text-inverse;
+  }
 }
 
 //---------------------------------------
@@ -41,7 +51,7 @@
   }
 
   @include breakpoint(md) {
-    width: 25%;
+    width: 33%;
   }
 
   a {
@@ -74,8 +84,14 @@
 //---------------------------------------
 // events
 //---------------------------------------
-.featured--evennts {
-  width: 100%;
+.featured--events {
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 120px 0 70px 0;
+  position: relative;
+  background: $ui-01;
+  text-align: center;
+  text-align: center;
 }
 
 //---------------------------------------

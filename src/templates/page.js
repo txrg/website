@@ -70,7 +70,7 @@ class PageTemplate extends React.Component {
           <h1>{page.title}</h1>
           {breadcrumb}
         </section>
-        <main className="main-page">
+        <main className="main--page">
           <Helmet title={`${page.title} | ${siteTitle}`} />
           <aside className="side-bar">
             <nav>

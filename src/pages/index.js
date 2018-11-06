@@ -21,18 +21,19 @@ class RootIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <section className="banner--homepage" />
+        <section className="featured featured--events">
+          {events.map(({ node }) => {
+            return (
+              <div key={node.id}>
+                {node.title} | {node.date} | {node.location}
+              </div>
+            );
+          })}
+        </section>
         <main className="main--home">
           <Helmet title={siteTitle} />
 
-          <section className="featured featured--events">
-            {events.map(({ node }) => {
-              return (
-                <div key={node.id}>
-                  {node.title} | {node.date} | {node.location}
-                </div>
-              );
-            })}
-          </section>
+          
 
           <section className="featured featured--items">
             {blogs.map(({ node }) => {

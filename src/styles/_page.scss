@@ -85,7 +85,6 @@ blockquote {
 }
 
 p {
-  text-align: justify;
   margin-bottom: 2em;
 }
 
@@ -163,9 +162,9 @@ ul, ol, dl, table, blockquote {
   }
 }
 
-.main-page {
+.main--page {
   display: flex;
-  max-width: 1200px;
+  max-width: $max-width;
   margin: 0 auto;
 }
 
