@@ -10,16 +10,28 @@ body {
   font-size: 16px;
 }
 
-body, input, textarea, select {
-
+body,
+input,
+textarea,
+select {
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
   color: #888;
 }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
   color: inherit;
   text-decoration: none;
   border: 0;
@@ -52,12 +64,12 @@ a {
   }
 }
 
-strong, b {
+strong {
   font-weight: 600;
   color: #666;
 }
 
-em, i {
+em {
   font-style: italic;
 }
 
@@ -88,7 +100,11 @@ p {
   margin-bottom: 2em;
 }
 
-ul, ol, dl, table, blockquote {
+ul,
+ol,
+dl,
+table,
+blockquote {
   margin-bottom: 2em;
 }
 
@@ -152,9 +168,9 @@ ul, ol, dl, table, blockquote {
     color: $text-inverse;
   }
 
-  >li+li:before {
+  > li + li:before {
     padding: 0 5px;
-    content: "/\00a0";
+    content: '/\00a0';
   }
 
   a {

@@ -72,11 +72,9 @@
 
 .blog__thumbnail,
 .page__thumbnail {
-  
-
   img {
     &:hover {
-      opacity: .9;
+      opacity: 0.9;
     }
   }
 }

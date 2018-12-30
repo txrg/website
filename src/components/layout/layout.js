@@ -1,7 +1,9 @@
 import React from 'react';
 import Header from '../header/header';
 import Footer from '../footer/footer';
-import '../../styles/index.scss';
+import '../../styles/css/base.css';
+import '../../styles/css/vendor.css';
+import '../../styles/css/main.css';
 
 class Template extends React.Component {
   render() {
