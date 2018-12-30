@@ -14,11 +14,10 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location}>
         <main>
           <Helmet title={siteTitle} />
-          
+
           <section id="about">
-           
             <div className="row about-features">
-            <h1 class="intro-header">Recent Articles</h1>
+              <h1 class="intro-header">Blog</h1>
               <div className="features-list block-1-3 block-m-1-2 block-mob-full group">
                 {posts.map(({ node }) => {
                   return (
@@ -27,7 +26,7 @@ class BlogIndex extends React.Component {
                     </>
                   );
                 })}
-            </div>
+              </div>
             </div>
           </section>
         </main>

@@ -2,7 +2,7 @@
  *  15. footer styles - (_site-layout.scss)
  *
  * ------------------------------------------------------------------- */
- footer {
+footer {
   padding-top: 9rem;
   padding-bottom: 4.2rem;
   font-size: 1.5rem;
@@ -11,7 +11,7 @@
 }
 footer a,
 footer a:visited {
-  color: #39b54a;
+  color: #701211;
 }
 footer a:hover,
 footer a:focus {
@@ -102,8 +102,8 @@ footer ul a:visited {
   top: 0;
   right: 0;
   color: #ffffff;
-  background: #39b54a;
-  border-color: #39b54a;
+  background: #701211;
+  border-color: #701211;
   border-radius: 0 0.5rem 0.5rem 0;
   padding: 0 15px;
 }
@@ -152,7 +152,7 @@ footer ul a:visited {
  * responsive:
  * footer 
  * ------------------------------------------------------------------- */
- @media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .footer-main > .row {
     max-width: 800px;
   }

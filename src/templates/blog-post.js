@@ -13,18 +13,22 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location}>
         <Helmet title={`${post.title} | ${siteTitle}`} />
         <section id="about">
-          <h1 className="section-headline">{post.title}</h1>
-          <p
-            style={{
-              display: 'block',
-            }}>
-            {post.publishDate}
-          </p>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: post.body.childMarkdownRemark.html,
-            }}
-          />
+          <div class="row about-intro">
+            <div class="col-twelve">
+              <h1 class="intro-header">{post.title}</h1>
+              <h5
+                style={{
+                  display: 'block',
+                }}>
+                {post.publishDate}
+              </h5>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: post.body.childMarkdownRemark.html,
+                }}
+              />
+            </div>
+          </div>
         </section>
       </Layout>
     );

@@ -75,30 +75,28 @@ class PageTemplate extends React.Component {
         <main className="main--page">
           <Helmet title={`${page.title} | ${siteTitle}`} />
           <section id="about">
-
             <div class="row about-intro">
-
-                <div class="col-four">
-                    <h1 class="intro-header">{page.title}</h1>
-                    <aside className="side-bar">
-                      <nav>
-                        <ul>
-                          {subNav}
-                          {subNavTeam}
-                        </ul>
-                      </nav>
-                    </aside>
-                </div>
-                <div class="col-eight">
-                  <div
-                    className="main-content"
-                    dangerouslySetInnerHTML={{
-                      __html: page.pageContent.childMarkdownRemark.html,
-                    }}
-                  />
-                </div>                       
+              <div class="col-four">
+                <aside className="side-bar">
+                  <nav>
+                    <ul>
+                      {subNav}
+                      {subNavTeam}
+                    </ul>
+                  </nav>
+                </aside>
+              </div>
+              <div class="col-eight">
+                <h1 class="intro-header">{page.title}</h1>
+                <div
+                  className="main-content"
+                  dangerouslySetInnerHTML={{
+                    __html: page.pageContent.childMarkdownRemark.html,
+                  }}
+                />
+              </div>
             </div>
-          </section> 
+          </section>
         </main>
       </Layout>
     );

@@ -15,31 +15,36 @@ class PageTemplate extends React.Component {
       <Layout location={this.props.location}>
         <main className="main--team">
           <Helmet title={`${team.title} | ${siteTitle}`} />
-          <div className="main-content">
-            <h1>{team.title}</h1>
-            {team.pageContent ? (
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: team.pageContent.childMarkdownRemark.html,
-                }}
-              />
-            ) : null}
-          </div>
-          <ul className="profile-list">
-            {profiles.map(({ node }) => {
-              console.log(node.details);
-              return (
-                <>
-                  {node.details != 'Retired' &&
-                  (team.title === node.homeTeam || team.title === node.type) ? (
-                    <li className="profile-list__item" key={node.id}>
-                      <Profile profile={node} />
-                    </li>
-                  ) : null}
-                </>
-              );
-            })}
-          </ul>
+          <section id="about">
+            <div className="row about-features">
+              <div className="main-content">
+                <h1 class="intro-header">{team.title}</h1>
+                {team.pageContent ? (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: team.pageContent.childMarkdownRemark.html,
+                    }}
+                  />
+                ) : null}
+              </div>
+              <ul className="profile-list">
+                {profiles.map(({ node }) => {
+                  console.log(node.details);
+                  return (
+                    <>
+                      {node.details != 'Retired' &&
+                      (team.title === node.homeTeam ||
+                        team.title === node.type) ? (
+                        <li className="profile-list__item" key={node.id}>
+                          <Profile profile={node} />
+                        </li>
+                      ) : null}
+                    </>
+                  );
+                })}
+              </ul>
+            </div>
+          </section>
         </main>
       </Layout>
     );
