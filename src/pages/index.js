@@ -1,8 +1,7 @@
 import React from 'react';
 import get from 'lodash/get';
 import Helmet from 'react-helmet';
-import Img from 'gatsby-image';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout/layout';
 import BlogPreview from '../components/blog-preview/blog-preview';
 import PagePreview from '../components/page-preview/page-preview';
@@ -40,14 +39,14 @@ class RootIndex extends React.Component {
                 </h1>
 
                 <div className="buttons">
-                  <a href="#download" className="smoothscroll button stroke">
-                    <span className="icon-circle-down" aria-hidden="true" />
-                    Download App
+                  <a href="https://www.brownpapertickets.com/event/3233212" className="smoothscroll button stroke">
+                    <span className="icon-calendar" aria-hidden="true" />
+                    Buy Tickets
                   </a>
-                  <a href="#" className="button stroke">
-                    <span className="icon-play" aria-hidden="true" />
-                    Watch Video
-                  </a>
+                  <Link to="/about/donate" className="smoothscroll button stroke">
+                    <span className="icon-dollar" aria-hidden="true" />
+                    Donate
+                  </Link>
                 </div>
               </div>
             </div>
