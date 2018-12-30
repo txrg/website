@@ -20,69 +20,156 @@ class RootIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <section className="banner--homepage" />
-        <section className="featured featured--events">
-          {events.map(({ node }) => {
-            return (
-              <div key={node.id}>
-                {node.title} | {node.date} | {node.location}
+        <section
+          id="home"
+          data-parallax="scroll"
+          data-image-src="images/hero-bg.jpg"
+          data-natural-width="3000"
+          data-natural-height="2000">
+          <div className="overlay" />
+          <div className="home-content">
+            <div className="row contents">
+              <div className="home-content-left">
+                <h3>Texas Rollergirls</h3>
+
+                <h1>
+                  This is <br />
+                  roller<br/>
+                  derby. 
+                </h1>
+
+                <div className="buttons">
+                  <a href="#download" className="smoothscroll button stroke">
+                    <span className="icon-circle-down" aria-hidden="true" />
+                    Download App
+                  </a>
+                  <a href="#" className="button stroke">
+                    <span className="icon-play" aria-hidden="true" />
+                    Watch Video
+                  </a>
+                </div>
               </div>
-            );
-          })}
+            </div>
+          </div>
+
+          <ul className="home-social-list">
+            <li>
+              <a href="#">
+                <i className="fa fa-facebook-square" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i className="fa fa-twitter" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i className="fa fa-instagram" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i className="fa fa-youtube-play" />
+              </a>
+            </li>
+          </ul>
+
+          <div className="home-scrolldown">
+            <a href="#about" className="scroll-icon smoothscroll">
+              <span>Scroll Down</span>
+              <i className="icon-arrow-right" aria-hidden="true" />
+            </a>
+          </div>
         </section>
-        <main className="main--home">
-          <Helmet title={siteTitle} />
 
-          
+        <section id="about">
 
-          <section className="featured featured--items">
-            {blogs.map(({ node }) => {
-              const featuredBlog = node.featured;
-              return (
-                <>
-                  {featuredBlog ? (
-                    <BlogPreview blog={node} key={node.id} />
-                  ) : null}
-                </>
-              );
-            })}
-            {pages.map(({ node }) => {
-              const FeaturedPage = node.featured;
-              return (
-                <>
-                  {FeaturedPage ? (
-                    <PagePreview page={node} key={node.id} />
-                  ) : null}
-                </>
-              );
-            })}
-          </section>
+        <div className="row about-intro">
 
-          <section className="featured featured-skater">
-            <h2>Featured Skater</h2>
-            {profiles.map(({ node }) => {
-              return (
-                <>
-                  {node.featured != null ? (
-                    <Profile profile={node} key={node.id} />
-                  ) : null}
-                </>
-              );
-            })}
-          </section>
+            <div className="col-four">
+                <h1 className="intro-header">Events</h1>
+            </div>
+            <div className="col-eight">
+                <p className="lead">   
+                  {events.map(({ node }) => {
+                    return (
+                      <div key={node.id}>
+                        {node.title} | {node.date} | {node.location}
+                      </div>
+                    );
+                  })}
+                </p>
+            </div>                       
+            
+        </div>
 
-          <section className="sponsor">
-            <ul className="sponsor__list">
-              {sponsors.map(({ node }) => {
-                return (
-                  <li className="sponsor__item" key={node.id}>
-                    <Sponsor sponsor={node} />
-                  </li>
-                );
-              })}
-            </ul>
-          </section>
-        </main>
+        <div className="row about-features">
+
+            <div className="features-list block-1-3 block-m-1-2 block-mob-full group">
+
+                
+
+                    {blogs.map(({ node }) => {
+                      const featuredBlog = node.featured;
+                      return (
+                        <>
+                          {featuredBlog ? (
+                            <BlogPreview blog={node} key={node.id} />
+                          ) : null}
+                        </>
+                      );
+                    })}
+                    {pages.map(({ node }) => {
+                      const FeaturedPage = node.featured;
+                      return (
+                        <>
+                          {FeaturedPage ? (
+                            <PagePreview page={node} key={node.id} />
+                          ) : null}
+                        </>
+                      );
+                    })}
+                    {profiles.map(({ node }) => {
+                      return (
+                        <>
+                          {node.featured != null ? (
+                            <Profile profile={node} key={node.id} />
+                          ) : null}
+                        </>
+                      );
+                    })}
+                            
+                  </div>
+          </div> 
+        </section>
+
+        
+        <Helmet title={siteTitle} />
+
+      
+        <section id="download">
+          <div className="row">
+            <div className="col-full">
+              <h1 className="intro-header">
+                Sponsors
+              </h1>
+              <p className="lead">
+                
+              </p>
+
+              <ul className="sponsor__list download-badges">
+                {sponsors.map(({ node }) => {
+                  return (
+                    <li className="sponsor__item" key={node.id}>
+                      <Sponsor sponsor={node} />
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+        </section>
       </Layout>
     );
   }

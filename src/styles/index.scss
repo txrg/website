@@ -1,10 +1,12 @@
 //---------------------------------------
 // 🌍 Global
 //---------------------------------------
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600');
 @import 'variables';
 @import 'mixins';
-@import 'normalize';
+
+@import 'vendor';
+@import 'base';
+@import 'main';
 
 //---------------------------------------
 // Pages / Templates
@@ -12,7 +14,7 @@
 @import 'page';
 @import 'home';
 
-@import '../templates/team.scss';
+//@import '../templates/team.scss';
 
 //---------------------------------------
 // Components

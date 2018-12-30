@@ -12,7 +12,7 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Helmet title={`${post.title} | ${siteTitle}`} />
-        <div className="wrapper">
+        <section id="about">
           <h1 className="section-headline">{post.title}</h1>
           <p
             style={{
@@ -25,7 +25,7 @@ class BlogPostTemplate extends React.Component {
               __html: post.body.childMarkdownRemark.html,
             }}
           />
-        </div>
+        </section>
       </Layout>
     );
   }

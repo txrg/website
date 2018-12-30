@@ -4,58 +4,51 @@ import logo from '../../images/texasrollergirls.png';
 import runningGirl from '../../images/runninggirl.png';
 
 export default () => (
-  <header>
-    <Link className="logo" to="/">
-      <img src={runningGirl} alt="" /> Texas Rollergirls
-    </Link>
-    <nav>
-      <ul className="navbar-nav">
-        <li className="nav-item active">
-          <Link className="nav-link" to="/blog/">
-            Blog
-          </Link>
+  <header id="header" className="row">
+    <div className="header-logo">
+      <Link className="logo" to="/">
+        <img src={runningGirl} alt="" /> Texas Rollergirls
+      </Link>
+    </div>
+
+    <nav id="header-nav-wrap">
+      <ul className="header-main-nav">
+        <li>
+          <Link to="/blog/">Blog</Link>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/about/">
-            About
-          </Link>
+        <li>
+          <Link to="/about/">About</Link>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/who-we-are/">
-            Who we are
-          </Link>
+        <li>
+          <Link to="/who-we-are/">Who we are</Link>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/events/">
-            Events
-          </Link>
+        <li>
+          <Link to="/events/">Events</Link>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/tickets/">
-            Tickets
-          </Link>
+        <li>
+          <Link to="/tickets/">Tickets</Link>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/get-involved/">
-            Get Involved
-          </Link>
+        <li>
+          <Link to="/get-involved/">Get Involved</Link>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/media/">
-            Media
-          </Link>
+        <li>
+          <Link to="/media/">Media</Link>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/sponsorship/">
-            Sponsorship
-          </Link>
+        <li>
+          <Link to="/sponsorship/">Sponsorship</Link>
         </li>
-        <li className="nav-item">
-          <a className="nav-link" href="https://www.texasrollergirls.org/shop/">
-            Shop
-          </a>
+        <li>
+          <a href="https://www.texasrollergirls.org/shop/">Shop</a>
         </li>
       </ul>
+
+      <a href="#" title="Buy" className="button button-primary cta">
+        Buy Tickets
+      </a>
     </nav>
+
+    <a className="header-menu-toggle" href="#">
+      <span>Menu</span>
+    </a>
   </header>
 );

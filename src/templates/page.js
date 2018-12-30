@@ -20,7 +20,10 @@ class PageTemplate extends React.Component {
               .split(' ')
               .join('-') === node.slug
               ? `/${node.slug}/`
-              : `/${node.section.toLowerCase().split(' ').join('-')}/${node.slug}/`;
+              : `/${node.section
+                  .toLowerCase()
+                  .split(' ')
+                  .join('-')}/${node.slug}/`;
           return (
             <>
               {page.section === node.section && page.section != 'who we are' ? (
@@ -49,42 +52,53 @@ class PageTemplate extends React.Component {
         })}
       </>
     );
-    
-    const sectionLink = `/${page.section.toLowerCase().split(' ').join('-')}/`;
+
+    const sectionLink = `/${page.section
+      .toLowerCase()
+      .split(' ')
+      .join('-')}/`;
 
     const breadcrumb = (
       <ol class="breadcrumb">
-          <li>
-              <a href="/">
-                  Home
-              </a>
-          </li>
-          <li class="active"><Link to={sectionLink}>{page.section}</Link></li>
-          <li class="active">{page.title}</li>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li class="active">
+          <Link to={sectionLink}>{page.section}</Link>
+        </li>
+        <li class="active">{page.title}</li>
       </ol>
     );
 
     return (
       <Layout location={this.props.location}>
-        <section className="banner">
-          <h1>{page.title}</h1>
-          {breadcrumb}
-        </section>
         <main className="main--page">
           <Helmet title={`${page.title} | ${siteTitle}`} />
-          <aside className="side-bar">
-            <nav>
-              <ul>
-                {subNav}
-                {subNavTeam}
-              </ul>
-            </nav>
-          </aside>
-          <div className="main-content"
-              dangerouslySetInnerHTML={{
-                __html: page.pageContent.childMarkdownRemark.html,
-              }}
-            />
+          <section id="about">
+
+            <div class="row about-intro">
+
+                <div class="col-four">
+                    <h1 class="intro-header">{page.title}</h1>
+                    <aside className="side-bar">
+                      <nav>
+                        <ul>
+                          {subNav}
+                          {subNavTeam}
+                        </ul>
+                      </nav>
+                    </aside>
+                </div>
+                <div class="col-eight">
+                  <div
+                    className="main-content"
+                    dangerouslySetInnerHTML={{
+                      __html: page.pageContent.childMarkdownRemark.html,
+                    }}
+                  />
+                </div>                       
+            </div>
+          </section> 
         </main>
       </Layout>
     );
@@ -114,7 +128,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulTeam(sort: {fields: [order], order: ASC}) {
+    allContentfulTeam(sort: { fields: [order], order: ASC }) {
       edges {
         node {
           title
