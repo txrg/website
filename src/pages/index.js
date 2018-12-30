@@ -55,23 +55,18 @@ class RootIndex extends React.Component {
 
           <ul className="home-social-list">
             <li>
-              <a href="#">
+              <a href="http://www.facebook.com/TexasRollergirls">
                 <i className="fa fa-facebook-square" />
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="http://twitter.com/txrollergirls">
                 <i className="fa fa-twitter" />
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="https://www.instagram.com/texasrollergirls/">
                 <i className="fa fa-instagram" />
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fa fa-youtube-play" />
               </a>
             </li>
           </ul>
