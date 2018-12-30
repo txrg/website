@@ -86,9 +86,9 @@ class RootIndex extends React.Component {
             <div className="col-ten">
               {events.map(({ node }) => {
                 return (
-                  <div key={node.id}>
+                  <div key={node.id} className="event-list">
                     <h3>
-                      <span>{node.date}</span>: {node.title}
+                      <span className="icon-calendar" aria-hidden="true" /> <span>{node.date}</span>: {node.title}
                     </h3>
                   </div>
                 );
@@ -226,7 +226,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulEvent(sort: { fields: [date], order: DESC }) {
+    allContentfulEvent(sort: { fields: [date], order: ASC }) {
       edges {
         node {
           title
