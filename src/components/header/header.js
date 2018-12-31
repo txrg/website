@@ -3,14 +3,14 @@ import { Link } from 'gatsby';
 import runningGirl from '../../images/runninggirl.png';
 
 export default () => (
-  <header id="header" className="row">
+  <header className="header row">
     <div className="header-logo">
       <Link className="logo" to="/">
         <img src={runningGirl} alt="" /> Texas Rollergirls
       </Link>
     </div>
 
-    <nav id="header-nav-wrap">
+    <nav className="header-nav-wrap">
       <ul className="header-main-nav">
         <li>
           <Link to="/about/">About</Link>

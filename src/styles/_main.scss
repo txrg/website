@@ -65,7 +65,10 @@ body {
 }
 
 body {
-  background: #141515;
+  background-color: #000;
+  background-image:url('../images/splatter.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
   font-family: 'muli-regular', sans-serif;
   font-size: 1.6rem;
   line-height: 1.875;
@@ -87,7 +90,7 @@ a:visited {
 
 a:hover,
 a:focus {
-  color: #701211;
+  color: #690000;
 }
 
 /* ===================================================================
@@ -366,7 +369,7 @@ ul.disc li::before {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #701211;
+  background: #690000;
   position: absolute;
   left: -17px;
   top: 11px;
@@ -375,7 +378,7 @@ ul.disc li::before {
 
 dt {
   margin: 0;
-  color: #701211;
+  color: #690000;
 }
 
 dd {
@@ -541,7 +544,7 @@ td:last-child {
   right: 100%;
   height: 100%;
   width: 100%;
-  background: #701211;
+  background: #690000;
 }
 
 .pace.pace-inactive {
@@ -795,8 +798,8 @@ button.button-primary,
 input[type='submit'].button-primary,
 input[type='reset'].button-primary,
 input[type='button'].button-primary {
-  background-color: #701211;
-  border-color: #701211;
+  background-color: #690000;
+  border-color: #690000;
   color: #ffffff;
 }
 
@@ -810,8 +813,8 @@ button.button-primary:focus,
 input[type='submit'].button-primary:focus,
 input[type='reset'].button-primary:focus,
 input[type='button'].button-primary:focus {
-  background: #701211;
-  border-color: #701211;
+  background: #690000;
+  border-color: #690000;
 }
 
 button.full-width,
@@ -840,8 +843,8 @@ button.stroke,
 
 button.stroke:hover,
 .button.stroke:hover {
-  border: 0.3rem solid #701211;
-  color: #701211;
+  border: 0.3rem solid #690000;
+  color: #690000;
 }
 
 button.pill,
@@ -1058,7 +1061,7 @@ input::-moz-focus-inner {
 }
 
 .stats-tabs li a:hover {
-  color: #701211;
+  color: #690000;
 }
 
 .stats-tabs li a em {
@@ -1088,7 +1091,7 @@ h1.intro-header::before {
   content: '';
   height: 2px;
   width: 70px;
-  background-color: #701211;
+  background-color: #690000;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -1144,7 +1147,7 @@ h1.intro-header::before {
   display: inline-block;
 }
 .about-features .feature .icon i {
-  color: #701211;
+  color: #690000;
   font-size: 4.8rem;
 }
 .about-features .feature h3 {
@@ -1214,7 +1217,7 @@ h1.intro-header::before {
   line-height: 54px;
   text-align: center;
   border-radius: 50%;
-  background-color: #701211;
+  background-color: #690000;
   box-shadow: 0 0 0 15px #ffffff;
   z-index: 500;
   position: absolute;
@@ -1339,14 +1342,19 @@ h1.intro-header::before {
  * ------------------------------------------------------------------- */
 
 .side-bar {
-  background: #701211;
+  background-color: #690000;
+  background-image:url('../images/splatter.jpg');
+  background-size: 150%;
+  background-repeat: no-repeat;
+  background-position: bottom;
   border-radius: 5px;
-  padding: 4.5rem 2.8rem;
+  padding: 3rem 3.5rem 10rem;
   margin-bottom: 4.8rem;
 }
 
 .side-bar ul {
   list-style: none;
+  margin: 0;
 }
 
 .side-bar a {
