@@ -71,7 +71,7 @@ export const teamQuery = graphql`
         }
       }
     }
-    allContentfulProfile {
+    allContentfulProfile(sort: { fields: [name], order: DESC }) {
       edges {
         node {
           name
@@ -79,7 +79,7 @@ export const teamQuery = graphql`
           type
           details
           photo {
-            sizes(maxWidth: 350) {
+            sizes(maxWidth: 235) {
               ...GatsbyContentfulSizes
             }
           }

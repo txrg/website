@@ -18,7 +18,7 @@ class BlogIndex extends React.Component {
           <section id="about">
             <div className="row about-features">
               <h1 className="intro-header">Blog</h1>
-              <div className="features-list block-1-3 block-m-1-2 block-mob-full group">
+              <div className="features-list block-1-4 block-m-1-2 block-mob-full group">
                 {posts.map(({ node }) => {
                   return (
                     <>
@@ -46,7 +46,7 @@ export const pageQuery = graphql`
           slug
           publishDate(formatString: "MMMM Do, YYYY")
           featureImage {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }

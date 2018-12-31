@@ -16,9 +16,9 @@ export default ({ page }) => (
           <Img alt={page.title} sizes={page.featureImage.fluid} />
         </div>
         <div className="page__content">
-          <h3 className="page__title">{page.title}</h3>
+          <h4 className="page__title">{page.title}</h4>
           <p
-            className="page__description"
+            className="feature__description"
             dangerouslySetInnerHTML={{
               __html: page.featureDescription.childMarkdownRemark.html,
             }}

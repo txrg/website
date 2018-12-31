@@ -10,9 +10,9 @@ export default ({ blog }) => (
           <Img alt={blog.title} fluid={blog.featureImage.fluid} />
         </div>
         <div className="blog__content">
-          <h3 className="blog__title">{blog.title}</h3>
+          <h4 className="blog__title">{blog.title}</h4>
           <p
-            className="blog__description"
+            className="feature__description"
             dangerouslySetInnerHTML={{
               __html: blog.description.childMarkdownRemark.html,
             }}

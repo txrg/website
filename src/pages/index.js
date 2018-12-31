@@ -6,7 +6,7 @@ import Layout from '../components/layout/layout';
 import BlogPreview from '../components/blog-preview/blog-preview';
 import PagePreview from '../components/page-preview/page-preview';
 import Sponsor from '../components/sponsor/sponsor';
-import Profile from '../components/profile-preview/profile-preview';
+import Profile from '../components/profile-preview/profile-feature';
 import logo from '../images/texasrollergirls.png';
 
 class RootIndex extends React.Component {
@@ -103,7 +103,7 @@ class RootIndex extends React.Component {
           </div>
 
           <div className="row about-features">
-            <div className="features-list block-1-3 block-m-1-2 block-mob-full group">
+            <div className="features-list block-1-4 block-m-1-2 block-mob-full group">
               {blogs.map(({ node }) => {
                 const featuredBlog = node.featured;
                 return (
@@ -168,7 +168,7 @@ export default RootIndex;
 
 export const pageQuery = graphql`
   query HomeQuery {
-    allContentfulProfile {
+    allContentfulProfile(sort: { fields: [name], order: ASC }) {
       edges {
         node {
           name
@@ -186,6 +186,11 @@ export const pageQuery = graphql`
               ...GatsbyContentfulSizes
             }
           }
+          featureDescription {
+            childMarkdownRemark {
+              html
+            }
+          }
         }
       }
     }
@@ -197,7 +202,7 @@ export const pageQuery = graphql`
           publishDate(formatString: "MMMM Do, YYYY")
           featured
           featureImage {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }
@@ -217,7 +222,7 @@ export const pageQuery = graphql`
           section
           featured
           featureImage {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }
