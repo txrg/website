@@ -12,8 +12,8 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Helmet title={`${post.title} | ${siteTitle}`} />
-        <section id="about">
-          <div className="row about-intro">
+        <section className="content content-intro">
+          <div className="row">
             <div className="col-twelve">
               <h1 className="intro-header">{post.title}</h1>
               <h5>{post.publishDate}</h5>

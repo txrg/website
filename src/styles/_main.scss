@@ -1126,16 +1126,13 @@ h1.intro-header::before {
  *  11. about - (_layout.scss)
  *
  * ------------------------------------------------------------------- */
-#about {
+.content {
   min-height: 786px;
   background: #ffffff;
   padding-top: 10rem;
   overflow: hidden;
 }
-.about-intro {
-  padding-bottom: 3.6rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-}
+
 .about-features .features-list {
   padding-top: 5.4rem;
 }
@@ -1163,7 +1160,7 @@ h1.intro-header::before {
 .about-how h1.intro-header {
   text-align: center;
 }
-#about .about-how h1.intro-header::before {
+.content .about-how h1.intro-header::before {
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
@@ -1237,17 +1234,17 @@ h1.intro-header::before {
   }
 }
 @media only screen and (max-width: 1024px) {
-  .about-intro {
+  .content-intro {
     max-width: 800px;
     text-align: center;
   }
-  .about-intro h1::before {
+  .content-intro h1::before {
     left: 50%;
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
   }
-  .about-intro [class*='col-'] {
+  .content-intro [class*='col-'] {
     width: 100% !important;
     float: none !important;
     clear: both !important;
@@ -1347,7 +1344,7 @@ h1.intro-header::before {
   background-size: 150%;
   background-repeat: no-repeat;
   background-position: bottom;
-  border-radius: 5px;
+  border-radius: 3px;
   padding: 3rem 3.5rem 10rem;
   margin-bottom: 4.8rem;
 }

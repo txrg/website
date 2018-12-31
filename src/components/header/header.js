@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import runningGirl from '../../images/runninggirl.png';
+import runningGirl from '../../images/runninggirl-white.png';
 
 export default () => (
   <header className="header row">
     <div className="header-logo">
       <Link className="logo" to="/">
-        <img src={runningGirl} alt="" /> Texas Rollergirls
+        <img src={runningGirl} alt="" />
+        <span>TXRG</span>
       </Link>
     </div>
 

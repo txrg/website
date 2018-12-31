@@ -83,8 +83,8 @@ class RootIndex extends React.Component {
           </div>
         </section>
 
-        <section id="about">
-          <div className="row about-intro">
+        <section className="content">
+          <div className="row content-intro">
             <div className="col-two">
               <h1 className="intro-header">2019 Season</h1>
             </div>

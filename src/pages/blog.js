@@ -15,7 +15,7 @@ class BlogIndex extends React.Component {
         <main>
           <Helmet title={siteTitle} />
 
-          <section id="about">
+          <section className="content">
             <div className="row about-features">
               <h1 className="intro-header">Blog</h1>
               <div className="features-list block-1-4 block-m-1-2 block-mob-full group">

@@ -74,8 +74,8 @@ class PageTemplate extends React.Component {
       <Layout location={this.props.location}>
         <main className="main--page">
           <Helmet title={`${page.title} | ${siteTitle}`} />
-          <section id="about">
-            <div className="row about-intro">
+          <section className="content content-intro">
+            <div className="row">
               <div className="col-four">
                 <aside className="side-bar">
                   <nav>

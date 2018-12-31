@@ -6,7 +6,7 @@
 .header {
   width: 100%;
   height: 72px;
-  background-color: #111111;
+  background-color: rgba(0,0,0,.9);
   position: fixed;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -22,25 +22,20 @@
 
 .header-logo {
   position: absolute;
-  left: 32px;
-  top: 32px;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  -webkit-transition: all 1s ease-in-out;
+  left: 1rem;
+  top: 10px;
   transition: all 1s ease-in-out;
   z-index: 501;
 }
 
 .header-logo a {
-  display: block;
+  display: flex;
   margin: 0;
   padding: 0;
   outline: 0;
   border: none;
   text-shadow: none;
   color: white;
-  -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   text-decoration: none;
   font-size: 2.2rem;
@@ -52,8 +47,14 @@
 }
 
 .header-logo a img {
-  max-height: 100%;
-  display: none;
+  height: 50px;
+  width: auto;
+  margin-right: 2rem;
+}
+
+.header-logo span {
+  display: block;
+  padding-top: .75rem;
 }
 
 /* ------------------------------------------------------------------- 
@@ -178,7 +179,7 @@
 
 .header-nav-wrap .header-main-nav li a,
 .header-nav-wrap .header-main-nav li a:visited {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .header-nav-wrap .header-main-nav li a:hover,
