@@ -79,8 +79,8 @@ export const teamQuery = graphql`
           type
           details
           photo {
-            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid_tracedSVG
+            sizes(maxWidth: 350) {
+              ...GatsbyContentfulSizes
             }
           }
         }

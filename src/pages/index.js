@@ -182,8 +182,8 @@ export const pageQuery = graphql`
           }
           featured
           photo {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid_tracedSVG
+            sizes(maxWidth: 350) {
+              ...GatsbyContentfulSizes
             }
           }
         }
