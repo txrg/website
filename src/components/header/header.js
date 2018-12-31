@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import logo from '../../images/texasrollergirls.png';
 import runningGirl from '../../images/runninggirl.png';
 
 export default () => (

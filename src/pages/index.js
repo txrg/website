@@ -7,6 +7,7 @@ import BlogPreview from '../components/blog-preview/blog-preview';
 import PagePreview from '../components/page-preview/page-preview';
 import Sponsor from '../components/sponsor/sponsor';
 import Profile from '../components/profile-preview/profile-preview';
+import logo from '../images/texasrollergirls.png';
 
 class RootIndex extends React.Component {
   render() {
@@ -122,7 +123,9 @@ class RootIndex extends React.Component {
                 return (
                   <>
                     {node.featured != null ? (
-                      <Profile profile={node} key={node.id} />
+                      <div className="bgrid feature">
+                        <Profile profile={node} key={node.id} />
+                      </div>
                     ) : null}
                   </>
                 );
