@@ -13,6 +13,7 @@
   position: relative;
   text-align: center;
   filter: grayscale(1);
+  overflow: hidden;
 
   .profile__name {
     padding: 0.5rem;
@@ -33,6 +34,11 @@
     .profile__name {
       opacity: 0;
       background: transparent;
+    }
+
+    .profile__thumbnail {
+        transform: scale(1.05);
+        transition: all 0.5s ease-in-out;
     }
   }
 }
