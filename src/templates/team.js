@@ -78,7 +78,11 @@ export const teamQuery = graphql`
           homeTeam
           type
           details
-          
+          photo {
+            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: SCALE) {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
         }
       }
     }
