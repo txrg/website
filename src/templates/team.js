@@ -40,7 +40,7 @@ class PageTemplate extends React.Component {
                     <>
                       {(profileDetails != 'Retired' &&
                         (team.title === node.homeTeam ||
-                          team.title === profileDetails)) ||
+                          team.title === profileDetails || team.title.toLowerCase() === node.type)) ||
                       (profileDetails === 'Retired' &&
                         team.title === 'Retired Skaters') ? (
                         <li className="profile-list__item" key={node.id}>
