@@ -55,7 +55,7 @@
   position: relative;
 }
 .home-content-left {
-  padding: 15rem 0 12rem 40px;
+  padding: 15rem 0 10rem 40px;
   position: relative;
   width: 50%;
 }
@@ -95,19 +95,15 @@
 .home-image-right {
   display: block;
   position: absolute;
-  right: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  padding-top: 21rem;
+  right: 80px;
+  top: 40%;
   z-index: 500;
   width: 50%;
   text-align: right;
 }
 .home-image-right img {
   vertical-align: bottom;
-  width: 75%;
+  width: 50%;
 }
 /* home social-list */
 .home-social-list {
@@ -246,35 +242,7 @@ html[data-useragent*='MSIE 10.0'] .home-scrolldown,
  * responsive:
  * home section 
  * ------------------------------------------------------------------- */
-@media only screen and (max-width: 1300px) {
-  .home-image-right {
-    right: 5rem;
-  }
-}
-@media only screen and (max-width: 1200px) {
-  #home {
-    overflow: hidden;
-  }
-  .home-content {
-    vertical-align: middle;
-  }
-  .home-content-left {
-    padding: 18rem 0 12rem 40px;
-  }
-  .home-content-left h3 {
-    font-size: 1.5rem;
-  }
-  .home-content-left h1 {
-    font-size: 4.8rem;
-  }
-  .home-image-right {
-    padding-top: 18rem;
-  }
-  .home-image-right img {
-    vertical-align: top;
-    width: 70%;
-  }
-}
+
 @media only screen and (max-width: 1100px) {
   .home-content-left h1 {
     font-size: 4.6rem;
@@ -286,7 +254,7 @@ html[data-useragent*='MSIE 10.0'] .home-scrolldown,
 @media only screen and (max-width: 1024px) {
   .home-content-left {
     width: 60%;
-    padding: 18rem 6rem 12rem 4rem;
+    padding: 18rem 6rem 10rem 4rem;
   }
   .home-content-left h3 {
     font-size: 1.5rem;
@@ -296,14 +264,9 @@ html[data-useragent*='MSIE 10.0'] .home-scrolldown,
   }
   .home-image-right {
     width: 40%;
-    padding-top: 120px;
-  }
-  .home-image-right img {
-    vertical-align: top;
-    width: 100%;
   }
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 600px) {
   #home {
     height: auto;
     min-height: 840px;
@@ -327,12 +290,10 @@ html[data-useragent*='MSIE 10.0'] .home-scrolldown,
     right: auto;
     top: auto;
     left: 50%;
-    bottom: 0;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
+    bottom: 100px;
     transform: translateX(-50%);
     padding: 0;
-    margin-bottom: -378px;
+    text-align: center;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -348,7 +309,7 @@ html[data-useragent*='MSIE 10.0'] .home-scrolldown,
 }
 @media only screen and (max-width: 600px) {
   .home-content-left {
-    padding: 12rem 6rem 366px;
+    padding: 10rem 6rem 366px;
   }
   .home-content-left h1 {
     font-size: 3.3rem;
@@ -372,7 +333,7 @@ html[data-useragent*='MSIE 10.0'] .home-scrolldown,
     display: none;
   }
   .home-content-left {
-    padding: 12rem 2.5rem 366px;
+    padding: 10rem 2.5rem 366px;
     width: 100%;
   }
   .home-content-left h1 {
@@ -381,13 +342,12 @@ html[data-useragent*='MSIE 10.0'] .home-scrolldown,
 }
 @media only screen and (max-width: 400px) {
   .home-content-left {
-    padding: 12rem 0 300px;
+    padding: 10rem 0 300px;
   }
   .home-content-left .button.stroke {
     margin: 0 0 1.2rem 0;
   }
   .home-image-right {
     width: 320px;
-    margin-bottom: -298px;
   }
 }

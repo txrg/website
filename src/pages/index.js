@@ -7,7 +7,7 @@ import BlogPreview from '../components/blog-preview/blog-preview';
 import PagePreview from '../components/page-preview/page-preview';
 import Sponsor from '../components/sponsor/sponsor';
 import Profile from '../components/profile-preview/profile-feature';
-import logo from '../images/texasrollergirls.png';
+import logo from '../images/logo-white.png';
 
 class RootIndex extends React.Component {
   render() {
@@ -53,6 +53,9 @@ class RootIndex extends React.Component {
                     Donate
                   </Link>
                 </div>
+              </div>
+              <div className="home-image-right">
+                <img src={logo} alt="Texas Rollergirls" className="logo-seal" />
               </div>
             </div>
           </div>
