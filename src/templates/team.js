@@ -11,13 +11,6 @@ class PageTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title');
     const profiles = get(this, 'props.data.allContentfulProfile.edges');
 
-    let teamContent;
-    try {
-      teamContent = team.pageContent; 
-    } catch (e) {
-      teamContent = null;
-    }
-
     return (
       <Layout location={this.props.location}>
         <main className="main--team">
@@ -26,10 +19,10 @@ class PageTemplate extends React.Component {
             <div className="row about-features">
               <div className="main-content">
                 <h1 className="intro-header">{team.title}</h1>
-                {teamContent ? (
+                {team.pageContent ? (
                   <div
                     dangerouslySetInnerHTML={{
-                      __html: teamContent.childMarkdownRemark.html,
+                      __html: team.pageContent.childMarkdownRemark.html,
                     }}
                   />
                 ) : null}
@@ -42,9 +35,6 @@ class PageTemplate extends React.Component {
                   } catch (e) {
                     profileDetails = '';
                   }
-
-                  console.log(profileDetails);
-                  console.log(team.title);
 
                   return (
                     <>
