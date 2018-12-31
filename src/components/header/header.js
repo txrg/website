@@ -41,7 +41,10 @@ export default () => (
         </li>
       </ul>
 
-      <a href="https://www.brownpapertickets.com/event/3233212" title="Buy" className="button button-primary cta">
+      <a
+        href="https://www.brownpapertickets.com/event/3233212"
+        title="Buy"
+        className="button button-primary cta">
         Buy Tickets
       </a>
     </nav>

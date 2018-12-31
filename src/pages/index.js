@@ -40,11 +40,15 @@ class RootIndex extends React.Component {
                 </h1>
 
                 <div className="buttons">
-                  <a href="https://www.brownpapertickets.com/event/3233212" className="smoothscroll button stroke">
+                  <a
+                    href="https://www.brownpapertickets.com/event/3233212"
+                    className="smoothscroll button stroke">
                     <span className="icon-calendar" aria-hidden="true" />
                     Buy Tickets
                   </a>
-                  <Link to="/about/donate" className="smoothscroll button stroke">
+                  <Link
+                    to="/about/donate"
+                    className="smoothscroll button stroke">
                     <span className="icon-dollar" aria-hidden="true" />
                     Donate
                   </Link>
@@ -89,7 +93,8 @@ class RootIndex extends React.Component {
                 return (
                   <div key={node.id} className="event-list">
                     <h3>
-                      <span className="icon-calendar" aria-hidden="true" /> <span>{node.date}</span>: {node.title}
+                      <span className="icon-calendar" aria-hidden="true" />{' '}
+                      <span>{node.date}</span>: {node.title}
                     </h3>
                   </div>
                 );

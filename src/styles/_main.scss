@@ -976,7 +976,7 @@ input::-moz-focus-inner {
  * -----------
  * markup:
  *
- * <aside class="pull-quote">
+ * <aside className="pull-quote">
  *		<blockquote>
  *			<p></p>
  *		</blockquote>
@@ -1023,7 +1023,7 @@ input::-moz-focus-inner {
  * ---------
  * markup:
  *
- * <ul class="stats-tabs">
+ * <ul className="stats-tabs">
  *		<li><a href="#">[value]<em>[name]</em></a></li>
  *	</ul>
  *
@@ -1151,7 +1151,7 @@ h1.intro-header::before {
   font-family: 'montserrat-regular', sans-serif;
   font-size: 1.9rem;
   color: #151515;
-  margin-top: .75rem;
+  margin-top: 0.75rem;
 }
 .about-how {
   padding-top: 7.2rem;
@@ -1352,7 +1352,7 @@ h1.intro-header::before {
 .side-bar a {
   color: white;
   display: block;
-  padding: .25rem 0;
+  padding: 0.25rem 0;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   font-weight: bold;

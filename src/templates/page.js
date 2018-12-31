@@ -59,14 +59,14 @@ class PageTemplate extends React.Component {
       .join('-')}/`;
 
     const breadcrumb = (
-      <ol class="breadcrumb">
+      <ol className="breadcrumb">
         <li>
           <a href="/">Home</a>
         </li>
-        <li class="active">
+        <li className="active">
           <Link to={sectionLink}>{page.section}</Link>
         </li>
-        <li class="active">{page.title}</li>
+        <li className="active">{page.title}</li>
       </ol>
     );
 
@@ -75,8 +75,8 @@ class PageTemplate extends React.Component {
         <main className="main--page">
           <Helmet title={`${page.title} | ${siteTitle}`} />
           <section id="about">
-            <div class="row about-intro">
-              <div class="col-four">
+            <div className="row about-intro">
+              <div className="col-four">
                 <aside className="side-bar">
                   <nav>
                     <ul>
@@ -86,8 +86,8 @@ class PageTemplate extends React.Component {
                   </nav>
                 </aside>
               </div>
-              <div class="col-eight">
-                <h1 class="intro-header">{page.title}</h1>
+              <div className="col-eight">
+                <h1 className="intro-header">{page.title}</h1>
                 <div
                   className="main-content"
                   dangerouslySetInnerHTML={{
