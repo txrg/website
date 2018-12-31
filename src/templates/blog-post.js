@@ -16,10 +16,7 @@ class BlogPostTemplate extends React.Component {
           <div className="row about-intro">
             <div className="col-twelve">
               <h1 className="intro-header">{post.title}</h1>
-              <h5
-                style={{
-                  display: 'block',
-                }}>
+              <h5>
                 {post.publishDate}
               </h5>
               <div
