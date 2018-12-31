@@ -86,7 +86,7 @@ class RootIndex extends React.Component {
         <section id="about">
           <div className="row about-intro">
             <div className="col-two">
-              <h1 className="intro-header">Events</h1>
+              <h1 className="intro-header">2019 Season</h1>
             </div>
             <div className="col-ten">
               {events.map(({ node }) => {
@@ -141,13 +141,11 @@ class RootIndex extends React.Component {
 
         <Helmet title={siteTitle} />
 
-        <section id="download">
+        <section className="sponsors">
           <div className="row">
             <div className="col-full">
               <h1 className="intro-header">Sponsors</h1>
-              <p className="lead" />
-
-              <ul className="sponsor__list download-badges">
+              <ul className="sponsor__list">
                 {sponsors.map(({ node }) => {
                   return (
                     <li className="sponsor__item" key={node.id}>
@@ -255,7 +253,7 @@ export const pageQuery = graphql`
           name
           id
           photo {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+            fluid {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }
