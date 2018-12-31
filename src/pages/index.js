@@ -1,6 +1,5 @@
 import React from 'react';
 import get from 'lodash/get';
-import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout/layout';
 import BlogPreview from '../components/blog-preview/blog-preview';
@@ -11,7 +10,6 @@ import logo from '../images/logo-white.png';
 
 class RootIndex extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
     const blogs = get(this, 'props.data.allContentfulBlogPost.edges');
     const events = get(this, 'props.data.allContentfulEvent.edges');
     const sponsors = get(this, 'props.data.allContentfulSponsor.edges');

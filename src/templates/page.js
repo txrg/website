@@ -1,14 +1,15 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import get from 'lodash/get';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout/layout';
+import Sponsor from '../components/sponsor/sponsor';
 
 class PageTemplate extends React.Component {
   render() {
     const page = get(this.props, 'data.contentfulPage');
     const pages = get(this, 'props.data.allContentfulPage.edges');
     const teams = get(this, 'props.data.allContentfulTeam.edges');
+    const sponsors = get(this, 'props.data.allContentfulSponsor.edges');
 
     const subNav = (
       <>
@@ -25,7 +26,7 @@ class PageTemplate extends React.Component {
                   .join('-')}/${node.slug}/`;
           return (
             <>
-              {page.section === node.section && page.section != 'who we are' ? (
+              {page.section === node.section && page.section !== 'who we are' ? (
                 <li key={node.slug}>
                   <Link to={pageLink}>{node.title}</Link>
                 </li>
@@ -56,7 +57,8 @@ class PageTemplate extends React.Component {
       .toLowerCase()
       .split(' ')
       .join('-')}/`;
-
+    
+    // eslint-disable-next-line
     const breadcrumb = (
       <ol className="breadcrumb">
         <li>
@@ -95,6 +97,22 @@ class PageTemplate extends React.Component {
               </div>
             </div>
           </section>
+          <section className="sponsors">
+            <div className="row">
+              <div className="col-full">
+                <h1 className="intro-header">Sponsors</h1>
+                <ul className="sponsor__list">
+                  {sponsors.map(({ node }) => {
+                    return (
+                      <li className="sponsor__item" key={node.id}>
+                        <Sponsor sponsor={node} />
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
+          </section>
         </main>
       </Layout>
     );
@@ -105,6 +123,20 @@ export default PageTemplate;
 
 export const pageQuery = graphql`
   query PageBySlug($slug: String!) {
+    allContentfulSponsor {
+      edges {
+        node {
+          name
+          id
+          photo {
+            fluid {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
+          link
+        }
+      }
+    }
     contentfulPage(slug: { eq: $slug }) {
       title
       section

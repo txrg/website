@@ -1,13 +1,14 @@
 import React from 'react';
 import get from 'lodash/get';
-import Helmet from 'react-helmet';
 import Layout from '../components/layout/layout';
 import BlogPreview from '../components/blog-preview/blog-preview';
+import Sponsor from '../components/sponsor/sponsor';
 import { graphql } from 'gatsby';
 
 class BlogIndex extends React.Component {
   render() {
     const posts = get(this, 'props.data.allContentfulBlogPost.edges');
+    const sponsors = get(this, 'props.data.allContentfulSponsor.edges');
 
     return (
       <Layout location={this.props.location}>
@@ -26,6 +27,22 @@ class BlogIndex extends React.Component {
               </div>
             </div>
           </section>
+          <section className="sponsors">
+            <div className="row">
+              <div className="col-full">
+                <h1 className="intro-header">Sponsors</h1>
+                <ul className="sponsor__list">
+                  {sponsors.map(({ node }) => {
+                    return (
+                      <li className="sponsor__item" key={node.id}>
+                        <Sponsor sponsor={node} />
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
+          </section>
         </main>
       </Layout>
     );
@@ -36,6 +53,20 @@ export default BlogIndex;
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
+    allContentfulSponsor {
+      edges {
+        node {
+          name
+          id
+          photo {
+            fluid {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
+          link
+        }
+      }
+    }
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {

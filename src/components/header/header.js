@@ -50,8 +50,8 @@ export default () => (
       </a>
     </nav>
 
-    <a className="header-menu-toggle" href="#">
+    <button className="header-menu-toggle">
       <span>Menu</span>
-    </a>
+    </button>
   </header>
 );

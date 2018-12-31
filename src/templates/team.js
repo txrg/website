@@ -1,14 +1,15 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import get from 'lodash/get';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
 import Profile from '../components/profile-preview/profile-preview';
+import Sponsor from '../components/sponsor/sponsor';
 
 class PageTemplate extends React.Component {
   render() {
     const team = get(this.props, 'data.contentfulTeam');
     const profiles = get(this, 'props.data.allContentfulProfile.edges');
+    const sponsors = get(this, 'props.data.allContentfulSponsor.edges');
 
     return (
       <Layout location={this.props.location}>
@@ -37,7 +38,7 @@ class PageTemplate extends React.Component {
 
                   return (
                     <>
-                      {(profileDetails != 'Retired' &&
+                      {(profileDetails !== 'Retired' &&
                         (team.title === node.homeTeam ||
                           team.title === profileDetails ||
                           team.title.toLowerCase() === node.type)) ||
@@ -53,6 +54,22 @@ class PageTemplate extends React.Component {
               </ul>
             </div>
           </section>
+          <section className="sponsors">
+            <div className="row">
+              <div className="col-full">
+                <h1 className="intro-header">Sponsors</h1>
+                <ul className="sponsor__list">
+                  {sponsors.map(({ node }) => {
+                    return (
+                      <li className="sponsor__item" key={node.id}>
+                        <Sponsor sponsor={node} />
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
+          </section>
         </main>
       </Layout>
     );
@@ -63,6 +80,20 @@ export default PageTemplate;
 
 export const teamQuery = graphql`
   query TeamBySlug($slug: String!) {
+    allContentfulSponsor {
+      edges {
+        node {
+          name
+          id
+          photo {
+            fluid {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
+          link
+        }
+      }
+    }
     contentfulTeam(slug: { eq: $slug }) {
       title
       pageContent {
