@@ -7,14 +7,11 @@ import { graphql } from 'gatsby';
 
 class BlogIndex extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
     const posts = get(this, 'props.data.allContentfulBlogPost.edges');
 
     return (
       <Layout location={this.props.location}>
         <main>
-          <Helmet title={siteTitle} />
-
           <section className="content">
             <div className="row about-features">
               <h1 className="intro-header">Blog</h1>

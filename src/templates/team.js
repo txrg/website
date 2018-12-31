@@ -8,13 +8,12 @@ import Profile from '../components/profile-preview/profile-preview';
 class PageTemplate extends React.Component {
   render() {
     const team = get(this.props, 'data.contentfulTeam');
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title');
     const profiles = get(this, 'props.data.allContentfulProfile.edges');
 
     return (
       <Layout location={this.props.location}>
         <main className="main--team">
-         
+
           <section className="content content-intro">
             <div className="row about-features">
               <div className="main-content">

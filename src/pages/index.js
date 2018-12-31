@@ -142,8 +142,6 @@ class RootIndex extends React.Component {
           </div>
         </section>
 
-        <Helmet title={siteTitle} />
-
         <section className="sponsors">
           <div className="row">
             <div className="col-full">
