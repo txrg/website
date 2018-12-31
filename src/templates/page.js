@@ -7,7 +7,6 @@ import Layout from '../components/layout/layout';
 class PageTemplate extends React.Component {
   render() {
     const page = get(this.props, 'data.contentfulPage');
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title');
     const pages = get(this, 'props.data.allContentfulPage.edges');
     const teams = get(this, 'props.data.allContentfulTeam.edges');
 
@@ -73,7 +72,6 @@ class PageTemplate extends React.Component {
     return (
       <Layout location={this.props.location}>
         <main className="main--page">
-          <Helmet title={`${page.title} | ${siteTitle}`} />
           <section className="content content-intro">
             <div className="row">
               <div className="col-four">

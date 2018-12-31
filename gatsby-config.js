@@ -23,7 +23,10 @@ if (!spaceId || !accessToken) {
 const path = require('path');
 
 module.exports = {
-  pathPrefix: '/gatsby-contentful-starter',
+  siteMetadata: {
+    title: 'Texas Rollergirls',
+  },
+  pathPrefix: '/',
   plugins: [
     {
       resolve: 'gatsby-plugin-sass',
@@ -41,6 +44,15 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Texas Rollergirls`,
+        short_name: `TXRG`,
+        start_url: `/`,
+        icon: `src/images/favicon-32.png`, // This path is relative to the root of the site.
+      },
+    },
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-contentful',

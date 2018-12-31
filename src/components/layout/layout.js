@@ -1,28 +1,54 @@
 import React from 'react';
+import { StaticQuery } from 'gatsby';
 import Header from '../header/header';
 import Footer from '../footer/footer';
+import Helmet from 'react-helmet';
+import favicon32 from '../../images/favicon-32.png';
 import '../../styles/index.scss';
 
 class Template extends React.Component {
+
   render() {
     const { children } = this.props;
-    /*
-    const { location, children } = this.props
-    let header
-
-    let rootPath = `/`
     
-    if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
-      rootPath = __PATH_PREFIX__ + `/`
-    }
-    */
-
     return (
-      <div>
-        <Header />
-        {children}
-        <Footer />
-      </div>
+      <StaticQuery
+        query={graphql`
+          query SiteTitleQuery {
+            site {
+              siteMetadata {
+                title
+              }
+            }
+          }
+        `}
+        render={data => (
+          <>
+            <Helmet
+              title={data.site.siteMetadata.title}
+              meta={[
+                {
+                  name: 'description',
+                  content:
+                    'Get the latest news, training tips, events &amp; other information from the Texas Rollergirls. Learn more about the godmothers of modern roller derby.',
+                },
+
+              ]}
+              link={[
+                {
+                  rel: 'shortcut icon',
+                  type: 'image/png',
+                  href: `${favicon32}`,
+                },
+              ]}>
+              <html lang="en" />
+            </Helmet>
+            <Header />
+            {children}
+            <Footer />
+          </>
+        )}
+      />
     );
   }
 }
