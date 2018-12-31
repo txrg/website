@@ -14,10 +14,10 @@ export default () => (
     <nav id="header-nav-wrap">
       <ul className="header-main-nav">
         <li>
-          <Link to="/blog/">Blog</Link>
+          <Link to="/about/">About</Link>
         </li>
         <li>
-          <Link to="/about/">About</Link>
+          <Link to="/blog/">Blog</Link>
         </li>
         <li>
           <Link to="/who-we-are/">Who we are</Link>
