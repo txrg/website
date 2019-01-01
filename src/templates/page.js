@@ -101,15 +101,19 @@ class PageTemplate extends React.Component {
               </div>
               <div className="col-eight">
                 <h1 className="intro-header">{page.title}</h1>
+                {this.props.location.pathname === '/events/' ? (
+                  <>
+                    <h2>2019 Season</h2>
+                    <EventList />
+                  </>
+                ) : null}
                 <div
                   className="main-content"
                   dangerouslySetInnerHTML={{
                     __html: page.pageContent.childMarkdownRemark.html,
                   }}
                 />
-                {this.props.location.pathname === '/events/' ? (
-                  <EventList />
-                ) : null}
+               
               </div>
             </div>
           </section>
