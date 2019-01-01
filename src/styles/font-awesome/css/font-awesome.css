@@ -70,12 +70,6 @@
   border: solid 0.08em #eeeeee;
   border-radius: 0.1em;
 }
-.fa-pull-left {
-  float: left;
-}
-.fa-pull-right {
-  float: right;
-}
 .fa.fa-pull-left {
   margin-right: 0.3em;
 }
@@ -83,12 +77,6 @@
   margin-left: 0.3em;
 }
 /* Deprecated as of 4.4.0 */
-.pull-right {
-  float: right;
-}
-.pull-left {
-  float: left;
-}
 .fa.pull-left {
   margin-right: 0.3em;
 }

@@ -67,23 +67,11 @@
   border: solid 0.08em #eee;
   border-radius: 0.1em;
 }
-.fa-pull-left {
-  float: left;
-}
-.fa-pull-right {
-  float: right;
-}
 .fa.fa-pull-left {
   margin-right: 0.3em;
 }
 .fa.fa-pull-right {
   margin-left: 0.3em;
-}
-.pull-right {
-  float: right;
-}
-.pull-left {
-  float: left;
 }
 .fa.pull-left {
   margin-right: 0.3em;

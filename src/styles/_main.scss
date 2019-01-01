@@ -435,7 +435,7 @@ form,
 }
 
 /* ------------------------------------------------------------------- 
- * floated image - (_document-setup)  
+ * img 
  * ------------------------------------------------------------------- */
 
 img.pull-right {
@@ -925,25 +925,6 @@ input::-moz-focus-inner {
   color: #bba31b;
 }
 
-/* ------------------------------------------------------------------- 
- * additional typo styles - (_additional-typo.scss)
- * ------------------------------------------------------------------- */
-
-/* drop cap 
- * ----------------------------------------------- */
-
-.drop-cap:first-letter {
-  float: left;
-  margin: 0;
-  padding: 1.5rem 0.6rem 0 0;
-  font-size: 8.4rem;
-  font-family: 'montserrat-bold', sans-serif;
-  line-height: 6rem;
-  text-indent: 0;
-  background: transparent;
-  color: #151515;
-}
-
 /* line definition style 
  * ----------------------------------------------- */
 
@@ -1165,6 +1146,7 @@ h1.intro-header::before {
 
 .about-features .features-list {
   padding-top: 5.4rem;
+  display: flex;
 }
 .about-features .feature {
   margin-bottom: 1.8rem;
@@ -1270,7 +1252,6 @@ h1.intro-header::before {
   }
   .content-intro [class*='col-'] {
     width: 100% !important;
-    float: none !important;
     clear: both !important;
     margin-left: 0;
     margin-right: 0;
@@ -1288,7 +1269,6 @@ h1.intro-header::before {
   }
   .about-how-content .step {
     width: 100% !important;
-    float: none !important;
     clear: both !important;
     margin-left: 0;
     margin-right: 0;
@@ -1329,7 +1309,6 @@ h1.intro-header::before {
   }
   .about-features .feature {
     width: 100% !important;
-    float: none !important;
     clear: both !important;
     margin-left: 0;
     margin-right: 0;

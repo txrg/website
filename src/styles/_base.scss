@@ -413,6 +413,8 @@ textarea {
   width: 94%;
   max-width: 1170px;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .row:after {
@@ -430,11 +432,11 @@ textarea {
 
 [class*='col-'],
 .bgrid {
-  float: left;
+  //float: left;
 }
 
 [class*='col-'] + [class*='col-'].end {
-  float: right;
+  //float: right;
 }
 
 [class*='col-'] {
@@ -643,14 +645,13 @@ textarea {
   }
   [class*='col-'] {
     width: 100% !important;
-    float: none !important;
     clear: both !important;
     margin-left: 0;
     margin-right: 0;
     padding: 0;
   }
   [class*='col-'] + [class*='col-'].end {
-    float: none;
+    //float: none;
   }
 }
 
@@ -806,20 +807,6 @@ textarea {
   }
 }
 
-/* ------------------------------------------------------------------- 
- * stack on small mobile devices - (_grid.scss)
- * ------------------------------------------------------------------- */
-
-@media only screen and (max-width: 400px) {
-  .stack .bgrid {
-    width: 100% !important;
-    float: none !important;
-    clear: both !important;
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
 /* ===================================================================
  *  05. MISC  - (_grid.scss)
  *
@@ -880,14 +867,6 @@ textarea {
 
 .text-right {
   text-align: right;
-}
-
-.pull-left {
-  float: left;
-}
-
-.pull-right {
-  float: right;
 }
 
 .align-center {
