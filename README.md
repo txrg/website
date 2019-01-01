@@ -1,6 +1,6 @@
 # TXRG
 
-WIP for new TXRG website, this is a [Gatsby](http://gatsbyjs.com/) blog powered by [Contentful](https://www.contentful.com).
+WIP for new TXRG website, this is a [Gatsby](http://gatsbyjs.com/) website powered by [Contentful](https://www.contentful.com).
 
 This is based on a version of the [Gatsby Contentful Starter](https://github.com/contentful-userland/gatsby-contentful-starter) which is maintained by our Community.
 

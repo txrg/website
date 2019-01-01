@@ -1232,14 +1232,8 @@ h1.intro-header::before {
  * responsive:
  * about 
  * ------------------------------------------------------------------- */
-@media only screen and (max-width: 1200px) {
-  .about-how-content {
-    max-width: 800px;
-  }
-}
 @media only screen and (max-width: 1024px) {
   .content-intro {
-    max-width: 800px;
     text-align: center;
   }
   .content-intro h1::before {

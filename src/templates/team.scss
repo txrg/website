@@ -15,6 +15,18 @@
   filter: grayscale(1);
   overflow: hidden;
 
+  @media only screen and (max-width: 1024px) {
+    width: 25%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 33.3%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 50%;
+  }
+
   .profile__name {
     padding: 0.5rem;
     position: absolute;
