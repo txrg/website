@@ -18,12 +18,7 @@ class RootIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <section
-          id="home"
-          data-parallax="scroll"
-          data-image-src="images/hero-bg.jpg"
-          data-natural-width="3000"
-          data-natural-height="2000">
+        <section className="home">
           <div className="overlay" />
           <div className="home-content">
             <div className="row contents">
@@ -84,7 +79,7 @@ class RootIndex extends React.Component {
           </div>
         </section>
 
-        <section className="content">
+        <section className="content content-home">
           <div className="row content-intro">
             <div className="col-two">
               <h1 className="intro-header">2019 Season</h1>

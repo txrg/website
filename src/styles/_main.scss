@@ -72,7 +72,7 @@ body {
   font-family: 'muli-regular', sans-serif;
   font-size: 1.6rem;
   line-height: 1.875;
-  color: #767676;
+  color: #595959;
   margin: 0;
   padding: 0;
 }
@@ -1128,9 +1128,9 @@ h1.intro-header::before {
  *
  * ------------------------------------------------------------------- */
 .content {
-  min-height: 786px;
   background: #ffffff;
-  padding-top: 10rem;
+  padding-top: 12rem;
+  padding-bottom: 8rem;
   overflow: hidden;
   background-image: url('../images/splatter-light.jpg');
   background-size: 70%;
