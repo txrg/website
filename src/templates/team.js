@@ -94,7 +94,7 @@ export const teamQuery = graphql`
           id
           photo {
             fluid {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
           link

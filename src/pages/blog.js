@@ -60,7 +60,7 @@ export const pageQuery = graphql`
           id
           photo {
             fluid {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
           link
@@ -75,7 +75,7 @@ export const pageQuery = graphql`
           publishDate(formatString: "MMMM Do, YYYY")
           featureImage {
             fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
           description {

@@ -142,7 +142,7 @@ export const pageQuery = graphql`
           id
           photo {
             fluid {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
           link

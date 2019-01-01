@@ -199,7 +199,7 @@ export const pageQuery = graphql`
           featured
           featureImage {
             fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: CROP) {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
           description {
@@ -219,7 +219,7 @@ export const pageQuery = graphql`
           featured
           featureImage {
             fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: CROP) {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
           featureDescription {
@@ -252,7 +252,7 @@ export const pageQuery = graphql`
           id
           photo {
             fluid {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
           link
