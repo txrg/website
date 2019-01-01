@@ -38,7 +38,7 @@ class Header extends React.Component {
               <Link to="/sponsorship/">Sponsorship</Link>
             </li>
             <li>
-              <a href="https://www.texasrollergirls.org/shop/">Shop</a>
+              <Link to="/shop/">Shop</Link>
             </li>
           </ul>
 
