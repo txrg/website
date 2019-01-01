@@ -1,24 +1,27 @@
 /* ------------------------------------------------------------------- 
  * events
  * ------------------------------------------------------------------- */
+.event {
+  padding-left: 3rem;
+}
 
- .event-list h3 {
+.event h3 {
+font-weight: normal;
+margin-bottom: 0;
+position: relative;
+
+span {
+  font-weight: bold;
+}
+
+.icon-calendar {
   font-weight: normal;
-  margin-bottom: 0;
-  position: relative;
-
-  span {
-    font-weight: bold;
-  }
-
-  .icon-calendar {
-    font-weight: normal;
-    position: absolute;
-    left: -28px;
-    top: 5px;
-  }
+  position: absolute;
+  left: -28px;
+  top: 5px;
+}
 }
 
 .event__location {
-  margin-bottom: 1rem;
+margin-bottom: 1rem;
 }

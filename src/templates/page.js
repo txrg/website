@@ -2,6 +2,7 @@ import React from 'react';
 import get from 'lodash/get';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout/layout';
+import EventList from '../components/eventList/eventList';
 
 class PageTemplate extends React.Component {
   render() {
@@ -81,6 +82,7 @@ class PageTemplate extends React.Component {
       </ol>
     );
 
+
     return (
       <Layout location={this.props.location}>
         <main className="main--page">
@@ -105,6 +107,9 @@ class PageTemplate extends React.Component {
                     __html: page.pageContent.childMarkdownRemark.html,
                   }}
                 />
+                {this.props.location.pathname === '/events/' ? (
+                  <EventList />
+                ) : null}
               </div>
             </div>
           </section>

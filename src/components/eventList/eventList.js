@@ -24,7 +24,7 @@ class EventList extends React.Component {
           <>
             {data.allContentfulEvent.edges.map(({ node }) => {
               return (
-                <div key={node.id} className="event-list">
+                <div key={node.id} className="event">
                   <h3>
                     <span className="icon-calendar" aria-hidden="true" />{' '}
                     <span>{node.date}</span>: {node.title}
