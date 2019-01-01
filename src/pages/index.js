@@ -4,7 +4,6 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout/layout';
 import BlogPreview from '../components/blog-preview/blog-preview';
 import PagePreview from '../components/page-preview/page-preview';
-import Sponsor from '../components/sponsor/sponsor';
 import Profile from '../components/profile-preview/profile-feature';
 import logo from '../images/logo-white.png';
 
@@ -12,7 +11,7 @@ class RootIndex extends React.Component {
   render() {
     const blogs = get(this, 'props.data.allContentfulBlogPost.edges');
     const events = get(this, 'props.data.allContentfulEvent.edges');
-    const sponsors = get(this, 'props.data.allContentfulSponsor.edges');
+
     const pages = get(this, 'props.data.allContentfulPage.edges');
     const profiles = get(this, 'props.data.allContentfulProfile.edges');
 
@@ -138,23 +137,6 @@ class RootIndex extends React.Component {
             </div>
           </div>
         </section>
-
-        <section className="sponsors">
-          <div className="row">
-            <div>
-              <h1 className="intro-header">We love our sponsors!</h1>
-              <ul className="sponsor__list">
-                {sponsors.map(({ node }) => {
-                  return (
-                    <li className="sponsor__item" key={node.id}>
-                      <Sponsor sponsor={node} />
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
-        </section>
       </Layout>
     );
   }
@@ -242,20 +224,6 @@ export const pageQuery = graphql`
           id
           date(formatString: "MMMM DD, YYYY")
           location
-        }
-      }
-    }
-    allContentfulSponsor {
-      edges {
-        node {
-          name
-          id
-          photo {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
-          }
-          link
         }
       }
     }

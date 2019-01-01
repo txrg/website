@@ -2,6 +2,7 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Header from '../header/header';
 import Footer from '../footer/footer';
+import SponsorList from '../sponsor/sponsorList';
 import Helmet from 'react-helmet';
 import favicon32 from '../../images/favicon-32.png';
 import '../../styles/index.scss';
@@ -43,6 +44,7 @@ class Template extends React.Component {
             </Helmet>
             <Header />
             {children}
+            <SponsorList />
             <Footer />
           </>
         )}

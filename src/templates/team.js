@@ -3,13 +3,11 @@ import get from 'lodash/get';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
 import Profile from '../components/profile-preview/profile-preview';
-import Sponsor from '../components/sponsor/sponsor';
 
 class TeamTemplate extends React.Component {
   render() {
     const team = get(this.props, 'data.contentfulTeam');
     const profiles = get(this, 'props.data.allContentfulProfile.edges');
-    const sponsors = get(this, 'props.data.allContentfulSponsor.edges');
 
     return (
       <Layout location={this.props.location}>
@@ -61,22 +59,6 @@ class TeamTemplate extends React.Component {
               </ul>
             </div>
           </section>
-          <section className="sponsors">
-            <div className="row">
-              <div>
-                <h1 className="intro-header">We love our sponsors!</h1>
-                <ul className="sponsor__list">
-                  {sponsors.map(({ node }) => {
-                    return (
-                      <li className="sponsor__item" key={node.id}>
-                        <Sponsor sponsor={node} />
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </div>
-          </section>
         </main>
       </Layout>
     );
@@ -87,20 +69,6 @@ export default TeamTemplate;
 
 export const teamQuery = graphql`
   query TeamBySlug($slug: String!) {
-    allContentfulSponsor {
-      edges {
-        node {
-          name
-          id
-          photo {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
-          }
-          link
-        }
-      }
-    }
     contentfulTeam(slug: { eq: $slug }) {
       title
       pageContent {
