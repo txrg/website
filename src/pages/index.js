@@ -184,7 +184,7 @@ export const pageQuery = graphql`
           }
           featureDescription {
             childMarkdownRemark {
-              html
+              rawMarkdownBody
             }
           }
         }
@@ -204,7 +204,7 @@ export const pageQuery = graphql`
           }
           description {
             childMarkdownRemark {
-              html
+              rawMarkdownBody
             }
           }
         }
