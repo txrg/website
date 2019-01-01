@@ -10,7 +10,7 @@ export default ({ page }) => (
         to={
           page.section === page.slug
             ? `/${page.slug}/`
-            : `/${page.section}/${page.slug}/`
+            : `/${page.section.toLowerCase().split(' ').join('-')}/${page.slug}/`
         }>
         <div className="page__thumbnail">
           <Img alt={page.title} sizes={page.featureImage.fluid} />
