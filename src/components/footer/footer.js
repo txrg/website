@@ -1,5 +1,5 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql, Link } from 'gatsby';
 
 class Footer extends React.Component {
   render() {
@@ -77,7 +77,7 @@ class Footer extends React.Component {
                   <div className="col-twelve">
                     <div className="copyright">
                       <span>
-                        © Copyright Texas Rollergirls {currentYear}.
+                        © Copyright Texas Rollergirls {currentYear}. <Link to="/about/privacy-policy/">Privacy Policy</Link>
                         <br />
                         All photos on this web site are © 2009 - {
                           currentYear
