@@ -20,7 +20,7 @@ class BlogIndex extends React.Component {
                 {posts.map(({ node }) => {
                   return (
                     <>
-                      <BlogPreview blog={node} />
+                      <BlogPreview blog={node} key={node.id} />
                     </>
                   );
                 })}

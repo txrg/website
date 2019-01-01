@@ -34,15 +34,18 @@ class PageTemplate extends React.Component {
                   } catch (e) {
                     profileDetails = '';
                   }
+                  let profileDetailsFounder;
+                  try {
+                    profileDetailsFounder = node.details[1];
+                  } catch (e) {
+                    profileDetailsFounder = '';
+                  }
+                  
 
                   return (
                     <>
-                      {(profileDetails !== 'Retired' &&
-                        (team.title === node.homeTeam ||
-                          team.title === profileDetails ||
-                          team.title.toLowerCase() === node.type)) ||
-                      (profileDetails === 'Retired' &&
-                        team.title === 'Retired Skaters') ? (
+                      {(profileDetails !== 'Retired' && (team.title === node.homeTeam || team.title === profileDetails || team.title.toLowerCase() === node.type)) ||
+                       (profileDetailsFounder === 'Founders' && team.title === 'Founders') || (profileDetails === 'Retired' && team.title === 'Retired Skaters') ? (
                         <li className="profile-list__item" key={node.id}>
                           <Profile profile={node} />
                         </li>
