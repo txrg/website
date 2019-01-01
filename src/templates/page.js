@@ -54,6 +54,14 @@ class PageTemplate extends React.Component {
       </>
     );
 
+    const blogNav = (
+      <>
+        { page.section === 'about' ? (
+          <li><Link to="/blog/">Blog</Link></li>
+        ) : null}
+      </>
+    )
+
     const sectionLink = `/${page.section
       .toLowerCase()
       .split(' ')
@@ -82,6 +90,7 @@ class PageTemplate extends React.Component {
                   <nav>
                     <ul>
                       {subNav}
+                      {blogNav}
                       {subNavTeam}
                     </ul>
                   </nav>

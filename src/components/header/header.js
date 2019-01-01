@@ -17,9 +17,6 @@ export default () => (
           <Link to="/about/">About</Link>
         </li>
         <li>
-          <Link to="/blog/">Blog</Link>
-        </li>
-        <li>
           <Link to="/who-we-are/">Who we are</Link>
         </li>
         <li>
@@ -29,10 +26,7 @@ export default () => (
           <Link to="/tickets/">Tickets</Link>
         </li>
         <li>
-          <Link to="/get-involved/">Get Involved</Link>
-        </li>
-        <li>
-          <Link to="/media/">Media</Link>
+          <Link to="/get-involved/">Get involved</Link>
         </li>
         <li>
           <Link to="/sponsorship/">Sponsorship</Link>
