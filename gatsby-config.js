@@ -41,9 +41,14 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: 'gatsby-source-contentful',
+      options: contentfulConfig,
+    },
     'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -52,11 +57,6 @@ module.exports = {
         start_url: `/`,
         icon: `src/images/favicon-32.png`, // This path is relative to the root of the site.
       },
-    },
-    'gatsby-plugin-sharp',
-    {
-      resolve: 'gatsby-source-contentful',
-      options: contentfulConfig,
     },
   ],
 };
