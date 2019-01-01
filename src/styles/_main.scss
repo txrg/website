@@ -90,7 +90,8 @@ a:visited {
 
 .main-content a,
 .content .col-eight a,
-.content-home a {
+.content-home a,
+.event a {
   font-weight: bold;
   border-bottom: 1px solid #eee;
   box-shadow: 0px -4px 0px #eee inset;
@@ -403,9 +404,13 @@ dd {
  * ------------------------------------------------------------------- */
 
 button,
-.button {
+a.button {
   margin-bottom: 1.2rem;
   box-shadow: 0 0 0!important;
+
+  &:hover {
+    border-color: #690000;
+  }
 }
 
 fieldset {
