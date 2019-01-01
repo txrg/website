@@ -2,50 +2,60 @@ import React from 'react';
 import { Link } from 'gatsby';
 import runningGirl from '../../images/runninggirl-white.png';
 
-export default () => (
-  <header className="header row">
-    <div className="header-logo">
-      <Link className="logo" to="/">
-        <img src={runningGirl} alt="" />
-        <span>TXRG</span>
-      </Link>
-    </div>
+class Header extends React.Component {
+  menuClick = () => {
+    document.body.classList.toggle('open');
+  };
 
-    <nav className="header-nav-wrap">
-      <ul className="header-main-nav">
-        <li>
-          <Link to="/about/">About</Link>
-        </li>
-        <li>
-          <Link to="/who-we-are/">Who we are</Link>
-        </li>
-        <li>
-          <Link to="/events/">Events</Link>
-        </li>
-        <li>
-          <Link to="/tickets/">Tickets</Link>
-        </li>
-        <li>
-          <Link to="/get-involved/">Get involved</Link>
-        </li>
-        <li>
-          <Link to="/sponsorship/">Sponsorship</Link>
-        </li>
-        <li>
-          <a href="https://www.texasrollergirls.org/shop/">Shop</a>
-        </li>
-      </ul>
+  render() {
+    return (
+      <header className="header row">
+        <div className="header-logo">
+          <Link className="logo" to="/">
+            <img src={runningGirl} alt="" />
+            <span>TXRG</span>
+          </Link>
+        </div>
 
-      <a
-        href="https://www.brownpapertickets.com/event/3233212"
-        title="Buy"
-        className="button button-primary cta">
-        Buy Tickets
-      </a>
-    </nav>
+        <nav className="header-nav-wrap">
+          <ul className="header-main-nav" onClick={() => this.menuClick()}>
+            <li>
+              <Link to="/about/">About</Link>
+            </li>
+            <li>
+              <Link to="/who-we-are/">Who we are</Link>
+            </li>
+            <li>
+              <Link to="/events/">Events</Link>
+            </li>
+            <li>
+              <Link to="/tickets/">Tickets</Link>
+            </li>
+            <li>
+              <Link to="/get-involved/">Get involved</Link>
+            </li>
+            <li>
+              <Link to="/sponsorship/">Sponsorship</Link>
+            </li>
+            <li>
+              <a href="https://www.texasrollergirls.org/shop/">Shop</a>
+            </li>
+          </ul>
 
-    <button className="header-menu-toggle" onClick={() => document.body.classList.toggle('open')}>
-      <span>Menu</span>
-    </button>
-  </header>
-);
+          <a
+            href="https://www.brownpapertickets.com/event/3233212"
+            title="Buy"
+            className="button button-primary cta">
+            Buy Tickets
+          </a>
+        </nav>
+
+        <button className="header-menu-toggle" onClick={() => this.menuClick()}>
+          <span>Menu</span>
+        </button>
+      </header>
+    );
+  }
+}
+
+export default Header;

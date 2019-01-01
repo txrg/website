@@ -1,10 +1,9 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-const currentYear = new Date().getFullYear();
-
 class Footer extends React.Component {
   render() {
+    const currentYear = new Date().getFullYear();
     return (
       <StaticQuery
         query={graphql`
@@ -36,17 +35,23 @@ class Footer extends React.Component {
 
                     <ul className="footer-social-list">
                       <li>
-                        <a href="http://www.facebook.com/TexasRollergirls" aria-label="Facebook">
+                        <a
+                          href="http://www.facebook.com/TexasRollergirls"
+                          aria-label="Facebook">
                           <i className="fa fa-facebook-square" />
                         </a>
                       </li>
                       <li>
-                        <a href="http://twitter.com/txrollergirls" aria-label="Twitter">
+                        <a
+                          href="http://twitter.com/txrollergirls"
+                          aria-label="Twitter">
                           <i className="fa fa-twitter" />
                         </a>
                       </li>
                       <li>
-                        <a href="https://www.instagram.com/texasrollergirls/" aria-label="Instagram">
+                        <a
+                          href="https://www.instagram.com/texasrollergirls/"
+                          aria-label="Instagram">
                           <i className="fa fa-instagram" />
                         </a>
                       </li>
@@ -55,19 +60,14 @@ class Footer extends React.Component {
                   <div className="col-eight md-1-3 tab-full footer-info">
                     <h4>2019 Season</h4>
                     <ul className="event-list">
-                    {data.allContentfulEvent.edges.map(({ node }) => {
-                      return (
-                        <li key={node.id} className="event-list">
-                          
-                           
+                      {data.allContentfulEvent.edges.map(({ node }) => {
+                        return (
+                          <li key={node.id} className="event-list">
                             <strong>{node.date}</strong>: {node.title}
-                          
-                        </li>
-                      );
-
-                    })}
+                          </li>
+                        );
+                      })}
                     </ul>
-                   
                   </div>
                 </div>
               </div>

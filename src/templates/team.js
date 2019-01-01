@@ -5,7 +5,7 @@ import Layout from '../components/layout/layout';
 import Profile from '../components/profile-preview/profile-preview';
 import Sponsor from '../components/sponsor/sponsor';
 
-class PageTemplate extends React.Component {
+class TeamTemplate extends React.Component {
   render() {
     const team = get(this.props, 'data.contentfulTeam');
     const profiles = get(this, 'props.data.allContentfulProfile.edges');
@@ -40,12 +40,17 @@ class PageTemplate extends React.Component {
                   } catch (e) {
                     profileDetailsFounder = '';
                   }
-                  
 
                   return (
                     <>
-                      {(profileDetails !== 'Retired' && (team.title === node.homeTeam || team.title === profileDetails || team.title.toLowerCase() === node.type)) ||
-                       (profileDetailsFounder === 'Founders' && team.title === 'Founders') || (profileDetails === 'Retired' && team.title === 'Retired Skaters') ? (
+                      {(profileDetails !== 'Retired' &&
+                        (team.title === node.homeTeam ||
+                          team.title === profileDetails ||
+                          team.title.toLowerCase() === node.type)) ||
+                      (profileDetailsFounder === 'Founders' &&
+                        team.title === 'Founders') ||
+                      (profileDetails === 'Retired' &&
+                        team.title === 'Retired Skaters') ? (
                         <li className="profile-list__item" key={node.id}>
                           <Profile profile={node} />
                         </li>
@@ -78,7 +83,7 @@ class PageTemplate extends React.Component {
   }
 }
 
-export default PageTemplate;
+export default TeamTemplate;
 
 export const teamQuery = graphql`
   query TeamBySlug($slug: String!) {
