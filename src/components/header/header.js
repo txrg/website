@@ -44,7 +44,7 @@ export default () => (
       </a>
     </nav>
 
-    <button className="header-menu-toggle">
+    <button className="header-menu-toggle" onClick={() => document.body.classList.toggle('open')}>
       <span>Menu</span>
     </button>
   </header>

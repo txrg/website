@@ -61,7 +61,12 @@
    * menu trigger - (_site-layout.css) 
    * ------------------------------------------------------------------- */
 
-.header-menu-toggle {
+button.header-menu-toggle {
+  background: transparent;
+  border-radius: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
   display: none;
   position: fixed;
   right: 32px;
@@ -78,12 +83,12 @@
   transition: all 0.3s ease-in-out;
 }
 
-.header-menu-toggle:hover,
-.header-menu-toggle:focus {
+button.header-menu-toggle:hover,
+button.header-menu-toggle:focus {
   color: #ffffff;
 }
 
-.header-menu-toggle span {
+button.header-menu-toggle span {
   display: block;
   width: 24px;
   height: 2px;
@@ -101,8 +106,8 @@
   color: transparent;
 }
 
-.header-menu-toggle span::before,
-.header-menu-toggle span::after {
+button.header-menu-toggle span::before,
+button.header-menu-toggle span::after {
   content: '';
   width: 100%;
   height: 100%;
@@ -113,33 +118,33 @@
   transition: all 0.5s ease-in-out;
 }
 
-.header-menu-toggle span::before {
+button.header-menu-toggle span::before {
   top: -9px;
 }
 
-.header-menu-toggle span::after {
+button.header-menu-toggle span::after {
   bottom: -9px;
 }
 
-.header-menu-toggle.is-clicked span {
+button.header-menu-toggle.is-clicked span {
   background-color: rgba(255, 255, 255, 0);
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
 
-.header-menu-toggle.is-clicked span::before,
-.header-menu-toggle.is-clicked span::after {
+button.header-menu-toggle.is-clicked span::before,
+button.header-menu-toggle.is-clicked span::after {
   background-color: white;
 }
 
-.header-menu-toggle.is-clicked span::before {
+button.header-menu-toggle.is-clicked span::before {
   top: 0;
   -webkit-transform: rotate(135deg);
   -ms-transform: rotate(135deg);
   transform: rotate(135deg);
 }
 
-.header-menu-toggle.is-clicked span::after {
+button.header-menu-toggle.is-clicked span::after {
   bottom: 0;
   -webkit-transform: rotate(225deg);
   -ms-transform: rotate(225deg);
@@ -214,6 +219,10 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .open .header-nav-wrap {
+    display: block;
+  }
+
   .header-logo a {
     width: 88px;
     height: 20px;
@@ -226,7 +235,7 @@
     right: auto;
     left: 0;
     background-color: #111111;
-    padding: 120px 40px 54px;
+    padding: 80px 40px 54px;
   }
   .header-nav-wrap .header-main-nav {
     display: block;
@@ -249,7 +258,7 @@
     line-height: calc(42px - 0.6rem);
     padding: 0 30px;
   }
-  .header-menu-toggle {
+  button.header-menu-toggle {
     display: block;
   }
 }
@@ -262,7 +271,7 @@
 }
 
 @media only screen and (max-width: 400px) {
-  .header-menu-toggle {
+  button.header-menu-toggle {
     right: 24px;
   }
 }
