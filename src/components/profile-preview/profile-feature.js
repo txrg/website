@@ -7,7 +7,7 @@ export default ({ profile }) => (
       <Img alt={profile.name} sizes={profile.photo.sizes} />
     </div>
 
-    <h4 className="profile__name">Featured skater: {profile.name}</h4>
+    <h4 className="feature__title">Featured skater: {profile.name}</h4>
     <p
       className="feature__description"
       dangerouslySetInnerHTML={{

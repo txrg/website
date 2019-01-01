@@ -16,7 +16,7 @@ export default ({ page }) => (
           <Img alt={page.title} sizes={page.featureImage.fluid} />
         </div>
         <div className="page__content">
-          <h4 className="page__title">{page.title}</h4>
+          <h4 className="feature__title">{page.title}</h4>
           <p
             className="feature__description"
             dangerouslySetInnerHTML={{

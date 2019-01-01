@@ -194,7 +194,7 @@ export const pageQuery = graphql`
           publishDate(formatString: "MMMM Do, YYYY")
           featured
           featureImage {
-            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: SCALE) {
+            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: CROP) {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }
@@ -214,7 +214,7 @@ export const pageQuery = graphql`
           section
           featured
           featureImage {
-            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: SCALE) {
+            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: CROP) {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }
