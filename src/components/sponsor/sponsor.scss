@@ -1,9 +1,13 @@
 .sponsors {
-  background: #690000;
   color: #fff;
   padding-top: 8rem;
   padding-bottom: 8rem;
   text-align: center;
+  background-color: #690000;
+  background-image: url('../images/splatter.jpg');
+  background-size: 55%;
+  background-repeat: repeat-x;
+  background-position: bottom;
 }
 
 .sponsors h1 {
@@ -21,14 +25,15 @@
   margin: 0;
   display: flex;
   flex-wrap: wrap;
+  border: 24px solid black;
 }
 
 .sponsors .sponsor__list li {
+  background: #fff;
   display: block;
   margin: 0;
-  padding: 0.75rem;
   width: 16.666%;
-  filter: grayscale(1);
+  
   transition: all 0.5s ease-in-out;
 
   &:hover {
@@ -41,8 +46,7 @@
   display: block;
   height: 100%;
   background: white;
-  padding: 1rem;
-  border-radius: 2px;
+  padding: 2rem;
 }
 
 @media only screen and (max-width: 600px) {

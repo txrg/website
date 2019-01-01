@@ -8,7 +8,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulBlogPost');
     const sponsors = get(this, 'props.data.allContentfulSponsor.edges');
-    
+
     return (
       <Layout location={this.props.location}>
         <section className="content content-intro">
@@ -25,21 +25,21 @@ class BlogPostTemplate extends React.Component {
           </div>
         </section>
         <section className="sponsors">
-            <div className="row">
-              <div className="col-full">
-                <h1 className="intro-header">Sponsors</h1>
-                <ul className="sponsor__list">
-                  {sponsors.map(({ node }) => {
-                    return (
-                      <li className="sponsor__item" key={node.id}>
-                        <Sponsor sponsor={node} />
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
+          <div className="row">
+            <div>
+              <h1 className="intro-header">We love our sponsors!</h1>
+              <ul className="sponsor__list">
+                {sponsors.map(({ node }) => {
+                  return (
+                    <li className="sponsor__item" key={node.id}>
+                      <Sponsor sponsor={node} />
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
-          </section>
+          </div>
+        </section>
       </Layout>
     );
   }

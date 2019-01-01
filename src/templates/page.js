@@ -26,7 +26,8 @@ class PageTemplate extends React.Component {
                   .join('-')}/${node.slug}/`;
           return (
             <>
-              {page.section === node.section && page.section !== 'who we are' ? (
+              {page.section === node.section &&
+              page.section !== 'who we are' ? (
                 <li key={node.slug}>
                   <Link to={pageLink}>{node.title}</Link>
                 </li>
@@ -57,7 +58,7 @@ class PageTemplate extends React.Component {
       .toLowerCase()
       .split(' ')
       .join('-')}/`;
-    
+
     // eslint-disable-next-line
     const breadcrumb = (
       <ol className="breadcrumb">
@@ -99,8 +100,8 @@ class PageTemplate extends React.Component {
           </section>
           <section className="sponsors">
             <div className="row">
-              <div className="col-full">
-                <h1 className="intro-header">Sponsors</h1>
+              <div>
+                <h1 className="intro-header">We love our sponsors!</h1>
                 <ul className="sponsor__list">
                   {sponsors.map(({ node }) => {
                     return (

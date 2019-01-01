@@ -142,8 +142,8 @@ class RootIndex extends React.Component {
 
         <section className="sponsors">
           <div className="row">
-            <div className="col-full">
-              <h1 className="intro-header">Sponsors</h1>
+            <div>
+              <h1 className="intro-header">We love our sponsors!</h1>
               <ul className="sponsor__list">
                 {sponsors.map(({ node }) => {
                   return (

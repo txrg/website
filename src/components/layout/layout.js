@@ -7,10 +7,9 @@ import favicon32 from '../../images/favicon-32.png';
 import '../../styles/index.scss';
 
 class Template extends React.Component {
-
   render() {
     const { children } = this.props;
-    
+
     return (
       <StaticQuery
         query={graphql`
@@ -32,7 +31,6 @@ class Template extends React.Component {
                   content:
                     'Get the latest news, training tips, events &amp; other information from the Texas Rollergirls. Learn more about the godmothers of modern roller derby.',
                 },
-
               ]}
               link={[
                 {

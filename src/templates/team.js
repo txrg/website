@@ -14,7 +14,6 @@ class PageTemplate extends React.Component {
     return (
       <Layout location={this.props.location}>
         <main className="main--team">
-
           <section className="content content-intro">
             <div className="row about-features">
               <div className="main-content">
@@ -56,8 +55,8 @@ class PageTemplate extends React.Component {
           </section>
           <section className="sponsors">
             <div className="row">
-              <div className="col-full">
-                <h1 className="intro-header">Sponsors</h1>
+              <div>
+                <h1 className="intro-header">We love our sponsors!</h1>
                 <ul className="sponsor__list">
                   {sponsors.map(({ node }) => {
                     return (

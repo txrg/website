@@ -66,7 +66,7 @@ body {
 
 body {
   background-color: #000;
-  background-image:url('../images/splatter.jpg');
+  background-image: url('../images/splatter.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
   font-family: 'muli-regular', sans-serif;
@@ -432,9 +432,10 @@ img.pull-left {
  * ------------------------------------------------------------------- */
 
 .bgrid {
-  padding: 0 20px;
+  //padding: 0 20px;
+  padding: 0;
 }
-
+/*
 @media only screen and (max-width: 1024px) {
   .bgrid {
     padding: 0 18px;
@@ -458,7 +459,7 @@ img.pull-left {
     padding: 0;
   }
 }
-
+*/
 /* ------------------------------------------------------------------- 
  * tables - (_document-setup.scss)  
  * ------------------------------------------------------------------- */
@@ -1131,6 +1132,9 @@ h1.intro-header::before {
   background: #ffffff;
   padding-top: 10rem;
   overflow: hidden;
+  background-image: url('../images/splatter-light.jpg');
+  background-size: 70%;
+  background-repeat: repeat-x;
 }
 
 .about-features .features-list {
@@ -1340,12 +1344,12 @@ h1.intro-header::before {
 
 .side-bar {
   background-color: #690000;
-  background-image:url('../images/splatter.jpg');
-  background-size: 150%;
-  background-repeat: no-repeat;
+  background-image: url('../images/splatter.jpg');
+  background-size: 60%;
+  background-repeat: repeat-x;
   background-position: bottom;
   border-radius: 3px;
-  padding: 3rem 3.5rem 10rem;
+  padding: 3rem 3.5rem 7rem;
   margin-bottom: 4.8rem;
 }
 
