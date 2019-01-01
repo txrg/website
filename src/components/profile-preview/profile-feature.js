@@ -8,11 +8,6 @@ export default ({ profile }) => (
     </div>
 
     <h4 className="feature__title">Featured skater: {profile.name}</h4>
-    <p
-      className="feature__description"
-      dangerouslySetInnerHTML={{
-        __html: profile.featureDescription.childMarkdownRemark.html,
-      }}
-    />
+    <p className="feature__description">{profile.featureDescription.childMarkdownRemark.rawMarkdownBody}</p>
   </div>
 );

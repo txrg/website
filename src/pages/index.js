@@ -224,7 +224,7 @@ export const pageQuery = graphql`
           }
           featureDescription {
             childMarkdownRemark {
-              html
+              rawMarkdownBody
             }
           }
           pageContent {

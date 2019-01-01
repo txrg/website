@@ -80,7 +80,7 @@ export const pageQuery = graphql`
           }
           description {
             childMarkdownRemark {
-              html
+              rawMarkdownBody
             }
           }
         }

@@ -20,12 +20,7 @@ export default ({ page }) => (
         </div>
         <div className="page__content">
           <h4 className="feature__title">{page.title}</h4>
-          <p
-            className="feature__description"
-            dangerouslySetInnerHTML={{
-              __html: page.featureDescription.childMarkdownRemark.html,
-            }}
-          />
+          <p className="feature__description">{page.featureDescription.childMarkdownRemark.rawMarkdownBody}</p>
         </div>
       </Link>
     </div>
