@@ -1,0 +1,24 @@
+/* ------------------------------------------------------------------- 
+ * events
+ * ------------------------------------------------------------------- */
+
+ .event-list h3 {
+  font-weight: normal;
+  margin-bottom: 0;
+  position: relative;
+
+  span {
+    font-weight: bold;
+  }
+
+  .icon-calendar {
+    font-weight: normal;
+    position: absolute;
+    left: -28px;
+    top: 5px;
+  }
+}
+
+.event__location {
+  margin-bottom: 1rem;
+}

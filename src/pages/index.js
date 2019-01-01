@@ -5,13 +5,12 @@ import Layout from '../components/layout/layout';
 import BlogPreview from '../components/blog-preview/blog-preview';
 import PagePreview from '../components/page-preview/page-preview';
 import Profile from '../components/profile-preview/profile-feature';
+import EventList from '../components/eventList/eventList';
 import logo from '../images/logo-white.png';
 
 class RootIndex extends React.Component {
   render() {
     const blogs = get(this, 'props.data.allContentfulBlogPost.edges');
-    const events = get(this, 'props.data.allContentfulEvent.edges');
-
     const pages = get(this, 'props.data.allContentfulPage.edges');
     const profiles = get(this, 'props.data.allContentfulProfile.edges');
 
@@ -26,8 +25,7 @@ class RootIndex extends React.Component {
 
                 <h1>
                   This is <br />
-                  roller
-                  <br />
+                  roller <br />
                   derby.
                 </h1>
 
@@ -88,16 +86,7 @@ class RootIndex extends React.Component {
               <h1 className="intro-header">2019 Season</h1>
             </div>
             <div className="col-ten">
-              {events.map(({ node }) => {
-                return (
-                  <div key={node.id} className="event-list">
-                    <h3>
-                      <span className="icon-calendar" aria-hidden="true" />{' '}
-                      <span>{node.date}</span>: {node.title}
-                    </h3>
-                  </div>
-                );
-              })}
+              <EventList />
             </div>
           </div>
 
@@ -214,16 +203,6 @@ export const pageQuery = graphql`
               html
             }
           }
-        }
-      }
-    }
-    allContentfulEvent(sort: { fields: [date], order: ASC }) {
-      edges {
-        node {
-          title
-          id
-          date(formatString: "MMMM DD, YYYY")
-          location
         }
       }
     }
