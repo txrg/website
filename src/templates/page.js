@@ -26,7 +26,8 @@ class PageTemplate extends React.Component {
                   .join('-')}/${node.slug}/`;
           return (
             <>
-              {page.section === node.section ? (
+              {page.section === node.section &&
+              page.section !== 'none' ? (
                 <li key={node.slug}>
                   <Link to={pageLink}>{node.title}</Link>
                 </li>
@@ -87,7 +88,9 @@ class PageTemplate extends React.Component {
         <main className="main--page">
           <section className="content content-intro">
             <div className="row">
+            
               <div className="col-four">
+              {page.section !== 'none' ? (
                 <aside className="side-bar">
                   <nav>
                     <ul>
@@ -97,9 +100,11 @@ class PageTemplate extends React.Component {
                     </ul>
                   </nav>
                 </aside>
+                  ) : null}
                 <h2>2019 Season</h2>
                 <EventList />
               </div>
+             
               <div className="col-eight">
                 <h1 className="intro-header">{page.title}</h1>
                 {this.props.location.pathname === '/events1/' ? (
