@@ -20,22 +20,16 @@ class Header extends React.Component {
         <nav className="header-nav-wrap">
           <ul className="header-main-nav" onClick={() => this.menuClick()}>
             <li>
-              <Link to="/about/">About</Link>
-            </li>
-            <li>
               <Link to="/who-we-are/">Who we are</Link>
             </li>
             <li>
               <Link to="/events/">Events</Link>
             </li>
             <li>
-              <Link to="/tickets/">Tickets</Link>
-            </li>
-            <li>
               <Link to="/get-involved/">Get involved</Link>
             </li>
             <li>
-              <Link to="/sponsorship/">Sponsorship</Link>
+              <Link to="/contact/">Contact</Link>
             </li>
             <li>
               <Link to="/shop/">Shop</Link>
