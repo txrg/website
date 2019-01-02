@@ -2,13 +2,14 @@
   color: #fff;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  text-align: center;
+  ;
   background: radial-gradient(
       circle closest-corner at center 125px,
       #222,
       black 80%
     )
     no-repeat;
+  text-align: center;
 }
 
 .sponsors .row div {
@@ -37,9 +38,16 @@
   background: #fff;
   display: block;
   margin: 0;
-  width: 16.666%;
-
   transition: all 0.5s ease-in-out;
+  width: 50%;
+
+  @include breakpoint('sm') {
+    width: 33.33%;
+  }
+
+  @include breakpoint('md') {
+    width: 16.666%;
+  }
 
   &:hover {
     filter: none;
@@ -52,12 +60,4 @@
   height: 100%;
   background: white;
   padding: 2rem;
-}
-
-@media only screen and (max-width: 600px) {
-  .sponsors .sponsor__list li {
-    width: 33.3%;
-    opacity: 1;
-    filter: none;
-  }
 }

@@ -42,7 +42,7 @@
 }
 .fa-fw {
   width: 1.28571429em;
-  text-align: center;
+  ;
 }
 .fa-ul {
   padding-left: 0;
@@ -57,7 +57,7 @@
   left: -2.14285714em;
   width: 2.14285714em;
   top: 0.14285714em;
-  text-align: center;
+  ;
 }
 .fa-li.fa-lg {
   left: -1.85714286em;
@@ -157,7 +157,7 @@
   position: absolute;
   left: 0;
   width: 100%;
-  text-align: center;
+  ;
 }
 .fa-stack-1x {
   line-height: inherit;

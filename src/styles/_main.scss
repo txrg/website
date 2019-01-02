@@ -668,7 +668,7 @@ select {
   height: 20px;
   line-height: 20px;
   font-size: 18px;
-  text-align: center;
+  
   pointer-events: none;
   color: #252525;
 }
@@ -786,7 +786,7 @@ input[type='button'] {
   color: #222222;
   text-decoration: none;
   cursor: pointer;
-  text-align: center;
+  
   white-space: nowrap;
   border-radius: 0.5rem;
   -webkit-transition: all 0.3s ease-in-out;
@@ -1145,6 +1145,7 @@ h1.intro-header::before {
 .about-features .features-list {
   padding-top: 5.4rem;
   display: flex;
+  flex-wrap: wrap;
 }
 .about-features .feature {
   margin-bottom: 1.8rem;
@@ -1168,7 +1169,7 @@ h1.intro-header::before {
   padding-bottom: 6rem;
 }
 .about-how h1.intro-header {
-  text-align: center;
+  
 }
 .content .about-how h1.intro-header::before {
   left: 50%;
@@ -1222,7 +1223,7 @@ h1.intro-header::before {
   height: 54px;
   width: 54px;
   line-height: 54px;
-  text-align: center;
+  
   border-radius: 50%;
   background-color: #690000;
   box-shadow: 0 0 0 15px #ffffff;
@@ -1240,7 +1241,7 @@ h1.intro-header::before {
  * ------------------------------------------------------------------- */
 @media only screen and (max-width: 1024px) {
   .content-intro {
-    text-align: center;
+    
   }
   .content-intro h1::before {
     left: 50%;
@@ -1303,7 +1304,7 @@ h1.intro-header::before {
 @media only screen and (max-width: 650px) {
   .about-features {
     max-width: 600px;
-    text-align: center;
+    
   }
   .about-features .feature {
     width: 100% !important;
@@ -1318,7 +1319,7 @@ h1.intro-header::before {
 }
 @media only screen and (max-width: 400px) {
   .about-how-content {
-    text-align: center;
+    
   }
   .about-how-content::before {
     display: none;
@@ -1384,10 +1385,10 @@ h1.intro-header::before {
   height: 60px;
   width: 60px;
   line-height: 60px;
-  text-align: center;
+  
   background: black;
   color: rgba(255, 255, 255, 0.5);
-  text-align: center;
+  
   text-transform: uppercase;
   border-radius: 5px;
   -webkit-transition: all 0.3s ease-in-out;
