@@ -69,9 +69,7 @@ exports.createPages = ({ graphql, actions }) => {
             .join('-');
           createPage({
             path:
-              sectionName === page.node.slug
-                ? `/${page.node.slug}/`
-                : `/${sectionName}/${page.node.slug}/`,
+              sectionName === page.node.slug || sectionName === 'none'  ? `/${page.node.slug}/` : `/${sectionName}/${page.node.slug}/`,
             component: pageView,
             context: {
               slug: page.node.slug,
