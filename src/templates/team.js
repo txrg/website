@@ -77,10 +77,11 @@ export const teamQuery = graphql`
         }
       }
     }
-    allContentfulProfile(sort: { fields: [name], order: DESC }) {
+    allContentfulProfile(sort:  { fields: [title, name], order: ASC }) {
       edges {
         node {
           name
+          title
           homeTeam
           type
           details
