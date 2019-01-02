@@ -26,8 +26,7 @@ class PageTemplate extends React.Component {
                   .join('-')}/${node.slug}/`;
           return (
             <>
-              {page.section === node.section &&
-              page.section !== 'who we are' ? (
+              {page.section === node.section ? (
                 <li key={node.slug}>
                   <Link to={pageLink}>{node.title}</Link>
                 </li>
