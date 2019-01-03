@@ -7,8 +7,19 @@
 .feature__title {
   display: inline;
   font-weight: bold;
-  
   transition: all 0.3s ease-in-out;
+}
+
+.feature__date {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-family: 'montserrat-regular', sans-serif;
+  color: #151515;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  margin: .25rem 0 0rem;
 }
 
 a .feature__title {

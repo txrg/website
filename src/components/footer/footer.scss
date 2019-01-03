@@ -2,6 +2,13 @@
  *  15. footer styles - (_site-layout.scss)
  *
  * ------------------------------------------------------------------- */
+.wftda-logo {
+  width: 75px;
+  float: left;
+  margin-right: 16px;
+}
+
+
 footer {
   padding-top: 9rem;
   padding-bottom: 4.2rem;
@@ -43,32 +50,13 @@ footer ul {
 footer ul li {
   padding-left: 0;
 }
-footer ul a,
-footer ul a:visited {
-  color: rgba(255, 255, 255, 0.25);
-}
-.footer-logo {
-  display: block;
-  margin: 0 0 5.4rem 0;
-  padding: 0;
-  outline: 0;
-  border: none;
-  width: 93px;
-  height: 21px;
-  background: url('../images/logo.png') no-repeat center;
-  background-size: 93px 21px;
-  font: 0/0 a;
-  text-shadow: none;
-  color: transparent;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
 .footer-social-list {
   font-size: 1.8rem;
-  margin-top: -1.5rem;
+  margin-top: 1.5rem;
   margin-bottom: 3rem;
 }
 .footer-social-list li {
+  clear: both;
   display: inline-block;
   margin-right: 8px;
 }

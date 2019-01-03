@@ -1,5 +1,6 @@
 import React from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
+import wftda from '../../images/wftda-logo.svg';
 
 class Footer extends React.Component {
   render() {
@@ -27,10 +28,9 @@ class Footer extends React.Component {
                 <div className="row">
                   <div className="col-four md-1-3 tab-full footer-info">
                     <h4>Texas Rollergirls</h4>
-
+                    <a href="https://www.wftda.com"><img src={wftda} alt="WFTDA" className="wftda-logo" rel="noopener noreferrer" target="_blank" /></a>
                     <p>
-                      Texas Rollergirls are proud to be founding members of the
-                      Women's Flat Track Derby Association (WFTDA).
+                      Texas Rollergirls are proud to be founding members of the <a href="https://www.wftda.com" rel="noopener noreferrer" target="_blank">Women's Flat Track Derby Association (WFTDA)</a>.
                     </p>
 
                     <ul className="footer-social-list">
@@ -57,7 +57,7 @@ class Footer extends React.Component {
                       </li>
                     </ul>
                   </div>
-                  <div className="col-eight md-1-3 tab-full footer-info">
+                  <div className="col-six md-1-3 tab-full footer-info">
                     <h4>2019 Season</h4>
                     <ul className="event-list">
                       {data.allContentfulEvent.edges.map(({ node }) => {
@@ -67,6 +67,17 @@ class Footer extends React.Component {
                           </li>
                         );
                       })}
+                    </ul>
+                  </div>
+                  <div className="col-two md-1-3 tab-full footer-info">
+                    <h4>Links</h4>
+                    <ul className="list-links">
+                      <li>
+                        <Link to="/donate">Donate</Link>
+                      </li>
+                      <li>
+                        <Link to="/blog">Blog</Link>
+                      </li>
                     </ul>
                   </div>
                 </div>

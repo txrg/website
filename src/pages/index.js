@@ -37,7 +37,7 @@ class RootIndex extends React.Component {
                     Buy Tickets
                   </a>
                   <Link
-                    to="/about/donate"
+                    to="/donate"
                     className="smoothscroll button stroke">
                     <span className="icon-dollar" aria-hidden="true" />
                     Donate
@@ -71,13 +71,6 @@ class RootIndex extends React.Component {
               </a>
             </li>
           </ul>
-
-          <div className="home-scrolldown">
-            <a href="#about" className="scroll-icon smoothscroll">
-              <span>Scroll Down</span>
-              <i className="icon-arrow-right" aria-hidden="true" />
-            </a>
-          </div>
         </section>
 
         <section className="content content-home">
@@ -92,16 +85,6 @@ class RootIndex extends React.Component {
 
           <div className="row about-features">
             <div className="features-list block-1-4 block-m-1-3 block-mob-full group">
-              {blogs.map(({ node }) => {
-                const featuredBlog = node.featured;
-                return (
-                  <>
-                    {featuredBlog ? (
-                      <BlogPreview blog={node} key={node.id} />
-                    ) : null}
-                  </>
-                );
-              })}
               {pages.map(({ node }) => {
                 const FeaturedPage = node.featured;
                 return (
@@ -119,6 +102,16 @@ class RootIndex extends React.Component {
                       <div className="bgrid feature">
                         <Profile profile={node} key={node.id} />
                       </div>
+                    ) : null}
+                  </>
+                );
+              })}
+              {blogs.map(({ node }) => {
+                const featuredBlog = node.featured;
+                return (
+                  <>
+                    {featuredBlog ? (
+                      <BlogPreview blog={node} key={node.id} />
                     ) : null}
                   </>
                 );

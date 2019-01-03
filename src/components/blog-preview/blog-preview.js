@@ -11,6 +11,7 @@ export default ({ blog }) => (
         </div>
         <div className="feature__content">
           <h4 className="feature__title">{blog.title}</h4>
+          <p className="feature__date">{blog.publishDate}</p>
           <p className="feature__description">{blog.description.childMarkdownRemark.rawMarkdownBody}</p>
         </div>
       </Link>
