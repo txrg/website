@@ -57,7 +57,7 @@ class Footer extends React.Component {
                       </li>
                     </ul>
                   </div>
-                  <div className="col-six md-1-3 tab-full footer-info">
+                  <div className="col-five md-1-3 tab-full footer-info">
                     <h4>2019 Season</h4>
                     <ul className="event-list">
                       {data.allContentfulEvent.edges.map(({ node }) => {
@@ -69,7 +69,7 @@ class Footer extends React.Component {
                       })}
                     </ul>
                   </div>
-                  <div className="col-two md-1-3 tab-full footer-info">
+                  <div className="col-three md-1-3 tab-full footer-info">
                     <h4>Links</h4>
                     <ul className="list-links">
                       <li>
@@ -77,6 +77,9 @@ class Footer extends React.Component {
                       </li>
                       <li>
                         <Link to="/blog">Blog</Link>
+                      </li>
+                      <li>
+                        <a href="https://squareup.com/market/texasrollergirls">Shop</a>
                       </li>
                     </ul>
                   </div>
