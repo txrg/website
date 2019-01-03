@@ -18,7 +18,7 @@ export default ({ page }) => (
         <div className="page__thumbnail">
           <Img alt={page.title} sizes={page.featureImage.fluid} />
         </div>
-        <div className="page__content">
+        <div className="feature__content">
           <h4 className="feature__title">{page.title}</h4>
           <p className="feature__description">{page.featureDescription.childMarkdownRemark.rawMarkdownBody}</p>
         </div>

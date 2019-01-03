@@ -1,14 +1,27 @@
-.feature__title {
-  padding-top: 1rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.4;
+.feature__content {
+  line-height: 1;
   padding-right: 2rem; 
+  padding-top: 1rem;
+}
+
+.feature__title {
+  display: inline;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0px -4px 0px #eee inset;
+  color: #690000;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    border-color: #ccc;
+    box-shadow: 0px -4px 0px #ccc inset;
+  }
 }
 
 .feature__description {
   color: #151515;
   line-height: 1.5;
-  padding-right: 3rem;
   font-weight: normal;
   font-size: 14px;
+  padding-top: 1rem;
 }
