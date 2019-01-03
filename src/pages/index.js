@@ -91,7 +91,7 @@ class RootIndex extends React.Component {
           </div>
 
           <div className="row about-features">
-            <div className="features-list block-1-4 block-m-1-2 block-mob-full group">
+            <div className="features-list block-1-5 block-m-1-3 block-mob-full group">
               {blogs.map(({ node }) => {
                 const featuredBlog = node.featured;
                 return (
