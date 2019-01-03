@@ -12,7 +12,8 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location}>
         <section className="content content-intro">
           <div className="row">
-            <div className="col-twelve">
+          <div className="col-two"></div>
+            <div className="col-eight">
               <h1 className="intro-header">{post.title}</h1>
               <h5>{post.publishDate}</h5>
               <div
