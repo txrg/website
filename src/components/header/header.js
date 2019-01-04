@@ -9,7 +9,8 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header className="header row">
+      <header className="header">
+      <div class="row">
         <div className="header-logo">
           <Link className="logo" to="/">
             <img src={runningGirl} alt="" />
@@ -47,6 +48,7 @@ class Header extends React.Component {
         <button className="header-menu-toggle" onClick={() => this.menuClick()}>
           <span>Menu</span>
         </button>
+        </div>
       </header>
     );
   }

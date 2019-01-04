@@ -16,6 +16,10 @@
   border-radius: 2px;
 }
 
+.header .row {
+  position: relative;
+}
+
 /* ------------------------------------------------------------------- 
    * header logo - (_site-layout.css) 
    * ------------------------------------------------------------------- */
@@ -53,8 +57,12 @@
 }
 
 .header-logo span {
-  display: block;
+  display: none;
   padding-top: 0.75rem;
+
+  @include breakpoint('md') {
+    display: block;
+  }
 }
 
 /* ------------------------------------------------------------------- 
@@ -188,7 +196,8 @@ button.header-menu-toggle.is-clicked span::after {
 }
 
 .header-nav-wrap .header-main-nav li a:hover,
-.header-nav-wrap .header-main-nav li a:focus {
+.header-nav-wrap .header-main-nav li a:focus,
+.header-nav-wrap .header-main-nav li a[aria-current="page"] {
   color: #ffffff;
   box-shadow: 0px -4px 0px rgba(255,255,255,.3) inset;
 }
