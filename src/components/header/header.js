@@ -13,7 +13,7 @@ class Header extends React.Component {
         <div className="header-logo">
           <Link className="logo" to="/">
             <img src={runningGirl} alt="" />
-            <span>TXRG</span>
+            <span>Texas Rollergirls</span>
           </Link>
         </div>
 

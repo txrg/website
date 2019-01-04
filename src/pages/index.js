@@ -21,8 +21,7 @@ class RootIndex extends React.Component {
           <div className="home-content">
             <div className="row contents">
               <div className="home-content-left">
-                <h3>Texas Rollergirls</h3>
-
+               
                 <h1>
                   This is <br />
                   roller <br />
