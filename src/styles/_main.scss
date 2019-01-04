@@ -1253,12 +1253,6 @@ h1.intro-header::before {
   .content-intro {
     
   }
-  .content-intro h1::before {
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-  }
   .content-intro [class*='col-'] {
     width: 100% !important;
     clear: both !important;
