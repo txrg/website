@@ -1366,7 +1366,8 @@ h1.intro-header::before {
   margin: 0;
 }
 
-.side-bar a {
+.side-bar a,
+.side-bar span {
   color: white;
   display: block;
   padding: 0.25rem 0;
@@ -1375,6 +1376,25 @@ h1.intro-header::before {
   font-weight: bold;
   font-family: 'montserrat-regular', sans-serif;
   font-size: 13px;
+  display: inline;
+}
+
+.side-bar a:hover,
+.side-bar a[aria-current="page"] {
+  border-color: rgba(0,0,0,.3);
+  box-shadow: 0px -4px 0px rgba(255,255,255,.3) inset;
+}
+
+.side-bar a[aria-current="page"] {
+  box-shadow: 0px -4px 0px rgba(255,255,255,.8) inset;
+}
+
+.side-bar ul ul {
+  margin-left: 8px;
+}
+
+.side-bar__teams {
+  margin-top: 24px;
 }
 
 /* ------------------------------------------------------------------- 

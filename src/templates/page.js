@@ -8,8 +8,7 @@ class PageTemplate extends React.Component {
   render() {
     const page = get(this.props, 'data.contentfulPage');
     const pages = get(this, 'props.data.allContentfulPage.edges');
-    const teams = get(this, 'props.data.allContentfulTeam.edges');
-
+    //const teams = get(this, 'props.data.allContentfulTeam.edges');
 
     const subNav = (
       <>
@@ -39,6 +38,47 @@ class PageTemplate extends React.Component {
     );
 
     const subNavTeam = (
+      <ul>
+        <li>
+          <Link to="/who-we-are/founders">Founders</Link>
+        </li>
+        <li>
+          <Link to="/who-we-are/retired">Retired Skaters</Link>
+        </li>
+        <li>
+          <Link to="/who-we-are/officials">Officials</Link>
+        </li>
+        <li>
+          <Link to="/who-we-are/photographers">Photographers</Link>
+        </li>
+        <li>
+          <Link to="/who-we-are/volunteers">Volunteers</Link>
+        </li>
+        <li className="side-bar__teams">
+          <span>Home teams</span>
+          <ul>
+            <li>
+              <Link to="/who-we-are/hell-marys">Hell Marys</Link>
+            </li>
+            <li>
+              <Link to="/who-we-are/honky-tonk-heartbreakers">Honkey Tonk Heartbreakers</Link>
+            </li>
+            <li>
+              <Link to="/who-we-are/hotrod-honeys">Hotrod Honeys</Link>
+            </li>
+            <li>
+              <Link to="/who-we-are/hustlers">Hustlers</Link>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <Link to="/who-we-are/all-stars">All Stars</Link>
+        </li>
+        
+      </ul>
+    );
+    /* pulls each team dynamically, hard codinnng so I can style and nest specifically 
+    const subNavTeam = (
       <>
         {teams.map(({ node }) => {
           return (
@@ -53,7 +93,9 @@ class PageTemplate extends React.Component {
         })}
       </>
     );
-
+    */
+    
+    /* if you need to add a static link to a specific section
     const blogNav = (
       <>
         {page.section === 'about' ? (
@@ -63,6 +105,7 @@ class PageTemplate extends React.Component {
         ) : null}
       </>
     );
+    */
 
     const sectionLink = `/${page.section
       .toLowerCase()
@@ -89,22 +132,6 @@ class PageTemplate extends React.Component {
           <section className="content content-intro">
             <div className="row">
             
-              <div className="col-four">
-              {page.section !== 'none' ? (
-                <aside className="side-bar">
-                  <nav>
-                    <ul>
-                      {subNav}
-                      {blogNav}
-                      {subNavTeam}
-                    </ul>
-                  </nav>
-                </aside>
-                  ) : null}
-                <h2>2019 Season</h2>
-                <EventList />
-              </div>
-             
               <div className="col-eight">
                 <h1 className="intro-header">{page.title}</h1>
                 {this.props.location.pathname === '/events1/' ? (
@@ -120,6 +147,21 @@ class PageTemplate extends React.Component {
                   }}
                 />
                
+              </div>
+
+              <div className="col-four">
+              {page.section !== 'none' ? (
+                <aside className="side-bar">
+                  <nav>
+                    <ul>
+                      {subNav}
+                    </ul>
+                    {page.section === 'who we are' ? (<> {subNavTeam} </>) : null}
+                  </nav>
+                </aside>
+                  ) : null}
+                <h2>2019 Season</h2>
+                <EventList />
               </div>
             </div>
           </section>
@@ -143,7 +185,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulPage {
+    allContentfulPage(sort: { fields: [title], order: ASC }) {
       edges {
         node {
           title
