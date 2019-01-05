@@ -10,19 +10,20 @@ class SponsorList extends React.Component {
         query={graphql`
           query SponsorListQuery {
             allContentfulSponsor {
-                edges {
-                  node {
-                    name
-                    id
-                    photo {
-                      fluid {
-                        ...GatsbyContentfulFluid
-                      }
+              edges {
+                node {
+                  name
+                  type
+                  id
+                  photo {
+                    fluid {
+                      ...GatsbyContentfulFluid
                     }
-                    link
                   }
+                  link
                 }
               }
+            }
           }
         `}
         render={data => (
@@ -31,15 +32,39 @@ class SponsorList extends React.Component {
                 <div className="row">
                     <div>
                     <h1 className="intro-header">We love our sponsors!</h1>
-                    <ul className="sponsor__list">
-                        {data.allContentfulSponsor.edges.map(({ node }) => {
-                        return (
-                            <li className="sponsor__item" key={node.id}>
-                            <Sponsor sponsor={node} />
-                            </li>
-                        );
-                        })}
-                    </ul>
+                    <div className="sponsor__types">
+                      <h2>Sponsors</h2>
+                      <ul className="sponsor__list">
+                          {data.allContentfulSponsor.edges.map(({ node }) => {
+                          return (
+                            <>
+                              {node.type === "sponsor" ? (
+                            
+                                <li className="sponsor__item" key={node.id}>
+                                    <Sponsor sponsor={node} />
+                                  
+                                </li>
+                              ) : null}
+                            </>                           
+                          );
+                          })}
+                      </ul>
+                      <h2>Supporters</h2>
+                      <ul className="supporter__list">
+                          {data.allContentfulSponsor.edges.map(({ node }) => {
+                          return (
+                            <>
+                              {node.type === "supporter" ? (
+                            
+                                <li className="sponsor__item" key={node.id}>
+                                    <a href="{node.link}">{node.name}</a>                                  
+                                </li>
+                              ) : null}
+                            </>                           
+                          );
+                          })}
+                      </ul>
+                      </div>
                     </div>
                 </div>
             </section>

@@ -12,6 +12,10 @@
   text-align: center;
 }
 
+.sponsors h2 {
+  padding: 3rem 0 1rem 0;
+}
+
 .sponsors .row div {
   width: 100%;
 }
@@ -26,12 +30,17 @@
   transform: translateX(-50%);
 }
 
+.sponsor__types {
+  border: 24px solid #141515;
+  background: #fff;
+}
+
 .sponsors .sponsor__list {
   list-style: none;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  border: 24px solid #141515;
+  justify-content: space-around;
 }
 
 .sponsors .sponsor__list li {
@@ -60,4 +69,28 @@
   height: 100%;
   background: white;
   padding: 2rem;
+}
+
+.supporter__list {
+  display: flex;
+  justify-content: center;
+}
+
+.supporter__list li {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style: none;
+  color: #000;
+  padding: 0 1rem;
+}
+
+.supporter__list li a {
+  color: #690000;
+  box-shadow: 0px -4px 0px #eee inset;
+  font-weight: bold;
+  font-size: 18px;
+
+  &:hover {
+    box-shadow: 0px -4px 0px #ccc inset;
+  }
 }
