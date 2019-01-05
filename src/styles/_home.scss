@@ -339,7 +339,7 @@ html[data-useragent*='MSIE 10.0'] .home-scrolldown,
     font-size: 3rem;
   }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
   .home-content-left {
     padding: 10rem 0 300px;
   }
@@ -348,5 +348,20 @@ html[data-useragent*='MSIE 10.0'] .home-scrolldown,
   }
   .home-image-right {
     width: 320px;
+  }
+}
+
+.homepage-skaters {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+
+  @media only screen and (min-width: 600px) {
+    width: 65%;
+  }
+  
+  @include breakpoint('md') {
+    width: 65%;
   }
 }

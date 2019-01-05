@@ -67,7 +67,7 @@ body {
 body {
   background-color: #000;
   background-image: url('../images/splatter.jpg');
-  background-size: 100%;
+  background-size: 300%;
   background-repeat: no-repeat;
   font-family: 'muli-regular', sans-serif;
   font-size: 1.6rem;
@@ -75,6 +75,18 @@ body {
   color: #595959;
   margin: 0;
   padding: 0;
+
+  @media only screen and (min-width: 500px) {
+    background-size: 200%;
+  }
+
+  @media only screen and (min-width: 600px) {
+    background-size: 150%;
+  }
+
+  @include breakpoint('md') {
+    background-size: 100%;
+  }
 }
 
 /* ------------------------------------------------------------------- 

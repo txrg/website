@@ -7,6 +7,7 @@ import PagePreview from '../components/page-preview/page-preview';
 import Profile from '../components/profile-preview/profile-feature';
 import EventList from '../components/eventList/eventList';
 import logo from '../images/logo-white.png';
+import skaters from '../images/homepage.png';
 
 class RootIndex extends React.Component {
   render() {
@@ -20,6 +21,7 @@ class RootIndex extends React.Component {
           <div className="overlay" />
           <div className="home-content">
             <div className="row contents">
+              <img src={skaters} alt="Texas Rollergirls" className="homepage-skaters" />
               <div className="home-content-left">
                 <h1>
                   This is <br />
@@ -40,9 +42,13 @@ class RootIndex extends React.Component {
                   </Link>
                 </div>
               </div>
+              {/*}
               <div className="home-image-right">
                 <img src={logo} alt="Texas Rollergirls" className="logo-seal" />
               </div>
+              */
+              }
+              
             </div>
           </div>
 
