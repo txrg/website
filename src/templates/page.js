@@ -25,8 +25,7 @@ class PageTemplate extends React.Component {
                   .join('-')}/${node.slug}/`;
           return (
             <>
-              {page.section === node.section &&
-              page.section !== 'none' ? (
+              {page.section === node.section && page.section !== 'none' ? (
                 <li key={node.slug}>
                   <Link to={pageLink}>{node.title}</Link>
                 </li>
@@ -61,7 +60,9 @@ class PageTemplate extends React.Component {
               <Link to="/who-we-are/hell-marys">Hell Marys</Link>
             </li>
             <li>
-              <Link to="/who-we-are/honky-tonk-heartbreakers">Honkey Tonk Heartbreakers</Link>
+              <Link to="/who-we-are/honky-tonk-heartbreakers">
+                Honkey Tonk Heartbreakers
+              </Link>
             </li>
             <li>
               <Link to="/who-we-are/hotrod-honeys">Hotrod Honeys</Link>
@@ -74,7 +75,6 @@ class PageTemplate extends React.Component {
         <li>
           <Link to="/who-we-are/all-stars">All Stars</Link>
         </li>
-        
       </ul>
     );
     /* pulls each team dynamically, hard codinnng so I can style and nest specifically 
@@ -94,7 +94,7 @@ class PageTemplate extends React.Component {
       </>
     );
     */
-    
+
     /* if you need to add a static link to a specific section
     const blogNav = (
       <>
@@ -125,13 +125,27 @@ class PageTemplate extends React.Component {
       </ol>
     );
 
-
     return (
       <Layout location={this.props.location}>
         <main className="main--page">
           <section className="content content-intro">
             <div className="row">
-            
+              <div className="col-four">
+                {page.section !== 'none' ? (
+                  <aside className="side-bar">
+                    <nav>
+                      <ul>{subNav}</ul>
+                      {page.section === 'who we are' ? (
+                        <> {subNavTeam} </>
+                      ) : null}
+                    </nav>
+                  </aside>
+                ) : null}
+                <div className="side-events">
+                  <h2>2019 Season</h2>
+                  <EventList />
+                </div>
+              </div>
               <div className="col-eight">
                 <h1 className="intro-header">{page.title}</h1>
                 {this.props.location.pathname === '/events1/' ? (
@@ -146,23 +160,9 @@ class PageTemplate extends React.Component {
                     __html: page.pageContent.childMarkdownRemark.html,
                   }}
                 />
-               
               </div>
 
-              <div className="col-four">
-              {page.section !== 'none' ? (
-                <aside className="side-bar">
-                  <nav>
-                    <ul>
-                      {subNav}
-                    </ul>
-                    {page.section === 'who we are' ? (<> {subNavTeam} </>) : null}
-                  </nav>
-                </aside>
-                  ) : null}
-                <h2>2019 Season</h2>
-                <EventList />
-              </div>
+             
             </div>
           </section>
         </main>

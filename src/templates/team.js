@@ -77,7 +77,7 @@ export const teamQuery = graphql`
         }
       }
     }
-    allContentfulProfile(sort:  { fields: [title, name], order: ASC }) {
+    allContentfulProfile(sort: { fields: [title, name], order: ASC }) {
       edges {
         node {
           name

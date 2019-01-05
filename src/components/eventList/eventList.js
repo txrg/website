@@ -29,7 +29,14 @@ class EventList extends React.Component {
                     <span className="icon-calendar" aria-hidden="true" />{' '}
                     <span>{node.date}</span>: {node.title}
                   </h3>
-                  <p class="event__location"><a href={node.googleMaps} target="_blank" rel="noopener noreferrer">{node.location}</a></p>
+                  <p class="event__location">
+                    <a
+                      href={node.googleMaps}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      {node.location}
+                    </a>
+                  </p>
                 </div>
               );
             })}

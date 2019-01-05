@@ -414,7 +414,7 @@ dd {
 button,
 a.button {
   margin-bottom: 1.2rem;
-  box-shadow: 0 0 0!important;
+  box-shadow: 0 0 0 !important;
 
   &:hover {
     border-color: #690000;
@@ -678,7 +678,7 @@ select {
   height: 20px;
   line-height: 20px;
   font-size: 18px;
-  
+
   pointer-events: none;
   color: #252525;
 }
@@ -796,7 +796,7 @@ input[type='button'] {
   color: #222222;
   text-decoration: none;
   cursor: pointer;
-  
+
   white-space: nowrap;
   border-radius: 0.5rem;
   -webkit-transition: all 0.3s ease-in-out;
@@ -1179,7 +1179,6 @@ h1.intro-header::before {
   padding-bottom: 6rem;
 }
 .about-how h1.intro-header {
-  
 }
 .content .about-how h1.intro-header::before {
   left: 50%;
@@ -1233,7 +1232,7 @@ h1.intro-header::before {
   height: 54px;
   width: 54px;
   line-height: 54px;
-  
+
   border-radius: 50%;
   background-color: #690000;
   box-shadow: 0 0 0 15px #ffffff;
@@ -1251,7 +1250,6 @@ h1.intro-header::before {
  * ------------------------------------------------------------------- */
 @media only screen and (max-width: 1024px) {
   .content-intro {
-    
   }
   .content-intro [class*='col-'] {
     width: 100% !important;
@@ -1308,7 +1306,6 @@ h1.intro-header::before {
 @media only screen and (max-width: 650px) {
   .about-features {
     max-width: 600px;
-    
   }
   .about-features .feature {
     width: 100% !important;
@@ -1323,7 +1320,6 @@ h1.intro-header::before {
 }
 @media only screen and (max-width: 400px) {
   .about-how-content {
-    
   }
   .about-how-content::before {
     display: none;
@@ -1343,6 +1339,14 @@ h1.intro-header::before {
  *  12. side bar
  *
  * ------------------------------------------------------------------- */
+
+ .side-events {
+   display: none;
+
+   @include breakpoint('md') {
+     display: block;
+   }
+ }
 
 .side-bar {
   background-color: #690000;
@@ -1374,13 +1378,13 @@ h1.intro-header::before {
 }
 
 .side-bar a:hover,
-.side-bar a[aria-current="page"] {
-  border-color: rgba(0,0,0,.3);
-  box-shadow: 0px -4px 0px rgba(255,255,255,.3) inset;
+.side-bar a[aria-current='page'] {
+  border-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0px -4px 0px rgba(255, 255, 255, 0.3) inset;
 }
 
-.side-bar a[aria-current="page"] {
-  box-shadow: 0px -4px 0px rgba(255,255,255,.8) inset;
+.side-bar a[aria-current='page'] {
+  box-shadow: 0px -4px 0px rgba(255, 255, 255, 0.8) inset;
 }
 
 .side-bar ul ul {
@@ -1409,10 +1413,10 @@ h1.intro-header::before {
   height: 60px;
   width: 60px;
   line-height: 60px;
-  
+
   background: black;
   color: rgba(255, 255, 255, 0.5);
-  
+
   text-transform: uppercase;
   border-radius: 5px;
   -webkit-transition: all 0.3s ease-in-out;
@@ -1427,4 +1431,3 @@ h1.intro-header::before {
 #go-top a:focus {
   color: #ffffff;
 }
-

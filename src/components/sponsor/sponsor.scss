@@ -2,7 +2,6 @@
   color: #fff;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  ;
   background: radial-gradient(
       circle closest-corner at center 125px,
       #222,
@@ -72,16 +71,23 @@
 }
 
 .supporter__list {
-  display: flex;
-  justify-content: center;
+  @include breakpoint('md') {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .supporter__list li {
-  flex-wrap: wrap;
-  justify-content: space-around;
   list-style: none;
   color: #000;
   padding: 0 1rem;
+  width: 100%;
+
+  @include breakpoint('md') {
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 }
 
 .supporter__list li a {

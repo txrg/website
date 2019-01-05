@@ -20,7 +20,9 @@ export default ({ page }) => (
         </div>
         <div className="feature__content">
           <h4 className="feature__title">{page.title}</h4>
-          <p className="feature__description">{page.featureDescription.childMarkdownRemark.rawMarkdownBody}</p>
+          <p className="feature__description">
+            {page.featureDescription.childMarkdownRemark.rawMarkdownBody}
+          </p>
         </div>
       </Link>
     </div>

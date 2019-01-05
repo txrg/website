@@ -21,7 +21,6 @@ class RootIndex extends React.Component {
           <div className="home-content">
             <div className="row contents">
               <div className="home-content-left">
-               
                 <h1>
                   This is <br />
                   roller <br />
@@ -35,9 +34,7 @@ class RootIndex extends React.Component {
                     <span className="icon-calendar" aria-hidden="true" />
                     Buy Tickets
                   </a>
-                  <Link
-                    to="/donate"
-                    className="smoothscroll button stroke">
+                  <Link to="/donate" className="smoothscroll button stroke">
                     <span className="icon-dollar" aria-hidden="true" />
                     Donate
                   </Link>

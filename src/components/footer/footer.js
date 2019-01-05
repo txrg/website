@@ -28,9 +28,24 @@ class Footer extends React.Component {
                 <div className="row">
                   <div className="col-four md-1-3 tab-full footer-info">
                     <h4>Texas Rollergirls</h4>
-                    <a href="https://www.wftda.com"><img src={wftda} alt="WFTDA" className="wftda-logo" rel="noopener noreferrer" target="_blank" /></a>
+                    <a href="https://www.wftda.com">
+                      <img
+                        src={wftda}
+                        alt="WFTDA"
+                        className="wftda-logo"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      />
+                    </a>
                     <p>
-                      Texas Rollergirls are proud to be founding members of the <a href="https://www.wftda.com" rel="noopener noreferrer" target="_blank">Women's Flat Track Derby Association (WFTDA)</a>.
+                      Texas Rollergirls are proud to be founding members of the{' '}
+                      <a
+                        href="https://www.wftda.com"
+                        rel="noopener noreferrer"
+                        target="_blank">
+                        Women's Flat Track Derby Association (WFTDA)
+                      </a>
+                      .
                     </p>
 
                     <ul className="footer-social-list">
@@ -79,7 +94,9 @@ class Footer extends React.Component {
                         <Link to="/blog">Blog</Link>
                       </li>
                       <li>
-                        <a href="https://squareup.com/market/texasrollergirls">Shop</a>
+                        <a href="https://squareup.com/market/texasrollergirls">
+                          Shop
+                        </a>
                       </li>
                     </ul>
                   </div>
@@ -91,7 +108,8 @@ class Footer extends React.Component {
                   <div className="col-twelve">
                     <div className="copyright">
                       <span>
-                        © Copyright Texas Rollergirls {currentYear}. <Link to="/privacy-policy/">Privacy Policy</Link>
+                        © Copyright Texas Rollergirls {currentYear}.{' '}
+                        <Link to="/privacy-policy/">Privacy Policy</Link>
                         <br />
                         All photos on this web site are © 2009 - {
                           currentYear
