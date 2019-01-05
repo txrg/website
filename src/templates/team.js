@@ -86,7 +86,7 @@ export const teamQuery = graphql`
           type
           details
           photo {
-            sizes(maxWidth: 235) {
+            sizes(maxWidth: 400, maxHeight: 400) {
               ...GatsbyContentfulSizes
             }
           }
