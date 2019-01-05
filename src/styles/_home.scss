@@ -32,15 +32,6 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000', GradientType=1);
   /* IE6-9 */
 }
-.home .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.2;
-  background-color: #000000;
-}
 .content-home {
   padding-top: 8rem;
 }
@@ -140,7 +131,7 @@
 .home-social-list li a:hover,
 .home-social-list li a:focus,
 .home-social-list li a:active {
-  color: #690000;
+  color: #620e03;
 }
 /* scroll down */
 .home-scrolldown {
@@ -159,7 +150,7 @@
 }
 .home-scrolldown a:hover,
 .home-scrolldown a:focus {
-  color: #690000 !important;
+  color: #620e03 !important;
 }
 html[data-useragent*='MSIE 10.0'] .home-scrolldown,
 .oldie .home-scrolldown {
@@ -341,7 +332,7 @@ html[data-useragent*='MSIE 10.0'] .home-scrolldown,
 }
 @media only screen and (max-width: 500px) {
   .home-content-left {
-    padding: 10rem 0 300px;
+    padding: 10rem 0 250px;
   }
   .home-content-left .button.stroke {
     margin: 0 0 1.2rem 0;

@@ -18,7 +18,6 @@ class RootIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <section className="home">
-          <div className="overlay" />
           <div className="home-content">
             <div className="row contents">
               <img src={skaters} alt="Texas Rollergirls" className="homepage-skaters" />
@@ -31,10 +30,10 @@ class RootIndex extends React.Component {
 
                 <div className="buttons">
                   <a
-                    href="https://www.brownpapertickets.com/event/3233212"
+                    href="/events/tickets"
                     className="smoothscroll button stroke">
                     <span className="icon-calendar" aria-hidden="true" />
-                    Buy Tickets
+                    Tickets
                   </a>
                   <Link to="/donate" className="smoothscroll button stroke">
                     <span className="icon-dollar" aria-hidden="true" />

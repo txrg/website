@@ -38,10 +38,10 @@ class Header extends React.Component {
             </ul>
 
             <a
-              href="https://www.brownpapertickets.com/event/3233212"
+              href="/events/tickets"
               title="Buy"
               className="button button-primary cta">
-              Buy Tickets
+              Tickets
             </a>
           </nav>
 

@@ -95,7 +95,7 @@ body {
 
 a,
 a:visited {
-  color: #690000;
+  color: #620e03;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -116,7 +116,7 @@ a:visited {
 
 a:hover,
 a:focus {
-  color: #690000;
+  color: #620e03;
 }
 
 /* ===================================================================
@@ -403,7 +403,7 @@ ul.disc li::before {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #690000;
+  background: #620e03;
   position: absolute;
   left: -17px;
   top: 11px;
@@ -412,7 +412,7 @@ ul.disc li::before {
 
 dt {
   margin: 0;
-  color: #690000;
+  color: #620e03;
 }
 
 dd {
@@ -429,7 +429,7 @@ a.button {
   box-shadow: 0 0 0 !important;
 
   &:hover {
-    border-color: #690000;
+    border-color: #620e03;
   }
 }
 
@@ -584,7 +584,7 @@ td:last-child {
   right: 100%;
   height: 100%;
   width: 100%;
-  background: #690000;
+  background: #620e03;
 }
 
 .pace.pace-inactive {
@@ -838,8 +838,8 @@ button.button-primary,
 input[type='submit'].button-primary,
 input[type='reset'].button-primary,
 input[type='button'].button-primary {
-  background-color: #690000;
-  border-color: #690000;
+  background-color: #620e03;
+  border-color: #620e03;
   color: #ffffff;
 }
 
@@ -853,8 +853,8 @@ button.button-primary:focus,
 input[type='submit'].button-primary:focus,
 input[type='reset'].button-primary:focus,
 input[type='button'].button-primary:focus {
-  background: #690000;
-  border-color: #690000;
+  background: #620e03;
+  border-color: #620e03;
 }
 
 button.full-width,
@@ -883,8 +883,8 @@ button.stroke,
 
 button.stroke:hover,
 .button.stroke:hover {
-  border: 0.3rem solid #690000;
-  color: #690000;
+  border: 0.3rem solid #620e03;
+  color: #620e03;
 }
 
 button.pill,
@@ -1082,7 +1082,7 @@ input::-moz-focus-inner {
 }
 
 .stats-tabs li a:hover {
-  color: #690000;
+  color: #620e03;
 }
 
 .stats-tabs li a em {
@@ -1112,7 +1112,7 @@ h1.intro-header::before {
   content: '';
   height: 2px;
   width: 70px;
-  background-color: #690000;
+  background-color: #620e03;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -1177,7 +1177,7 @@ h1.intro-header::before {
   display: inline-block;
 }
 .about-features .feature .icon i {
-  color: #690000;
+  color: #620e03;
   font-size: 4.8rem;
 }
 .about-features .feature h3 {
@@ -1246,7 +1246,7 @@ h1.intro-header::before {
   line-height: 54px;
 
   border-radius: 50%;
-  background-color: #690000;
+  background-color: #620e03;
   box-shadow: 0 0 0 15px #ffffff;
   z-index: 500;
   position: absolute;
@@ -1361,7 +1361,7 @@ h1.intro-header::before {
  }
 
 .side-bar {
-  background-color: #690000;
+  background-color: #620e03;
   background-image: url('../images/splatter.jpg');
   background-size: 60%;
   background-repeat: repeat-x;
