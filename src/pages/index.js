@@ -31,12 +31,11 @@ class RootIndex extends React.Component {
                 </h1>
 
                 <div className="buttons">
-                  <a
-                    href="/events/tickets"
+                  <Link to="/events/tickets"
                     className="smoothscroll button stroke">
                     <span className="icon-calendar" aria-hidden="true" />
                     Tickets
-                  </a>
+                  </Link>
                   <Link to="/donate" className="smoothscroll button stroke">
                     <span className="icon-dollar" aria-hidden="true" />
                     Donate
