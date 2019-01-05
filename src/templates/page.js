@@ -41,9 +41,9 @@ class PageTemplate extends React.Component {
         <li>
           <Link to="/who-we-are/founders">Founders</Link>
         </li>
-        <li>
+        {/* hide for now until we add<li>
           <Link to="/who-we-are/retired">Retired Skaters</Link>
-        </li>
+        </li>*/}
         <li>
           <Link to="/who-we-are/officials">Officials</Link>
         </li>
