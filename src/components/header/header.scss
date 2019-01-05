@@ -57,11 +57,14 @@
 }
 
 .header-logo span {
-  display: none;
-  padding-top: 0.75rem;
-
+  font-size: 16px;
+  white-space: nowrap;
+  padding-right: 20px;
+  padding-top: 15px;
+  
   @include breakpoint('md') {
     display: block;
+    padding-top: 0.75rem;
   }
 }
 

@@ -18,6 +18,8 @@ class RootIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <section className="home">
+          <div className="overlay" />
+
           <div className="home-content">
             <div className="row contents">
               <img src={skaters} alt="Texas Rollergirls" className="homepage-skaters" />
