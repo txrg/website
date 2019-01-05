@@ -37,7 +37,7 @@ class Header extends React.Component {
               </li>
             </ul>
 
-            <Link to=/events/tickets"
+            <Link to="/events/tickets"
               className="button button-primary cta">
               Tickets
             </Link>
