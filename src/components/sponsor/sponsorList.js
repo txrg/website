@@ -53,7 +53,7 @@ class SponsorList extends React.Component {
                           <>
                             {node.type === 'supporter' ? (
                               <li className="sponsor__item" key={node.id}>
-                                <a href="{node.link}">{node.name}</a>
+                                <a href={node.link}>{node.name}</a>
                               </li>
                             ) : null}
                           </>
