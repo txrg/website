@@ -45,6 +45,7 @@ footer h4::before {
 footer ul {
   list-style: none;
   margin: 0;
+  margin-bottom: 2rem;
 }
 footer ul li {
   padding-left: 0;
@@ -188,7 +189,6 @@ footer ul li {
   .footer-main ul.list-links {
     width: 80%;
     display: block;
-    margin-left: auto;
     margin-right: auto;
   }
   .footer-main ul.list-links li a {
