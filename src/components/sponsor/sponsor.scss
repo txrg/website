@@ -50,11 +50,7 @@
   width: 50%;
 
   @include breakpoint('sm') {
-    width: 33.33%;
-  }
-
-  @include breakpoint('md') {
-    width: 16.666%;
+    width: 25%;
   }
 
   &:hover {

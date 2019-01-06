@@ -117,15 +117,6 @@ class Footer extends React.Component {
                         the respective photographers.
                       </span>
                     </div>
-
-                    <div id="go-top">
-                      <a
-                        className="smoothscroll"
-                        title="Back to Top"
-                        href="#top">
-                        <i className="icon-arrow-up" />
-                      </a>
-                    </div>
                   </div>
                 </div>
               </div>
