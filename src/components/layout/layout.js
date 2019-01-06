@@ -8,6 +8,10 @@ import favicon32 from '../../images/favicon-32.png';
 import '../../styles/index.scss';
 
 class Template extends React.Component {
+  menuHideClick = () => {
+    document.body.classList.remove('open');
+  };
+
   render() {
     const { children } = this.props;
 
@@ -43,9 +47,11 @@ class Template extends React.Component {
               <html lang="en" />
             </Helmet>
             <Header />
-            {children}
-            <SponsorList />
-            <Footer />
+            <div onClick={() => this.menuHideClick()}>
+              {children}
+              <SponsorList />
+              <Footer />
+            </div>
           </>
         )}
       />

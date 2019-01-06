@@ -3,8 +3,12 @@ import { Link } from 'gatsby';
 import runningGirl from '../../images/runninggirl-white.png';
 
 class Header extends React.Component {
-  menuClick = () => {
+  menuToggleClick = () => {
     document.body.classList.toggle('open');
+  };
+
+  menuHideClick = () => {
+    document.body.classList.remove('open');
   };
 
   render() {
@@ -19,7 +23,7 @@ class Header extends React.Component {
           </div>
 
           <nav className="header-nav-wrap">
-            <ul className="header-main-nav" onClick={() => this.menuClick()}>
+            <ul className="header-main-nav" onClick={() => this.menuHideClick()}>
               <li>
                 <Link to="/who-we-are/">Who we are</Link>
               </li>
@@ -45,7 +49,7 @@ class Header extends React.Component {
 
           <button
             className="header-menu-toggle"
-            onClick={() => this.menuClick()}>
+            onClick={() => this.menuToggleClick()}>
             <span>Menu</span>
           </button>
         </div>
