@@ -13,20 +13,20 @@ footer {
   padding-bottom: 4.2rem;
   font-size: 1.5rem;
   line-height: 2.7rem;
-  color: #a3a3a3;
-  background: #141515;
+  color: $text-inverse-02;
+  background: $ui-dark;
 }
 footer a,
 footer a:visited {
-  color: #a3a3a3;
+  color: $text-inverse-02;
   text-decoration: underline;
 }
 footer a:hover,
 footer a:focus {
-  color: white;
+  color: $text-inverse;
 }
 footer h4 {
-  color: white;
+  color: $text-inverse;
   font-size: 1.5rem;
   padding-bottom: 2.4rem;
   margin-bottom: 2.4rem;
@@ -37,7 +37,7 @@ footer h4::before {
   display: block;
   width: 120px;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba($ui-light, 0.05);
   position: absolute;
   left: 0;
   bottom: 0;
@@ -66,61 +66,6 @@ footer ul li {
 .footer-site-links .list-links {
   margin-bottom: 3rem;
 }
-.footer-subscribe .subscribe-form {
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
-.footer-subscribe #mc-form {
-  width: 100%;
-}
-.footer-subscribe #mc-form input[type='email'] {
-  width: 100%;
-  height: 5.4rem;
-  padding: 1.2rem 100px 1.2rem 60px;
-  /*background: url(../images/email-icon.png) 20px center no-repeat,
-    rgba(0, 0, 0, 0.1);*/
-  background-size: 24px 16px, auto;
-  margin-bottom: 1.8rem;
-  color: rgba(255, 255, 255, 0.5);
-}
-.footer-subscribe #mc-form input[type='email']:focus {
-  color: #ffffff;
-}
-.footer-subscribe #mc-form input[type='submit'] {
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: #ffffff;
-  background: $ui-01;
-  border-color: $ui-01;
-  border-radius: 0 0.5rem 0.5rem 0;
-  padding: 0 15px;
-}
-.footer-subscribe #mc-form label {
-  color: #ffffff;
-  font-family: 'montserrat-regular', sans-serif;
-  font-size: 1.3rem;
-  padding: 0 2rem;
-}
-.footer-subscribe #mc-form label i {
-  padding-right: 6px;
-}
-.footer-subscribe #mc-form ::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.2);
-}
-.footer-subscribe #mc-form :-moz-placeholder {
-  color: rgba(255, 255, 255, 0.2); /* Firefox 18- */
-}
-.footer-subscribe #mc-form ::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.2); /* Firefox 19+ */
-}
-.footer-subscribe #mc-form :-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.2);
-}
-.footer-subscribe #mc-form .placeholder {
-  color: rgba(255, 255, 255, 0.2) !important;
-}
 .footer-bottom {
   margin-top: 6.6rem;
   text-align: center;
@@ -135,7 +80,7 @@ footer ul li {
   content: '|';
   display: inline-block;
   padding: 0 1rem 0 1.2rem;
-  color: rgba(255, 255, 255, 0.1);
+  color: rgba($ui-light, 0.1);
 }
 .footer-bottom .copyright span:last-child::after {
   display: none;
@@ -193,11 +138,11 @@ footer ul li {
   }
   .footer-main ul.list-links li a {
     display: block;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba($ui-light, 0.03);
     padding: 0.6rem 0;
   }
   .footer-main ul.list-links li:first-child a {
-    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    border-top: 1px solid rgba($ui-light, 0.03);
   }
   .footer-bottom {
     padding-bottom: 0.6rem;

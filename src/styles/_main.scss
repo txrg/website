@@ -65,14 +65,14 @@ body {
 }
 
 body {
-  background-color: #000;
+  background-color: $text-02;
   background-image: url('../images/splatter.jpg');
   background-size: 300%;
   background-repeat: no-repeat;
   font-family: 'muli-regular', sans-serif;
   font-size: 1.6rem;
   line-height: 1.875;
-  color: #595959;
+  color: $text-01;
   margin: 0;
   padding: 0;
 
@@ -105,18 +105,18 @@ a:visited {
 .content-home a,
 .event a {
   font-weight: bold;
-  border-bottom: 1px solid #eee;
-  box-shadow: 0px -4px 0px #eee inset;
+  border-bottom: 1px solid $ui-accent-02;
+  box-shadow: 0px -4px 0px $ui-accent-02 inset;
 
   &:hover {
-    border-color: #ccc;
-    box-shadow: 0px -4px 0px #ccc inset;
+    border-color: $ui-accent;
+    box-shadow: 0px -4px 0px $ui-accent inset;
   }
 }
 
 a:hover,
 a:focus {
-  color: $ui-01;
+  color: $active;
 }
 
 /* ===================================================================
@@ -137,7 +137,7 @@ h6,
 .h05,
 .h06 {
   font-family: 'montserrat-regular', sans-serif;
-  color: #151515;
+  color: $text-02;
   font-style: normal;
   text-rendering: optimizeLegibility;
   margin-bottom: 2.4rem;
@@ -287,7 +287,7 @@ blockquote cite:before {
 
 blockquote cite a,
 blockquote cite a:visited {
-  color: #838383;
+  color: $text-01;
   border: none;
 }
 
@@ -296,7 +296,7 @@ abbr {
   font-variant: small-caps;
   text-transform: lowercase;
   letter-spacing: 0.05rem;
-  color: #838383;
+  color: $text-01;
 }
 
 var,
@@ -347,7 +347,7 @@ dfn[title] {
 
 mark {
   background: #fff49b;
-  color: #000;
+  color: $text-02;
 }
 
 hr {
@@ -518,7 +518,7 @@ td {
 }
 
 th {
-  color: #151515;
+  color: $text-02;
   font-family: 'montserrat-bold', sans-serif;
 }
 
@@ -559,7 +559,7 @@ input[type='button'] {
   line-height: calc(5.4rem - 0.6rem);
   padding: 0 3rem;
   margin: 0 0.3rem 1.2rem 0;
-  color: #222222;
+  color: $text-02;
   text-decoration: none;
   cursor: pointer;
 
@@ -567,8 +567,8 @@ input[type='button'] {
   border-radius: 0.5rem;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: #c5c5c5;
-  border: 0.3rem solid #c5c5c5;
+  background-color: $ui-light-02;
+  border: 0.3rem solid $ui-light-02;
 }
 
 .button:hover,
@@ -581,9 +581,9 @@ button:focus,
 input[type='submit']:focus,
 input[type='reset']:focus,
 input[type='button']:focus {
-  background-color: #b8b8b8;
-  border-color: #b8b8b8;
-  color: #000000;
+  background-color: $ui-light-02;
+  border-color: $ui-light-02;
+  color: $text-02;
   outline: 0;
 }
 
@@ -594,7 +594,7 @@ input[type='reset'].button-primary,
 input[type='button'].button-primary {
   background-color: $ui-01;
   border-color: $ui-01;
-  color: #ffffff;
+  color: $text-inverse;
 }
 
 .button.button-primary:hover,
@@ -607,8 +607,8 @@ button.button-primary:focus,
 input[type='submit'].button-primary:focus,
 input[type='reset'].button-primary:focus,
 input[type='button'].button-primary:focus {
-  background: $ui-01;
-  border-color: $ui-01;
+  background: $active;
+  border-color: $active;
 }
 
 button.full-width,
@@ -659,96 +659,6 @@ input::-moz-focus-inner {
  *
  * ------------------------------------------------------------------- */
 
-/* ------------------------------------------------------------------- 
- * alert box - (_alert-box.scss)
- * ------------------------------------------------------------------- */
-
-.alert-box {
-  padding: 2.1rem 4rem 2.1rem 3rem;
-  position: relative;
-  margin-bottom: 3rem;
-  border-radius: 3px;
-  font-family: 'montserrat-regular', sans-serif;
-  font-size: 1.5rem;
-}
-
-.alert-box .close {
-  position: absolute;
-  right: 1.8rem;
-  top: 1.8rem;
-  cursor: pointer;
-}
-
-.ss-error {
-  background-color: #ffd1d2;
-  color: #e65153;
-}
-
-.ss-success {
-  background-color: #c8e675;
-  color: #758c36;
-}
-
-.ss-info {
-  background-color: #d7ecfb;
-  color: #4a95cc;
-}
-
-.ss-notice {
-  background-color: #fff099;
-  color: #bba31b;
-}
-
-/* line definition style 
- * ----------------------------------------------- */
-
-.lining dt,
-.lining dd {
-  display: inline;
-  margin: 0;
-}
-
-.lining dt + dt:before,
-.lining dd + dt:before {
-  content: '\A';
-  white-space: pre;
-}
-
-.lining dd + dd:before {
-  content: ', ';
-}
-
-.lining dd + dd:before {
-  content: ', ';
-}
-
-.lining dd:before {
-  content: ': ';
-  margin-left: -0.2em;
-}
-
-/* dictionary definition style 
- * ----------------------------------------------- */
-
-.dictionary-style dt {
-  display: inline;
-  counter-reset: definitions;
-}
-
-.dictionary-style dt + dt:before {
-  content: ', ';
-  margin-left: -0.2em;
-}
-
-.dictionary-style dd {
-  display: block;
-  counter-increment: definitions;
-}
-
-.dictionary-style dd:before {
-  content: counter(definitions, decimal) '. ';
-}
-
 /** 
  * Pull Quotes
  * -----------
@@ -796,56 +706,6 @@ input::-moz-focus-inner {
   content: none;
 }
 
-/** 
- * Stats Tab
- * ---------
- * markup:
- *
- * <ul className="stats-tabs">
- *		<li><a href="#">[value]<em>[name]</em></a></li>
- *	</ul>
- *
- * Extend this object into your markup.
- *
- * --------------------------------------------------------------------- */
-
-.stats-tabs {
-  padding: 0;
-  margin: 3rem 0;
-}
-
-.stats-tabs li {
-  display: inline-block;
-  margin: 0 1.5rem 3rem 0;
-  padding: 0 1.5rem 0 0;
-  border-right: 1px solid #ccc;
-}
-
-.stats-tabs li:last-child {
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
-.stats-tabs li a {
-  display: inline-block;
-  font-size: 2.5rem;
-  font-family: 'montserrat-semibold', sans-serif;
-  border: none;
-  color: #151515;
-}
-
-.stats-tabs li a:hover {
-  color: $ui-01;
-}
-
-.stats-tabs li a em {
-  display: block;
-  margin: 0.6rem 0 0 0;
-  font-size: 1.4rem;
-  font-family: 'montserrat-regular', sans-serif;
-  color: #909090;
-}
 
 /* ===================================================================
  *  08. common and reusable theme styles 
@@ -856,7 +716,7 @@ h1.intro-header {
   font-family: 'montserrat-regular', sans-serif;
   font-size: 3.4rem;
   line-height: 1.324;
-  color: #151515;
+  color: $text-02;
   position: relative;
   padding-bottom: 3.6rem;
 }
@@ -930,7 +790,7 @@ h1.intro-header::before {
 .about-features .feature h3 {
   font-family: 'montserrat-regular', sans-serif;
   font-size: 1.9rem;
-  color: #151515;
+  color: $text-02;
   margin-top: 0.75rem;
 }
 .about-how {
@@ -987,7 +847,7 @@ h1.intro-header::before {
   font-family: 'muli-bold';
   font-size: 2rem;
   content: attr(data-item);
-  color: #ffffff;
+  color: $text-inverse;
   height: 54px;
   width: 54px;
   line-height: 54px;
@@ -1125,7 +985,7 @@ h1.intro-header::before {
 
 .side-bar a,
 .side-bar span {
-  color: white;
+  color: $text-inverse;
   display: block;
   padding: 0.25rem 0;
   text-transform: uppercase;
@@ -1139,11 +999,11 @@ h1.intro-header::before {
 .side-bar a:hover,
 .side-bar a[aria-current='page'] {
   border-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 0px -4px 0px rgba(255, 255, 255, 0.3) inset;
+  box-shadow: 0px -4px 0px rgba($ui-light, 0.3) inset;
 }
 
 .side-bar a[aria-current='page'] {
-  box-shadow: 0px -4px 0px rgba(255, 255, 255, 0.8) inset;
+  box-shadow: 0px -4px 0px rgba($ui-light, 0.8) inset;
 }
 
 .side-bar ul ul {
@@ -1153,42 +1013,3 @@ h1.intro-header::before {
 .side-bar__teams {
   margin-top: 24px;
 }
-
-/* ------------------------------------------------------------------- 
- * go to top
- * ------------------------------------------------------------------- */
-#go-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 600;
-  display: none;
-}
-#go-top a,
-#go-top a:visited {
-  text-decoration: none;
-  border: 0 none;
-  display: block;
-  height: 60px;
-  width: 60px;
-  line-height: 60px;
-
-  background: black;
-  color: rgba(255, 255, 255, 0.5);
-
-  text-transform: uppercase;
-  border-radius: 5px;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-#go-top a i,
-#go-top a:visited i {
-  font-size: 18px;
-  line-height: inherit;
-}
-#go-top a:hover,
-#go-top a:focus {
-  color: #ffffff;
-}
-
-/* iframe shop page */

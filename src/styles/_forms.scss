@@ -96,7 +96,7 @@ input[type='url']:focus,
 input[type='password']:focus,
 textarea:focus,
 select:focus {
-  color: #000000;
+  color: $text-02;
 }
 
 label,
@@ -104,7 +104,7 @@ legend {
   font-family: 'montserrat-bold', sans-serif;
   font-size: 1.4rem;
   margin-bottom: 0.6rem;
-  color: #151515;
+  color: $text-02;
   display: block;
 }
 

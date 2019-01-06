@@ -18,19 +18,8 @@
   width: 100%;
   height: 100%;
   opacity: 0.2;
-  background: -moz-linear-gradient(left, black 0%, black 20%, transparent 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    left,
-    black 0%,
-    black 20%,
-    transparent 100%
-  );
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, black 0%, black 20%, transparent 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000', GradientType=1);
-  /* IE6-9 */
+  background: linear-gradient(to right, $ui-dark 0%, $ui-dark 20%, transparent 100%);
 }
 .home .overlay {
   position: absolute;
@@ -39,7 +28,7 @@
   width: 100%;
   height: 100%;
   opacity: 0.2;
-  background-color: #000000;
+  background-color: $text-02;
 }
 .content-home {
   padding-top: 8rem;
@@ -60,7 +49,7 @@
   width: 50%;
 }
 .home-content-left h3 {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba($ui-light, 0.8);
   font-size: 1.6rem;
   line-height: 1.5;
   text-transform: uppercase;
@@ -72,12 +61,12 @@
   font-size: 5.2rem;
   letter-spacing: -0.05rem;
   line-height: 1.269;
-  color: #ffffff;
+  color: $text-inverse;
   margin-bottom: 9rem;
 }
 .home-content-left .button.stroke {
-  color: #ffffff !important;
-  border-color: #ffffff;
+  color: $text-inverse !important;
+  border-color: $text-inverse;
   margin: 0 0.6rem 1.2rem;
   padding: 0 2.2rem;
   min-width: 188px;
@@ -89,8 +78,8 @@
 }
 .home-content-left .button.stroke:hover,
 .home-content-left .button.stroke:focus {
-  background-color: white !important;
-  color: #000000 !important;
+  background-color: $ui-light !important;
+  color: $text-02 !important;
 }
 .home-image-right {
   display: block;
@@ -125,7 +114,7 @@
   content: '';
   width: 2px;
   height: 42px;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba($ui-light, 0.15);
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 12px;
@@ -135,107 +124,12 @@
 }
 .home-social-list li a,
 .home-social-list li a:visited {
-  color: #ffffff;
+  color: $text-inverse;
 }
 .home-social-list li a:hover,
 .home-social-list li a:focus,
 .home-social-list li a:active {
-  color: #690000;
-}
-/* scroll down */
-.home-scrolldown {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-  -webkit-transform-origin: right top;
-  -ms-transform-origin: right top;
-  transform-origin: right top;
-}
-.home-scrolldown i {
-  padding-left: 9px;
-}
-.home-scrolldown a:hover,
-.home-scrolldown a:focus {
-  color: #690000 !important;
-}
-html[data-useragent*='MSIE 10.0'] .home-scrolldown,
-.oldie .home-scrolldown {
-  display: none;
-}
-.scroll-icon {
-  display: inline-block;
-  font-family: 'montserrat-medium', sans-serif;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.3rem;
-  color: #ffffff !important;
-  background: transparent;
-  position: relative;
-  top: 36px;
-  right: 42px;
-  -webkit-animation: animate-it 3s ease infinite;
-  animation: animate-it 3s ease infinite;
-}
-.scroll-icon i {
-  font-size: 2.4rem;
-  position: relative;
-  bottom: -6px;
-}
-/* vertical animation */
-@-webkit-keyframes animate-it {
-  0%,
-  60%,
-  80%,
-  100% {
-    -webkit-transform: translateX(0);
-  }
-  0%,
-  60%,
-  80%,
-  100% {
-    transform: translateX(0);
-  }
-  20% {
-    -webkit-transform: translateX(-5px);
-  }
-  20% {
-    transform: translateX(-5px);
-  }
-  40% {
-    -webkit-transform: translateX(20px);
-  }
-  40% {
-    transform: translateX(20px);
-  }
-}
-@keyframes animate-it {
-  0%,
-  60%,
-  80%,
-  100% {
-    -webkit-transform: translateX(0);
-  }
-  0%,
-  60%,
-  80%,
-  100% {
-    transform: translateX(0);
-  }
-  20% {
-    -webkit-transform: translateX(-5px);
-  }
-  20% {
-    transform: translateX(-5px);
-  }
-  40% {
-    -webkit-transform: translateX(20px);
-  }
-  40% {
-    transform: translateX(20px);
-  }
+  color: $ui-01;
 }
 /* ------------------------------------------------------------------- 
  * responsive:

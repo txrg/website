@@ -1,5 +1,5 @@
 .sponsors {
-  color: #fff;
+  color: $text-inverse;
   padding-top: 8rem;
   padding-bottom: 8rem;
   background: radial-gradient(
@@ -20,17 +20,17 @@
 }
 
 .sponsors h1 {
-  color: #ffffff;
+  color: $text-inverse;
 }
 
 .sponsors h1::before {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba($ui-light, 0.2);
   left: 50%;
   transform: translateX(-50%);
 }
 
 .sponsor__types {
-  border: 24px solid #141515;
+  border: 24px solid $ui-dark;
   background: #fff;
 }
 
@@ -66,7 +66,7 @@
 .sponsors .sponsor__list li a {
   display: block;
   height: 100%;
-  background: white;
+  background: $ui-light;
   padding: 2rem;
 }
 
@@ -81,7 +81,7 @@
 
 .supporter__list li {
   list-style: none;
-  color: #000;
+  color: $text-02;
   padding: 0 1rem;
   width: 100%;
 
@@ -94,11 +94,11 @@
 
 .supporter__list li a {
   color: $ui-01;
-  box-shadow: 0px -4px 0px #eee inset;
+  box-shadow: 0px -4px 0px $ui-accent-02 inset;
   font-weight: bold;
   font-size: 18px;
 
   &:hover {
-    box-shadow: 0px -4px 0px #ccc inset;
+    box-shadow: 0px -4px 0px $ui-accent inset;
   }
 }
