@@ -6,7 +6,6 @@ import BlogPreview from '../components/blog-preview/blog-preview';
 import PagePreview from '../components/page-preview/page-preview';
 import Profile from '../components/profile-preview/profile-feature';
 import EventList from '../components/eventList/eventList';
-import logo from '../images/logo-white.png';
 import skaters from '../images/homepage.png';
 
 class RootIndex extends React.Component {

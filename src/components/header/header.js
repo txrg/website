@@ -33,7 +33,7 @@ class Header extends React.Component {
                 <Link to="/contact/">Contact</Link>
               </li>
               <li>
-                <a href="https://squareup.com/market/texasrollergirls">Shop</a>
+                <Link to="/shop/">Shop</Link>
               </li>
             </ul>
 
