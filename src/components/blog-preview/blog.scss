@@ -38,3 +38,29 @@ a .feature__title {
   font-size: 14px;
   padding-top: 1rem;
 }
+
+
+// Blog listing page
+
+.blog-list {
+  list-style: none;
+  margin: none;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.blog-list__item {
+  margin: 0
+}
+
+.blog-list .feature__description {
+  font-size: 18px;
+}
+
+.blog-list a .feature__title {
+  font-size: 30px;
+}
+
+.blog-list .feature__date {
+  font-size: 14px;
+}

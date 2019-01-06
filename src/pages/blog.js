@@ -1,8 +1,7 @@
 import React from 'react';
 import get from 'lodash/get';
 import Layout from '../components/layout/layout';
-import BlogPreview from '../components/blog-preview/blog-preview';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 class BlogIndex extends React.Component {
   render() {
@@ -12,17 +11,27 @@ class BlogIndex extends React.Component {
       <Layout location={this.props.location}>
         <main>
           <section className="content">
-            <div className="row about-features">
-              <h1 className="intro-header">Blog</h1>
-              <div className="features-list block-1-4 block-m-1-2 block-mob-full group">
+            <div className="row">
+              <h1 className="intro-header intro-header--full">Blog</h1>
+              <ul className="blog-list">
                 {posts.map(({ node }) => {
                   return (
                     <>
-                      <BlogPreview blog={node} key={node.id} />
+                      <li className="blog-list__item">
+                        <Link className="blog__header" to={`/blog/${node.slug}`}>
+                          <div className="feature__content">
+                            <h4 className="feature__title">{node.title}</h4>
+                            <p className="feature__date">{node.publishDate}</p>
+                            <p className="feature__description">
+                              {node.description.childMarkdownRemark.rawMarkdownBody}
+                            </p>
+                          </div>
+                        </Link>
+                      </li>
                     </>
                   );
                 })}
-              </div>
+              </ul>
             </div>
           </section>
         </main>
@@ -42,7 +51,7 @@ export const pageQuery = graphql`
           slug
           publishDate(formatString: "MMMM Do, YYYY")
           featureImage {
-            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: SCALE) {
+            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: CROP) {
               ...GatsbyContentfulFluid
             }
           }

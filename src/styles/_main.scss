@@ -718,6 +718,12 @@ h1.intro-header {
   color: $text-02;
   position: relative;
   padding-bottom: 3.6rem;
+  width: 100%;
+}
+
+h1.intro-header--full {
+  width: 60%;
+  margin: 0 auto;
 }
 
 h1.intro-header::before {
