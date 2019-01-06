@@ -95,7 +95,7 @@ body {
 
 a,
 a:visited {
-  color: #620e03;
+  color: $ui-01;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -116,7 +116,7 @@ a:visited {
 
 a:hover,
 a:focus {
-  color: #620e03;
+  color: $ui-01;
 }
 
 /* ===================================================================
@@ -403,7 +403,7 @@ ul.disc li::before {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #620e03;
+  background: $ui-01;
   position: absolute;
   left: -17px;
   top: 11px;
@@ -412,7 +412,7 @@ ul.disc li::before {
 
 dt {
   margin: 0;
-  color: #620e03;
+  color: $ui-01;
 }
 
 dd {
@@ -429,7 +429,7 @@ a.button {
   box-shadow: 0 0 0 !important;
 
   &:hover {
-    border-color: #620e03;
+    border-color: $ui-01;
   }
 }
 
@@ -541,252 +541,6 @@ td:last-child {
   -webkit-overflow-scrolling: touch;
 }
 
-/* ------------------------------------------------------------------- 
- * pace.js styles - center simple  - (_document-setup.scss)
- * ------------------------------------------------------------------- */
-
-.pace {
-  -webkit-pointer-events: none;
-  pointer-events: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-  z-index: 2000;
-  position: fixed;
-  margin: auto;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 5px;
-  width: 150px;
-  background: #dedede;
-  overflow: hidden;
-}
-
-.pace .pace-progress {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  max-width: 150px;
-  position: fixed;
-  z-index: 2000;
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 100%;
-  height: 100%;
-  width: 100%;
-  background: #620e03;
-}
-
-.pace.pace-inactive {
-  display: none;
-}
-
-.oldie .pace {
-  display: none;
-}
-
-/* ===================================================================
- *  04. preloader - (_preloader-blank.scss)
- *
- * ------------------------------------------------------------------- */
-
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #ffffff;
-  z-index: 800;
-  height: 100%;
-  width: 100%;
-}
-
-.no-js #preloader,
-.oldie #preloader {
-  display: none;
-}
-
-/* ===================================================================
- *  05. forms - (_forms.scss)
- *
- * ------------------------------------------------------------------- */
-
-fieldset {
-  border: none;
-}
-
-input[type='email'],
-input[type='number'],
-input[type='search'],
-input[type='text'],
-input[type='tel'],
-input[type='url'],
-input[type='password'],
-textarea,
-select {
-  display: block;
-  height: 6rem;
-  padding: 1.5rem 2rem;
-  border: 0;
-  outline: none;
-  color: #333333;
-  font-family: 'muli-regular', sans-serif;
-  font-size: 1.5rem;
-  line-height: 3rem;
-  max-width: 100%;
-  background: rgba(0, 0, 0, 0.1);
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  border-radius: 5px;
-}
-
-.ss-custom-select {
-  position: relative;
-  padding: 0;
-}
-
-.ss-custom-select select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  text-indent: 0.01px;
-  text-overflow: '';
-  margin: 0;
-  line-height: 3rem;
-  vertical-align: middle;
-}
-
-.ss-custom-select select option {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.ss-custom-select select::-ms-expand {
-  display: none;
-}
-
-.ss-custom-select::after {
-  content: '\f0d7';
-  font-family: 'FontAwesome';
-  position: absolute;
-  top: 50%;
-  right: 1.5rem;
-  margin-top: -10px;
-  bottom: auto;
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
-  font-size: 18px;
-
-  pointer-events: none;
-  color: #252525;
-}
-
-/* IE9 and below */
-
-.oldie .ss-custom-select::after {
-  display: none;
-}
-
-textarea {
-  min-height: 25rem;
-}
-
-input[type='email']:focus,
-input[type='number']:focus,
-input[type='search']:focus,
-input[type='text']:focus,
-input[type='tel']:focus,
-input[type='url']:focus,
-input[type='password']:focus,
-textarea:focus,
-select:focus {
-  color: #000000;
-}
-
-label,
-legend {
-  font-family: 'montserrat-bold', sans-serif;
-  font-size: 1.4rem;
-  margin-bottom: 0.6rem;
-  color: #151515;
-  display: block;
-}
-
-input[type='checkbox'],
-input[type='radio'] {
-  display: inline;
-}
-
-label > .label-text {
-  display: inline-block;
-  margin-left: 1rem;
-  font-family: 'montserrat-regular', sans-serif;
-  line-height: inherit;
-}
-
-label > input[type='checkbox'],
-label > input[type='radio'] {
-  margin: 0;
-  position: relative;
-  top: 0.15rem;
-}
-
-/* ------------------------------------------------------------------- 
- * Style Placeholder Text - (_forms.scss)
- * ------------------------------------------------------------------- */
-
-::-webkit-input-placeholder {
-  color: #838383;
-}
-
-:-moz-placeholder {
-  color: #838383;
-  /* Firefox 18- */
-}
-
-::-moz-placeholder {
-  color: #838383;
-  /* Firefox 19+ */
-}
-
-:-ms-input-placeholder {
-  color: #838383;
-}
-
-.placeholder {
-  color: #838383 !important;
-}
-
-/* ------------------------------------------------------------------- 
- * Change Autocomplete styles in Chrome - (_forms.scss)
- * ------------------------------------------------------------------- */
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus input:-webkit-autofill,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  border: none;
-  -webkit-text-fill-color: #57ca67;
-  transition: background-color 5000s ease-in-out 0s;
-}
 
 /* ===================================================================
  *  06. buttons - (_button-essentials.scss)
@@ -838,8 +592,8 @@ button.button-primary,
 input[type='submit'].button-primary,
 input[type='reset'].button-primary,
 input[type='button'].button-primary {
-  background-color: #620e03;
-  border-color: #620e03;
+  background-color: $ui-01;
+  border-color: $ui-01;
   color: #ffffff;
 }
 
@@ -853,8 +607,8 @@ button.button-primary:focus,
 input[type='submit'].button-primary:focus,
 input[type='reset'].button-primary:focus,
 input[type='button'].button-primary:focus {
-  background: #620e03;
-  border-color: #620e03;
+  background: $ui-01;
+  border-color: $ui-01;
 }
 
 button.full-width,
@@ -883,8 +637,8 @@ button.stroke,
 
 button.stroke:hover,
 .button.stroke:hover {
-  border: 0.3rem solid #620e03;
-  color: #620e03;
+  border: 0.3rem solid $ui-01;
+  color: $ui-01;
 }
 
 button.pill,
@@ -1082,7 +836,7 @@ input::-moz-focus-inner {
 }
 
 .stats-tabs li a:hover {
-  color: #620e03;
+  color: $ui-01;
 }
 
 .stats-tabs li a em {
@@ -1112,7 +866,7 @@ h1.intro-header::before {
   content: '';
   height: 2px;
   width: 70px;
-  background-color: #620e03;
+  background-color: $ui-01;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -1170,7 +924,7 @@ h1.intro-header::before {
   display: inline-block;
 }
 .about-features .feature .icon i {
-  color: #620e03;
+  color: $ui-01;
   font-size: 4.8rem;
 }
 .about-features .feature h3 {
@@ -1239,7 +993,7 @@ h1.intro-header::before {
   line-height: 54px;
 
   border-radius: 50%;
-  background-color: #620e03;
+  background-color: $ui-01;
   box-shadow: 0 0 0 15px #ffffff;
   z-index: 500;
   position: absolute;
@@ -1354,7 +1108,7 @@ h1.intro-header::before {
  }
 
 .side-bar {
-  background-color: #620e03;
+  background-color: $ui-01;
   background-image: url('../images/splatter.jpg');
   background-size: 60%;
   background-repeat: repeat-x;
