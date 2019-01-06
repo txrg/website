@@ -67,12 +67,13 @@
 .header-logo span {
   font-size: 16px;
   white-space: nowrap;
-  padding-right: 20px;
-  padding-top: 14px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
   
   @include breakpoint('md') {
-    display: block;
-    padding-top: 0.75rem;
+    font-size: 24px;
   }
 }
 
