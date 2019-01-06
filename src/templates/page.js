@@ -141,14 +141,16 @@ class PageTemplate extends React.Component {
                     </nav>
                   </aside>
                 ) : null}
-                <div className="side-events">
-                  <h2>2019 Season</h2>
-                  <EventList />
-                </div>
+                {page.title !== 'Events' ? (
+                  <div className="side-events">
+                    <h2>2019 Season</h2>
+                    <EventList />
+                  </div>
+                ) : null}
               </div>
               <div className="col-eight">
                 <h1 className="intro-header">{page.title}</h1>
-                {this.props.location.pathname === '/events1/' ? (
+                {this.props.location.pathname === '/events/' ? (
                   <>
                     <h2>2019 Season</h2>
                     <EventList />
