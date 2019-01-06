@@ -193,7 +193,7 @@ button.header-menu-toggle.is-clicked span::after {
 .header-nav-wrap .header-main-nav li {
   display: inline-block;
   padding-left: 0;
-  margin-right: 2.5rem;
+  margin-left: 2.rem;
 }
 
 .header-nav-wrap .header-main-nav li a {
@@ -246,12 +246,6 @@ button.header-menu-toggle.is-clicked span::after {
 @media only screen and (max-width: 768px) {
   .open .header-nav-wrap {
     display: block;
-  }
-
-  .header-logo a {
-    width: 88px;
-    height: 20px;
-    background-size: 88px 20px;
   }
   .header-nav-wrap {
     display: none;
