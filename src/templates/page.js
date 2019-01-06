@@ -61,7 +61,7 @@ class PageTemplate extends React.Component {
             </li>
             <li>
               <Link to="/who-we-are/honky-tonk-heartbreakers">
-                Honkey Tonk Heartbreakers
+                Honky Tonk Heartbreakers
               </Link>
             </li>
             <li>
