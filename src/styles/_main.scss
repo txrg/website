@@ -1438,30 +1438,3 @@ h1.intro-header::before {
 }
 
 /* iframe shop page */
-.content-shop {
-  background: #ffffff;
-  padding-top: 7rem;
-  padding-bottom: 8rem;
-  background-size: 70%;
-  background-repeat: repeat-x;
-}
-
-.iframe-shop--wrapper {
-  overflow: hidden;
-  padding-top: 56.25%;
-  position: relative;
-}
-
-.iframe-shop {
-  border: 0;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.shop + .sponsors,
-.shop + .sponsors + footer {
-  display: none;
-}
