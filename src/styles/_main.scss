@@ -71,28 +71,32 @@ body {
   word-wrap: break-word;
   -webkit-overflow-scrolling: touch;
   -webkit-text-size-adjust: none;
-  background-color: black;
-  background-image: url('../images/splatter.jpg');
-  background-size: 300%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   font-family: 'muli-regular', sans-serif;
   font-size: 1.6rem;
   line-height: 1.875;
   color: $text-01;
   margin: 0;
   padding: 0;
+  background-color: black;
+  background-image: url('../images/splatter.jpg');
+  background-size: 300%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0 -75px;
 
   @media only screen and (min-width: 500px) {
     background-size: 200%;
+    background-position: 0 -57px;
   }
 
   @media only screen and (min-width: 600px) {
     background-size: 150%;
+    background-position: 0 -65px;
   }
 
   @include breakpoint('md') {
     background-size: 100%;
+    background-position: 0 -75px;
   }
 }
 
@@ -778,14 +782,27 @@ h1.intro-header::before {
  *
  * ------------------------------------------------------------------- */
 .content {
-  background: #ffffff;
   padding-top: 12rem;
   padding-bottom: 8rem;
   overflow: hidden;
   background-image: url('../images/splatter-light.jpg');
-  background-size: 70%;
-  background-repeat: repeat-x;
+  background-color: $ui-light;
+  background-size: 300%;
+  background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: 0 0;
+
+  @media only screen and (min-width: 500px) {
+    background-size: 200%;
+  }
+
+  @media only screen and (min-width: 600px) {
+    background-size: 150%;
+  }
+
+  @include breakpoint('md') {
+    background-size: 100%;
+  }
 }
 
 .about-features .features-list {
