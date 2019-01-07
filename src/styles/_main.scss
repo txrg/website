@@ -722,8 +722,12 @@ h1.intro-header {
 }
 
 h1.intro-header--full {
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
+
+  @include breakpoint('lg') {
+    width: 60%;
+  }
 }
 
 h1.intro-header::before {

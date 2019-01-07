@@ -45,8 +45,12 @@ a .feature__title {
 .blog-list {
   list-style: none;
   margin: none;
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
+
+  @include breakpoint('lg') {
+    width: 60%;
+  }
 }
 
 .blog-list__item {
