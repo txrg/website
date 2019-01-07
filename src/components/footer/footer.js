@@ -94,6 +94,15 @@ class Footer extends React.Component {
                         <Link to="/blog">Blog</Link>
                       </li>
                       <li>
+                        <Link to="/whammys">The Whammys</Link>
+                      </li>
+                      <li>
+                        <Link to="/media">Media archive</Link>
+                      </li>
+                      <li>
+                        <Link to="/tulsa-fund">The tulsa fund</Link>
+                      </li>
+                      <li>
                         <a href="https://squareup.com/market/texasrollergirls" target="_blank" rel="noopener noreferrer">
                           Shop
                         </a>
