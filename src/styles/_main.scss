@@ -65,10 +65,17 @@ body {
 }
 
 body {
+  font-weight: normal;
+  line-height: 1;
+  text-rendering: optimizeLegibility;
+  word-wrap: break-word;
+  -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: none;
   background-color: black;
   background-image: url('../images/splatter.jpg');
   background-size: 300%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: 'muli-regular', sans-serif;
   font-size: 1.6rem;
   line-height: 1.875;
@@ -778,6 +785,7 @@ h1.intro-header::before {
   background-image: url('../images/splatter-light.jpg');
   background-size: 70%;
   background-repeat: repeat-x;
+  background-attachment: fixed;
 }
 
 .about-features .features-list {
