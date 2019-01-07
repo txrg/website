@@ -725,7 +725,7 @@ h1.intro-header--full {
   width: 100%;
   margin: 0 auto;
 
-  @include breakpoint('lg') {
+  @include breakpoint('md') {
     width: 60%;
   }
 }
