@@ -30,9 +30,9 @@ class SponsorList extends React.Component {
             <section className="sponsors">
               <div className="row">
                 <div>
-                  <h1 className="intro-header">We love our sponsors!</h1>
+                  <h1 className="intro-header">Sponsors</h1>
                   <div className="sponsor__types">
-                    <h2>Sponsors</h2>
+                    
                     <ul className="sponsor__list">
                       {data.allContentfulSponsor.edges.map(({ node }) => {
                         return (
@@ -46,7 +46,7 @@ class SponsorList extends React.Component {
                         );
                       })}
                     </ul>
-                    <h2>Supporters</h2>
+                    <h1 className="intro-header">Supporters</h1>
                     <ul className="supporter__list">
                       {data.allContentfulSponsor.edges.map(({ node }) => {
                         return (

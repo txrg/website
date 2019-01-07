@@ -2,17 +2,13 @@
   color: $text-inverse;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: radial-gradient(
-      circle closest-corner at center 125px,
-      #222,
-      black 80%
-    )
-    no-repeat;
+  background: black;
   text-align: center;
 }
 
 .sponsors h2 {
   padding: 3rem 0 1rem 0;
+  color: $text-inverse-02;
 }
 
 .sponsors .row div {
@@ -29,11 +25,6 @@
   transform: translateX(-50%);
 }
 
-.sponsor__types {
-  border: 24px solid $ui-dark;
-  background: #fff;
-}
-
 .sponsors .sponsor__list {
   list-style: none;
   margin: 0;
@@ -43,7 +34,6 @@
 }
 
 .sponsors .sponsor__list li {
-  background: #fff;
   display: block;
   margin: 0;
   transition: all 0.5s ease-in-out;
@@ -62,7 +52,6 @@
 .sponsors .sponsor__list li a {
   display: block;
   height: 100%;
-  background: $ui-light;
   padding: 2rem;
 }
 
@@ -89,12 +78,12 @@
 }
 
 .supporter__list li a {
-  color: $ui-01;
-  box-shadow: 0px -4px 0px $ui-accent-02 inset;
+  color: $text-inverse;
+  box-shadow: 0px -4px 0px lighten($ui-dark, 15%) inset;
   font-weight: bold;
   font-size: 18px;
 
   &:hover {
-    box-shadow: 0px -4px 0px $ui-accent inset;
+    box-shadow: 0px -4px 0px lighten($ui-dark, 25%) inset;
   }
 }
