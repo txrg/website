@@ -44,7 +44,7 @@ class Header extends React.Component {
             <a href="https://www.brownpapertickets.com/event/4044964" target="_blank" rel="noopener noreferrer"
               className="button button-primary cta">
               Buy Tickets
-            </Link>
+            </a>
           </nav>
 
           <button
