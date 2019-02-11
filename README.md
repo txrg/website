@@ -1,6 +1,8 @@
 # TXRG
 
-WIP for new TXRG website, this is a [Gatsby](http://gatsbyjs.com/) website powered by [Contentful](https://www.contentful.com).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9ede34cb-b770-4b9d-ba80-d942845ed0c7/deploy-status)](https://app.netlify.com/sites/txrg2019/deploys)
+
+Texas Rollergirls website, this is a [Gatsby](http://gatsbyjs.com/) website powered by [Contentful](https://www.contentful.com).
 
 This is based on a version of the [Gatsby Contentful Starter](https://github.com/contentful-userland/gatsby-contentful-starter) which is maintained by our Community.
 
