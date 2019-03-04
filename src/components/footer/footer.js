@@ -88,6 +88,9 @@ class Footer extends React.Component {
                     <h4>Links</h4>
                     <ul className="list-links">
                       <li>
+                        <Link to="/contact/sponsorship/">Sponsorship</Link>
+                      </li>
+                      <li>
                         <Link to="/mission">Mission</Link>
                       </li>
                       <li>
