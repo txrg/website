@@ -30,7 +30,7 @@ class SponsorList extends React.Component {
             <section className="sponsors">
               <div className="row">
                 <div>
-                  <h1 className="intro-header">Sponsors</h1>
+                  <h1 className="intro-header"><Link to="/contact/sponsorship/">Sponsors</Link></h1>
                   <div className="sponsor__types">
                     
                     <ul className="sponsor__list">
