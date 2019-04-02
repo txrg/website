@@ -73,7 +73,7 @@ class PageTemplate extends React.Component {
           </ul>
         </li>
         <li>
-          <Link to="/who-we-are/all-stars">All Stars</Link>
+          <Link to="/who-we-are/travel-team">Travel team</Link>
         </li>
       </ul>
     );
@@ -163,8 +163,6 @@ class PageTemplate extends React.Component {
                   }}
                 />
               </div>
-
-             
             </div>
           </section>
         </main>

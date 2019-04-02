@@ -21,7 +21,11 @@ class RootIndex extends React.Component {
 
           <div className="home-content">
             <div className="row contents">
-              <img src={skaters} alt="Texas Rollergirls" className="homepage-skaters" />
+              <img
+                src={skaters}
+                alt="Texas Rollergirls"
+                className="homepage-skaters"
+              />
               <div className="home-content-left">
                 <h1>
                   This is <br />
@@ -30,7 +34,8 @@ class RootIndex extends React.Component {
                 </h1>
 
                 <div className="buttons">
-                  <Link to="/events/tickets"
+                  <Link
+                    to="/events/tickets"
                     className="smoothscroll button stroke">
                     <span className="icon-calendar" aria-hidden="true" />
                     Tickets
@@ -45,9 +50,7 @@ class RootIndex extends React.Component {
               <div className="home-image-right">
                 <img src={logo} alt="Texas Rollergirls" className="logo-seal" />
               </div>
-              */
-              }
-              
+              */}
             </div>
           </div>
 
@@ -80,6 +83,14 @@ class RootIndex extends React.Component {
               <h1 className="intro-header">2019 Season</h1>
             </div>
             <div className="col-ten">
+              <button
+                className="givegab-button"
+                data-campaign-id="30427"
+                data-host="https://www.givegab.com"
+                data-org-id="459939"
+                data-preview="">
+                Donate Now
+              </button>
               <EventList />
             </div>
           </div>

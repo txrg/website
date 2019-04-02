@@ -39,6 +39,8 @@ class TeamTemplate extends React.Component {
                     profileDetailsFounder = '';
                   }
 
+                  console.log(profileDetails);
+
                   return (
                     <>
                       {(profileDetails !== 'Retired' &&
@@ -48,7 +50,9 @@ class TeamTemplate extends React.Component {
                       (profileDetailsFounder === 'Founders' &&
                         team.title === 'Founders') ||
                       (profileDetails === 'Retired' &&
-                        team.title === 'Retired Skaters') ? (
+                        team.title === 'Retired Skaters') ||
+                      (profileDetails === 'Travel-team' &&
+                        team.title === 'Travel team') ? (
                         <li className="profile-list__item" key={node.id}>
                           <Profile profile={node} />
                         </li>

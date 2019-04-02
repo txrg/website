@@ -1,5 +1,5 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default class HTML extends React.Component {
   render() {
@@ -13,6 +13,8 @@ export default class HTML extends React.Component {
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
           {this.props.headComponents}
+          <script src="https://givegab.s3.amazonaws.com/donation-widget/givegab-button.js" />
+
           <noscript>This website requires JavaScript.</noscript>
         </head>
         <body {...this.props.bodyAttributes}>
@@ -25,7 +27,7 @@ export default class HTML extends React.Component {
           {this.props.postBodyComponents}
         </body>
       </html>
-    )
+    );
   }
 }
 
@@ -36,4 +38,4 @@ HTML.propTypes = {
   preBodyComponents: PropTypes.array,
   body: PropTypes.string,
   postBodyComponents: PropTypes.array,
-}
+};
