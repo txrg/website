@@ -47,6 +47,9 @@ class Footer extends React.Component {
                       </a>
                       .
                     </p>
+      <p>Austin Texas Rollergirls Incorporated<br/>
+8760A Research Blvd # 511<br/>
+Austin, TX 78758</p>
 
                     <ul className="footer-social-list">
                       <li>
