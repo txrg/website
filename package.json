@@ -7,37 +7,37 @@
     "url": "https://github.com/txrg/website"
   },
   "dependencies": {
-    "gatsby-image": "^2.0.25",
-    "gatsby-plugin-google-analytics": "^2.0.8",
-    "gatsby-plugin-manifest": "^2.0.13",
-    "gatsby-plugin-offline": "^2.0.20",
-    "gatsby-plugin-react-helmet": "^3.0.5",
-    "gatsby-plugin-sass": "^2.0.7",
-    "gatsby-plugin-sharp": "^2.0.17",
-    "gatsby-source-contentful": "^2.0.22",
-    "gatsby-transformer-remark": "^2.1.18",
-    "gatsby-transformer-sharp": "^2.1.10",
+    "gatsby-image": "^2.1.2",
+    "gatsby-plugin-google-analytics": "^2.0.20",
+    "gatsby-plugin-manifest": "^2.1.1",
+    "gatsby-plugin-offline": "^2.1.1",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-sass": "^2.0.11",
+    "gatsby-plugin-sharp": "^2.1.2",
+    "gatsby-source-contentful": "^2.0.65",
+    "gatsby-transformer-remark": "^2.3.12",
+    "gatsby-transformer-sharp": "^2.1.20",
     "lodash": "^4.17.11",
-    "node-sass": "^4.9.4",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-helmet": "^5.2.0",
-    "sharp": "^0.21.0"
+    "node-sass": "^4.12.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
+    "sharp": "^0.22.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
-    "chalk": "^2.4.1",
-    "contentful-import": "^7.4.3",
-    "eslint": "^5.6.1",
-    "eslint-plugin-react": "^7.12.0",
-    "gatsby": "^2.0.18",
+    "chalk": "^2.4.2",
+    "contentful-import": "^7.4.4",
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.13.0",
+    "gatsby": "^2.7.5",
     "gh-pages": "^2.0.1",
-    "inquirer": "^6.2.0",
-    "prettier": "^1.14.3",
-    "rimraf": "^2.6.2",
+    "inquirer": "^6.3.1",
+    "prettier": "^1.17.1",
+    "rimraf": "^2.6.3",
     "yargs-parser": "^11.0.0"
   },
-  "homepage": "https://github.com/contentful-userland/gatsby-contentful-starter#readme",
+  "homepage": "https://github.com/txrg/website",
   "keywords": [
     "gatsby",
     "contentful"
@@ -46,7 +46,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/contentful-userland/gatsby-contentful-starter.git"
+    "url": "git+https://github.com/txrg/website.git"
   },
   "scripts": {
     "dev": "gatsby develop",
