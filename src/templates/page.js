@@ -53,10 +53,10 @@ class PageTemplate extends React.Component {
         <li>
           <Link to="/who-we-are/volunteers">Volunteers</Link>
         </li>
-        <li>
+        <li className="side-bar__teams">
           <Link to="/who-we-are/skaters-on-tap">Skaters on tap</Link>
         </li>
-        <li className="side-bar__teams">
+        <li>
           <span>Home teams</span>
           <ul>
             <li>
