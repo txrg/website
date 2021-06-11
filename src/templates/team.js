@@ -51,6 +51,8 @@ class TeamTemplate extends React.Component {
                         team.title === 'Founders') ||
                       (profileDetails === 'Retired' &&
                         team.title === 'Retired Skaters') ||
+                      (profileDetails === 'Skaters-on-tap' &&
+                        team.title === 'Skaters on tap') ||
                       (profileDetails === 'Travel-team' &&
                         team.title === 'Travel team') ? (
                         <li className="profile-list__item" key={node.id}>
