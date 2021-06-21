@@ -43,7 +43,7 @@ class PageTemplate extends React.Component {
         </li>
        <li>
           <Link to="/who-we-are/retired">Retired Skaters</Link>
-        </li>*/}
+        </li>
         <li>
           <Link to="/who-we-are/officials">Officials</Link>
         </li>
