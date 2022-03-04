@@ -146,7 +146,7 @@ class PageTemplate extends React.Component {
                 ) : null}
                 {page.title !== 'Events' ? (
                   <div className="side-events">
-                    <h2>2021 Season</h2>
+                    <h2>2022 Season</h2>
                     <EventList />
                   </div>
                 ) : null}
