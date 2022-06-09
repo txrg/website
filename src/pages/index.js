@@ -98,7 +98,7 @@ class RootIndex extends React.Component {
           <div className="row about-features">
             <div className="features-list block-1-4 block-m-1-3 block-mob-full group">
               {pages.map(({ node }) => {
-                const FeaturedPage = node.featured;
+                const FeaturedPage = null;//node.featured; //testing to see if this gets past build issue
                 return (
                   <>
                     {FeaturedPage ? (
