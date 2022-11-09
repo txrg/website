@@ -48,7 +48,7 @@ class Footer extends React.Component {
                       .
                     </p>
       <p>Austin Texas Rollergirls Incorporated<br/>
-8760A Research Blvd # 511<br/>
+8120 Research Blvd Ste 105, #511<br/>
 Austin, TX 78758</p>
 
                     <ul className="footer-social-list">
@@ -103,13 +103,13 @@ Austin, TX 78758</p>
                         <Link to="/blog">Blog</Link>
                       </li>
                       <li>
-                        <Link to="/whammys">The Whammys</Link>
+                        <Link to="/events/whammys">The Whammys</Link>
                       </li>
                       <li>
                         <Link to="/media">Media archive</Link>
                       </li>
                       <li>
-                        <Link to="/tulsa-fund">The tulsa fund</Link>
+                        <Link to="/tulsa-fund">The Tulsa Fund</Link>
                       </li>
                       <li>
                         <a href="https://squareup.com/market/texasrollergirls" target="_blank" rel="noopener noreferrer">
