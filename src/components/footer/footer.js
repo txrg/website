@@ -38,7 +38,7 @@ class Footer extends React.Component {
                       />
                     </a>
                     <p>
-                      Texas Rollergirls are proud to be founding members of the{' '}
+                      Texas Rollergirls are proud to be a founding members of the{' '}
                       <a
                         href="https://www.wftda.com"
                         rel="noopener noreferrer"
@@ -106,7 +106,7 @@ Austin, TX 78758</p>
                         <Link to="/events/whammys">The Whammys</Link>
                       </li>
                       <li>
-                        <Link to="/media">Media archive</Link>
+                        <Link to="/media">Media Archive</Link>
                       </li>
                       <li>
                         <Link to="/tulsa-fund">The Tulsa Fund</Link>
