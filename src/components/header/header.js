@@ -33,7 +33,9 @@ class Header extends React.Component {
               <li>
                 <Link to="/events/">Events</Link>
               </li>
-      
+              <li>
+                 <Link to="/get-involved/">Get involved</Link>
+               </li>
               <li>
                 <Link to="/contact/">Contact</Link>
               </li>
@@ -41,8 +43,8 @@ class Header extends React.Component {
                 <a href="https://squareup.com/market/texasrollergirls" target="_blank" rel="noopener noreferrer">Shop</a>
               </li>
             </ul>
-
-            <a href="https://tickets.texasrollergirls.org/e/texas-roller-girls-2020/preview" target="_blank" rel="noopener noreferrer"
+          
+            <a href="https://www.texasrollergirls.org/events/tickets/" target="_blank" rel="noopener noreferrer"
               className="button button-primary cta">
               Buy Tickets
             </a>
