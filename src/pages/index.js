@@ -91,7 +91,7 @@ class RootIndex extends React.Component {
                 //data-preview="">
                 //Donate Now
               //</button>
-              <EventList />
+             // <EventList />
             </div>
           </div>
 
