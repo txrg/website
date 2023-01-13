@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 /* original logo code: import runningGirl from '../../images/runninggirl-white.png'; */
-import anniversaryLogo from 'src/images/TXRG20yearsLogoWhite.png'; 
+import anniversaryLogo from '../../images/TXRG20yearsLogoWhite.png'; 
 
 class Header extends React.Component {
   menuToggleClick = () => {
