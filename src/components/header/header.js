@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 /* original logo code: import runningGirl from '../../images/runninggirl-white.png'; */
-import anniversaryLogo from '../../images/TXRG20yearsLogoWhite.png'; 
+import TXRG20yearsLogoWhite from '../../images/TXRG20yearsLogoWhite.png'; 
 
 class Header extends React.Component {
   menuToggleClick = () => {
@@ -19,7 +19,7 @@ class Header extends React.Component {
           <div className="header-logo">
             <Link className="logo" to="/" aria-label="Texas Rollergirls Home">
             /*updating to annivesary logo */ 
-            <img src ={anniversaryLogo} alt="TXRG" />       
+            <img src ={TXRG20yearsLogoWhite} alt="TXRG" />       
       
       /* Original Logo Code  <img src={runningGirl} alt="TXRG" /> */
       
