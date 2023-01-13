@@ -28,9 +28,9 @@ class RootIndex extends React.Component {
               />
               <div className="home-content-left">
                 <h1>
-                  This is <br />
-                  roller <br />
-                  derby.
+                  Celebrating <br />
+                  20 Year of <br />
+                  Roller Derby.
                 </h1>
 
                 <div className="buttons">
