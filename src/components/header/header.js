@@ -17,7 +17,7 @@ class Header extends React.Component {
         <div class="row">
           <div className="header-logo">
             <Link className="logo" to="/" aria-label="Texas Rollergirls Home">
-              <img src={runningGirl} alt="TXRG" />
+              <img src={runningGirl} alt="TXRG" /> 
               <span>Texas Rollergirls</span>
             </Link>
           </div>
