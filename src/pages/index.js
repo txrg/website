@@ -29,7 +29,7 @@ class RootIndex extends React.Component {
               <div className="home-content-left">
                 <h1>
                   Celebrating <br />
-                  20 Year of <br />
+                  20 years of <br />
                   Roller Derby.
                 </h1>
 
