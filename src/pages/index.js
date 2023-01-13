@@ -28,9 +28,9 @@ class RootIndex extends React.Component {
               />
               <div className="home-content-left">
                 <h1>
-                  This is <br />
-                  roller <br />
-                  derby.
+                  Celebrating <br />
+                  20 years of <br />
+                  Roller Derby.
                 </h1>
 
                 <div className="buttons">
@@ -83,14 +83,7 @@ class RootIndex extends React.Component {
               <h1 className="intro-header">2023 Season</h1>
             </div>
             <div className="col-ten">
-             <button
-               className="givegab-button"
-                data-campaign-id="30427"
-                data-host="https://www.givegab.com"
-                data-org-id="459939"
-                data-preview="">
-                Donate Now
-              </button>
+             
              <EventList />
             </div>
           </div>
