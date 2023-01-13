@@ -17,7 +17,7 @@ class Header extends React.Component {
         <div class="row">
           <div className="header-logo">
             <Link className="logo" to="/" aria-label="Texas Rollergirls Home">
-            /*  updating to annivesary logo */ 
+ 
             <img src ={TXRG20yearsLogoWhite} alt="TXRG" />       
             
               <span> Texas Rollergirls</span>
