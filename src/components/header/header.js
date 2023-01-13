@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import runningGirl from '../../images/runninggirl-white.png';
+//import runningGirl from '../../images/runninggirl-white.png';//
+import anniversaryLogo from 'src/images/TXRG20yearsLogoWhite.png';
 
 class Header extends React.Component {
   menuToggleClick = () => {
@@ -17,7 +18,8 @@ class Header extends React.Component {
         <div class="row">
           <div className="header-logo">
             <Link className="logo" to="/" aria-label="Texas Rollergirls Home">
-              <img src={runningGirl} alt="TXRG" />
+              <img src={anniversaryLogo} alt="TXRG" />
+              //<img src={runningGirl} alt="TXRG" /> //
               <span>Texas Rollergirls</span>
             </Link>
           </div>
