@@ -80,18 +80,18 @@ class RootIndex extends React.Component {
         <section className="content content-home">
           <div className="row content-intro">
             <div className="col-two">
-              <h1 className="intro-header">2021 Season</h1>
+              <h1 className="intro-header">2023 Season</h1>
             </div>
             <div className="col-ten">
-              <button
-                className="givegab-button"
+             <button
+               className="givegab-button"
                 data-campaign-id="30427"
                 data-host="https://www.givegab.com"
                 data-org-id="459939"
                 data-preview="">
                 Donate Now
               </button>
-              <EventList />
+             <EventList />
             </div>
           </div>
 
