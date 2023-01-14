@@ -73,6 +73,13 @@ Austin, TX 78758</p>
                           <i className="fa fa-instagram" />
                         </a>
                       </li>
+                       <li>
+                        <a
+                          href="http://www.youtube.com/TexasRollergirls"
+                          aria-label="Youtube">
+                          <i className="fa fa-youtube-square" />
+                        </a>
+                      </li>
                     </ul>
                   </div>
                   <div className="col-five md-1-3 tab-full footer-info">
