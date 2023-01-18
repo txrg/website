@@ -74,6 +74,13 @@ class RootIndex extends React.Component {
                 <i className="fa fa-instagram" />
               </a>
             </li>
+            <li>
+              <a
+                href="http://www.youtube.com/TexasRollergirls"
+                aria-label="Youtube">
+                <i className="fa fa-youtube-square" />
+                </a>
+                </li>
           </ul>
         </section>
 
