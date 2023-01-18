@@ -41,9 +41,9 @@ class PageTemplate extends React.Component {
         <li>
           <Link to="/who-we-are/founders">Founders</Link>
         </li>
-        {/* hide for now until we add<li>
+       <li>
           <Link to="/who-we-are/retired">Retired Skaters</Link>
-        </li>*/}
+        </li>
         <li>
           <Link to="/who-we-are/officials">Officials</Link>
         </li>
@@ -54,6 +54,9 @@ class PageTemplate extends React.Component {
           <Link to="/who-we-are/volunteers">Volunteers</Link>
         </li>
         <li className="side-bar__teams">
+          <Link to="/who-we-are/skaters-on-tap">Skaters on tap</Link>
+        </li>
+        <li>
           <span>Home teams</span>
           <ul>
             <li>
@@ -143,7 +146,7 @@ class PageTemplate extends React.Component {
                 ) : null}
                 {page.title !== 'Events' ? (
                   <div className="side-events">
-                    <h2>2021 Season</h2>
+                    <h2>2023 Season</h2>
                     <EventList />
                   </div>
                 ) : null}
@@ -152,7 +155,7 @@ class PageTemplate extends React.Component {
                 <h1 className="intro-header">{page.title}</h1>
                 {this.props.location.pathname === '/events/' ? (
                   <>
-                    <h2>2021 Season</h2>
+                    <h2>2023 Season</h2>
                     <EventList />
                   </>
                 ) : null}
