@@ -38,7 +38,7 @@ class RootIndex extends React.Component {
                     className="smoothscroll button stroke">
                     <span className="icon-calendar" aria-hidden="true" />
                     Tickets
-                  </Link>
+                  </a>
                   <Link to="/donate" className="smoothscroll button stroke">
                     <span className="icon-dollar" aria-hidden="true" />
                     Donate
