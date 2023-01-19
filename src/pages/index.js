@@ -35,7 +35,7 @@ class RootIndex extends React.Component {
 
                 <div className="buttons">
                   <Link
-                    to="/events/tickets"
+                    to="https://ticketbud.com/events/43f5c81c-8b1c-11ed-aac5-42010a71701e"
                     className="smoothscroll button stroke">
                     <span className="icon-calendar" aria-hidden="true" />
                     Tickets
