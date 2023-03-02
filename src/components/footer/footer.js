@@ -123,6 +123,12 @@ Austin, TX 78758</p>
                           Shop
                         </a>
                       </li>
+                       <li>
+                        <a href="https://vr2.verticalresponse.com/s/websitesignupform38482906975676" target="_blank" rel="noopener noreferrer">
+                          Join our email list  
+                        </a>
+                      </li>
+
                     </ul>
                   </div>
                 </div>
