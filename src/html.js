@@ -6,6 +6,7 @@ export default class HTML extends React.Component {
     return (
       <html {...this.props.htmlAttributes}>
         <head>
+        <meta name="facebook-domain-verification" content="vf34qzv42iji3x67nfu6qgam11qv22" /> 
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
           <meta
