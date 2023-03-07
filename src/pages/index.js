@@ -6,7 +6,7 @@ import BlogPreview from '../components/blog-preview/blog-preview';
 import PagePreview from '../components/page-preview/page-preview';
 import Profile from '../components/profile-preview/profile-feature';
 import EventList from '../components/eventList/eventList';
-import skaters from '../images/homepage.png';
+import skaters from '../images/20yr-header-photo-homepage-v2.png';
 
 class RootIndex extends React.Component {
   render() {
@@ -28,18 +28,17 @@ class RootIndex extends React.Component {
               />
               <div className="home-content-left">
                 <h1>
-                  This is <br />
-                  roller <br />
-                  derby.
+                  Celebrating <br />
+                  20 years of <br />
+                  Roller Derby.
                 </h1>
 
                 <div className="buttons">
-                  <Link
-                    to="/events/tickets"
+                 <a href="https://ticketbud.com/events/43f5c81c-8b1c-11ed-aac5-42010a71701e" target="_blank" rel="noopener noreferrer"
                     className="smoothscroll button stroke">
                     <span className="icon-calendar" aria-hidden="true" />
                     Tickets
-                  </Link>
+                  </a>
                   <Link to="/donate" className="smoothscroll button stroke">
                     <span className="icon-dollar" aria-hidden="true" />
                     Donate
@@ -74,24 +73,24 @@ class RootIndex extends React.Component {
                 <i className="fa fa-instagram" />
               </a>
             </li>
+            <li>
+              <a
+                href="http://www.youtube.com/TexasRollergirls"
+                aria-label="Youtube">
+                <i className="fa fa-youtube-square" />
+                </a>
+                </li>
           </ul>
         </section>
 
         <section className="content content-home">
           <div className="row content-intro">
             <div className="col-two">
-              <h1 className="intro-header">2021 Season</h1>
+              <h1 className="intro-header">2023 Season</h1>
             </div>
             <div className="col-ten">
-              <button
-                className="givegab-button"
-                data-campaign-id="30427"
-                data-host="https://www.givegab.com"
-                data-org-id="459939"
-                data-preview="">
-                Donate Now
-              </button>
-              <EventList />
+             
+             <EventList />
             </div>
           </div>
 

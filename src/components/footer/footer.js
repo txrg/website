@@ -48,7 +48,7 @@ class Footer extends React.Component {
                       .
                     </p>
       <p>Austin Texas Rollergirls Incorporated<br/>
-8760A Research Blvd # 511<br/>
+8120 Research Blvd Ste 105, #511<br/>
 Austin, TX 78758</p>
 
                     <ul className="footer-social-list">
@@ -71,6 +71,13 @@ Austin, TX 78758</p>
                           href="https://www.instagram.com/texasrollergirls/"
                           aria-label="Instagram">
                           <i className="fa fa-instagram" />
+                        </a>
+                      </li>
+                       <li>
+                        <a
+                          href="http://www.youtube.com/TexasRollergirls"
+                          aria-label="Youtube">
+                          <i className="fa fa-youtube-square" />
                         </a>
                       </li>
                     </ul>
@@ -103,19 +110,25 @@ Austin, TX 78758</p>
                         <Link to="/blog">Blog</Link>
                       </li>
                       <li>
-                        <Link to="/whammys">The Whammys</Link>
+                        <Link to="/events/whammys">The Whammys</Link>
                       </li>
                       <li>
-                        <Link to="/media">Media archive</Link>
+                        <Link to="/media">Media Archive</Link>
                       </li>
                       <li>
-                        <Link to="/tulsa-fund">The tulsa fund</Link>
+                        <Link to="/tulsa-fund">The Tulsa Fund</Link>
                       </li>
                       <li>
                         <a href="https://squareup.com/market/texasrollergirls" target="_blank" rel="noopener noreferrer">
                           Shop
                         </a>
                       </li>
+                       <li>
+                        <a href="https://vr2.verticalresponse.com/s/websitesignupform38482906975676" target="_blank" rel="noopener noreferrer">
+                          Join our email list  
+                        </a>
+                      </li>
+
                     </ul>
                   </div>
                 </div>
