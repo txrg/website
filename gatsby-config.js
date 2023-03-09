@@ -47,13 +47,6 @@ module.exports = {
         trackingId: 'UA-249307394-1',
       },
     },
-
-    {
-      resolve: `gatsby-plugin-facebook-pixel`,
-      options: {
-        pixelId: "726891122478970",
-      },
-    },
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
