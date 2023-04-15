@@ -46,20 +46,20 @@ class SponsorList extends React.Component {
                         );
                       })}
                     </ul>
-                    <h1 className="intro-header">Supporters</h1>
-                    <ul className="supporter__list">
-                      {data.allContentfulSponsor.edges.map(({ node }) => {
-                        return (
-                          <>
-                            {node.type === 'supporter' ? (
-                              <li className="sponsor__item" key={node.id}>
-                                <a href={node.link} target="_blank" rel="noopener noreferrer">{node.name}</a>
-                              </li>
-                            ) : null}
-                          </>
-                        );
-                      })}
-                    </ul>
+                  //  <h1 className="intro-header">Supporters</h1>
+                //    <ul className="supporter__list">
+                  //    {data.allContentfulSponsor.edges.map(({ node }) => {
+                    //    return (
+                       //   <>
+                     //       {node.type === 'supporter' ? (
+                           //   <li className="sponsor__item" key={node.id}>
+                            //    <a href={node.link} target="_blank" rel="noopener noreferrer">{node.name}</a>
+                           //   </li>
+                         //   ) : null}
+                       //   </>
+                      //  );
+                    //  })}
+                   // </ul>
                   </div>
                 </div>
               </div>
