@@ -26,9 +26,7 @@ class Header extends React.Component {
 
           <nav className="header-nav-wrap">
             <ul className="header-main-nav" onClick={() => this.menuHideClick()}>
-              <li>
-                <Link to="/COVID-19/">COVID-19</Link>
-              </li>
+     
               <li>
                 <Link to="/who-we-are/">Who we are</Link>
               </li>
