@@ -73,31 +73,29 @@ class TeamTemplate extends React.Component {
 
 export default TeamTemplate;
 
-export const teamQuery = graphql`
-  query TeamBySlug($slug: String!) {
-    contentfulTeam(slug: { eq: $slug }) {
-      title
-      pageContent {
-        childMarkdownRemark {
-          html
-        }
+export const teamQuery = graphql`query TeamBySlug($slug: String!) {
+  contentfulTeam(slug: {eq: $slug}) {
+    title
+    pageContent {
+      childMarkdownRemark {
+        html
       }
     }
-    allContentfulProfile(sort: { fields: [title, name], order: ASC }) {
-      edges {
-        node {
-          name
-          title
-          homeTeam
-          type
-          details
-          photo {
-            sizes(maxWidth: 400, maxHeight: 400) {
-              ...GatsbyContentfulSizes
-            }
+  }
+  allContentfulProfile(sort: [{title: ASC}, {name: ASC}]) {
+    edges {
+      node {
+        name
+        title
+        homeTeam
+        type
+        details
+        photo {
+          sizes(maxWidth: 400, maxHeight: 400) {
+            ...GatsbyContentfulSizes
           }
         }
       }
     }
   }
-`;
+}`;

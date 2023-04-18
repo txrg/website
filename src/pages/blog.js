@@ -42,26 +42,24 @@ class BlogIndex extends React.Component {
 
 export default BlogIndex;
 
-export const pageQuery = graphql`
-  query BlogIndexQuery {
-    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
-      edges {
-        node {
-          title
-          slug
-          publishDate(formatString: "MMMM Do, YYYY")
-          featureImage {
-            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: CROP) {
-              ...GatsbyContentfulFluid
-            }
+export const pageQuery = graphql`query BlogIndexQuery {
+  allContentfulBlogPost(sort: {publishDate: DESC}) {
+    edges {
+      node {
+        title
+        slug
+        publishDate(formatString: "MMMM Do, YYYY")
+        featureImage {
+          fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: CROP) {
+            ...GatsbyContentfulFluid
           }
-          description {
-            childMarkdownRemark {
-              rawMarkdownBody
-            }
+        }
+        description {
+          childMarkdownRemark {
+            rawMarkdownBody
           }
         }
       }
     }
   }
-`;
+}`;

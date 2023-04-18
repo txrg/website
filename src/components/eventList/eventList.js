@@ -5,21 +5,19 @@ class EventList extends React.Component {
   render() {
     return (
       <StaticQuery
-        query={graphql`
-          query EventListQuery {
-            allContentfulEvent(sort: { fields: [date], order: ASC }) {
-              edges {
-                node {
-                  title
-                  id
-                  date(formatString: "MMMM Do, YYYY h:mm A")
-                  location
-                  googleMaps
-                }
-              }
-            }
-          }
-        `}
+        query={graphql`query EventListQuery {
+  allContentfulEvent(sort: {date: ASC}) {
+    edges {
+      node {
+        title
+        id
+        date(formatString: "MMMM Do, YYYY h:mm A")
+        location
+        googleMaps
+      }
+    }
+  }
+}`}
         render={data => (
           <>
             {data.allContentfulEvent.edges.map(({ node }) => {

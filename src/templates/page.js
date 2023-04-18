@@ -176,35 +176,33 @@ class PageTemplate extends React.Component {
 
 export default PageTemplate;
 
-export const pageQuery = graphql`
-  query PageBySlug($slug: String!) {
-    contentfulPage(slug: { eq: $slug }) {
-      title
-      section
-      slug
-      pageContent {
-        childMarkdownRemark {
-          html
-        }
-      }
-    }
-    allContentfulPage(sort: { fields: [title], order: ASC }) {
-      edges {
-        node {
-          title
-          slug
-          section
-        }
-      }
-    }
-    allContentfulTeam(sort: { fields: [order], order: ASC }) {
-      edges {
-        node {
-          title
-          order
-          slug
-        }
+export const pageQuery = graphql`query PageBySlug($slug: String!) {
+  contentfulPage(slug: {eq: $slug}) {
+    title
+    section
+    slug
+    pageContent {
+      childMarkdownRemark {
+        html
       }
     }
   }
-`;
+  allContentfulPage(sort: {title: ASC}) {
+    edges {
+      node {
+        title
+        slug
+        section
+      }
+    }
+  }
+  allContentfulTeam(sort: {order: ASC}) {
+    edges {
+      node {
+        title
+        order
+        slug
+      }
+    }
+  }
+}`;

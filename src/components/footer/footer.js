@@ -7,20 +7,18 @@ class Footer extends React.Component {
     const currentYear = new Date().getFullYear();
     return (
       <StaticQuery
-        query={graphql`
-          query SiteFooterQuery {
-            allContentfulEvent(sort: { fields: [date], order: ASC }) {
-              edges {
-                node {
-                  title
-                  id
-                  date(formatString: "MMMM DD, YYYY")
-                  location
-                }
-              }
-            }
-          }
-        `}
+        query={graphql`query SiteFooterQuery {
+  allContentfulEvent(sort: {date: ASC}) {
+    edges {
+      node {
+        title
+        id
+        date(formatString: "MMMM DD, YYYY")
+        location
+      }
+    }
+  }
+}`}
         render={data => (
           <>
             <footer>

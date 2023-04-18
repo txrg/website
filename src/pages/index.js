@@ -137,78 +137,76 @@ class RootIndex extends React.Component {
 
 export default RootIndex;
 
-export const pageQuery = graphql`
-  query HomeQuery {
-    allContentfulProfile(sort: { fields: [name], order: ASC }) {
-      edges {
-        node {
-          name
-          homeTeam
-          type
-          details
-          bio {
-            childMarkdownRemark {
-              html
-            }
-          }
-          featured
-          photo {
-            sizes(maxWidth: 350) {
-              ...GatsbyContentfulSizes
-            }
-          }
-          featureDescription {
-            childMarkdownRemark {
-              rawMarkdownBody
-            }
+export const pageQuery = graphql`query HomeQuery {
+  allContentfulProfile(sort: {name: ASC}) {
+    edges {
+      node {
+        name
+        homeTeam
+        type
+        details
+        bio {
+          childMarkdownRemark {
+            html
           }
         }
-      }
-    }
-    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
-      edges {
-        node {
-          title
-          slug
-          publishDate(formatString: "MMMM Do, YYYY")
-          featured
-          featureImage {
-            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: CROP) {
-              ...GatsbyContentfulFluid
-            }
-          }
-          description {
-            childMarkdownRemark {
-              rawMarkdownBody
-            }
+        featured
+        photo {
+          sizes(maxWidth: 350) {
+            ...GatsbyContentfulSizes
           }
         }
-      }
-    }
-    allContentfulPage {
-      edges {
-        node {
-          title
-          slug
-          section
-          featured
-          featureImage {
-            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: CROP) {
-              ...GatsbyContentfulFluid
-            }
-          }
-          featureDescription {
-            childMarkdownRemark {
-              rawMarkdownBody
-            }
-          }
-          pageContent {
-            childMarkdownRemark {
-              html
-            }
+        featureDescription {
+          childMarkdownRemark {
+            rawMarkdownBody
           }
         }
       }
     }
   }
-`;
+  allContentfulBlogPost(sort: {publishDate: DESC}) {
+    edges {
+      node {
+        title
+        slug
+        publishDate(formatString: "MMMM Do, YYYY")
+        featured
+        featureImage {
+          fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: CROP) {
+            ...GatsbyContentfulFluid
+          }
+        }
+        description {
+          childMarkdownRemark {
+            rawMarkdownBody
+          }
+        }
+      }
+    }
+  }
+  allContentfulPage {
+    edges {
+      node {
+        title
+        slug
+        section
+        featured
+        featureImage {
+          fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: CROP) {
+            ...GatsbyContentfulFluid
+          }
+        }
+        featureDescription {
+          childMarkdownRemark {
+            rawMarkdownBody
+          }
+        }
+        pageContent {
+          childMarkdownRemark {
+            html
+          }
+        }
+      }
+    }
+  }
+}`;
