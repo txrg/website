@@ -26,9 +26,7 @@ class Header extends React.Component {
 
           <nav className="header-nav-wrap">
             <ul className="header-main-nav" onClick={() => this.menuHideClick()}>
-              <li>
-                <Link to="/COVID-19/">COVID-19</Link>
-              </li>
+     
               <li>
                 <Link to="/who-we-are/">Who we are</Link>
               </li>
@@ -46,7 +44,7 @@ class Header extends React.Component {
               </li>
             </ul>
           
-            <a href="https://ticketbud.com/events/43f5c81c-8b1c-11ed-aac5-42010a71701e" target="_blank" rel="noopener noreferrer"
+            <a href="https://ticketbud.com/events/01bd11f4-93b8-11ed-bab4-42010a71701e" target="_blank" rel="noopener noreferrer"
               className="button button-primary cta">
               Buy Tickets
             </a>

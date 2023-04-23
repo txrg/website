@@ -48,6 +48,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: "726891122478970",
+      },
+    },
+    {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
     },
@@ -69,6 +75,7 @@ module.exports = {
         icon: `src/images/favicon-32.png`, // This path is relative to the root of the site.
       },
     },
+
     'gatsby-plugin-offline'
   ],
 };
