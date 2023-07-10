@@ -44,7 +44,7 @@ class Header extends React.Component {
               </li>
             </ul>
           
-            <a href="https://ticketbud.com/events/ccd63a12-bd09-11ed-a99b-42010a71701e" target="_blank" rel="noopener noreferrer"
+            <a href="https://ticketbud.com/events/5d4c9a46-bd0a-11ed-b078-42010a71701e" target="_blank" rel="noopener noreferrer"
               className="button button-primary cta">
               Buy Tickets
             </a>
