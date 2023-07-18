@@ -73,6 +73,9 @@ class PageTemplate extends React.Component {
             <li>
               <Link to="/who-we-are/hustlers">Hustlers</Link>
             </li>
+            <li>
+              <Link to="/who-we-are/homies">Homies </Link>
+            </li>
           </ul>
         </li>
         <li>
