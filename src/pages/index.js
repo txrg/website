@@ -34,7 +34,7 @@ class RootIndex extends React.Component {
                 </h1>
 
                 <div className="buttons">
-                 <a href="https://ticketbud.com/events/5d4c9a46-bd0a-11ed-b078-42010a71701e" target="_blank" rel="noopener noreferrer"
+                 <a href="https://www.texasrollergirls.org/events/" target="_blank" rel="noopener noreferrer"
                     className="smoothscroll button stroke">
                     <span className="icon-calendar" aria-hidden="true" />
                     Tickets
