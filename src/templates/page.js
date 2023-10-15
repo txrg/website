@@ -149,7 +149,7 @@ class PageTemplate extends React.Component {
                 ) : null}
                 {page.title !== 'Events' ? (
                   <div className="side-events">
-                    <h2>2023 Season</h2>
+                    <h2>2024 Season</h2>
                     <EventList />
                   </div>
                 ) : null}
@@ -158,7 +158,7 @@ class PageTemplate extends React.Component {
                 <h1 className="intro-header">{page.title}</h1>
                 {this.props.location.pathname === '/events/' ? (
                   <>
-                    <h2>2023 Season</h2>
+                    <h2>2024 Season</h2>
                     <EventList />
                   </>
                 ) : null}
