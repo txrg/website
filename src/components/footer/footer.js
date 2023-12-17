@@ -83,7 +83,7 @@ Austin, TX 78758</p>
                     </ul>
                   </div>
                   <div className="col-five md-1-3 tab-full footer-info">
-                    <h4>{currentYear} Season</h4>
+                    <h4>2024 Season</h4>
                     <ul className="event-list">
                       {data.allContentfulEvent.edges.map(({ node }) => {
                         return (
