@@ -51,9 +51,7 @@ class TeamTemplate extends React.Component {
                         team.title === 'Founders') ||
                       (profileDetails === 'Retired' &&
                         team.title === 'Retired Skaters') ||
-                      (profileDetails === 'Skaters-on-tap' &&
-                        team.title === 'Skaters on tap') ||
-                     (profileDetails === 'Homies' &&
+                      (profileDetails === 'Homies' &&
                         team.title === 'Homies') ||
                       (profileDetails === 'Travel-team' &&
                         team.title === 'Travel team') ? (
