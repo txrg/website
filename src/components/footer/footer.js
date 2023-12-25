@@ -80,6 +80,13 @@ Austin, TX 78758</p>
                           <i className="fa fa-youtube-square" />
                         </a>
                       </li>
+                      <li>
+                        <a
+                          href="https://www.tiktok.com/@texasrollergirls"
+                          aria-label="TikTok">
+                          <i className="fa fa-tiktok" />
+                        </a>
+                      </li>
                     </ul>
                   </div>
                   <div className="col-five md-1-3 tab-full footer-info">
