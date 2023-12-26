@@ -2307,6 +2307,9 @@
 .fa-meetup:before {
   content: '\f2e0';
 }
+.fa-tiktok:before {
+  content: '\e07b';
+}
 .sr-only {
   position: absolute;
   width: 1px;
