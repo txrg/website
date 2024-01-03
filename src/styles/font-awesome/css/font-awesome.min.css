@@ -12,6 +12,8 @@
     url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),
     url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular')
       format('svg');
+  src: url('../fonts/fa-brands-400.ttf?v=6.5.1') format('truetype'),
+    url('../fonts/fa-brands-400.woff2?v=6.5.1') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -2300,6 +2302,9 @@
 }
 .fa-meetup:before {
   content: '\f2e0';
+}
+.fa-tiktok:before {
+  content: '\e07b';
 }
 .sr-only {
   position: absolute;
