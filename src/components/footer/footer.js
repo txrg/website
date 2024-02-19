@@ -9,7 +9,7 @@ class Footer extends React.Component {
       <StaticQuery
         query={graphql`
           query SiteFooterQuery {
-            allContentfulEvent(sort: { fields: [date], order: ASC }) {
+            allContentfulEvent(sort: {date: ASC}) {
               edges {
                 node {
                   title

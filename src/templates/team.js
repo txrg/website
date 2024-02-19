@@ -75,7 +75,7 @@ export default TeamTemplate;
 
 export const teamQuery = graphql`
   query TeamBySlug($slug: String!) {
-    contentfulTeam(slug: { eq: $slug }) {
+    contentfulTeam(slug: {eq: $slug}) {
       title
       pageContent {
         childMarkdownRemark {
@@ -83,7 +83,7 @@ export const teamQuery = graphql`
         }
       }
     }
-    allContentfulProfile(sort: { fields: [title, name], order: ASC }) {
+    allContentfulProfile(sort: [{title: ASC}, {name: ASC}]) {
       edges {
         node {
           name
@@ -92,9 +92,7 @@ export const teamQuery = graphql`
           type
           details
           photo {
-            sizes(maxWidth: 400, maxHeight: 400) {
-              ...GatsbyContentfulSizes
-            }
+            gatsbyImageData(layout: CONSTRAINED, width: 400, height: 400)
           }
         }
       }

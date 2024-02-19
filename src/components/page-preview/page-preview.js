@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 export default ({ page }) => (
   <div className="bgrid feature">
@@ -16,7 +16,7 @@ export default ({ page }) => (
                 .join('-')}/${page.slug}/`
         }>
         <div className="page__thumbnail">
-          <Img alt={page.title} sizes={page.featureImage.fluid} />
+          <GatsbyImage alt={page.title} image={page.featureImage.gatsbyImageData} />
         </div>
         <div className="feature__content">
           <h4 className="feature__title">{page.title}</h4>

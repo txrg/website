@@ -7,7 +7,7 @@ class EventList extends React.Component {
       <StaticQuery
         query={graphql`
           query EventListQuery {
-            allContentfulEvent(sort: { fields: [date], order: ASC }) {
+            allContentfulEvent(sort: {date: ASC}) {
               edges {
                 node {
                   title

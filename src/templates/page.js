@@ -178,7 +178,7 @@ export default PageTemplate;
 
 export const pageQuery = graphql`
   query PageBySlug($slug: String!) {
-    contentfulPage(slug: { eq: $slug }) {
+    contentfulPage(slug: {eq: $slug}) {
       title
       section
       slug
@@ -188,7 +188,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulPage(sort: { fields: [title], order: ASC }) {
+    allContentfulPage(sort: {title: ASC}) {
       edges {
         node {
           title
@@ -197,7 +197,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulTeam(sort: { fields: [order], order: ASC }) {
+    allContentfulTeam(sort: {order: ASC}) {
       edges {
         node {
           title

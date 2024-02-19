@@ -44,16 +44,14 @@ export default BlogIndex;
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
-    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
+    allContentfulBlogPost(sort: {publishDate: DESC}) {
       edges {
         node {
           title
           slug
           publishDate(formatString: "MMMM Do, YYYY")
           featureImage {
-            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: CROP) {
-              ...GatsbyContentfulFluid
-            }
+            gatsbyImageData(layout: CONSTRAINED, width: 350, height: 350)
           }
           description {
             childMarkdownRemark {

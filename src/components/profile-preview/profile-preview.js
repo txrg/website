@@ -1,10 +1,10 @@
 import React from 'react';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 
 export default ({ profile }) => (
   <div className="profile__preview  service-content">
     <div className="profile__thumbnail">
-      <Img alt={profile.name} sizes={profile.photo.sizes} />
+      <GatsbyImage alt={profile.name} sizes={profile.photo.sizes} image={profile.photo.gatsbyImageData} />
     </div>
 
     <h4 className="profile__name">

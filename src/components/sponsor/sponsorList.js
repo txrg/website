@@ -15,9 +15,7 @@ class SponsorList extends React.Component {
                   type
                   id
                   photo {
-                    fluid {
-                      ...GatsbyContentfulFluid
-                    }
+                    gatsbyImageData(layout: CONSTRAINED)
                   }
                   link
                 }

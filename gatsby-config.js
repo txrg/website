@@ -31,14 +31,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sass',
       options: {
-        includePaths: [path.resolve(__dirname, 'node_modules')],
-        importer: (url, prev, done) => {
-          done({
-            file: !/import-once(\.scss)?$/.test(url)
-              ? url
-              : path.resolve(__dirname, 'src/styles/import-once'),
-          });
-        },
+        implementation: require("node-sass"),
       },
     },
     {
@@ -76,6 +69,7 @@ module.exports = {
       },
     },
 
-    'gatsby-plugin-offline'
+    'gatsby-plugin-offline',
+    'gatsby-plugin-image'
   ],
 };

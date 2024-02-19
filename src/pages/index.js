@@ -146,7 +146,7 @@ export default RootIndex;
 
 export const pageQuery = graphql`
   query HomeQuery {
-    allContentfulProfile(sort: { fields: [name], order: ASC }) {
+    allContentfulProfile(sort: {name: ASC}) {
       edges {
         node {
           name
@@ -160,9 +160,7 @@ export const pageQuery = graphql`
           }
           featured
           photo {
-            sizes(maxWidth: 350) {
-              ...GatsbyContentfulSizes
-            }
+            gatsbyImageData(layout: CONSTRAINED, width: 350)
           }
           featureDescription {
             childMarkdownRemark {
@@ -172,7 +170,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
+    allContentfulBlogPost(sort: {publishDate: DESC}) {
       edges {
         node {
           title
@@ -180,9 +178,7 @@ export const pageQuery = graphql`
           publishDate(formatString: "MMMM Do, YYYY")
           featured
           featureImage {
-            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: CROP) {
-              ...GatsbyContentfulFluid
-            }
+            gatsbyImageData(layout: CONSTRAINED, width: 350, height: 350)
           }
           description {
             childMarkdownRemark {
@@ -200,9 +196,7 @@ export const pageQuery = graphql`
           section
           featured
           featureImage {
-            fluid(maxWidth: 350, maxHeight: 350, resizingBehavior: CROP) {
-              ...GatsbyContentfulFluid
-            }
+            gatsbyImageData(layout: CONSTRAINED, width: 350, height: 350)
           }
           featureDescription {
             childMarkdownRemark {

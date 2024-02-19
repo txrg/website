@@ -12,15 +12,15 @@ See our [official Contentful getting started guide](https://www.contentful.com/d
 
 ## Development
 
-### `yarn dev`
+### `npm dev`
 
 Run the project locally with live reload in development mode.
 
-### `yarn build`
+### `npm build`
 
 Run a production build into `./public`. The result is ready to be put on any static hosting you prefer.
 
-### `yarn serve`
+### `npm serve`
 
 Spin up a production-ready server with your blog. Don't forget to build your page beforehand.
 

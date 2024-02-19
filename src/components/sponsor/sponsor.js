@@ -1,5 +1,5 @@
 import React from 'react';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 
 export default ({ sponsor }) => (
   <a
@@ -7,10 +7,9 @@ export default ({ sponsor }) => (
     href={sponsor.link}
     target="_blank"
     rel="noopener noreferrer">
-    <Img
+    <GatsbyImage
+      image={sponsor.photo.gatsbyImageData}
       className="sponsor__img"
-      alt={sponsor.name}
-      fluid={sponsor.photo.fluid}
-    />
+      alt={sponsor.name} />
   </a>
 );

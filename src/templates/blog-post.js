@@ -36,9 +36,7 @@ export const pageQuery = graphql`
       title
       publishDate(formatString: "MMMM Do, YYYY")
       featureImage {
-        fluid(maxWidth: 1180, background: "rgb:000000") {
-          ...GatsbyContentfulFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED, width: 1180, backgroundColor: "rgb:000000")
       }
       body {
         childMarkdownRemark {
