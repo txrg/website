@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-export default ({ blog }) => (
+const BlogPreview = ({ blog }) => (
   <div className="bgrid feature">
     <div className="blog__preview service-content">
       <Link className="blog__header" to={`/blog/${blog.slug}`}>
@@ -20,3 +20,5 @@ export default ({ blog }) => (
     </div>
   </div>
 );
+
+export default BlogPreview;

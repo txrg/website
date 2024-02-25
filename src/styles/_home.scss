@@ -11,25 +11,6 @@
   display: table;
 }
 
-.home .shadow-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.2;
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, $ui-dark 0%, $ui-dark 20%, transparent 100%);
-}
-.home .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.2;
-  background-color: $text-02;
-}
 .content-home {
   padding-top: 8rem;
 }
@@ -38,61 +19,62 @@
   display: table-cell;
   width: 100%;
   height: 100%;
-  vertical-align: bottom;
+  position: static;
 }
 .home-content .contents {
   position: relative;
 }
-.home-content-left {
-  padding: 15rem 0 10rem 40px;
-  position: relative;
+.home-highlight {
+  margin: 0;
+  top: 72px;
+  width: 100vw;
+  min-height: 578px;
+  max-width: unset;
+}
+.home-highlight-right {
+  position: absolute;
+  height: 100%;
   width: 50%;
+  right: 0;
 }
-.home-content-left h3 {
-  color: rgba($ui-light, 0.8);
-  font-size: 1.6rem;
-  line-height: 1.5;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  margin-bottom: 2.4rem;
+.home-highlight-right > img {
+  width: 100%;
+  max-width: unset;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
 }
-.home-content-left h1 {
+.home-highlight-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 50%;
+  text-align: center;
+}
+.home-highlight-left h1 {
   font-family: 'montserrat-regular', sans-serif;
-  font-size: 5.2rem;
+  font-size: 6.5rem;
   letter-spacing: -0.05rem;
-  line-height: 1.269;
-  color: $text-inverse;
-  margin-bottom: 9rem;
+  line-height: 1;
+  color: $text-02;
 }
-.home-content-left .button.stroke {
-  color: $text-inverse !important;
-  border-color: $text-inverse;
-  margin: 0 0.6rem 1.2rem;
-  padding: 0 2.2rem;
+.home-highlight-left .button.stroke {
+  color: $text-02 !important;
+  background-color: $text-inverse !important;
+  border-color: $text-02;
   min-width: 188px;
 }
-.home-content-left .button.stroke span[class*='icon'] {
+.home-highlight-left .button.stroke span[class*='icon'] {
   margin-right: 5px;
   position: relative;
   top: 2px;
 }
-.home-content-left .button.stroke:hover,
-.home-content-left .button.stroke:focus {
-  background-color: $ui-light !important;
-  color: $text-02 !important;
-}
-.home-image-right {
-  display: block;
-  position: absolute;
-  right: 80px;
-  top: 50%;
-  z-index: 500;
-  width: 50%;
-  text-align: right;
-}
-.home-image-right img {
-  vertical-align: bottom;
-  width: 35%;
+.home-highlight-left .button.stroke:hover,
+.home-highlight-left .button.stroke:focus {
+  background-color: $ui-01 !important;
+  color: $text-inverse !important;
 }
 /* home social-list */
 .home-social-list {
@@ -136,130 +118,68 @@
  * home section 
  * ------------------------------------------------------------------- */
 
-@media only screen and (max-width: 1100px) {
-  .home-content-left h1 {
-    font-size: 4.6rem;
-  }
-  .home-content-left h1 br {
-    display: none;
-  }
-}
-@media only screen and (max-width: 1024px) {
-  .home-content-left {
+@media only screen and (max-width: 1300px) {
+  .home-highlight-right {
     width: 60%;
-    padding: 18rem 6rem 10rem 4rem;
   }
-  .home-content-left h3 {
-    font-size: 1.5rem;
-  }
-  .home-content-left h1 {
-    font-size: 4.2rem;
-  }
-  .home-image-right {
+  .home-highlight-left {
     width: 40%;
   }
 }
-@media only screen and (max-width: 600px) {
-  .home {
-    height: auto;
-    min-height: 840px;
+@media only screen and (max-width: 1090px) {
+  .home-highlight-right {
+    width: 90%;
   }
+  .home-highlight-left {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+  }
+  .home-highlight-left h1 {
+    color: $text-inverse;
+    opacity: .8;
+    text-shadow: -1px 0 $text-02, 0 1px $text-02, 1px 0 $text-02, 0 -1px $text-02;
+  }
+}
+@media only screen and (max-width: 720px) {
   .home,
   .home-content {
+    height: auto;
     display: block;
-    text-align: center;
+    min-height: 572px;
   }
-  .home-content-left {
-    width: 94%;
+  .home-highlight {
+    min-height: 500px;
+  }
+  .home-highlight-right {
+    width: 100%;
+  }
+  .home-highlight-left {
+    width: 100%;
     position: static;
-    padding: 15rem 6rem 366px;
-    margin: 0 auto;
   }
-  .home-content-left h1 {
-    margin-bottom: 3.6rem;
-  }
-  .home-image-right {
-    width: 300px;
-    right: auto;
-    top: auto;
-    left: 50%;
-    bottom: 100px;
-    transform: translateX(-50%);
-    padding: 0;
-    text-align: center;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .home {
-    min-height: auto;
-  }
-  .home-content-left h3 {
-    font-size: 1.4rem;
-  }
-  .home-content-left h1 {
-    font-size: 3.6rem;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .home-content-left {
-    padding: 10rem 6rem 366px;
-  }
-  .home-content-left h1 {
-    font-size: 3.3rem;
-  }
-  .home-content-left .button.stroke {
+  .home-highlight-left .button.stroke {
     width: 100%;
     min-width: 0;
     max-width: 280px;
   }
-  .home-social-list {
-    font-size: 2rem;
-    right: 30px;
-  }
-  .scroll-icon {
-    top: 21px;
-  }
-}
-@media only screen and (max-width: 500px) {
-  .home-social-list,
-  .home-scrolldown {
+  .home-social-list::before {
     display: none;
   }
-  .home-content-left {
-    padding: 10rem 2.5rem 366px;
+  .home-social-list {
+    display: flex;
+    justify-content: space-evenly;
     width: 100%;
-  }
-  .home-content-left h1 {
+    top: unset;
+    right: unset;
+    transform: unset;
     font-size: 3rem;
   }
-}
-@media only screen and (max-width: 500px) {
-  .home-content-left {
-    padding: 10rem 0 250px;
-  }
-  .home-content-left .button.stroke {
-    margin: 0 0 1.2rem 0;
-  }
-  .home-image-right {
-    width: 320px;
-  }
-}
-
-.homepage-skaters {
-  position: absolute;
-  width: 100%;
-  right: 0;
-  bottom: 0;
-  padding-top: 10px;
-  padding-bottom: 2rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
-
-  @media only screen and (min-width: 600px) {
-    width: 65%;
-  }
-  
-  @include breakpoint('md') {
-    width: 65%;
+  .home-social-list li i {
+    color: $text-02;
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import TXRG20yearsLogoWhite from '../../images/TXRG20yearsLogoWhite.png'; 
+import TXRGLogoWhite from '../../images/logo-white.png';
 
 class Header extends React.Component {
   menuToggleClick = () => {
@@ -14,13 +14,11 @@ class Header extends React.Component {
   render() {
     return (
       <header className="header">
-        <div class="row">
+        <div className="row">
           <div className="header-logo">
             <Link className="logo" to="/" aria-label="Texas Rollergirls Home">
- 
-            <img src ={TXRG20yearsLogoWhite} alt="TXRG" />       
-            
-              <span> Texas Rollergirls</span>
+              <img src ={TXRGLogoWhite} alt="TXRG" />       
+              <span className="header-logo-name"> Texas Rollergirls</span>
             </Link>
           </div>
 

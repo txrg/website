@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-export default ({ page }) => (
+const PagePreview = ({ page }) => (
   <div className="bgrid feature">
     <div className="page__preview  service-content">
       <Link
@@ -28,3 +28,5 @@ export default ({ page }) => (
     </div>
   </div>
 );
+
+export default PagePreview;

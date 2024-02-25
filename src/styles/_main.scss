@@ -94,8 +94,8 @@ body {
     background-position: 0 -65px;
   }
 
-  @include breakpoint('md') {
-    background-size: 100%;
+  @media only screen and (min-width: 1024px) {
+    background-size: 115%;
     background-position: 0 -75px;
   }
 }

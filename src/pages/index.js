@@ -1,145 +1,137 @@
 import React from 'react';
-import get from 'lodash/get';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout/layout';
 import BlogPreview from '../components/blog-preview/blog-preview';
 import PagePreview from '../components/page-preview/page-preview';
 import Profile from '../components/profile-preview/profile-feature';
 import EventList from '../components/eventList/eventList';
-import skaters from '../images/20yr-header-photo-homepage-v2.png';
+import skaters from '../images/homepage.png';
 
-class RootIndex extends React.Component {
-  render() {
-    const blogs = get(this, 'props.data.allContentfulBlogPost.edges');
-    const pages = get(this, 'props.data.allContentfulPage.edges');
-    const profiles = get(this, 'props.data.allContentfulProfile.edges');
+const RootIndex = ({ data, location }) => { 
+  const blogs = data.allContentfulBlogPost.edges;
+  const pages = data.allContentfulPage.edges;
+  const profiles = data.allContentfulProfile.edges;
 
-    return (
-      <Layout location={this.props.location}>
-        <section className="home">
-          <div className="overlay" />
+  return (
+    <Layout location={location}>
+      <section className="home">
 
-          <div className="home-content">
-            <div className="row contents">
+        <div className="home-content">
+          <div className="home-highlight row contents">
+            <div className="home-highlight-right">
               <img
                 src={skaters}
                 alt="Texas Rollergirls"
-                className="homepage-skaters"
               />
-              <div className="home-content-left">
-                <h1>
-                  Celebrating <br />
-                  20 years of <br />
-                  Roller Derby.
-                </h1>
+            </div>
+            <div className="home-highlight-left">
+              <h1>
+                <span style={{ display: "block" }}>THIS IS </span>
+                <span style={{ display: "block" }}>ROLLER </span>
+                DERBY
+              </h1>
 
-                <div className="buttons">
-                 <Link to="/events/tickets/"
-                    className="smoothscroll button stroke">
-                    <span className="icon-calendar" aria-hidden="true" />
-                    Tickets
-                  </Link>
-                  <Link to="/donate" className="smoothscroll button stroke">
-                    <span className="icon-dollar" aria-hidden="true" />
-                    Donate
-                  </Link>
-                </div>
+              <div className="buttons">
+               <Link to="/events/tickets/"
+                  className="smoothscroll button stroke">
+                  <span className="icon-calendar" aria-hidden="true" />
+                  Tickets
+                </Link>
+                <Link to="/donate" className="smoothscroll button stroke">
+                  <span className="icon-dollar" aria-hidden="true" />
+                  Donate
+                </Link>
               </div>
-              {/*}
-              <div className="home-image-right">
-                <img src={logo} alt="Texas Rollergirls" className="logo-seal" />
-              </div>
-              */}
             </div>
           </div>
+        </div>
 
-          <ul className="home-social-list">
-            <li>
-              <a
-                href="http://www.facebook.com/TexasRollergirls"
-                aria-label="Facebook">
-                <i className="fa fa-facebook-square" />
+        <ul className="home-social-list">
+          <li>
+            <a
+              href="http://www.facebook.com/TexasRollergirls"
+              aria-label="Facebook">
+              <i className="fa fa-facebook-square" />
+            </a>
+          </li>
+          <li>
+            <a href="http://twitter.com/txrollergirls" aria-label="Twitter">
+              <i className="fa fa-twitter" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/texasrollergirls/"
+              aria-label="Instagram">
+              <i className="fa fa-instagram" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="http://www.youtube.com/TexasRollergirls"
+              aria-label="Youtube">
+              <i className="fa fa-youtube-square" />
               </a>
-            </li>
-            <li>
-              <a href="http://twitter.com/txrollergirls" aria-label="Twitter">
-                <i className="fa fa-twitter" />
+          </li>
+          <li>
+            <a
+              href="https://www.tiktok.com/@texasrollergirls"
+              aria-label="TikTok">
+              <i className="fa fa-tiktok" />
               </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/texasrollergirls/"
-                aria-label="Instagram">
-                <i className="fa fa-instagram" />
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://www.youtube.com/TexasRollergirls"
-                aria-label="Youtube">
-                <i className="fa fa-youtube-square" />
-                </a>
-            </li>
-            <li>
-              <a
-                href="https://www.tiktok.com/@texasrollergirls"
-                aria-label="TikTok">
-                <i className="fa fa-tiktok" />
-                </a>
-            </li>
-          </ul>
-        </section>
+          </li>
+        </ul>
+      </section>
 
-        <section className="content content-home">
-          <div className="row content-intro">
-            <div className="col-two">
-              <h1 className="intro-header">2024 Season</h1>
-            </div>
-            <div className="col-ten">
-             
-             <EventList />
-            </div>
+      <section className="content content-home">
+        <div className="row content-intro">
+          <div className="col-two">
+            <h1 className="intro-header">2024 Season</h1>
           </div>
-
-          <div className="row about-features">
-            <div className="features-list block-1-4 block-m-1-3 block-mob-full group">
-              {pages.map(({ node }) => {
-                const FeaturedPage = node.featured;
-                return (
-                  <>
-                    {FeaturedPage ? (
-                      <PagePreview page={node} key={node.id} />
-                    ) : null}
-                  </>
-                );
-              })}
-              {profiles.map(({ node }) => {
-                return (
-                  <>
-                    {node.featured != null ? (
-                      <div className="bgrid feature">
-                        <Profile profile={node} key={node.id} />
-                      </div>
-                    ) : null}
-                  </>
-                );
-              })}
-              {blogs.map(({ node }) => {
-                const featuredBlog = node.featured;
-                return (
-                  <>
-                    {featuredBlog ? (
-                      <BlogPreview blog={node} key={node.id} />
-                    ) : null}
-                  </>
-                );
-              })}
-            </div>
+          <div className="col-ten">
+           
+           <EventList />
           </div>
-        </section>
-      </Layout>
-    );
-  }
+        </div>
+
+        <div className="row about-features">
+          <div className="features-list block-1-4 block-m-1-3 block-mob-full group">
+            {pages.map(({ node }) => {
+              const FeaturedPage = node.featured;
+              return (
+                <>
+                  {FeaturedPage ? (
+                    <PagePreview page={node} key={node.id} />
+                  ) : null}
+                </>
+              );
+            })}
+            {profiles.map(({ node }) => {
+              return (
+                <>
+                  {node.featured != null ? (
+                    <div className="bgrid feature" key={node.id}>
+                      <Profile profile={node} />
+                    </div>
+                  ) : null}
+                </>
+              );
+            })}
+            {blogs.map(({ node }) => {
+              const featuredBlog = node.featured;
+              return (
+                <>
+                  {featuredBlog ? (
+                    <BlogPreview blog={node} key={node.id} />
+                  ) : null}
+                </>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
 }
 
 export default RootIndex;

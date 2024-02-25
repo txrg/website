@@ -64,7 +64,7 @@
   }
 }
 
-.header-logo span {
+.header-logo-name {
   font-size: 16px;
   white-space: nowrap;
   display: flex;
@@ -243,7 +243,16 @@ button.header-menu-toggle.is-clicked span::after {
   }
 }
 
+@media only screen and (max-width: 900px) {
+  .header-logo-name  {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 768px) {
+  .header-logo-name {
+    display: flex;
+  }
   .open .header-nav-wrap {
     display: block;
   }
@@ -286,6 +295,12 @@ button.header-menu-toggle.is-clicked span::after {
   .header-nav-wrap .cta {
     display: block;
     padding: 0 20px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .header-logo-name {
+    display: none;
   }
 }
 

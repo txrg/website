@@ -1,31 +1,27 @@
 import React from 'react';
-import get from 'lodash/get';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = get(this.props, 'data.contentfulBlogPost');
-
-    return (
-      <Layout location={this.props.location}>
-        <section className="content content-intro">
-          <div className="row">
-            <div className="col-two" />
-            <div className="col-eight">
-              <h1 className="intro-header">{post.title}</h1>
-              <h5>{post.publishDate}</h5>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: post.body.childMarkdownRemark.html,
-                }}
-              />
-            </div>
+const BlogPostTemplate = ({ data, location }) => { 
+  const post = data.contentfulBlogPost;
+  return (
+    <Layout location={location}>
+      <section className="content content-intro">
+        <div className="row">
+          <div className="col-two" />
+          <div className="col-eight">
+            <h1 className="intro-header">{post.title}</h1>
+            <h5>{post.publishDate}</h5>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: post.body.childMarkdownRemark.html,
+              }}
+            />
           </div>
-        </section>
-      </Layout>
-    );
-  }
+        </div>
+      </section>
+    </Layout>
+  );
 }
 
 export default BlogPostTemplate;
