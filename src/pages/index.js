@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout/layout';
 import BlogPreview from '../components/blog-preview/blog-preview';
 import PagePreview from '../components/page-preview/page-preview';
-import Profile from '../components/profile-preview/profile-feature';
+import ProfilePreview from '../components/profile-preview/profile-preview';
 import EventList from '../components/eventList/eventList';
 import skaters from '../images/homepage.png';
 
@@ -111,7 +111,7 @@ const RootIndex = ({ data, location }) => {
                 <>
                   {node.featured != null ? (
                     <div className="bgrid feature" key={node.id}>
-                      <Profile profile={node} />
+                      <ProfilePreview profile={node} />
                     </div>
                   ) : null}
                 </>
