@@ -50,7 +50,8 @@
 }
 
 .sponsors .sponsor__list li a {
-  display: block;
+  display: flex;
+  align-items: center;
   height: 100%;
   padding: 2rem;
 }
