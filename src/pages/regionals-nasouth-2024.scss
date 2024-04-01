@@ -1,0 +1,143 @@
+.regionals {
+    font-weight: bold;
+    background-color: white;
+}
+.regionals > section {
+    padding-bottom: 2rem;
+}
+.regionals b {
+    font-weight: bolder;
+}
+div[class^="regionals-"][class$="-title"] {
+    font-size: 3rem;
+    font-weight: bolder;
+    line-height: 4rem;
+    font-family: 'montserrat-regular';
+    padding: 3rem 0;
+}
+.regionals button {
+    width: 100%;
+    height: 36px;
+    margin: 24px 0;
+    line-height: unset;
+}
+section[class*="regionals-theme-"], footer {
+    padding-left: 27px;
+    padding-right: 27px;
+}
+.regionals-theme-1 {
+    background-color: white;
+    color: black;
+}
+.regionals-theme-1 div[class^="regionals-"][class$="-title"] {
+    color: rgb(98, 0, 128);
+}
+.regionals-theme-1 button {
+    background-color: rgba(75, 188, 194, 1);
+    border-color: rgba(75, 188, 194, 1);
+}
+.regionals-theme-2 {
+    background-color: rgba(67, 0, 87, 1);
+    color: white;
+}
+.regionals-theme-2 div[class^="regionals-"][class$="-title"] {
+    color: rgba(255, 169, 38, 1);
+}
+.regionals-theme-2 button {
+    background-color: rgba(255, 169, 38, 1);
+    border-color: rgba(255, 169, 38, 1);
+}
+.regionals-theme-3 {
+    background-color: rgba(255, 208, 179, 1);
+    color: black;
+}
+.regionals-theme-3 div[class^="regionals-"][class$="-title"] {
+    color: rgb(57, 0, 87);
+}
+.regionals-theme-3 button {
+    background-color: rgb(98, 0, 128);
+    border-color: rgb(98, 0, 128);
+    color: white;
+}
+.regionals-top {
+    height: 565px;
+}
+.regionals-top-image {
+    height: 565px;
+    width: 100%;
+    background-position: center center;
+    background-image: url('../images/regionals-nasouth-2024/header.png');
+    background-size: cover;
+    position: absolute;
+    pointer-events: none;
+}
+.regionals-navigation-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: white;
+    align-items: baseline;
+    align-content: space-around;
+    row-gap: 1rem;
+    padding: 1rem;
+}
+.regionals-navigation-wrapper > a {
+    background-color: rgb(98, 0, 128);
+    color: white;
+    border-radius: 16px;
+    padding: 0.3rem 1rem;
+}
+.regionals-overview {
+    text-align: center;
+}
+.regionals-overview > img {
+    padding: 2rem 0;
+}
+.regionals-sponsors > img{
+    padding: 2rem 0;
+}
+.regionals-about {
+    text-align: left;
+}
+.regionals-about > img {
+    margin: 0.5rem 0;
+}
+.regionals-divisions {
+    text-align: center;
+}
+.regionals-divisions > div {
+    padding: 1rem 0 2rem;
+}
+div[class^="regionals-divisions-"][class$="-name"] {
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+.regionals-divisions-women {
+    color: rgb(98, 0, 128);
+}
+.regionals-divisions-open {
+    color: rgba(255, 169, 38, 1);
+}
+.regionals-divisions-junior {
+    color: #4bbcc2;
+}
+.regionals-volunteer {
+    text-align: left;
+}
+.regionals-volunteer-type {
+    margin-top: 4rem;
+    font-size: 2rem;
+    color: rgb(98, 0, 128);
+}
+.regionals-volunteer > button {
+    margin-top: 1rem;
+}
+@media only screen and (min-width: 1280px) {
+    .regionals-navigation {
+        display: flex;
+        justify-content: center;
+    }
+    .regionals-navigation-wrapper {
+        width: 1260px;
+    }
+}
