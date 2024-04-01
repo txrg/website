@@ -90,22 +90,25 @@ section[class*="regionals-theme-"], footer {
 .regionals-overview {
     text-align: center;
 }
-.regionals-overview > img {
+.regionals-overview img {
     padding: 2rem 0;
 }
-.regionals-sponsors > img{
+.regionals-sponsors-title {
+    text-align: center;
+}
+.regionals-sponsors img {
     padding: 2rem 0;
 }
 .regionals-about {
     text-align: left;
 }
-.regionals-about > img {
-    margin: 0.5rem 0;
+.regionals-about img {
+    margin-top: 1.5rem;
 }
 .regionals-divisions {
     text-align: center;
 }
-.regionals-divisions > div {
+.regionals-divisions-wrapper > div {
     padding: 1rem 0 2rem;
 }
 div[class^="regionals-divisions-"][class$="-name"] {
@@ -132,12 +135,57 @@ div[class^="regionals-divisions-"][class$="-name"] {
 .regionals-volunteer > button {
     margin-top: 1rem;
 }
+@media only screen and (min-width: 768px) {
+    .regionals-overview-photos, .regionals-sponsors-photos, .regionals-about {
+        display: flex;
+        justify-content: space-between;
+    }
+    .regionals-overview-photos img {
+        width: 49%;
+    }
+    .regionals-sponsors-photos img {
+        width: 33%;
+        margin: 1rem;
+        overflow: hidden;
+    }
+    .regionals-about-photos {
+        max-width: 75%;
+    }
+    .regionals-about-photos img {
+        display: block;
+        margin: 3rem 4rem 2rem 1rem;
+    }
+    .regionals-about-content {
+        margin-left: 5rem;
+    }
+    .regionals-divisions-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .regionals-volunteer-sections {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 3rem;
+    }
+    .regionals-volunteer-section {
+        flex-grow: 1;
+    }
+    .regionals-volunteer button {
+        margin-top: 12px;
+    }
+}
 @media only screen and (min-width: 1280px) {
     .regionals-navigation {
         display: flex;
         justify-content: center;
     }
-    .regionals-navigation-wrapper {
+    .regionals-navigation-wrapper, .regionals-overview-wrapper, .regionals-sponsors-wrapper, .regionals-volunteer-wrapper, .regionals-vendorsponsor-wrapper, .regionals-contact-wrapper {
         width: 1260px;
+    }
+    .regionals-overview, .regionals-sponsors, .regionals-volunteer, .regionals-vendorsponsor, .regionals-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
