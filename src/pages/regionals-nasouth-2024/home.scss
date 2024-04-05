@@ -1,0 +1,109 @@
+.regionals-home {
+    font-weight: bold;
+    background-color: white;
+}
+.regionals-home > section[class*="theme-"] {
+    padding-left: 27px;
+    padding-right: 27px;
+}
+.regionals-home > section {
+    padding-bottom: 2rem;
+}
+.regionals-home b {
+    font-weight: bolder;
+}
+.regionals-home button {
+    width: 100%;
+    height: 36px;
+    margin: 24px 0;
+    line-height: unset;
+}
+.regionals-home-header {
+    height: 565px;
+}
+.regionals-home-header-image {
+    height: 565px;
+    background-image: url('../images/regionals-nasouth-2024/header-01.png');
+}
+.regionals-home-overview {
+    text-align: center;
+}
+.regionals-home-overview img {
+    padding: 2rem 0;
+}
+.regionals-home-sponsors-title {
+    text-align: center;
+}
+.regionals-home-sponsors img {
+    padding: 2rem 0;
+}
+.regionals-home-divisions {
+    text-align: center;
+}
+.regionals-home-divisions-wrapper > div {
+    padding: 1rem 0 2rem;
+}
+div[class^="regionals-home-divisions-"][class$="-name"] {
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+.regionals-home-divisions-women {
+    color: rgb(98, 0, 128);
+}
+.regionals-home-divisions-open {
+    color: rgba(255, 169, 38, 1);
+}
+.regionals-home-divisions-junior {
+    color: #4bbcc2;
+}
+.regionals-home-volunteer {
+    text-align: left;
+}
+.regionals-home-volunteer-type {
+    margin-top: 4rem;
+    font-size: 2rem;
+    color: rgb(98, 0, 128);
+}
+.regionals-home-volunteer > button {
+    margin-top: 1rem;
+}
+@media only screen and (min-width: 768px) {
+    .regionals-home-overview-photos, .regionals-home-sponsors-photos {
+        display: flex;
+        justify-content: space-between;
+    }
+    .regionals-home-overview-photos img {
+        width: 49%;
+    }
+    .regionals-home-sponsors-photos img {
+        width: 33%;
+        margin: 1rem;
+        overflow: hidden;
+    }
+    .regionals-home-divisions-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .regionals-home-volunteer-sections {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 3rem;
+    }
+    .regionals-home-volunteer-section {
+        flex-grow: 1;
+    }
+    .regionals-home-volunteer button {
+        margin-top: 12px;
+    }
+}
+@media only screen and (min-width: 1280px) {
+    .regionals-home-overview-wrapper, .regionals-home-sponsors-wrapper, .regionals-home-volunteer-wrapper, .regionals-home-vendorsponsor-wrapper, .regionals-home-contact-wrapper {
+        width: 1260px;
+    }
+    .regionals-home-overview, .regionals-home-sponsors, .regionals-home-volunteer, .regionals-home-vendorsponsor, .regionals-home-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

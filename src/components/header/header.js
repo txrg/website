@@ -23,7 +23,6 @@ const Header = () => {
 
         <nav className="header-nav-wrap">
           <ul className="header-main-nav" onClick={() => menuHideClick()}>
-   
             <li>
               <Link to="/regionals">2024 NA South Regionals</Link>
             </li>
