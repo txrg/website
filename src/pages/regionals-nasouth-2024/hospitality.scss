@@ -1,3 +1,113 @@
 .regionals-hospitality {
     background-color: white;
 }
+.regionals-hospitality img {
+    margin: 2rem 0;
+    width: 100%;
+}
+.regionals-hospitality-about, .regionals-hospitality-guide-wrapper, .regionals-hospitality-hotels, .regionals-hospitality-restaurants, .regionals-hospitality-attractions {
+    padding: 0 2rem;
+}
+.regionals-hospitality-header {
+    height: 340px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+.regionals-hospitality-header-image {
+    height: 340px;
+    background-image: url('../images/regionals-nasouth-2024/header-02.png');
+}
+.regionals-hospitality-header-title {
+    z-index: 1;
+    font-size: 5rem;
+    font-weight: bolder;
+    color: white;
+}
+.regionals-hospitality-guide {
+    padding-bottom: 3rem;
+}
+.regionals-hospitality-guide-details {
+    display: flex;
+    justify-content: center;
+}
+.regionals-hospitality-guide-details > iframe {
+    height: 380px;
+    width: 300px;
+}
+.regionals-hospitality-hotels p {
+    text-align: center;
+    line-height: 2.5rem;
+}
+.regionals-hospitality-restaurants {
+    padding-bottom: 2rem;
+}
+@media only screen and (min-width: 768px) {
+    .regionals-hospitality-about, .regionals-hospitality-guide-wrapper, .regionals-hospitality-hotels, .regionals-hospitality-restaurants, .regionals-hospitality-attractions {
+        padding: 0 5rem;
+    }
+    .regionals-hospitality-about {
+        padding-bottom: 3rem;
+    }
+    .regionals-hospitality-about-details {
+        display: flex;
+    }
+    .regionals-hospitality-about-details-column1 {
+        max-width: 60%;
+        margin-right: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .regionals-hospitality-about-details-column1 img {
+        width: 100%;
+        max-width: 500px;
+        padding: 0 3rem;
+    }
+    .regionals-hospitality-about-details-column2 img {
+        margin: 0px;
+    }
+    .regionals-hospitality-guide-details > iframe {
+        height: 770px;
+        width: 600px;
+    }
+    div[class^="regionals-hospitality-hotels-"][class$="details"] {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    div[class^="regionals-hospitality-hotels-"][class$="details"] img {
+        width: 50%;
+        max-width: 600px;
+        margin: 0;
+    }
+    div[class^="regionals-hospitality-hotels-"][class$="details"] div {
+        margin-left: 2rem;
+        width: 580px;
+    }
+    div[class^="regionals-hospitality-hotels-"][class$="details"] p {
+        margin: 0;
+    }
+    .regionals-hospitality-restaurants-locations {
+        display: flex;
+        justify-content: space-between;
+    }
+    .regionals-hospitality-atttractions-details img {
+        width: 600px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .regionals-hospitality-restaurants-locations {
+        width: 900px;
+    }
+}
+@media only screen and (min-width: 1400px) {
+    div[class^="regionals-hospitality-hotels-"][class$="details"] {
+        justify-content: left;
+    }
+    div[class^="regionals-hospitality-hotels-"][class$="details"] div {
+        margin-left: 11rem;
+    }
+}
