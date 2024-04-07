@@ -1,0 +1,36 @@
+.regionals-info-header {
+    height: 340px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+.regionals-info-header-image {
+    height: 340px;
+    background-image: url('../images/regionals-nasouth-2024/header-02.png');
+}
+.regionals-info-header-title {
+    z-index: 1;
+    font-size: 5rem;
+    color: white;
+}
+.regionals-info-about img {
+    width: 100%;
+}
+[class^="regionals-info-event-dates-"][class$="-date"] {
+    font-weight: bold;
+    color: rgb(255, 169, 38);
+}
+.regionals-info-event-location iframe {
+    width: 100%;
+    height: 300px;
+}
+@media only screen and (min-width: 768px) {
+    .regionals-info-outcome-teams {
+        display: flex;
+        justify-content: space-between;;
+    }
+    .regionals-info-more-details {
+        display: flex;
+        column-gap: 2rem;
+    }
+}
