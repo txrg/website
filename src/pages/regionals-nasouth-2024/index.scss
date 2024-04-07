@@ -1,14 +1,30 @@
+.regionals {
+    background-color: white;
+}
+.regionals [class*="theme-"] {
+    padding: 3rem 2rem;
+}
 .regionals a {
     text-decoration: underline;
+    font-weight: bold;
 }
-div[class^="regionals-"][class$="-title"] {
+.regionals button {
+    width: 100%;
+    height: 36px;
+    line-height: unset;
+    margin: 0;
+}
+.regionals button > a {
+    text-decoration: none;
+}
+[class^="regionals-"][class$="-title"] {
     font-size: 3rem;
     font-weight: bolder;
     line-height: 4rem;
     font-family: 'montserrat-regular';
-    padding: 3rem 0;
+    padding-bottom: 3rem;
 }
-div[class^="regionals-"][class$="-subtitle"] {
+[class^="regionals-"][class$="-subtitle"] {
     font-size: 2.3rem;
     font-weight: bolder;
     font-family: 'montserrat-regular';
@@ -20,15 +36,14 @@ div[class^="regionals-"][class$="-subtitle"] {
     background-color: white;
     color: black;
 }
-.regionals .theme-1 div[class^="regionals-"][class$="-title"] {
+.regionals .theme-1 [class^="regionals-"][class$="-title"] {
     color: rgb(98, 0, 128);
 }
-.regionals .theme-1 div[class^="regionals-"][class$="-subtitle"] {
+.regionals .theme-1 [class^="regionals-"][class$="-subtitle"] {
     color: #dd5907;
 }
 .regionals .theme-1 a {
     color: rgba(67,0,87,1);
-    font-weight: bolder;
 }
 .regionals .theme-1 button {
     background-color: rgba(75, 188, 194, 1);
@@ -36,6 +51,9 @@ div[class^="regionals-"][class$="-subtitle"] {
 }
 .regionals .theme-1 button > a {
     color: black
+}
+.regionals .theme-1 .fa-hat-cowboy {
+    color: #4bbcc2;
 }
 
 //---------------------------------------
@@ -45,7 +63,7 @@ div[class^="regionals-"][class$="-subtitle"] {
     background-color: rgba(67, 0, 87, 1);
     color: white;
 }
-.regionals .theme-2 div[class^="regionals-"][class$="-title"] {
+.regionals .theme-2 [class^="regionals-"][class$="-title"], .regionals .theme-2 a, .regionals .theme-2 .fa-hat-cowboy {
     color: rgba(255, 169, 38, 1);
 }
 .regionals .theme-2 button {
@@ -63,10 +81,10 @@ div[class^="regionals-"][class$="-subtitle"] {
     background-color: rgba(255, 208, 179, 1);
     color: black;
 }
-.regionals .theme-3 div[class^="regionals-"][class$="-title"] {
+.regionals .theme-3 [class^="regionals-"][class$="-title"] {
     color: rgb(57, 0, 87);
 }
-.regionals .theme-3 div[class^="regionals-"][class$="-subtitle"] {
+.regionals .theme-3 [class^="regionals-"][class$="-subtitle"] {
     color: rgb(98, 0, 128);
 }
 .regionals .theme-3 a {
@@ -79,15 +97,24 @@ div[class^="regionals-"][class$="-subtitle"] {
 .regionals .theme-3 button > a {
     color: white;
 }
+.regionals .theme-3 .fa-hat-cowboy {
+    color: #620080;
+}
 
 
 //---------------------------------------
 // Header Image
 //---------------------------------------
-div[class^="regionals-"][class$="-header-image"] {
+[class^="regionals-"][class$="-header-image"] {
     width: 100%;
     background-position: center center;
     background-size: cover;
     position: absolute;
     pointer-events: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .regionals [class*="theme-"] {
+        padding: 5rem;
+    }
 }

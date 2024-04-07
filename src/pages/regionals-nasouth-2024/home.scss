@@ -1,23 +1,3 @@
-.regionals-home {
-    font-weight: bold;
-    background-color: white;
-}
-.regionals-home > section[class*="theme-"] {
-    padding-left: 27px;
-    padding-right: 27px;
-}
-.regionals-home > section {
-    padding-bottom: 2rem;
-}
-.regionals-home b {
-    font-weight: bolder;
-}
-.regionals-home button {
-    width: 100%;
-    height: 36px;
-    margin: 24px 0;
-    line-height: unset;
-}
 .regionals-home-header {
     height: 565px;
 }
@@ -27,6 +7,9 @@
 }
 .regionals-home-overview {
     text-align: center;
+}
+.regionals-home-overview button {
+    margin-top: 24px;
 }
 .regionals-home-overview img {
     padding: 2rem 0;
@@ -43,9 +26,8 @@
 .regionals-home-divisions-wrapper > div {
     padding: 1rem 0 2rem;
 }
-div[class^="regionals-home-divisions-"][class$="-name"] {
+[class^="regionals-home-divisions-"][class$="-name"] {
     font-size: 2.5rem;
-    font-weight: bolder;
 }
 .regionals-home-divisions-women {
     color: rgb(98, 0, 128);

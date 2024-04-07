@@ -138,7 +138,6 @@ const HomePage = () => {
                         <div className="regionals-home-contact-title">GET IN TOUCH</div>
                         <div className="regionals-home-contact-details">
                             Questions? Send us an e-mail at <a href="mailto:interleague@texasrollergirls.org">interleague@texasrollergirls.org</a>.
-                            TODO FIX STYLING
                         </div>
                     </div>
                 </section>

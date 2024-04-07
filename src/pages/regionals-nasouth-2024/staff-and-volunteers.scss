@@ -1,0 +1,56 @@
+.regionals-staff img {
+    width: 100%;
+}
+.regionals-staff-header {
+    height: 340px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+.regionals-staff-header-image {
+    height: 340px;
+    background-image: url('../images/regionals-nasouth-2024/header-02.png');
+}
+.regionals-staff-header-title {
+    z-index: 1;
+    font-size: 5rem;
+    font-weight: bolder;
+    color: white;
+}
+.regionals-staff-signup-subtitle {
+    line-height: 3rem;;
+}
+.regionals-staff-signups-option button {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+.regionals-staff-heads-official {
+    border-bottom: solid 1px black;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    &:first-child {
+        border: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    &:last-child {
+        border: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .regionals-staff-signups-column1, .regionals-staff-heads-official {
+        display: flex;
+    }
+    .regionas-staff-signups-column2 .regionals-staff-signups-option {
+        width: 100%;
+    }
+    .regionals-staff-heads-official-column1 {
+        width: 25%;
+    }
+    .regionals-staff-heads-official-column2 {
+        width: 75%;
+        margin-left: 3rem;
+    }
+}
