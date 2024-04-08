@@ -105,6 +105,20 @@
 //---------------------------------------
 // Header Image
 //---------------------------------------
+[class^="regionals-"][class$="-header"]:not(.regionals-home-header) {
+    height: 340px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+[class^="regionals-"][class$="-header-title"] {
+    z-index: 1;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: white;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
 [class^="regionals-"][class$="-header-image"] {
     width: 100%;
     background-position: center center;
@@ -112,9 +126,15 @@
     position: absolute;
     pointer-events: none;
 }
-
+[class^="regionals-"][class$="-header-image"]:not(.regionals-home-header-image) {
+    height: 340px;
+    background-image: url('../images/regionals-nasouth-2024/header-02.png');
+}
 @media only screen and (min-width: 768px) {
     .regionals [class*="theme-"] {
         padding: 5rem;
+    }
+    [class^="regionals-"][class$="-header-title"] {
+        font-size: 5rem;
     }
 }
