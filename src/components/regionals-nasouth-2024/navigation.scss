@@ -10,15 +10,19 @@
     padding-bottom: 0;
 }
 .regionals-navigation-wrapper > a {
-    background-color: rgb(98, 0, 128);
+    background-color: rgb(43, 47, 112);
     color: white;
     border-radius: 16px;
     padding: 0.3rem 1rem;
     text-decoration: none;
 }
-@media only screen and (min-width: 768) {
+@media only screen and (min-width: 768px) {
     .regionals-navigation-wrapper > a {
-        margin: 0 0.5rem;
+        background-color: unset;
+        color: black;
+    }
+    .regionals-navigation-wrapper > a:hover {
+        text-decoration: underline;
     }
 }
 @media only screen and (min-width: 1280px) {

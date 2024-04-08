@@ -1,5 +1,6 @@
 .regionals {
     background-color: white;
+    text-align: center;
 }
 .regionals [class*="theme-"] {
     padding: 3rem 2rem;
@@ -36,41 +37,29 @@
     background-color: white;
     color: black;
 }
-.regionals .theme-1 [class^="regionals-"][class$="-title"] {
-    color: rgb(98, 0, 128);
-}
-.regionals .theme-1 [class^="regionals-"][class$="-subtitle"] {
-    color: #dd5907;
-}
 .regionals .theme-1 a {
     color: rgba(67,0,87,1);
 }
 .regionals .theme-1 button {
-    background-color: rgba(75, 188, 194, 1);
-    border-color: rgba(75, 188, 194, 1);
+    background-color: white;
+    border-color: black;
+}
+.regionals .theme-1 button:hover {
+    background-color: rgb(43, 47, 112);
+    border-color: black;
 }
 .regionals .theme-1 button > a {
     color: black
 }
-.regionals .theme-1 .fa-hat-cowboy {
-    color: #4bbcc2;
+.regionals .theme-1 button:hover > a {
+    color: white 
 }
 
 //---------------------------------------
 // Theme 2
 //---------------------------------------
 .regionals .theme-2 {
-    background-color: rgba(67, 0, 87, 1);
-    color: white;
-}
-.regionals .theme-2 [class^="regionals-"][class$="-title"], .regionals .theme-2 a, .regionals .theme-2 .fa-hat-cowboy {
-    color: rgba(255, 169, 38, 1);
-}
-.regionals .theme-2 button {
-    background-color: rgba(255, 169, 38, 1);
-    border-color: rgba(255, 169, 38, 1);
-}
-.regionals .theme-2 button > a {
+    background-color: rgb(43, 47, 112);
     color: white;
 }
 
@@ -78,29 +67,26 @@
 // Theme 3
 //---------------------------------------
 .regionals .theme-3 {
-    background-color: rgba(255, 208, 179, 1);
+    background-color: rgb(233, 232, 228);
     color: black;
-}
-.regionals .theme-3 [class^="regionals-"][class$="-title"] {
-    color: rgb(57, 0, 87);
-}
-.regionals .theme-3 [class^="regionals-"][class$="-subtitle"] {
-    color: rgb(98, 0, 128);
 }
 .regionals .theme-3 a {
     color: rgb(28, 28, 28);
 }
-.regionals .theme-3 button {
-    background-color: rgb(98, 0, 128);
-    border-color: rgb(98, 0, 128);
-}
-.regionals .theme-3 button > a {
+
+//---------------------------------------
+// Theme 4
+//---------------------------------------
+.regionals .theme-4 {
+    background-color: rgb(143, 41, 38);
     color: white;
 }
-.regionals .theme-3 .fa-hat-cowboy {
-    color: #620080;
+.regionals .theme-4 [class^="regionals-"][class$="-subtitle"] {
+    color: rgb(98, 0, 128);
 }
-
+.regionals .theme-4 a {
+    color: white;
+}
 
 //---------------------------------------
 // Header Image
