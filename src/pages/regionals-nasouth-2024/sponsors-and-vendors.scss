@@ -14,7 +14,10 @@
     height: 100%;
     max-width: 851px;
     max-height: 478px;
-    margin: auto;
+    margin: 0 auto;
+}
+.regionals-support-sponsors {
+    padding-top: 0 !important;
 }
 .regionals-support-sponsors-level {
     padding-top: 4rem;
@@ -24,6 +27,9 @@
     width: 100%;
 }
 @media only screen and (min-width: 768px) {
+    .regionals-support-join-details-packet {
+        padding-top: 478px;
+    }
     .regionals-support-sponsors-level-image {
         width: 300px;
     }
