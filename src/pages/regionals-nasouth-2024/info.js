@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../../components/layout/layout';
 import Navigation from '../../components/regionals-nasouth-2024/navigation';
 import Footer from '../../components/regionals-nasouth-2024/footer';
 import imageAbout001 from '../../images/regionals-nasouth-2024/info-about-001.jpeg';
-import imageScheduleScoresBracket from '../../images/regionals-nasouth-2024/info-schedulescores-bracket.jpeg';
+import imageScheduleEurope from '../../images/regionals-nasouth-2024/info-bracket-europe.png'
+import imageScheduleNaNortheast from '../../images/regionals-nasouth-2024/info-bracket-nanortheast.png'
+import imageScheduleNaSouth from '../../images/regionals-nasouth-2024/info-bracket-nasouth.png'
+import imageScheduleNaWest from '../../images/regionals-nasouth-2024/info-bracket-nawest.png'
 
 const InfoPage = () => {
+    const [selectedScheduleNav, setSelectedScheduleNav] = useState('nasouth');
+
     return (
         <Layout>
             <main className="regionals regionals-info">
@@ -17,7 +22,7 @@ const InfoPage = () => {
                 <section className='regionals-info-about theme-1'>
                     <div className='regionals-info-about-title'>ABOUT THE EVENT</div>
                     <p>Y'Allstars is a pro-bowl style tournament, showcasing top-tier roller derby athletes and teams from across the continent. Competing teams e made up of highly-talented skaters from different cities and leagues, ultimately forming "superteams.</p>
-                    <img src={imageAbout001} />
+                    <img src={imageAbout001} alt="skaters"/>
                 </section>
                 <section className='regionals-info-event theme-2'>
                     <div className='regionals-info-event-title'>EVENT DATES & LOCATION</div>
@@ -45,12 +50,48 @@ const InfoPage = () => {
                     <div className='regionals-info-event-location'>
                         <div className='regionals-info-event-location-subtitle'>WARREN J. HARANG JR. MUNICIPAL AUDITORIUM</div>
                         <div className='regionals-info-event-location-address'>310 N CANAL BLVD, THIBODAUX, LA 70301</div>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.1028780344755!2d-90.8202557236492!3d29.803572075045857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86213deee160f8eb%3A0xcdb58794164707c8!2sWarren%20J%20Harang%20Jr%20Municipal%20Auditorium!5e0!3m2!1sen!2sus!4v1712531124830!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe title="Venue Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3462.1028780344755!2d-90.8202557236492!3d29.803572075045857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86213deee160f8eb%3A0xcdb58794164707c8!2sWarren%20J%20Harang%20Jr%20Municipal%20Auditorium!5e0!3m2!1sen!2sus!4v1712531124830!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </section>
                 <section className='regionals-info-schedulescores theme-3'>
                     <div className='regionals-info-schedulescores-title'>SCHEDULE & SCORES</div>
-                    <img className='regionals-info-schedulescores-bracket' src={imageScheduleScoresBracket} />
+                    <div className='regionals-info-schedulescores-details'>
+                        <div className='regionals-info-schedulescores-details-nav'>
+                            <button
+                                className={`regionals-info-schedulescores-details-nav-item${selectedScheduleNav === 'nasouth' ? ' regionals-info-schedulescores-details-nav-item-selected' : ''}`}
+                                onClick={() => setSelectedScheduleNav('nasouth')}
+                                onKeyDown={() => setSelectedScheduleNav('nasouth')}
+                            >North America South</button>
+                            <button
+                                className={`regionals-info-schedulescores-details-nav-item${selectedScheduleNav === 'nanortheast' ? ' regionals-info-schedulescores-details-nav-item-selected' : ''}`}
+                                onClick={() => setSelectedScheduleNav('nanortheast')}
+                            >North America Northeast</button>
+                            <button
+                                className={`regionals-info-schedulescores-details-nav-item${selectedScheduleNav === 'europe' ? ' regionals-info-schedulescores-details-nav-item-selected' : ''}`}
+                                onClick={() => setSelectedScheduleNav('europe')}
+                            >Europe</button>
+                            <button
+                                className={`regionals-info-schedulescores-details-nav-item${selectedScheduleNav === 'oceania' ? ' regionals-info-schedulescores-details-nav-item-selected' : ''}`}
+                                onClick={() => setSelectedScheduleNav('oceania')}
+                            >Oceania</button>
+                            <button
+                                className={`regionals-info-schedulescores-details-nav-item${selectedScheduleNav === 'nawest' ? ' regionals-info-schedulescores-details-nav-item-selected' : ''}`}
+                                onClick={() => setSelectedScheduleNav('nawest')}
+                            >North America West</button>
+                            <button
+                                className={`regionals-info-schedulescores-details-nav-item${selectedScheduleNav === 'globalchamps' ? ' regionals-info-schedulescores-details-nav-item-selected' : ''}`}
+                                onClick={() => setSelectedScheduleNav('globalchamps')}
+                            >Global Championships</button>
+                        </div>
+                        <div className='regionals-info-schedulescores-details-bracket'>
+                            { selectedScheduleNav === "nasouth" && <img className='regionals-info-schedulescores-details-bracket-img' src={imageScheduleNaSouth} alt="North America South Bracket" /> }
+                            { selectedScheduleNav === "nanortheast" && <img className='regionals-info-schedulescores-details-bracket-img' src={imageScheduleNaNortheast} alt="North America East Bracket" /> }
+                            { selectedScheduleNav === "europe" && <img className='regionals-info-schedulescores-details-bracket-img' src={imageScheduleEurope} alt="Europe Bracket" /> }
+                            { selectedScheduleNav === "oceania" && <div className='regionals-info-schedulescores-details-bracket-img'>To be determined...</div> }
+                            { selectedScheduleNav === "nawest" && <img className='regionals-info-schedulescores-details-bracket-img' src={imageScheduleNaWest} alt="North America West Bracket" /> }
+                            { selectedScheduleNav === "globalchamps" && <div className='regionals-info-schedulescores-details-bracket-img'>To be determined...</div> }
+                        </div>
+                    </div>
                 </section>
                 <section className='regionals-info-outcome theme-2'>
                     <div className='regionals-info-outcome-title'>TOURNAMENT OUTCOME</div>

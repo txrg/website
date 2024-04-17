@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import Layout from '../../components/layout/layout';
 import Navigation from '../../components/regionals-nasouth-2024/navigation';
 import Footer from '../../components/regionals-nasouth-2024/footer';
@@ -6,6 +7,18 @@ import Footer from '../../components/regionals-nasouth-2024/footer';
 const HomePage = () => {
     return (
         <Layout>
+            <Helmet
+                meta={[
+                    {
+                        name: 'description',
+                        content: '2024 North America South WFTDA Regionals is in Austin, TX. This roller derby tournament is hosted by Texas Rollergirls.'
+                    },
+                    {
+                        name: 'keywords',
+                        content: 'roller derby, Austin, Texas, WFTDA, Regionals'
+                    }
+                ]}
+            />
             <main className="regionals regionals-home">
                 <section className="regionals-home-header">
                     <div className="regionals-home-header-image"></div>
@@ -42,9 +55,8 @@ const HomePage = () => {
                                 <div>Chattanooga Roller Derby</div>
                                 <div>Twister City Roller Derby Victory All Star Squad</div>
                                 <div>Atlanta Roller Derby: Rumble Bs</div>
-                                <div>Dub City Roller Derby</div>
+                                <div>Dallas Derby Devils: Army of Darkness</div>
                                 <div>Rockin City Roller Derby: Greatest Hits</div>
-                                <div>Twin Valleys Roller Derby</div>
                                 <div>Texas Rollergirls: Chainsaws</div>
                             </div>
                         </div>
