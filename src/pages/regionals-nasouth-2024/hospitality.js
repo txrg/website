@@ -16,38 +16,37 @@ const HospitalityPage = () => {
             <main className="regionals regionals-hospitality">
                 <section className='regionals-hospitality-header'>
                     <div className="regionals-hospitality-header-image"></div>
-                    <div className="regionals-hospitality-header-title">Hospitality Info</div>
                 </section>
                 <Navigation />
                 <section className="regionals-hospitality-about theme-1">
-                    <div className="regionals-hospitality-about-title">ABOUT THE HOST CITY</div>
+                    <div className="regionals-hospitality-about-title">TODO: ABOUT THE HOST CITY</div>
                     <div className="regionals-hospitality-about-details">
                         <div className="regionals-hospitality-about-details-column1">
                             <p><a target="_blank" rel="noopener noreferrer" href="#">Austin, TX</a> is a small, bayou-side community located just 55 miles southwest of New Orleans. Cajun culture runs deep here, from the natural beauty of the surrounding swamps and waterways to the authentic Southern cuisine. Out-of-towners can expect to encounter friendly locals and <a target="_blank" rel="noopener noreferrer" href="#">plenty of cool attractions</a> while in the area.</p>
                             <p>Check out the <a target="_blank" rel="noopener noreferrer" href="#">Lafourche Parish Visitor Guide</a> from Louisiana's Cajun Bayou for more info!</p>
                             <a>
-                                <img src={imageHospitality001} />
+                                <img src={imageHospitality001} alt="Austin, TX"/>
                             </a>
                         </div>
                         <div className="regionals-hospitality-about-details-column2">
-                            <img src={imageHospitality002} />
+                            <img src={imageHospitality002} alt="Austin, TX" />
                         </div>
                     </div>
                 </section>
                 <section className="regionals-hospitality-guide theme-2">
                     <div className="regionals-hospitality-guide-wrapper">
-                        <div className="regionals-hospitality-guide-title">HOSPITALITY GUIDE</div>
+                        <div className="regionals-hospitality-guide-title">TODO: HOSPITALITY GUIDE</div>
                         <div className="regionals-hospitality-guide-details">
-                            <iframe src="https://drive.google.com/file/d/1vsujetmNGAiLr0Shsx7RZls9qZKwBzVN/preview"></iframe>
+                            <iframe src="https://drive.google.com/file/d/1vsujetmNGAiLr0Shsx7RZls9qZKwBzVN/preview" title="Hospitality Packet"></iframe>
                         </div>
                     </div>
                 </section>
                 <section className="regionals-hospitality-hotels theme-1">
-                    <div className="regionals-hospitality-hotels-title">WHERE TO STAY</div>
+                    <div className="regionals-hospitality-hotels-title">TODO: WHERE TO STAY</div>
                     <div className="regionals-hospitality-hotels-location01">
                         <div className="regionals-hospitality-hotels-location01-subtitle">Days Inn & Suites - NEWLY ADDED</div>
                         <div className="regionals-hospitality-hotels-location01-details">
-                            <img className="regionals-hospitality-hotels-location01-image" src={imageHospitalityHotel001}></img>
+                            <img className="regionals-hospitality-hotels-location01-image" src={imageHospitalityHotel001} alt="Days Inn & Suites"></img>
                             <div>
                                 <p>
                                     158 Glenwild Dr.<br/>
@@ -66,7 +65,7 @@ const HospitalityPage = () => {
                     <div className="regionals-hospitality-hotels-location02">
                         <div className="regionals-hospitality-hotels-location02-subtitle">Carmel Inn & Suites - SOLD OUT</div>
                         <div className="regionals-hospitality-hotels-location02-details">
-                            <img className="regionals-hospitality-hotels-location02-image" src={imageHospitalityHotel002}></img>
+                            <img className="regionals-hospitality-hotels-location02-image" src={imageHospitalityHotel002} alt="Carmel Inn & Suites"></img>
                             <div>
                                 <p>
                                     400 E 1st St<br/>
@@ -84,7 +83,7 @@ const HospitalityPage = () => {
                     <div className="regionals-hospitality-hotels-location03">
                         <div className="regionals-hospitality-hotels-location03-subtitle">Hampton Inn & Suites - SOLD OUT</div>
                         <div className="regionals-hospitality-hotels-location03-details">
-                            <img className="regionals-hospitality-hotels-location03-image" src={imageHospitalityHotel003}></img>
+                            <img className="regionals-hospitality-hotels-location03-image" src={imageHospitalityHotel003} alt="Hampton Inn & Suites"></img>
                             <div>
                                 <p>
                                     826 N Canal Blvd<br/>
@@ -101,7 +100,7 @@ const HospitalityPage = () => {
                     <div className="regionals-hospitality-hotels-location04">
                         <div className="regionals-hospitality-hotels-location04-subtitle">Holiday Inn Express - Raceland</div>
                         <div className="regionals-hospitality-hotels-location04-details">
-                            <img className="regionals-hospitality-hotels-location04-image" src={imageHospitalityHotel004}></img>
+                            <img className="regionals-hospitality-hotels-location04-image" src={imageHospitalityHotel004} alt="Holiday Inn Express - Raceland"></img>
                             <div>
                                 <p>
                                     4716 Highway 1<br/>
@@ -117,7 +116,7 @@ const HospitalityPage = () => {
                     </div>
                 </section>
                 <section className="regionals-hospitality-restaurants theme-3">
-                    <div className="regionals-hospitality-restaurants-title">LOCAL RESTAURANTS</div>
+                    <div className="regionals-hospitality-restaurants-title">TODO: LOCAL RESTAURANTS</div>
                     <div className="regionals-hospitality-restaurants-locations">
                         <div className="regionals-hospitality-restaurants-location01">
                             <div className="regionals-hospitality-restaurants-location01-subtitle">In Thibodaux</div>
@@ -151,17 +150,17 @@ const HospitalityPage = () => {
                     </div>
                 </section>
                 <section className="regionals-hospitality-attractions theme-1">
-                    <div className="regionals-hospitality-attractions-title">AREA ATTRACTIONS</div>
+                    <div className="regionals-hospitality-attractions-title">TODO: AREA ATTRACTIONS</div>
                     <div className="regionals-hospitality-atttractions-details">
                         <ul>
                             <li>Explore the <a href="#" target="_blank" rel="noopener noreferrer">Jean Lafitte National Historical Park-Wetlands Acadian Cultural Center</a>.</li>
                             <li>Have kids with you? Play and learn together at the <a href="#" target="_blank" rel="noopener noreferrer">Bayou Country Children's Museum</a>! $1 off coupon below.</li>
                             <li>Visit <a href="#" target="_blank" rel="noopener noreferrer">Purple Penguin Art Company</a> to create your very own masterpiece.</li>
-                            <li>Take a paddle on the bayou with <a href="#" target="_blank" rel="noopener noreferrer"Geaux Paddle></a>.</li>
+                            <li>Take a paddle on the bayou with <a href="#" target="_blank" rel="noopener noreferrer">Geaux Paddle</a>.</li>
                             <li>Snap a selfie or team pic at the <a href="#" target="_blank" rel="noopener noreferrer">downtown Thibodaux rainbow mural</a>.</li>
                             <li>Check out the <a href="#" target="_blank" rel="noopener noreferrer">Louisiana's Cajun Bayou Visitor’s Guide</a> for more exciting things to do around Lafourche Parish, including restaurants, attractions, tours and more!</li>
                         </ul>
-                        <img src={imageHospitalityAttractionsCoupon001}></img>
+                        <img src={imageHospitalityAttractionsCoupon001} alt="Coupon"></img>
                     </div>
                 </section>
             </main>

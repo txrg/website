@@ -1,3 +1,14 @@
+.regionals-info-header-image {
+    background-image: url('../images/regionals-nasouth-2024/info-header.png');
+}
+.regionals-info-header-title {
+    z-index: 1;
+    font-size: 5rem !important;
+    font-weight: bolder;
+    color: white;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
 .regionals-info-about img {
     width: 100%;
 }
@@ -20,7 +31,9 @@ button.regionals-info-schedulescores-details-nav-item {
     background-color: unset;
     font-size: 1.6rem;
     line-height: 2rem;
-    font-family: muli-regular, sans-serif
+    font-family: muli-regular, sans-serif;
+    height: unset;
+    background-color: unset !important;
 }
 button.regionals-info-schedulescores-details-nav-item-selected {
     text-decoration: underline;
@@ -30,6 +43,7 @@ button.regionals-info-schedulescores-details-nav-item-selected {
 button.regionals-info-schedulescores-details-nav-item:hover {
     background-color: unset;
     border-color: unset;
+    color: rgb(195, 53, 52) !important;
 }
 .regionals-info-schedulescores-details-bracket {
     display: flex;
@@ -42,11 +56,16 @@ div.regionals-info-schedulescores-details-bracket-img {
     font-weight: bolder;
     font-size: 2rem;
 }
+.regionals-info-bids-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.regionals-info-bids-details ol {
+    text-align: left;
+    width: 4rem;
+}
 @media only screen and (min-width: 768px) {
-    .regionals-info-outcome-teams {
-        display: flex;
-        justify-content: space-between;;
-    }
     .regionals-info-more-details {
         display: flex;
         column-gap: 2rem;

@@ -15,9 +15,6 @@
     line-height: unset;
     margin: 0;
 }
-.regionals button > a {
-    text-decoration: none;
-}
 [class^="regionals-"][class$="-title"] {
     font-size: 3rem;
     font-weight: bolder;
@@ -48,19 +45,28 @@
     background-color: rgb(43, 47, 112);
     border-color: black;
 }
-.regionals .theme-1 button > a {
+.regionals .theme-1 a > button {
     color: black
 }
-.regionals .theme-1 button:hover > a {
+.regionals .theme-1 a > button:hover {
     color: white 
 }
 
 //---------------------------------------
 // Theme 2
 //---------------------------------------
-.regionals .theme-2 {
+.regionals .theme-2, .regionals .theme-2 a {
     background-color: rgb(43, 47, 112);
     color: white;
+}
+.regionals .theme-2 button {
+    background-color: white;
+    border-color: white;
+}
+.regionals .theme-2 button:hover {
+    background-color: #c5c5c5;
+    border-color: #c5c5c5;
+    color: black;
 }
 
 //---------------------------------------
@@ -72,6 +78,15 @@
 }
 .regionals .theme-3 a {
     color: rgb(28, 28, 28);
+}
+.regionals .theme-3 button {
+    background-color: white;
+    border-color: black;
+}
+.regionals .theme-3 button:hover {
+    background-color: rgb(43, 47, 112);
+    border-color: black;
+    color: white;
 }
 
 //---------------------------------------
@@ -92,18 +107,10 @@
 // Header Image
 //---------------------------------------
 [class^="regionals-"][class$="-header"]:not(.regionals-home-header) {
-    height: 340px;
+    height: 412px;
     display: flex;
     align-items: end;
     justify-content: center;
-}
-[class^="regionals-"][class$="-header-title"] {
-    z-index: 1;
-    font-size: 3rem;
-    font-weight: bolder;
-    color: white;
-    margin-left: 2rem;
-    margin-right: 2rem;
 }
 [class^="regionals-"][class$="-header-image"] {
     width: 100%;
@@ -114,13 +121,9 @@
 }
 [class^="regionals-"][class$="-header-image"]:not(.regionals-home-header-image) {
     height: 340px;
-    background-image: url('../images/regionals-nasouth-2024/header-02.png');
 }
 @media only screen and (min-width: 768px) {
     .regionals [class*="theme-"] {
         padding: 5rem;
-    }
-    [class^="regionals-"][class$="-header-title"] {
-        font-size: 5rem;
     }
 }

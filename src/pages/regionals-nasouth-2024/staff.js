@@ -18,35 +18,56 @@ const StaffAndVolunteersPage = () => {
             <main className="regionals regionals-staff">
                 <section className='regionals-staff-header'>
                     <div className="regionals-staff-header-image"></div>
-                    <div className="regionals-staff-header-title">Staff & Volunteers</div>
                 </section>
                 <Navigation />
                 <section className='regionals-staff-signups'>
-                    <div className='regionals-staff-signups-column1'>
+                    <div className='regionals-staff-signups-columns'>
                         <div className="regionals-staff-signups-option theme-1">
-                            <div className="regionals-staff-signup-title">VOLUNTEERS</div>
-                            <div className="regionals-staff-signup-subtitle">Want to help keep things running at the tournament all weekend long?</div>
-                            <button><a href="#" target="_blank" rel="noopener noreferrer">Apply Here!</a></button>
+                            <div className="regionals-staff-signup-title">OFFICIALS</div>
+                            <div className="regionals-staff-signup-subtitle">TODO</div>
+                            <a href="https://forms.gle/94GNsiJf5c27B9LS9" target="_blank" rel="noopener noreferrer">
+                                <button>Apply Here!</button>
+                            </a>
                         </div>
                         <div className="regionals-staff-signups-option theme-1">
-                            <div className="regionals-staff-signup-title">MEDICS</div>
-                            <div className="regionals-staff-signup-subtitle">Willing and qualified to help kepp our athletes safe as they play the game?</div>
-                            <button><a href="#" target="_blank" rel="noopener noreferrer">Apply Here!</a></button>
+                            <div className="regionals-staff-signup-title">ANNOUNCERS</div>
+                            <div className="regionals-staff-signup-subtitle">TODO</div>
+                            <a href="https://forms.gle/94GNsiJf5c27B9LS9" target="_blank" rel="noopener noreferrer">
+                                <button>Apply Here!</button>
+                            </a>
                         </div>
                     </div>
-                    <div className="regionals-staff-signups-column2">
+                    <div className='regionals-staff-signups-columns'>
                         <div className="regionals-staff-signups-option theme-3">
+                            <div className="regionals-staff-signup-title">VOLUNTEERS</div>
+                            <div className="regionals-staff-signup-subtitle">Want to help keep things running at the tournament all weekend long?</div>
+                            <a href="https://forms.gle/94GNsiJf5c27B9LS9" target="_blank" rel="noopener noreferrer">
+                                <button>Apply Here!</button>
+                            </a>
+                        </div>
+                        <div className="regionals-staff-signups-option theme-3">
+                            <div className="regionals-staff-signup-title">MEDICS</div>
+                            <div className="regionals-staff-signup-subtitle">Willing and qualified to help kepp our athletes safe as they play the game?</div>
+                            <a href="https://forms.gle/94GNsiJf5c27B9LS9" target="_blank" rel="noopener noreferrer">
+                                <button>Apply Here!</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div className="regionals-staff-signups-rows">
+                        <div className="regionals-staff-signups-option theme-2">
                             <div className="regionals-staff-signup-title">PHOTOGRAPHERS & VIDEOGRAPHERS</div>
                             <div className="regionals-staff-signup-subtitle">Looking to capture the action on your camera?</div>
-                            <button><a href="#" target="_blank" rel="noopener noreferrer">Apply Here!</a></button>
+                            <a href="https://forms.gle/94GNsiJf5c27B9LS9" target="_blank" rel="noopener noreferrer">
+                                <button>Apply Here!</button>
+                            </a>
                         </div>
                     </div>
                 </section>
                 <section className='regionals-staff-heads theme-1'>
-                    <div className='regionals-staff-heads-title'>STAFF HEADS</div>
+                    <div className='regionals-staff-heads-title'>TODO: STAFF HEADS</div>
                     <div className='regionals-staff-heads-official'>
                         <div className='regionals-staff-heads-official-column1'>
-                            <img src={imageStaffThadoctah}></img>
+                            <img src={imageStaffThadoctah} alt="Official"></img>
                         </div>
                         <div className='regionals-staff-heads-official-column2'>
                             <div className='regionals-staff-heads-official-subtitle'>Tha Doctah <span className="regionals-staff-pronouns">(he/him)</span></div>
@@ -61,7 +82,7 @@ const StaffAndVolunteersPage = () => {
                     </div>
                     <div className='regionals-staff-heads-official'>
                         <div className='regionals-staff-heads-official-column1'>
-                            <img src={imageStaffWolverine}></img>
+                            <img src={imageStaffWolverine} alt="Official"></img>
                         </div>
                         <div className='regionals-staff-heads-official-column2'>
                             <div className='regionals-staff-heads-official-subtitle'>Wolverine< span className="regionals-staff-pronouns">(he/him)</span></div>
@@ -75,7 +96,7 @@ const StaffAndVolunteersPage = () => {
                     </div>
                     <div className='regionals-staff-heads-official'>
                         <div className='regionals-staff-heads-official-column1'>
-                            <img src={imageStaffJaminycricket}></img>
+                            <img src={imageStaffJaminycricket} alt="Official"></img>
                         </div>
                         <div className='regionals-staff-heads-official-column2'>
                             <div className='regionals-staff-heads-official-subtitle'>Jaminy Cricket <span className="regionals-staff-pronouns">(they/them)</span></div>
@@ -90,7 +111,7 @@ const StaffAndVolunteersPage = () => {
                     </div>
                     <div className='regionals-staff-heads-official'>
                         <div className='regionals-staff-heads-official-column1'>
-                            <img src={imageStaffJamesbondage}></img>
+                            <img src={imageStaffJamesbondage} alt="Official"></img>
                         </div>
                         <div className='regionals-staff-heads-official-column2'>
                             <div className='regionals-staff-heads-official-subtitle'>James Bondage <span className="regionals-staff-pronouns">(he/him)</span></div>
@@ -105,7 +126,7 @@ const StaffAndVolunteersPage = () => {
                     </div>
                     <div className='regionals-staff-heads-official'>
                         <div className='regionals-staff-heads-official-column1'>
-                            <img src={imageStaffIcequeen}></img>
+                            <img src={imageStaffIcequeen} alt="Official"></img>
                         </div>
                         <div className='regionals-staff-heads-official-column2'>
                             <div className='regionals-staff-heads-official-subtitle'>Ice Queen <span className="regionals-staff-pronouns">(she/her)</span></div>
@@ -119,7 +140,7 @@ const StaffAndVolunteersPage = () => {
                     </div>
                     <div className='regionals-staff-heads-official'>
                         <div className='regionals-staff-heads-official-column1'>
-                            <img src={imageStaffPrmageddon}></img>
+                            <img src={imageStaffPrmageddon} alt="Official"></img>
                         </div>
                         <div className='regionals-staff-heads-official-column2'>
                             <div className='regionals-staff-heads-official-subtitle'>PR Mageddon <span className="regionals-staff-pronouns">(he/him)</span></div>
@@ -134,7 +155,7 @@ const StaffAndVolunteersPage = () => {
                     </div>
                     <div className='regionals-staff-heads-official'>
                         <div className='regionals-staff-heads-official-column1'>
-                            <img src={imageStaffTrashpanda}></img>
+                            <img src={imageStaffTrashpanda} alt="Official"></img>
                         </div>
                         <div className='regionals-staff-heads-official-column2'>
                             <div className='regionals-staff-heads-official-subtitle'>Trash Panda <span className="regionals-staff-pronouns">(she/her)</span></div>
@@ -148,7 +169,7 @@ const StaffAndVolunteersPage = () => {
                     </div>
                     <div className='regionals-staff-heads-official'>
                         <div className='regionals-staff-heads-official-column1'>
-                            <img src={imageStaffCarminapiranha}></img>
+                            <img src={imageStaffCarminapiranha} alt="Official"></img>
                         </div>
                         <div className='regionals-staff-heads-official-column2'>
                             <div className='regionals-staff-heads-official-subtitle'>Carmina Piranha <span className="regionals-staff-pronouns">(she/her)</span></div>
@@ -164,7 +185,7 @@ const StaffAndVolunteersPage = () => {
                     </div>
                     <div className='regionals-staff-heads-official'>
                         <div className='regionals-staff-heads-official-column1'>
-                            <img src={imageStaffGrahamReaper}></img>
+                            <img src={imageStaffGrahamReaper} alt="Official"></img>
                         </div>
                         <div className='regionals-staff-heads-official-column2'>
                             <div className='regionals-staff-heads-official-subtitle'>Graham Reaper <span className="regionals-staff-pronouns">(she/her)</span></div>
@@ -180,7 +201,7 @@ const StaffAndVolunteersPage = () => {
                     </div>
                 </section>
                 <section className='regionals-staff-crew theme-2'>
-                    <div className='regionals-staff-crew-title'>OFFICIALS</div>
+                    <div className='regionals-staff-crew-title'>TODO: OFFICIALS</div>
                     <div className='regionals-staff-crew-referees'>
                         <div className='regionals-staff-crew-referees-subtitle'>Referees</div>
                         <div className='regionals-staff-crew-referees-details'>
@@ -199,14 +220,14 @@ const StaffAndVolunteersPage = () => {
                     </div>
                 </section>
                 <section className='regionals-staff-announcers theme-1'>
-                    <div className='regionals-staff-announcers-title'>Announcers</div>
+                    <div className='regionals-staff-announcers-title'>TODO: Announcers</div>
                     <div className='regionals-staff-announcers-details'>
                         <p><b>THA:</b> PR Mageddon</p>
                         <p>Belligerent Bex <i className="fa fa-hat-cowboy" /> Blayde <i className="fa fa-hat-cowboy" /> addyPants <i className="fa fa-hat-cowboy" /> Johnny Pepper <i className="fa fa-hat-cowboy" /> Muffin Tumble <i className="fa fa-hat-cowboy" /> Nikki Trikki Savi <i className="fa fa-hat-cowboy" /> Pin Pushion <i className="fa fa-hat-cowboy" /> Rainbow Spite <i className="fa fa-hat-cowboy" /> Ruth Banshee Ginsburg <i className="fa fa-hat-cowboy" /> Scar Trek <i className="fa fa-hat-cowboy" /> Snarlet Fever <i className="fa fa-hat-cowboy" /> Thin Mint <i className="fa fa-hat-cowboy" /> Whistles <i className="fa fa-hat-cowboy" /> Wrecking Bill</p>
                     </div>
                 </section>
                 <section className='regionals-staff-photographers theme-3'>
-                    <div className='regionals-staff-photographers-title'>PHOTOGRAPHERS & VIDEOGRAPHERS</div>
+                    <div className='regionals-staff-photographers-title'>TODO: PHOTOGRAPHERS & VIDEOGRAPHERS</div>
                     <div className='regionals-staff-photographers-details'>
                         <p><b>THP:</b> Trash Panda</p>
                         <p>Chris Albright <i className="fa fa-hat-cowboy" /> Jenna Beth Beber <i className="fa fa-hat-cowboy" /> Steven Davis <i className="fa fa-hat-cowboy" /> David Dyte <i className="fa fa-hat-cowboy" /> Michael Fairchild <i className="fa fa-hat-cowboy" /> Paige Luper <i className="fa fa-hat-cowboy" /> William McDowell <i className="fa fa-hat-cowboy" /> Geremy Ruest</p>

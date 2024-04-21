@@ -33,11 +33,9 @@ const HomePage = () => {
                             The top 12 teams in the North American South come together to battle for slots at Global Champs. Athletes from all over the region come together in an unprecedented showdown.
                             This action-packed battle of the best is the perfect opportunity to come out and support your local roller derby league, or root against them. And as always, the Texas Rollergirls know how to put on a fun, family-friendly event, complete with vendors, concessions, exhibition shows and more. So mark your calendars and join in on the fun.
                         </div>
-                        <button className="regionals-home-overview-tickets">
-                            <a target="_blank" rel="noopener noreferrer" href="https://www.brownpapertickets.com/event/6236214">
-                                Purchase Tickets
-                            </a>
-                        </button>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.brownpapertickets.com/event/6236214">
+                            <button className="regionals-home-overview-tickets">Purchase Tickets</button>
+                        </a>
                     </div>
                 </section>
                 <section className="regionals-home-divisions theme-2">
@@ -85,21 +83,21 @@ const HomePage = () => {
                         <div className="regionals-home-volunteer-title">JOIN OUR STAFF</div>
                         <div className="regionals-home-volunteer-details">We're seeking volunteers to join us for the tournament weekend in a number of different roles. Apply now at the links below!</div>
                         <div className="regionals-home-volunteer-signups">
-                            <button>
-                                <a href="https://forms.gle/94GNsiJf5c27B9LS9" target="_blank" rel="noopener noreferrer">Officials Sign-up</a>
-                            </button>
-                            <button>
-                                <a href="https://forms.gle/94GNsiJf5c27B9LS9" target="_blank" rel="noopener noreferrer">Volunteers Sign-up</a>
-                            </button>
-                            <button>
-                                <a href="https://forms.gle/94GNsiJf5c27B9LS9" target="_blank" rel="noopener noreferrer">Announcers Sign-up</a>
-                            </button>
-                            <button>
-                                <a href="https://forms.gle/94GNsiJf5c27B9LS9" target="_blank" rel="noopener noreferrer">Medics Sign-up</a>
-                            </button>
-                            <button>
-                                <a href="https://forms.gle/94GNsiJf5c27B9LS9" target="_blank" rel="noopener noreferrer">Photo & Videographers Sign-up</a>
-                            </button>
+                            <a href="https://forms.gle/94GNsiJf5c27B9LS9" target="_blank" rel="noopener noreferrer">
+                                <button>Officials Sign-up</button>
+                            </a>
+                            <a href="https://forms.gle/94GNsiJf5c27B9LS9" target="_blank" rel="noopener noreferrer">
+                                <button>Volunteers Sign-up</button>
+                            </a>
+                            <a href="https://forms.gle/94GNsiJf5c27B9LS9" target="_blank" rel="noopener noreferrer">
+                                <button>Announcers Sign-up</button>
+                            </a>
+                            <a href="https://forms.gle/94GNsiJf5c27B9LS9" target="_blank" rel="noopener noreferrer">
+                                <button>Medics Sign-up</button>
+                            </a>
+                            <a href="https://forms.gle/94GNsiJf5c27B9LS9" target="_blank" rel="noopener noreferrer">
+                                <button>Photo & Videographers Sign-up</button>
+                            </a>
                         </div>
                     </div>
                 </section>
@@ -114,7 +112,7 @@ const HomePage = () => {
                     </div>
                 </section>
                 <section className="regionals-home-sponsors theme-1">
-                    <div className='regionals-home-sponsors-title'>THANK YOU SPONSORS</div>
+                    <div className='regionals-home-sponsors-title'>TODO: THANK YOU SPONSORS</div>
                     <div className="regionals-home-sponsors-details">
                         <p>Deep in the Heart of Derby wants to give a big thanks to our sponsors...</p>
                         <div className="regionals-home-sponsors-businesses">
