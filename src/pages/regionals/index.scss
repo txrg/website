@@ -1,0 +1,142 @@
+.regionals {
+    background-color: white;
+    text-align: center;
+}
+.regionals-hide {
+    display: none;
+}
+.regionals [class*="theme-"] {
+    padding: 3rem 2rem;
+}
+.regionals a {
+    text-decoration: underline;
+    font-weight: bold;
+}
+.regionals button {
+    width: 100%;
+    height: 36px;
+    line-height: unset;
+    margin: 0;
+}
+[class^="regionals-"][class$="-title"] {
+    font-size: 3rem;
+    font-weight: bolder;
+    line-height: 4rem;
+    font-family: 'montserrat-regular';
+    padding-bottom: 3rem;
+}
+[class^="regionals-"][class$="-subtitle"] {
+    font-size: 2.3rem;
+    font-weight: bolder;
+    font-family: 'montserrat-regular';
+}
+//---------------------------------------
+// Theme 1
+//---------------------------------------
+.regionals .theme-1 {
+    background-color: white;
+    color: black;
+}
+.regionals .theme-1 a {
+    color: rgba(67,0,87,1);
+}
+.regionals .theme-1 button {
+    background-color: white;
+    border-color: black;
+}
+.regionals .theme-1 button:hover {
+    background-color: rgb(43, 47, 112);
+    border-color: black;
+}
+.regionals .theme-1 a > button {
+    color: black
+}
+.regionals .theme-1 a > button:hover {
+    color: white 
+}
+
+//---------------------------------------
+// Theme 2
+//---------------------------------------
+.regionals .theme-2, .regionals .theme-2 a {
+    background-color: rgb(43, 47, 112);
+    color: white;
+}
+.regionals .theme-2 button {
+    background-color: white;
+    border-color: white;
+}
+.regionals .theme-2 button:hover {
+    background-color: #c5c5c5;
+    border-color: #c5c5c5;
+    color: black;
+}
+.regionals .theme-2 .fa-hat-cowboy {
+    color: rgb(255, 169, 38);
+}
+
+//---------------------------------------
+// Theme 3
+//---------------------------------------
+.regionals .theme-3 {
+    background-color: rgb(233, 232, 228);
+    color: black;
+}
+.regionals .theme-3 a {
+    color: rgb(28, 28, 28);
+}
+.regionals .theme-3 button {
+    background-color: white;
+    border-color: black;
+}
+.regionals .theme-3 button:hover {
+    background-color: rgb(43, 47, 112);
+    border-color: black;
+    color: white;
+}
+
+//---------------------------------------
+// Theme 4
+//---------------------------------------
+.regionals .theme-4 {
+    background-color: rgb(143, 41, 38);
+    color: white;
+}
+.regionals .theme-4 [class^="regionals-"][class$="-subtitle"] {
+    color: rgb(98, 0, 128);
+}
+.regionals .theme-4 a {
+    color: white;
+}
+
+//---------------------------------------
+// Page Headers
+//---------------------------------------
+[class^="regionals-"][class$="-header"]:not(.regionals-home-header) {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+[class^="regionals-"][class$="-header-image"] {
+    width: 100%;
+    background-size: cover;
+    position: absolute;
+    pointer-events: none;
+}
+[class^="regionals-"][class$="-header-title"]:not(.regionals-home-header-title) {
+    z-index: 1;
+    font-size: 5rem !important;
+    font-weight: bolder;
+    color: white;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+//---------------------------------------
+// Responsive
+//---------------------------------------
+@media only screen and (min-width: 768px) {
+    .regionals [class*="theme-"] {
+        padding: 5rem;
+    }
+}

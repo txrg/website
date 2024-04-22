@@ -241,15 +241,12 @@ button.header-menu-toggle.is-clicked span::after {
   .header {
     max-width: none;
   }
-}
-
-@media only screen and (max-width: 900px) {
   .header-logo-name  {
     display: none;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
   .header-logo-name {
     display: flex;
   }
@@ -314,7 +311,7 @@ button.header-menu-toggle.is-clicked span::after {
    * make sure the menu is visible on larger screens
    * ------------------------------------------------------------------- */
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 900px) {
   .header-nav-wrap {
     display: block !important;
   }

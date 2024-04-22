@@ -51,33 +51,33 @@ const RootIndex = ({ data, location }) => {
             <a
               href="http://www.facebook.com/TexasRollergirls"
               aria-label="Facebook">
-              <i className="fa fa-facebook-square" />
+                <i className="fa-brands fa-facebook-square"/>
             </a>
           </li>
           <li>
             <a href="http://twitter.com/txrollergirls" aria-label="Twitter">
-              <i className="fa fa-twitter" />
+              <i className="fa-brands fa-twitter" />
             </a>
           </li>
           <li>
             <a
               href="https://www.instagram.com/texasrollergirls/"
               aria-label="Instagram">
-              <i className="fa fa-instagram" />
+              <i className="fa-brands fa-instagram" />
             </a>
           </li>
           <li>
             <a
               href="http://www.youtube.com/TexasRollergirls"
               aria-label="Youtube">
-              <i className="fa fa-youtube-square" />
+              <i className="fa-brands fa-youtube-square" />
               </a>
           </li>
           <li>
             <a
               href="https://www.tiktok.com/@texasrollergirls"
               aria-label="TikTok">
-              <i className="fa fa-tiktok" />
+              <i className="fa-brands fa-tiktok" />
               </a>
           </li>
         </ul>
