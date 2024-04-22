@@ -11,7 +11,6 @@
 // Pages / Templates
 //---------------------------------------
 @import 'home';
-
 @import '../templates/team.scss';
 
 //---------------------------------------
@@ -22,3 +21,19 @@
 @import '../components/blog-preview/blog.scss';
 @import '../components/sponsor/sponsor.scss';
 @import '../components/eventList/event-list.scss';
+
+//---------------------------------------
+// Regionals NA South 2024
+//---------------------------------------
+@import '../pages/regionals.scss';
+@import '../pages/regionals/index.scss';
+@import '../pages/regionals/hospitality.scss';
+@import '../pages/regionals/schedule.scss';
+@import '../pages/regionals/sponsors.scss';
+@import '../pages/regionals/staff.scss';
+@import '../pages/regionals/texas.scss';
+@import '../pages/regionals/tickets.scss';
+@import '../components/regionals/event-details.scss';
+@import '../components/regionals/footer.scss';
+@import '../components/regionals/navigation.scss';
+@import '../components/regionals/tbd.scss';
