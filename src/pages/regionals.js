@@ -96,7 +96,7 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
-                <section className="regionals-home-sponsors theme-1 regionals-hide">
+                <section className="regionals-home-sponsors theme-1">
                     <div className='regionals-home-sponsors-title'>TODO: THANK YOU SPONSORS</div>
                     <div className="regionals-home-sponsors-details">
                         <p>Deep in the Heart of Derby wants to give a big thanks to our sponsors...</p>

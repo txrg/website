@@ -157,7 +157,7 @@ const StaffAndVolunteersPage = () => {
                         </div>
                     </div>
                 </section>
-                <section className='regionals-staff-crew theme-2 regionals-hide'>
+                <section className='regionals-staff-crew theme-2'>
                     <div className='regionals-staff-crew-title'>TODO: OFFICIALS</div>
                     <div className='regionals-staff-crew-referees'>
                         <div className='regionals-staff-crew-referees-subtitle'>Referees</div>
@@ -167,7 +167,7 @@ const StaffAndVolunteersPage = () => {
                             <p>A. NUSS <i className="fa fa-hat-cowboy" /> Bianic <i className="fa fa-hat-cowboy" /> Breadpool <i className="fa fa-hat-cowboy" /> Colonel Angu <i className="fa fa-hat-cowboy" /> Croc <i className="fa fa-hat-cowboy" /> Effin' Ref <i className="fa fa-hat-cowboy" /> General Hellativity <i className="fa fa-hat-cowboy" /> G'Innes <i className="fa fa-hat-cowboy" /> Hannibull Reffer <i className="fa fa-hat-cowboy" /> I Shove Lucie <i className="fa fa-hat-cowboy" /> Jekyll & Sides <i className="fa fa-hat-cowboy" /> No Mad <i className="fa fa-hat-cowboy" /> Nopac Shakur <i className="fa fa-hat-cowboy" /> PopN Lock <i className="fa fa-hat-cowboy" /> Reffeweizen (Cahill) <i className="fa fa-hat-cowboy" /> RJ <i className="fa fa-hat-cowboy" /> Ruff Draft <i className="fa fa-hat-cowboy" /> Shrimp N Roll <i className="fa fa-hat-cowboy" /> Sidney Vicious <i className="fa fa-hat-cowboy" /> Skitzo <i className="fa fa-hat-cowboy" /> Sven Deför <i className="fa fa-hat-cowboy" /> Thrillem Dafoe <i className="fa fa-hat-cowboy" /> UKnowIKnowUKnow <i className="fa fa-hat-cowboy" /> Yulneda Rehab</p>
                         </div>
                     </div>
-                    <div className='regionals-staff-crew-nso'>
+                    <div className='regionals-staff-crew-nsos'>
                         <div className='regionals-staff-crew-nsos-subtitle'>Non-Skating Officials</div>
                         <div className='regionals-staff-crew-nsos-details'>
                             <p><b>THNSOs:</b> Tha Doctah & Wolverine</p>
@@ -176,14 +176,14 @@ const StaffAndVolunteersPage = () => {
                         </div>
                     </div>
                 </section>
-                <section className='regionals-staff-announcers theme-1 regionals-hide'>
+                <section className='regionals-staff-announcers theme-1'>
                     <div className='regionals-staff-announcers-title'>TODO: Announcers</div>
                     <div className='regionals-staff-announcers-details'>
                         <p><b>THA:</b> PR Mageddon</p>
                         <p>Belligerent Bex <i className="fa fa-hat-cowboy" /> Blayde <i className="fa fa-hat-cowboy" /> addyPants <i className="fa fa-hat-cowboy" /> Johnny Pepper <i className="fa fa-hat-cowboy" /> Muffin Tumble <i className="fa fa-hat-cowboy" /> Nikki Trikki Savi <i className="fa fa-hat-cowboy" /> Pin Pushion <i className="fa fa-hat-cowboy" /> Rainbow Spite <i className="fa fa-hat-cowboy" /> Ruth Banshee Ginsburg <i className="fa fa-hat-cowboy" /> Scar Trek <i className="fa fa-hat-cowboy" /> Snarlet Fever <i className="fa fa-hat-cowboy" /> Thin Mint <i className="fa fa-hat-cowboy" /> Whistles <i className="fa fa-hat-cowboy" /> Wrecking Bill</p>
                     </div>
                 </section>
-                <section className='regionals-staff-photographers theme-3 regionals-hide'>
+                <section className='regionals-staff-photographers theme-3'>
                     <div className='regionals-staff-photographers-title'>TODO: PHOTOGRAPHERS & VIDEOGRAPHERS</div>
                     <div className='regionals-staff-photographers-details'>
                         <p><b>THP:</b> Trash Panda</p>

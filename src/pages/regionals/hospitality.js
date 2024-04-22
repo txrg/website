@@ -309,7 +309,7 @@ const HospitalityPage = () => {
                         <p>Small health food focused options with locations across the city.</p>
                     </div>
                 </section>
-                <section className="regionals-hospitality-guide theme-2 regionals-hide">
+                <section className="regionals-hospitality-guide theme-2">
                     <div className="regionals-hospitality-guide-wrapper">
                         <div className="regionals-hospitality-guide-title">HOSPITALITY GUIDE</div>
                         <div className="regionals-hospitality-guide-details">

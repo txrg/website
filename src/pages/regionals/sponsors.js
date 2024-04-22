@@ -21,7 +21,7 @@ const SponsorsAndVendorsPage = () => {
                     <div className='regionals-sponsors-join-details'>
                         <p><b>Deep in the Heart of Derby</b> would truly not be possible without the generous contributions and involvement of our sponsors and vendors. We are currently seeking both sponsors and vendors for the 2024 event. Take a look at our Sponsorship Packet below for more information about how your business can support an event that will bring 2,000+ roller derby players, officials and enthusiasts to the Travis County Expo Center.</p>
                         <p>Please email <a target="_blank" rel="noopener noreferrer" href="mailto:sponsorship@texasrollergirls.org">sponsorship@texasrollergirls.org</a> to become a sponsor or vendor!</p>
-                        <div className="regionals-hide">
+                        <div>
                             TODO: Update packet
                             <div className="regionals-sponsors-join-details-packet">
                                 <iframe src="https://drive.google.com/file/d/1Iv58Pdyugoy3L_nYDsXsqlcOlLQJxX_F/preview" title="Sponsorship Packet"></iframe>
@@ -29,7 +29,7 @@ const SponsorsAndVendorsPage = () => {
                         </div>
                     </div>
                 </section>
-                <section className='regionals-sponsors-levels theme-1 regionals-hide'>
+                <section className='regionals-sponsors-levels theme-1'>
                     <div className='regionals-sponsors-levels-item'>
                         <div className='regionals-sponsors-level-title'>TODO: Royal Sponsors</div>
                         <img className='regionals-sponsors-level-image' src={ImageSponsorsRoyal001} alt="Sponsor" />
@@ -62,7 +62,7 @@ const SponsorsAndVendorsPage = () => {
                         </div>
                     </div>
                 </section>
-                <section className='regionals-sponsors-vendors theme-2 regionals-hide'>
+                <section className='regionals-sponsors-vendors theme-2'>
                     <div className='regionals-sponsors-vendors-title'>TODO: VENDORS</div>
                     <div className='regionals-sponsors-vendors-details'>
                         <p>TODO: Our Y'Allstars market will have a variety of local and derby businesses on-site, with a good mix of art, apparel, personal products, and more. Check out the list and links below! We'll continue to update as our market grows.</p>

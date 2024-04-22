@@ -38,11 +38,11 @@ const TicketsPage = () => {
                         </div>
                     </div>
                 </section>
-                <div className="regionals-tickets-overview-title regionals-hide">TODO: update pass images</div>
+                <div className="regionals-tickets-overview-title">TODO: update pass images</div>
                 <section className="regionals-tickets-passes theme-1">
                     <div className="regionals-tickets-passes-row">
                         <div className="regionals-tickets-passes-option">
-                            <img className="regionals-tickets-passes-option-image regionals-hide" src={ImagePassWeekend} alt="Full Weekend - VIP Pass"></img>
+                            <img className="regionals-tickets-passes-option-image" src={ImagePassWeekend} alt="Full Weekend - VIP Pass"></img>
                             <div>
                                 <div className="regionals-tickets-passes-option-title">Full Weekend - VIP Pass</div>
                                 <div className="regionals-tickets-passes-option-subtitle">JUNE 28-30, 2024</div>
@@ -56,7 +56,7 @@ const TicketsPage = () => {
                             </a>
                         </div>
                         <div className="regionals-tickets-passes-option">
-                            <img className="regionals-tickets-passes-option-image regionals-hide" src={ImagePassWeekend} alt="Full Weekend Pass"></img>
+                            <img className="regionals-tickets-passes-option-image" src={ImagePassWeekend} alt="Full Weekend Pass"></img>
                             <div>
                                 <div className="regionals-tickets-passes-option-title">Full Weekend Pass</div>
                                 <div className="regionals-tickets-passes-option-subtitle">JUNE 28-30, 2024</div>
@@ -72,7 +72,7 @@ const TicketsPage = () => {
                     </div>
                     <div className="regionals-tickets-passes-row">
                         <div className="regionals-tickets-passes-option">
-                            <img className="regionals-tickets-passes-option-image regionals-hide" src={ImagePassWeekend} alt="2 Day Pass"></img>
+                            <img className="regionals-tickets-passes-option-image" src={ImagePassWeekend} alt="2 Day Pass"></img>
                             <div>
                                 <div className="regionals-tickets-passes-option-title">2-Day Pass</div>
                                 <div className="regionals-tickets-passes-option-subtitle">JUNE 28-30, 2024</div>
@@ -86,7 +86,7 @@ const TicketsPage = () => {
                             </a>
                         </div>
                         <div className="regionals-tickets-passes-option">
-                            <img className="regionals-tickets-passes-option-image regionals-hide" src={ImagePassFriday} alt="Friday Pass"></img>
+                            <img className="regionals-tickets-passes-option-image" src={ImagePassFriday} alt="Friday Pass"></img>
                             <div>
                                 <div className="regionals-tickets-passes-option-title">Friday Pass</div>
                                 <div className="regionals-tickets-passes-option-subtitle">June 28, 2024</div>
@@ -102,7 +102,7 @@ const TicketsPage = () => {
                     </div>
                     <div className="regionals-tickets-passes-row">
                         <div className="regionals-tickets-passes-option">
-                            <img className="regionals-tickets-passes-option-image regionals-hide" src={ImagePassSaturday} alt="Saturday Pass"></img>
+                            <img className="regionals-tickets-passes-option-image" src={ImagePassSaturday} alt="Saturday Pass"></img>
                             <div>
                                 <div className="regionals-tickets-passes-option-title">Saturday Pass</div>
                                 <div className="regionals-tickets-passes-option-subtitle">June 29, 2024</div>
@@ -116,7 +116,7 @@ const TicketsPage = () => {
                             </a>
                         </div>
                         <div className="regionals-tickets-passes-option">
-                            <img className="regionals-tickets-passes-option-image regionals-hide" src={ImagePassSunday} alt="Sunday Pass"></img>
+                            <img className="regionals-tickets-passes-option-image" src={ImagePassSunday} alt="Sunday Pass"></img>
                             <div>
                                 <div className="regionals-tickets-passes-option-title">Sunday Pass</div>
                                 <div className="regionals-tickets-passes-option-subtitle">June 30, 2024</div>
@@ -132,7 +132,7 @@ const TicketsPage = () => {
                     </div>
                     <div className="regionals-tickets-passes-row">
                         <div className="regionals-tickets-passes-option">
-                            <img className="regionals-tickets-passes-option-image regionals-hide" src={ImagePassSaturday} alt="1 Day Kid Pass"></img>
+                            <img className="regionals-tickets-passes-option-image" src={ImagePassSaturday} alt="1 Day Kid Pass"></img>
                             <div>
                                 <div className="regionals-tickets-passes-option-title">1-Day Kid Pass</div>
                                 <div className="regionals-tickets-passes-option-subtitle">June 28-30, 2024</div>

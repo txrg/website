@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Layout from '../../components/layout/layout';
-import Navigation from '../../components/regionals-nasouth-2024/navigation';
-import Footer from '../../components/regionals-nasouth-2024/footer';
-import imageAbout01 from '../../images/regionals-nasouth-2024/info-about-01.jpeg'
-import imageScheduleEurope from '../../images/regionals-nasouth-2024/info-bracket-europe.png'
-import imageScheduleNaNortheast from '../../images/regionals-nasouth-2024/info-bracket-nanortheast.png'
-import imageScheduleNaSouth from '../../images/regionals-nasouth-2024/info-bracket-nasouth.png'
-import imageScheduleNaWest from '../../images/regionals-nasouth-2024/info-bracket-nawest.png'
+import Navigation from '../../components/regionals/navigation';
+import Footer from '../../components/regionals/footer';
+import imageAbout01 from '../../images/regionals/info-about-01.jpeg'
+import imageScheduleEurope from '../../images/regionals/info-bracket-europe.png'
+import imageScheduleNaNortheast from '../../images/regionals/info-bracket-nanortheast.png'
+import imageScheduleNaSouth from '../../images/regionals/info-bracket-nasouth.png'
+import imageScheduleNaWest from '../../images/regionals/info-bracket-nawest.png'
 
 const InfoPage = () => {
     const [selectedScheduleNav, setSelectedScheduleNav] = useState('nasouth');
