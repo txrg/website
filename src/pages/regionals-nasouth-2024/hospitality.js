@@ -16,6 +16,7 @@ const HospitalityPage = () => {
             <main className="regionals regionals-hospitality">
                 <section className='regionals-hospitality-header'>
                     <div className="regionals-hospitality-header-image"></div>
+                    <div className="regionals-hospitality-header-title">Hospitality</div>
                 </section>
                 <Navigation />
                 <section className="regionals-hospitality-about theme-1">

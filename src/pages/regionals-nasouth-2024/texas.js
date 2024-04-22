@@ -9,6 +9,7 @@ const RollerDerbyInAustinPage = () => {
             <main className="regionals regionals-texas">
                 <section className="regionals-texas-header">
                     <div className="regionals-texas-header-image"></div>
+                    <div className="regionals-texas-header-title">Roller Derby in Texas</div>
                 </section>
                 <Navigation />
                 <section className="regionals-texas-overview theme-1">

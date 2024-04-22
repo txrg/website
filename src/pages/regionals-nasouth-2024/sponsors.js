@@ -13,6 +13,7 @@ const SponsorsAndVendorsPage = () => {
             <main className="regionals regionals-sponsors">
                 <section className='regionals-sponsors-header'>
                     <div className="regionals-sponsors-header-image"></div>
+                    <div className="regionals-sponsors-header-title">Sponsors & Vendors</div>
                 </section>
                 <Navigation />
                 <section className='regionals-sponsors-join theme-1'>

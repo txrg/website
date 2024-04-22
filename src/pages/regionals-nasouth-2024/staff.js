@@ -18,6 +18,7 @@ const StaffAndVolunteersPage = () => {
             <main className="regionals regionals-staff">
                 <section className='regionals-staff-header'>
                     <div className="regionals-staff-header-image"></div>
+                    <div className="regionals-staff-header-title">Staff & Volunteers</div>
                 </section>
                 <Navigation />
                 <section className='regionals-staff-signups'>
@@ -47,7 +48,7 @@ const StaffAndVolunteersPage = () => {
                         </div>
                         <div className="regionals-staff-signups-option theme-3">
                             <div className="regionals-staff-signup-title">MEDICS</div>
-                            <div className="regionals-staff-signup-subtitle">Willing and qualified to help kepp our athletes safe as they play the game?</div>
+                            <div className="regionals-staff-signup-subtitle">Willing and qualified to help keep our athletes safe as they play the game?</div>
                             <a href="https://forms.gle/94GNsiJf5c27B9LS9" target="_blank" rel="noopener noreferrer">
                                 <button>Apply Here!</button>
                             </a>

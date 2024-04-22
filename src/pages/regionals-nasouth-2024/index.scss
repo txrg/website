@@ -104,7 +104,7 @@
 }
 
 //---------------------------------------
-// Header Image
+// Page Headers
 //---------------------------------------
 [class^="regionals-"][class$="-header"]:not(.regionals-home-header) {
     height: 412px;
@@ -122,6 +122,18 @@
 [class^="regionals-"][class$="-header-image"]:not(.regionals-home-header-image) {
     height: 340px;
 }
+[class^="regionals-"][class$="-header-title"]:not(.regionals-home-header-title) {
+    z-index: 1;
+    font-size: 5rem !important;
+    font-weight: bolder;
+    color: white;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+//---------------------------------------
+// Responsive
+//---------------------------------------
 @media only screen and (min-width: 768px) {
     .regionals [class*="theme-"] {
         padding: 5rem;

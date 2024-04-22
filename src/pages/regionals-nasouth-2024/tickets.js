@@ -13,6 +13,7 @@ const TicketsPage = () => {
             <main className="regionals regionals-tickets">
                 <section className="regionals-tickets-header">
                     <div className="regionals-tickets-header-image"></div>
+                    <div className="regionals-tickets-header-title">Tickets</div>
                 </section>
                 <Navigation />
                 <section className="regionals-tickets-overview theme-1">
