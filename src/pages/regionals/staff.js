@@ -158,36 +158,86 @@ const StaffAndVolunteersPage = () => {
                     </div>
                 </section>
                 <section className='regionals-staff-crew theme-2'>
-                    <div className='regionals-staff-crew-title'>TODO: OFFICIALS</div>
+                    <div className='regionals-staff-crew-title'>OFFICIALS</div>
                     <div className='regionals-staff-crew-referees'>
-                        <div className='regionals-staff-crew-referees-subtitle'>Referees</div>
+                        <div className='regionals-staff-crew-referees-subtitle'>Skating Officials</div>
                         <div className='regionals-staff-crew-referees-details'>
-                            <p><b>THRS:</b> James Bondage & Jaminy Cricket</p>
-                            <p><b>Crew Heads:</b> Daemon Mistress <i className="fa fa-hat-cowboy"/> Fighting Girlfiend <i className="fa fa-hat-cowboy" /> Mad Jack Churchkill <i className="fa fa-hat-cowboy" /> Pi-Radical</p>
-                            <p>A. NUSS <i className="fa fa-hat-cowboy" /> Bianic <i className="fa fa-hat-cowboy" /> Breadpool <i className="fa fa-hat-cowboy" /> Colonel Angu <i className="fa fa-hat-cowboy" /> Croc <i className="fa fa-hat-cowboy" /> Effin' Ref <i className="fa fa-hat-cowboy" /> General Hellativity <i className="fa fa-hat-cowboy" /> G'Innes <i className="fa fa-hat-cowboy" /> Hannibull Reffer <i className="fa fa-hat-cowboy" /> I Shove Lucie <i className="fa fa-hat-cowboy" /> Jekyll & Sides <i className="fa fa-hat-cowboy" /> No Mad <i className="fa fa-hat-cowboy" /> Nopac Shakur <i className="fa fa-hat-cowboy" /> PopN Lock <i className="fa fa-hat-cowboy" /> Reffeweizen (Cahill) <i className="fa fa-hat-cowboy" /> RJ <i className="fa fa-hat-cowboy" /> Ruff Draft <i className="fa fa-hat-cowboy" /> Shrimp N Roll <i className="fa fa-hat-cowboy" /> Sidney Vicious <i className="fa fa-hat-cowboy" /> Skitzo <i className="fa fa-hat-cowboy" /> Sven Deför <i className="fa fa-hat-cowboy" /> Thrillem Dafoe <i className="fa fa-hat-cowboy" /> UKnowIKnowUKnow <i className="fa fa-hat-cowboy" /> Yulneda Rehab</p>
+                            <p><b className="regionals-staff-sectiontitle">THR:</b>&nbsp;&nbsp;Darth Bling</p>
+                            <p><b className="regionals-staff-sectiontitle">Crew Heads:</b>&nbsp;&nbsp;Zero Factorial&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;Kilt Trip&nbsp;&nbsp;<i className="fa fa-hat-cowboy" />&nbsp;&nbsp;Refty Venture</p>
+                            <p>
+                                biANic&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Chewbackoffa&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Effin’ Ref&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Ella Noise&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Ice Queen&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Jacques Strappe&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Jaminy Cricket&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Jekyll & Sides&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Jim Class Hero&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Kat A Killzem&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Laddie&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                O. Yoshi Dint&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Ruff Draft&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Shrimp N Roll&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                STOnasty&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Web Lynx&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Will Ryder&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Xtra ChrisP
+                            </p>
                         </div>
                     </div>
                     <div className='regionals-staff-crew-nsos'>
                         <div className='regionals-staff-crew-nsos-subtitle'>Non-Skating Officials</div>
                         <div className='regionals-staff-crew-nsos-details'>
-                            <p><b>THNSOs:</b> Tha Doctah & Wolverine</p>
-                            <p><b>Crew Heads:</b> Montana Maulher <i className="fa fa-hat-cowboy" /> Officially Mel <i className="fa fa-hat-cowboy" /> TexAss Tornado</p>
-                            <p>Ada <i className="fa fa-hat-cowboy" /> Baby Snark <i className="fa fa-hat-cowboy" /> Baron von Erin <i className="fa fa-hat-cowboy" /> Bourbon Decay <i className="fa fa-hat-cowboy" /> Candied Bacon <i className="fa fa-hat-cowboy" /> Chemical Restraint <i className="fa fa-hat-cowboy" /> Fox40 <i className="fa fa-hat-cowboy" /> Fun Police <i className="fa fa-hat-cowboy" /> Identity Crisis <i className="fa fa-hat-cowboy" /> Ivana Rage <i className="fa fa-hat-cowboy" /> Kupcake <i className="fa fa-hat-cowboy" /> Lucky D. Irish <i className="fa fa-hat-cowboy" /> Mala Suerte <i className="fa fa-hat-cowboy" /> Maza-Liam <i className="fa fa-hat-cowboy" /> Mizery Chop <i className="fa fa-hat-cowboy" /> Penny Painful <i className="fa fa-hat-cowboy" /> Psylocked <i className="fa fa-hat-cowboy" /> Punishher <i className="fa fa-hat-cowboy" />Rocket Chop <i className="fa fa-hat-cowboy" /> Roslambo <i className="fa fa-hat-cowboy" /> Ruth Slayer <i className="fa fa-hat-cowboy" /> Shinsberg <i className="fa fa-hat-cowboy" /> SOS <i className="fa fa-hat-cowboy" /> Susan B. Blasphemy <i className="fa fa-hat-cowboy" /> Tornado Allie <i className="fa fa-hat-cowboy" /> Venus Thigh Trap <i className="fa fa-hat-cowboy" /> WinceDay Addams</p>
+                            <p><b className='regionals-staff-sectiontitle'>THNSO:</b>&nbsp;&nbsp;Trogdora the Jaminator</p>
+                            <p>
+                                <b className='regionals-staff-sectiontitle'>Crew Heads:</b>&nbsp;&nbsp;
+                                Chemical Restraint&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Quick Grayson&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Roslambo
+                            </p>
+                            <p>
+                                4s Mush Her&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Aggie Battery&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Bruise Almighty&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Callegory&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Decider&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Doesn’t Matt-er&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Galvatron&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Huggins&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Joss&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Kate Tastrophe&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Lemon Stinger&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Mala Suerte&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Mama Vader&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Montana Maulher&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Mortal Komkat&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Mother Flippin Artist&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Ms. Judgment&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                NoMad&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Officially Mel&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Queen of Katitude&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Silken Tofu&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Tha Doctah&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Toxic Marcotic&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                TRebel Maker&nbsp;&nbsp;<i className="fa fa-hat-cowboy"/>&nbsp;&nbsp;
+                                Wishbone Breaker
+                            </p>
                         </div>
                     </div>
                 </section>
                 <section className='regionals-staff-announcers theme-1'>
-                    <div className='regionals-staff-announcers-title'>TODO: Announcers</div>
+                    <div className='regionals-staff-announcers-title'>Announcers</div>
                     <div className='regionals-staff-announcers-details'>
-                        <p><b>THA:</b> PR Mageddon</p>
-                        <p>Belligerent Bex <i className="fa fa-hat-cowboy" /> Blayde <i className="fa fa-hat-cowboy" /> addyPants <i className="fa fa-hat-cowboy" /> Johnny Pepper <i className="fa fa-hat-cowboy" /> Muffin Tumble <i className="fa fa-hat-cowboy" /> Nikki Trikki Savi <i className="fa fa-hat-cowboy" /> Pin Pushion <i className="fa fa-hat-cowboy" /> Rainbow Spite <i className="fa fa-hat-cowboy" /> Ruth Banshee Ginsburg <i className="fa fa-hat-cowboy" /> Scar Trek <i className="fa fa-hat-cowboy" /> Snarlet Fever <i className="fa fa-hat-cowboy" /> Thin Mint <i className="fa fa-hat-cowboy" /> Whistles <i className="fa fa-hat-cowboy" /> Wrecking Bill</p>
+                        <p><b>THA:</b>&nbsp;&nbsp;TBD</p>
+                        <p>Coming soon!</p>
                     </div>
                 </section>
                 <section className='regionals-staff-photographers theme-3'>
-                    <div className='regionals-staff-photographers-title'>TODO: PHOTOGRAPHERS & VIDEOGRAPHERS</div>
+                    <div className='regionals-staff-photographers-title'>PHOTOGRAPHERS & VIDEOGRAPHERS</div>
                     <div className='regionals-staff-photographers-details'>
-                        <p><b>THP:</b> Trash Panda</p>
-                        <p>Chris Albright <i className="fa fa-hat-cowboy" /> Jenna Beth Beber <i className="fa fa-hat-cowboy" /> Steven Davis <i className="fa fa-hat-cowboy" /> David Dyte <i className="fa fa-hat-cowboy" /> Michael Fairchild <i className="fa fa-hat-cowboy" /> Paige Luper <i className="fa fa-hat-cowboy" /> William McDowell <i className="fa fa-hat-cowboy" /> Geremy Ruest</p>
+                        <p><b>THP:</b>&nbsp;&nbsp;TBD</p>
+                        <p>Coming soon!</p>
                     </div>
                 </section>
                 <section className='regionals-staff-contact theme-2'>
