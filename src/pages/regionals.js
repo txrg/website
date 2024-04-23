@@ -11,7 +11,7 @@ const HomePage = () => {
                 meta={[
                     {
                         name: 'description',
-                        content: '2024 North America South WFTDA Regionals is in Austin, TX. This roller derby tournament is hosted by Texas Rollergirls.'
+                        content: '2024 North America South WFTDA Regionals is June 28-30 in Austin, TX. This roller derby tournament is hosted by Texas Rollergirls.'
                     },
                     {
                         name: 'keywords',
