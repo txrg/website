@@ -97,20 +97,16 @@ const HomePage = () => {
                     </div>
                 </section>
                 <section className="regionals-home-sponsors theme-1">
-                    <div className='regionals-home-sponsors-title'>TODO: THANK YOU SPONSORS</div>
+                    <div className='regionals-home-sponsors-title'>THANK YOU SPONSORS</div>
                     <div className="regionals-home-sponsors-details">
                         <p>Deep in the Heart of Derby wants to give a big thanks to our sponsors...</p>
                         <div className="regionals-home-sponsors-businesses">
-                            <div className="regionals-home-sponsors-business"></div>
-                            <div className="regionals-home-sponsors-business"></div>
-                            <div className="regionals-home-sponsors-business"></div>
-                            <div className="regionals-home-sponsors-business"></div>
-                            <div className="regionals-home-sponsors-business"></div>
-                            <div className="regionals-home-sponsors-business"></div>
-                            <div className="regionals-home-sponsors-business"></div>
-                            <div className="regionals-home-sponsors-business"></div>
-                            <div className="regionals-home-sponsors-business"></div>
-                            <div className="regionals-home-sponsors-business"></div>
+                            <a href="https://www.holdoutbrewing.com/" target="_blank" rel="noopener noreferrer" aria-label="Link to sponsor, Holdout Brewing">
+                                <div className="regionals-home-sponsors-business sponsor-holdoutbrewing"></div>
+                            </a>
+                            <a href="https://www.betterhalfbar.com/" target="_blank" rel="noopener noreferrer" aria-label="Link to sponsor, Better Half">
+                                <div className="regionals-home-sponsors-business sponsor-betterhalf"></div>
+                            </a>
                         </div>
                     </div>
                 </section>
