@@ -17,13 +17,13 @@ const EventDetails = () => {
                     </div>
                     <div className='regionals-eventdetails-details-topic'>
                         <div className='regionals-eventdetails-details-topic-subtitle'>Seating</div>
-                        <p>Luedecke Arena has tiered stadium seating for up to 6,500 spectators. Seating includes general admission seating and VIP seating, including VIP boxes. Contact <a href="mailto:sponsorship@texasrollergirls.org">sponsorship@texasrollergirls.org</a> to reserve a VIP box.</p>
+                        <p>Luedecke Arena has tiered stadium seating for up to 6,500 spectators. Seating includes first come, first serve general admission seating and VIP seating, including VIP boxes. Contact <a href="mailto:sponsorship@texasrollergirls.org">sponsorship@texasrollergirls.org</a> to reserve a VIP box.</p>
                         </div>
                 </div>
                 <div className='regionals-eventdetails-details-column2'>
                     <div className='regionals-eventdetails-details-topic'>
-                        <div className='regionals-eventdetails-details-topic-subtitle'>Tickets</div>
-                        <p>Single-day and weekend passes general admission and VIP tickets will be available for purchase through Brown Paper Tickets. A full breakdown of ticket types can be found <Link to="/regionals/tickets">here</Link>.</p>
+                        <div className='regionals-eventdetails-details-topic-subtitle'>Entry and Re-Entry</div>
+                        <p>Your tickets will be scanned and/or taken at the entrance to the arena. For same day re-entry, you will need a wristband or hand stamp. Do not leave the arena without a wristband or stamp if you wish to re-enter.</p>
                     </div>
                     <div className='regionals-eventdetails-details-topic'>
                         <div className='regionals-eventdetails-details-topic-subtitle'>Food</div>
@@ -31,7 +31,16 @@ const EventDetails = () => {
                     </div>
                     <div className='regionals-eventdetails-details-topic'>
                         <div className='regionals-eventdetails-details-topic-subtitle'>Parking</div>
-                        <p>Free parking is available at the venue, with space for up to 4,000 vehicles.</p>
+                        <p>
+                            Free parking is available at the venue with
+                            space for up to 4,000 vehicles. Teams,
+                            volunteers, vendors and related staff
+                            may park in VIP Parking – go past general
+                            parking and follow the signs to the VIP area,
+                            where an elevator will take you to the team
+                            and volunteer hospitality areas or you can
+                            proceed directly onto the Arena Floor.
+                        </p>
                     </div>
                 </div>
             </div>

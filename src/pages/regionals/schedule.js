@@ -27,33 +27,67 @@ const SchedulePage = () => {
                 </section>
                 <section className='regionals-schedule-event theme-2'>
                     <div className='regionals-schedule-event-title'>DATES & LOCATION</div>
-                    <div className='regionals-schedule-event-dates'>
-                        <div className='regionals-schedule-event-dates-subtitle'>June 28 - 30, 2024</div>
-                        <div className='regionals-schedule-event-dates-day1'>
-                            <div className='regionals-schedule-event-dates-day1-date'>Friday, June 28th</div>
-                            <p className='regionals-schedule-event-dates-day1-details regionals-hide'>
-                                TODO: Update <br/>
-                                Catch 4 games in the Women's Division, featuring the top 4 seeds. Doors open to the public at 4:00 PM with games at 4:15, 5:30, 6:45 and 8:00 PM.
-                            </p>
-                        </div>
-                        <div className='regionals-schedule-event-dates-day2'>
-                            <div className='regionals-schedule-event-dates-day2-date'>Saturday, June 29th</div>
-                            <p className='regionals-schedule-event-dates-day2-details regionals-hide'>
-                                TODO: Update <br/>
-                                A full day of roller derby, featuring all divisions, concluding with the Mardi Brawl costume expo game and Second Line, led by the Young Fellaz Brass Band. Doors open at 8:00 AM. First game starts at 8:30 AM. Games continue throughout the day, with the Mardi Brawl starting at 8:00 PM.
-                            </p>
-                        </div>
-                        <div className='regionals-schedule-event-dates-day3'>
-                            <div className='regionals-schedule-event-dates-day3-date'>Sunday, June 30th</div>
-                            <p className='regionals-schedule-event-dates-day3-details regionals-hide'>
-                                TODO: Update <br/>
-                                It all comes down to this: our divisional championships and consolation games! Doors open at 8:00 AM. First game starts at 8:30 AM. Games continue throughout the day, with our last game starting at 6:00 PM.
-                            </p>
-                        </div>
+                    <div>
+                        <div className='regionals-schedule-event-subtitle'>Thursday, June 27th, 2024</div>
+                        <p>
+                            <span className='regionals-schedule-event-sectiontitle'>OPTIONAL SPECIAL EVENTS</span>
+                            <span className='regionals-schedule-event-highlight'>Hopsquad Brewing Company</span>
+                            <span className='regionals-schedule-event-emphasis'>2307 Kramer Ln, Austin, TX 78758</span>
+                            Hopsquad will have a wide selection of alcoholic and non-alcoholic drinks, as well as food
+                            for purchase. Bring your whole team! (Not that you’re required to – but it’s a great way to
+                            start your tournament.)
+                            <br/><br />
+                            <span className='regionals-schedule-event-highlight'>Barton Springs Pool in Zilker Park</span>
+                            <span className='regionals-schedule-event-emphasis'>2201 Barton Springs Rd, Austin, TX 78746</span>
+                            Carpool or convoy from Hopsquad or meet us there! $8 admission to Barton, which doesn’t allow dogs
+                            or food, or free admission to Barkin’ Springs, which allows dogs and food but is usually not
+                            very sanitary. Spring fed and over 900 feet long, the pool was formed when Barton Creek
+                            was dammed up, so it has a natural rock and gravel bottom. 68 degrees all year around,
+                            with a diving board.
+                        </p>
                     </div>
-                    <div className='regionals-schedule-event-location'>
-                        <div className='regionals-schedule-event-location-subtitle'>Travis County Exposition Center</div>
-                        <div className='regionals-schedule-event-location-address'>7311 Decker Ln, Austin, TX 78724</div>
+                    <div>
+                        <div className='regionals-schedule-event-subtitle'>Friday, June 28th, 2024</div>
+                        <p>
+                            <span className='regionals-schedule-event-sectiontitle'>7:00 AM</span>
+                            <span className='regionals-schedule-event-emphasis'>Travis County Expo Center</span>
+                            Venue opens to officials, volunteers, and teams.
+                        </p>
+                        <p>
+                            <span className='regionals-schedule-event-sectiontitle'>7:30 AM - 9:30 AM</span>
+                            <span className='regionals-schedule-event-highlight'>Team Registration, Volunteer Orientation and Hospitality Overview</span>
+                            <span className='regionals-schedule-event-emphasis'>Travis County Expo Center</span>
+                            Provided that your signup, charter, waivers and other processes are complete with
+                            WFTDA and Texas Rollergirls, you can send one representative to pick up badges,
+                            packets and merch presales. Required of any skaters or officials that did not do
+                            so on Thursday.
+                        </p>
+                        <p>
+                            <span className='regionals-schedule-event-sectiontitle'>9:00 AM</span>
+                            <span className='regionals-schedule-event-emphasis'>Travis County Expo Center</span>
+                            Doors open to general public.
+                        </p>
+                    </div>
+                    <div>
+                        <div className='regionals-schedule-event-subtitle'>Saturday, June 29th, 2024</div>
+                        <p>
+                            <span className='regionals-schedule-event-sectiontitle'>9:00 AM</span>
+                            <span className='regionals-schedule-event-emphasis'>Travis County Expo Center</span>
+                            Doors open to general public.
+                        </p>
+                    </div>
+                    <div>
+                        <div className='regionals-schedule-event-subtitle'>Sunday, June 30th, 2024</div>
+                        <p>
+                            <span className='regionals-schedule-event-sectiontitle'>10:00 AM</span>
+                            <span className='regionals-schedule-event-emphasis'>Travis County Expo Center</span>
+                            Doors open to general public.
+                        </p>
+                    </div>
+                    <div className='regionals-schedule-event-sectiontitle'>Want to tailgate with friends?<br/>Cool – let us know when and we’ll find a dedicated spot for your gathering.</div><br />
+                    <div className='regionals-schedule-location'>
+                        <div className='regionals-schedule-location-subtitle'>Travis County Exposition Center</div>
+                        <div className='regionals-schedule-location-address'>7311 Decker Ln, Austin, TX 78724</div>
                         <iframe title="Venue Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.9606099641314!2d-97.62416362363436!3d30.295182974798383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b7faa87b8613%3A0x80d8c5ce96afea92!2sTravis%20County%20Exposition%20Center!5e0!3m2!1sen!2sus!4v1713648138186!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </section>

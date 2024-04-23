@@ -9,11 +9,19 @@
 .regionals-schedule-about img {
     width: 100%;
 }
-[class^="regionals-schedule-event-dates-"][class$="-date"] {
+.regionals-schedule-event-sectiontitle {
+    font-size: 2rem;
+}
+.regionals-schedule-event-sectiontitle, .regionals-schedule-event-highlight {
     font-weight: bold;
     color: rgb(255, 169, 38);
+    display: block;
 }
-.regionals-schedule-event-location iframe {
+.regionals-schedule-event-emphasis {
+    font-weight: bold;
+    display: block;
+}
+.regionals-schedule-location iframe {
     width: 100%;
     height: 300px;
 }

@@ -21,30 +21,24 @@
     height: 380px;
     width: 300px;
 }
-.regionals-hospitality-hotels p {
+.regionals-hospitality-hotels-location-description {
+    margin-top: 2rem;
+}
+.regionals-hospitality-hotels-location-subtitle {
+    line-height: 3rem;
+    margin-bottom: 12px;
+}
+.regionals-hospitality-hotels-location-description p {
     text-align: center;
     line-height: 2.5rem;
-}
-.regionals-hospitality-atttractions-details li {
-    margin: 3rem 0;
+    margin-bottom: 2rem !important;
 }
 @media only screen and (min-width: 768px) {
-    .regionals-hospitality-about, .regionals-hospitality-guide-wrapper, .regionals-hospitality-hotels, .regionals-hospitality-restaurants, .regionals-hospitality-attractions {
+    .regionals-hospitality-about, .regionals-hospitality-guide-wrapper, .regionals-hospitality-hotels {
         padding: 0 5rem;
     }
     .regionals-hospitality-about-details {
         display: flex;
-    }
-    .regionals-hospitality-about-details-column1 {
-        max-width: 60%;
-        margin-right: 5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .regionals-hospitality-about-details-column1 img {
-        width: 100%;
-        max-width: 500px;
     }
     .regionals-hospitality-guide-details > iframe {
         height: 770px;
@@ -52,8 +46,7 @@
     }
     [class^="regionals-hospitality-hotels-"][class$="details"] {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        align-items: stretch;
     }
     [class^="regionals-hospitality-hotels-"][class$="details"] img {
         width: 50%;
@@ -61,27 +54,15 @@
     }
     [class^="regionals-hospitality-hotels-"][class$="details"] div {
         margin-left: 2rem;
-        width: 580px;
     }
     [class^="regionals-hospitality-hotels-"][class$="details"] p {
         margin: 0;
     }
-    .regionals-hospitality-restaurants-locations {
-        display: flex;
-        width: 100%;
-    }
-    .regionals-hospitality-restaurants-locations > div {
+    .regionals-hospitality-hotels-location-description {
         flex-grow: 1;
-    }
-    .regionals-hospitality-atttractions-details img {
-        width: 600px;
-    }
-}
-@media only screen and (min-width: 1400px) {
-    [class^="regionals-hospitality-hotels-"][class$="details"] {
-        justify-content: left;
-    }
-    [class^="regionals-hospitality-hotels-"][class$="details"] div {
-        margin-left: 11rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
