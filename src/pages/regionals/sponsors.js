@@ -38,26 +38,18 @@ const SponsorsAndVendorsPage = () => {
                         </div>
                     </div>
                     <div className='regionals-sponsors-levels-item regionals-hide'>
-                        <div className='regionals-sponsors-level-title'>TODO: Captain Sponsors</div>
+                        <div className='regionals-sponsors-level-title'>Lead Jammer</div>
                     </div>
                     <div className='regionals-sponsors-levels-item regionals-hide'>
-                        <div className='regionals-sponsors-level-title'>TODO: Krewe Sponsors</div>
+                        <div className='regionals-sponsors-level-title'>Heavy Hitter</div>
                     </div>
                     <div className='regionals-sponsors-levels-item regionals-hide'>
-                        <div className='regionals-sponsors-level-title'>TODO: Crowd Sponsors</div>
+                        <div className='regionals-sponsors-level-title'>Star Pass</div>
                     </div>
                     <div className='regionals-sponsors-levels-item regionals-hide'>
-                        <div className='regionals-sponsors-level-title'>TODO: Additional Supporters</div>
+                        <div className='regionals-sponsors-level-title'>Additional Supporters</div>
                         <div className='regionals-sponsors-level-details'>
                             <ul>
-                                <li>Chub Club</li>
-                                <li>Kajun Kidd Burgers & Wings</li>
-                                <li>Louisiana Fish Fry</li>
-                                <li>Roller Derby Athletics</li>
-                                <li>Roller Derby Coaching</li>
-                                <li>Sidewalk Side Spirits</li>
-                                <li>Tabasco</li>
-                                <li>Urban South Brewery</li>
                             </ul>
                         </div>
                     </div>

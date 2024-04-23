@@ -117,7 +117,62 @@ const HospitalityPage = () => {
                         </div>
                     </div>
                 </section>
-                <section className="regionals-hospitality-sightseeing theme-1">
+                <section className="regionals-hospitality-sponsors theme-1">
+                    <div className="regionals-hospitality-sponsors-title">Sponsor Businesses</div>
+                    <div className="regionals-hospitality-sponsor">
+                        <div className='regionals-hospitality-sponsor-address'>
+                            <a href="https://www.holdoutbrewing.com/" target="_blank" rel="noopener noreferrer" aria-label="Link to sponsor, Holdout Brewing">
+                                <div className='regionals-hospitality-sponsor-image sponsor-holdoutbrewing'></div>
+                            </a>
+                            <p>1208 West 4th Street<br/>Austin, TX 78703<br/>(512) 305-3540</p>
+                        </div>
+                        <div className='regionals-hospitality-sponsor-details'>
+                            <div className='regionals-hospitality-sponsor-subtitle'>Hold Out Brewing</div>
+                            <p>
+                                Beer we brew ourselves and burgers we smash ourselves.<br/>
+                                <a href="https://order.toasttab.com/online/hold-out-brewing" target="_blank" rel="noopener noreferrer">Order Online</a>
+                            </p>
+                            <p>
+                                Sun 10:00 AM - 10:00 PM<br />
+                                Mon 3:00 PM - 10:00 PM<br/>
+                                Tue 11:00 AM - 11:00 PM<br/>
+                                Wed 11:00 AM - 11:00 PM<br />
+                                Thu 11:00 AM - 11:00 PM<br />
+                                Fri 11:00 AM - 11:00 PM<br />
+                                Sat 10:00 AM - 11:00 PM<br />
+                            </p>
+                        </div>
+                    </div>
+                    <div className="regionals-hospitality-sponsor">
+                        <div className='regionals-hospitality-sponsor-address'>
+                            <a href="https://www.betterhalfbar.com/" target="_blank" rel="noopener noreferrer" aria-label="Link to sponsor, Better Half">
+                                <div className='regionals-hospitality-sponsor-image sponsor-betterhalf'></div>
+                            </a>
+                            <p>406 Walsh St<br/>Austin, TX 78703<br/>(512) 645-0786</p>
+                        </div>
+                        <div className='regionals-hospitality-sponsor-details'>
+                            <div className='regionals-hospitality-sponsor-subtitle'>Better half Coffee & Cocktails</div>
+                            <p>
+                                We’re an award-winning all-day cafe located just west of downtown Austin. We also have downtown Austin’s best parking, with a big front lot and many more spaces in a back lot off 4th Street. We share parking with Hold Out Brewing, our brewery that’s right next door and run by the same culinary team.<br/>
+                                <a href="https://order.toasttab.com/online/betterhalfbar" target="_blank" rel="noopener noreferrer">Order Online</a>
+                            </p>
+                            <p>
+                                Sun 8:00 AM - 10:00 PM<br />
+                                Mon 8:00 AM - 3:00 PM<br/>
+                                Tue 8:00 AM - 10:00 PM<br/>
+                                Wed 8:00 AM - 10:00 PM<br/>
+                                Thu 8:00 AM - 10:00 PM<br/>
+                                Fri 8:00 AM - 11:00 PM (8 AM - 10:30 PM Kitchen)<br />
+                                Sat 10:00 AM - 11:00 PM (8 AM - 10:30 PM Kitchen)<br />
+                            </p>
+                            <p>
+                                Happy Hour<br/>
+                                Tue - Fri 3:00 PM - 6:00 PM
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section className="regionals-hospitality-sightseeing theme-3">
                     <div className="regionals-hospitality-sightseeing-title">Sightseeing</div>
                     <div>
                         <div className="regionals-hospitality-sightseeing-subtitle">Congress Bridge Bats</div>
@@ -234,7 +289,7 @@ const HospitalityPage = () => {
                         </p>
                     </div>
                 </section>
-                <section className="regionals-hospitality-swimming theme-3">
+                <section className="regionals-hospitality-swimming theme-1">
                     <div className="regionals-hospitality-swimming-title">Swimming</div>
                     <p>
                         The Austin Parks and Recreation Aquatic Division operates 44 public aquatic facilities, which
@@ -243,8 +298,7 @@ const HospitalityPage = () => {
                         entry fee.
                     </p>
                     <div>
-                        <div className="regionals-hospitality-swimming-subtitle">Natural Springs Swimming Pool</div>
-                        <div className="regionals-hospitality-swimming-subtitle">Barton Springs Pool in Zilker Park</div>
+                        <div className="regionals-hospitality-swimming-subtitle">Natural Springs Swimming Pool - Barton Springs Pool in Zilker Park</div>
                         <div>2201 Barton Springs Rd., Austin, TX 78746</div>
                         <p>
                             Spring fed and over 900 feet long, the pool was formed when Barton Creek was dammed up, so it
@@ -289,7 +343,7 @@ const HospitalityPage = () => {
                         </p>
                     </div>
                 </section>
-                <section className="regionals-hospitality-grocery theme-1">
+                <section className="regionals-hospitality-grocery theme-2">
                     <div className='regionals-hospitality-grocery-title'>Grocery Stores</div>
                     <div>
                         <div className='regionals-hospitality-grocery-subtitle'>H-E-B</div>
@@ -309,7 +363,7 @@ const HospitalityPage = () => {
                         <p>Small health food focused options with locations across the city.</p>
                     </div>
                 </section>
-                <section className="regionals-hospitality-guide theme-2">
+                <section className="regionals-hospitality-guide theme-1">
                     <div className="regionals-hospitality-guide-wrapper">
                         <div className="regionals-hospitality-guide-title">HOSPITALITY GUIDE</div>
                         <div className="regionals-hospitality-guide-details">
