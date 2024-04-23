@@ -3,4 +3,7 @@
         display: flex;
         column-gap: 2rem;
     }
+    .regionals-eventdetails-details-column1, .regionals-eventdetails-details-column2 {
+        flex-basis: fit-content;
+    }
 }
