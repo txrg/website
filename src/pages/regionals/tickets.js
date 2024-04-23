@@ -24,7 +24,7 @@ const TicketsPage = () => {
                             The North America South Regionas, <b>Deep in the Heart of Derby</b>, is rolling into Austin, TX from <b>June 28-30, 2024</b>.
                         </p>
                         <p>
-                            Get your tickets <a href="https://www.brownpapertickets.com/event/6236214" target="_blank" rel="noopener noreferrer">HERE</a> to see 12 amazing teams fight for chance at the Global Champs!<br />
+                            Get your tickets <a href="https://www.brownpapertickets.com/event/6236214" target="_blank" rel="noopener noreferrer">HERE</a> to see 12 amazing teams fight for a chance at the Global Champs!<br />
                             In addition to the bouts, we'll have plenty of fun activities for the whole family throughout the weekend, including drawings for prizes throughout the weekend!
                         </p>
                         <p>
@@ -151,13 +151,6 @@ const TicketsPage = () => {
                 </section>
                 <section className='theme-2'>
                     <EventDetails />
-                </section>
-                <section className="regionals-tickets-disclaimer">
-                    <small>All tickets are general admission seating.</small><br/><br/>
-                    <small>Friday Pass, Saturday Pass, Sunday Pass, and Full Weekend Pass holders receive same-day re-entry privileges with their ticket purchase (must receive wristband from venue staff to re-enter the event).</small><br/><br/>
-                    <small>Box office opens 15 minutes before the first game and closes 30 minutes after the start of the last game of the day. Guests can arrive and enter the venue at any point during open hours (even in the middle of games).</small><br/><br/>
-                    <small>Tickets can be purchased online through Brown Paper Tickets. Online ticket purchases are subject to convenience fees.</small><br/><br/>
-                    <small>Interested in group rates? We're happy to chat! Please email us at interleague@texasrollergirls.org to inquire on behalf of your group.</small><br/><br/>
                 </section>
             </main>
             <Footer />
