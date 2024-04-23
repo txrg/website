@@ -21,6 +21,11 @@
     height: 380px;
     width: 300px;
 }
+.regionals-hospitality-hotels-location:not(:last-of-type) {
+    border-bottom: solid 1px #c5c5c5;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
 .regionals-hospitality-hotels-location-description {
     margin-top: 2rem;
 }

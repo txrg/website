@@ -27,7 +27,7 @@ const SchedulePage = () => {
                 </section>
                 <section className='regionals-schedule-event theme-2'>
                     <div className='regionals-schedule-event-title'>DATES & LOCATION</div>
-                    <div>
+                    <div className='regionals-schedule-event-break'>
                         <div className='regionals-schedule-event-subtitle'>Thursday, June 27th, 2024</div>
                         <p>
                             <span className='regionals-schedule-event-sectiontitle'>5:00 PM - 9:00 PM</span>
@@ -55,7 +55,7 @@ const SchedulePage = () => {
                             with a diving board.
                         </p>
                     </div>
-                    <div>
+                    <div className='regionals-schedule-event-break'>
                         <div className='regionals-schedule-event-subtitle'>Friday, June 28th, 2024</div>
                         <p>
                             <span className='regionals-schedule-event-sectiontitle'>7:00 AM</span>
@@ -77,7 +77,7 @@ const SchedulePage = () => {
                             Doors open to general public.
                         </p>
                     </div>
-                    <div>
+                    <div className='regionals-schedule-event-break'>
                         <div className='regionals-schedule-event-subtitle'>Saturday, June 29th, 2024</div>
                         <p>
                             <span className='regionals-schedule-event-sectiontitle'>9:00 AM</span>
