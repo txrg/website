@@ -9,6 +9,10 @@
 .regionals-schedule-about img {
     width: 100%;
 }
+.regionals-schedule-event-break {
+    border-bottom: 1px solid #c5c5c5;
+    margin-bottom: 1rem;
+}
 .regionals-schedule-event-sectiontitle {
     font-size: 2rem;
 }
@@ -69,6 +73,7 @@ div.regionals-schedule-brackets-details-img-selected {
     font-size: 2rem;
     justify-content: center;
     align-items: center;
+    background-color: white;
 }
 .regionals-schedule-bids-details {
     display: flex;
