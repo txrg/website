@@ -31,11 +31,13 @@ const TicketsPage = () => {
                             Ticket rates are for adults (ages 13+) and children ages 6-12. Kids 5 and under get in for free!<br />
                             Questions on tickets or the tournament? Please reach out via email, <a href="mailto:interleague@texasrollergirls.org" target="_blank" rel="noopener noreferrer">interleague@texasrollergirls.org</a>.
                         </p>
-                        <div className="regionals-tickets-overview-times">
-                            <p><b>Friday:</b><br/>Doors open at 9:00 AM<br/>Games begin 10:00 AM</p>
-                            <p><b>Saturday:</b><br/>Doors open at 9:00 AM<br/>Games begin at 10:00 AM<br/></p>
-                            <p><b>Sunday:</b><br/>Doors open at 10:00 AM<br/>Games begin at 11:00 AM<br/></p>
-                        </div>
+                    </div>
+                </section>
+                <section className="regionals-tickets-times theme-2">
+                    <div className="regionals-tickets-overview-times">
+                        <p><b>Friday:</b><br/>Doors open at 9:00 AM<br/>Games begin at 10:00 AM</p>
+                        <p><b>Saturday:</b><br/>Doors open at 9:00 AM<br/>Games begin at 10:00 AM<br/></p>
+                        <p><b>Sunday:</b><br/>Doors open at 10:00 AM<br/>Games begin at 11:00 AM<br/></p>
                     </div>
                 </section>
                 <div className="regionals-tickets-overview-title regionals-hide">TODO: update pass images</div>
