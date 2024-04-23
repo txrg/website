@@ -30,6 +30,15 @@ const SchedulePage = () => {
                     <div>
                         <div className='regionals-schedule-event-subtitle'>Thursday, June 27th, 2024</div>
                         <p>
+                            <span className='regionals-schedule-event-sectiontitle'>5:00 PM - 9:00 PM</span>
+                            <span className='regionals-schedule-event-highlight'>Team Registration, Volunteer Orientation and Hospitality Overview</span>
+                            <span className='regionals-schedule-event-emphasis'>Hopsquad Brewing Company</span>
+                            <span className='regionals-schedule-event-emphasis'>2307 Kramer Ln, Austin, TX 78758</span>
+                            Provided that your signup, charter, waivers and other processes are complete with
+                            WFTDA and Texas Rollergirls, you can send one representative to pick up badges,
+                            packets and merch presales.
+                        </p>
+                        <p>
                             <span className='regionals-schedule-event-sectiontitle'>OPTIONAL SPECIAL EVENTS</span>
                             <span className='regionals-schedule-event-highlight'>Hopsquad Brewing Company</span>
                             <span className='regionals-schedule-event-emphasis'>2307 Kramer Ln, Austin, TX 78758</span>
