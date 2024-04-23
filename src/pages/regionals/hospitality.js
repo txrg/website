@@ -151,7 +151,7 @@ const HospitalityPage = () => {
                             <p>406 Walsh St<br/>Austin, TX 78703<br/>(512) 645-0786</p>
                         </div>
                         <div className='regionals-hospitality-sponsor-details'>
-                            <div className='regionals-hospitality-sponsor-subtitle'>Better half Coffee & Cocktails</div>
+                            <div className='regionals-hospitality-sponsor-subtitle'>Better Half Coffee & Cocktails</div>
                             <p>
                                 We’re an award-winning all-day cafe located just west of downtown Austin. We also have downtown Austin’s best parking, with a big front lot and many more spaces in a back lot off 4th Street. We share parking with Hold Out Brewing, our brewery that’s right next door and run by the same culinary team.<br/>
                                 <a href="https://order.toasttab.com/online/betterhalfbar" target="_blank" rel="noopener noreferrer">Order Online</a>

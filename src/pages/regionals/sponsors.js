@@ -15,7 +15,7 @@ const SponsorsAndVendorsPage = () => {
                 <section className='regionals-sponsors-join theme-1'>
                     <div className='regionals-sponsors-join-title'>GET INVOLVED</div>
                     <div className='regionals-sponsors-join-details'>
-                        <p><b>Deep in the Heart of Derby</b> would truly not be possible without the generous contributions and involvement of our sponsors and vendors. We are currently seeking both sponsors and vendors for the 2024 event. Take a look at our Sponsorship Packet below for more information about how your business can support an event that will bring 2,000+ roller derby players, officials and enthusiasts to the Travis County Expo Center.</p>
+                        <p><b>Deep in the Heart of Derby</b> would truly not be possible without the generous contributions and involvement of our sponsors and vendors. We are currently seeking both sponsors and vendors for the 2024 event. <a href="mailto:sponsorship@texasrollergirls.org" target="_blank" rel="noopener noreferrer">Email</a> our sponsorship coordinator for more information about how your business can support an event that will bring 2,000+ roller derby players, officials and enthusiasts to the Travis County Expo Center.</p>
                         <p>Please email <a target="_blank" rel="noopener noreferrer" href="mailto:sponsorship@texasrollergirls.org">sponsorship@texasrollergirls.org</a> to become a sponsor or vendor!</p>
                         <div>
                             TODO: Update packet

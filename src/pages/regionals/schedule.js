@@ -51,7 +51,7 @@ const SchedulePage = () => {
                             Carpool or convoy from Hopsquad or meet us there! $8 admission to Barton, which doesn’t allow dogs
                             or food, or free admission to Barkin’ Springs, which allows dogs and food but is usually not
                             very sanitary. Spring fed and over 900 feet long, the pool was formed when Barton Creek
-                            was dammed up, so it has a natural rock and gravel bottom. 68 degrees all year around,
+                            was dammed up, so it has a natural rock and gravel bottom. 68 degrees all year around
                             with a diving board.
                         </p>
                     </div>
