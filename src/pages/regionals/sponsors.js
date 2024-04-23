@@ -2,10 +2,6 @@ import React from 'react';
 import Layout from '../../components/layout/layout';
 import Navigation from '../../components/regionals/navigation';
 import Footer from '../../components/regionals/footer';
-import ImageSponsorsRoyal001 from '../../images/regionals/sponsors-royal-001.png';
-import ImageSponsorsCaptain001 from '../../images/regionals/sponsors-captain-001.png';
-import ImageSponsorsKrewe001 from '../../images/regionals/sponsors-krewe-001.png';
-import ImageSponsorsCrowd001 from '../../images/regionals/sponsors-crowd-001.png';
 
 const SponsorsAndVendorsPage = () => {
     return (
@@ -29,24 +25,28 @@ const SponsorsAndVendorsPage = () => {
                         </div>
                     </div>
                 </section>
-                <section className='regionals-sponsors-levels theme-1 regionals-hide'>
+                <section className='regionals-sponsors-levels theme-1'>
                     <div className='regionals-sponsors-levels-item'>
-                        <div className='regionals-sponsors-level-title'>TODO: Royal Sponsors</div>
-                        <img className='regionals-sponsors-level-image' src={ImageSponsorsRoyal001} alt="Sponsor" />
+                        <div className='regionals-sponsors-level-title'>MVP Sponsors</div>
+                        <div className='regionals-sponsors-level-businesses'>
+                            <a href="https://www.holdoutbrewing.com/" target="_blank" rel="noopener noreferrer" aria-label="Link to sponsor, Holdout Brewing">
+                                <div className='regionals-sponsors-level-image sponsor-holdoutbrewing'></div>
+                            </a>
+                            <a href="https://www.betterhalfbar.com/" target="_blank" rel="noopener noreferrer" aria-label="Link to sponsor, Better Half">
+                                <div className='regionals-sponsors-level-image sponsor-betterhalf'></div>
+                            </a>
+                        </div>
                     </div>
-                    <div className='regionals-sponsors-levels-item'>
+                    <div className='regionals-sponsors-levels-item regionals-hide'>
                         <div className='regionals-sponsors-level-title'>TODO: Captain Sponsors</div>
-                        <img className='regionals-sponsors-level-image' src={ImageSponsorsCaptain001} alt="Sponsor" />
                     </div>
-                    <div className='regionals-sponsors-levels-item'>
+                    <div className='regionals-sponsors-levels-item regionals-hide'>
                         <div className='regionals-sponsors-level-title'>TODO: Krewe Sponsors</div>
-                        <img className='regionals-sponsors-level-image' src={ImageSponsorsKrewe001} alt="Sponsor"/>
                     </div>
-                    <div className='regionals-sponsors-levels-item'>
+                    <div className='regionals-sponsors-levels-item regionals-hide'>
                         <div className='regionals-sponsors-level-title'>TODO: Crowd Sponsors</div>
-                        <img className='regionals-sponsors-level-image' src={ImageSponsorsCrowd001} alt="Sponsor"/>
                     </div>
-                    <div className='regionals-sponsors-levels-item'>
+                    <div className='regionals-sponsors-levels-item regionals-hide'>
                         <div className='regionals-sponsors-level-title'>TODO: Additional Supporters</div>
                         <div className='regionals-sponsors-level-details'>
                             <ul>

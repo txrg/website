@@ -133,6 +133,20 @@
 }
 
 //---------------------------------------
+// Sponsor Logos
+//---------------------------------------
+.sponsor-holdoutbrewing {
+    background-image: url('../images/regionals/sponsor-holdoutbrewing.png');
+    background-size: cover;
+    background-position: center center;
+}
+.sponsor-betterhalf {
+    background-image: url('../images/regionals/sponsor-betterhalf.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+//---------------------------------------
 // Responsive
 //---------------------------------------
 @media only screen and (min-width: 768px) {
