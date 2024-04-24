@@ -3,6 +3,7 @@ import Layout from '../../components/layout/layout';
 import Navigation from '../../components/regionals/navigation';
 import Footer from '../../components/regionals/footer';
 import EventDetails from '../../components/regionals/event-details';
+import Venue from '../../components/regionals/venue';
 import imageAbout01 from '../../images/regionals/schedule-about-01.jpeg'
 import imageScheduleEurope from '../../images/regionals/schedule-bracket-europe.png'
 import imageScheduleNaNortheast from '../../images/regionals/schedule-bracket-nanortheast.png'
@@ -94,11 +95,9 @@ const SchedulePage = () => {
                         </p>
                     </div>
                     <div className='regionals-schedule-event-sectiontitle'>Want to tailgate with friends?<br/>Cool – let us know when and we’ll find a dedicated spot for your gathering.</div><br />
-                    <div className='regionals-schedule-location'>
-                        <div className='regionals-schedule-location-subtitle'>Travis County Exposition Center</div>
-                        <div className='regionals-schedule-location-address'>7311 Decker Ln, Austin, TX 78724</div>
-                        <iframe title="Venue Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.9606099641314!2d-97.62416362363436!3d30.295182974798383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b7faa87b8613%3A0x80d8c5ce96afea92!2sTravis%20County%20Exposition%20Center!5e0!3m2!1sen!2sus!4v1713648138186!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+                </section>
+                <section className="theme-1">
+                    <Venue />
                 </section>
                 <section className='regionals-schedule-brackets theme-3'>
                     <div className='regionals-schedule-brackets-title'>SCHEDULE & SCORES</div>
@@ -164,7 +163,7 @@ const SchedulePage = () => {
                         </div>
                     </div>
                 </section>
-                <section className='regionals-schedule-bids theme-2'>
+                <section className='regionals-schedule-bids theme-1'>
                     <div className='regionals-schedule-bids-title'>GLOBAL CHAMPIONSHIP TEAMS</div>
                     <div className='regionals-schedule-bids-details'>
                         <div className='regionals-schedule-bids-subtitle'>Europe</div>
@@ -205,7 +204,7 @@ const SchedulePage = () => {
                         </ol>
                     </div>
                 </section>
-                <section className='regionals-schedule-more theme-1'>
+                <section className='regionals-schedule-more theme-2'>
                     <EventDetails />
                 </section>
             </main>

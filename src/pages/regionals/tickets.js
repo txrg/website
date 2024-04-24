@@ -3,6 +3,7 @@ import Layout from '../../components/layout/layout';
 import Navigation from '../../components/regionals/navigation';
 import Footer from '../../components/regionals/footer';
 import EventDetails from '../../components/regionals/event-details';
+import Venue from '../../components/regionals/venue';
 import ImagePassFriday from '../../images/regionals/tickets-pass-friday.png';
 import ImagePassSaturday from '../../images/regionals/tickets-pass-saturday.png';
 import ImagePassSunday from '../../images/regionals/tickets-pass-sunday.png';
@@ -33,7 +34,10 @@ const TicketsPage = () => {
                         </p>
                     </div>
                 </section>
-                <section className="regionals-tickets-times theme-2">
+                <section className="theme-2">
+                    <Venue />
+                </section>
+                <section className="regionals-tickets-times theme-1">
                     <div className="regionals-tickets-overview-times">
                         <p><b>Friday:</b><br/>Doors open at 9:00 AM<br/>Games begin at 10:00 AM</p>
                         <p><b>Saturday:</b><br/>Doors open at 9:00 AM<br/>Games begin at 10:00 AM<br/></p>
@@ -41,7 +45,7 @@ const TicketsPage = () => {
                     </div>
                 </section>
                 <div className="regionals-tickets-overview-title">TODO: update pass images</div>
-                <section className="regionals-tickets-passes theme-1">
+                <section className="regionals-tickets-passes theme-3">
                     <div className="regionals-tickets-passes-row">
                         <div className="regionals-tickets-passes-option">
                             <img className="regionals-tickets-passes-option-image" src={ImagePassWeekend} alt="Full Weekend - VIP Pass"></img>
@@ -149,7 +153,7 @@ const TicketsPage = () => {
                         </div>
                     </div>
                 </section>
-                <section className='theme-2'>
+                <section className='theme-1'>
                     <EventDetails />
                 </section>
             </main>
