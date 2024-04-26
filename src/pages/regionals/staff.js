@@ -74,14 +74,17 @@ const StaffAndVolunteersPage = () => {
                     </div>
                     <div className='regionals-staff-heads-official'>
                         <div className='regionals-staff-heads-official-column1'>
-                            <img src={imageRunningGirl} alt="Official"></img>
+                            <div className="regionals-staff-bio-image-border"></div>
+                            <div className="regionals-staff-bio-image-darthbling"></div>
                         </div>
                         <div className='regionals-staff-heads-official-column2'>
                             <div className='regionals-staff-heads-official-subtitle'>Darth Bling <span className="regionals-staff-pronouns">(he/him)</span></div>
                             <div className="regionals-staff-heads-official-position">
                                 <details>
                                     <summary>Tournament Head Ref</summary>
-                                    <p>Bio coming soon!</p>
+                                    <p>
+                                        Darth Bling has been officiating for 13 years and has worked over 1000 games during his career. He was most recently the THR for 2019 WFTDA Playoffs in Seattle and also officiated 2019 WFTDA Championships in Montreal. When not doing all the officiating, Bling also coaches junior roller derby. Starting in 2014, he began coaching the Death Scar Derby Droids, one of Rose City's junior home teams. And then in 2017 he also started coaching the Rosebuds All-Stars, who recently won gold at JRDA Championships in 2022 and then won silver in 2023. Bling has also been serving as the WFTDA Rules Chair since 2019.
+                                    </p>
                                 </details>
                             </div>
                         </div>
@@ -130,7 +133,8 @@ const StaffAndVolunteersPage = () => {
                     </div>
                     <div className='regionals-staff-heads-official'>
                         <div className='regionals-staff-heads-official-column1'>
-                            <img src={imageRunningGirl} alt="Official"></img>
+                            <div className="regionals-staff-bio-image-border"></div>
+                            <div className="regionals-staff-bio-image-flanneryoclobber"></div>
                         </div>
                         <div className='regionals-staff-heads-official-column2'>
                             <div className='regionals-staff-heads-official-subtitle'>Flannery O'Clobber <span className="regionals-staff-pronouns">(she/her)</span></div>
@@ -144,7 +148,8 @@ const StaffAndVolunteersPage = () => {
                     </div>
                     <div className='regionals-staff-heads-official'>
                         <div className='regionals-staff-heads-official-column1'>
-                            <img src={imageRunningGirl} alt="Official"></img>
+                            <div className="regionals-staff-bio-image-border"></div>
+                            <div className="regionals-staff-bio-image-misothorny"></div>
                         </div>
                         <div className='regionals-staff-heads-official-column2'>
                             <div className='regionals-staff-heads-official-subtitle'>Miso Thorny <span className="regionals-staff-pronouns">(she/her)</span></div>
