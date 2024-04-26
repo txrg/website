@@ -74,8 +74,9 @@ const StaffAndVolunteersPage = () => {
                     </div>
                     <div className='regionals-staff-heads-official'>
                         <div className='regionals-staff-heads-official-column1'>
-                            <div className="regionals-staff-bio-image-border"></div>
-                            <div className="regionals-staff-bio-image-darthbling"></div>
+                            <div className="regionals-staff-bio-image-border">
+                                <div className="regionals-staff-bio-image-darthbling"></div>
+                            </div>
                         </div>
                         <div className='regionals-staff-heads-official-column2'>
                             <div className='regionals-staff-heads-official-subtitle'>Darth Bling <span className="regionals-staff-pronouns">(he/him)</span></div>
@@ -133,8 +134,9 @@ const StaffAndVolunteersPage = () => {
                     </div>
                     <div className='regionals-staff-heads-official'>
                         <div className='regionals-staff-heads-official-column1'>
-                            <div className="regionals-staff-bio-image-border"></div>
-                            <div className="regionals-staff-bio-image-flanneryoclobber"></div>
+                            <div className="regionals-staff-bio-image-border">
+                                <div className="regionals-staff-bio-image-flanneryoclobber"></div>
+                            </div>
                         </div>
                         <div className='regionals-staff-heads-official-column2'>
                             <div className='regionals-staff-heads-official-subtitle'>Flannery O'Clobber <span className="regionals-staff-pronouns">(she/her)</span></div>
@@ -148,8 +150,9 @@ const StaffAndVolunteersPage = () => {
                     </div>
                     <div className='regionals-staff-heads-official'>
                         <div className='regionals-staff-heads-official-column1'>
-                            <div className="regionals-staff-bio-image-border"></div>
-                            <div className="regionals-staff-bio-image-misothorny"></div>
+                            <div className="regionals-staff-bio-image-border">
+                                <div className="regionals-staff-bio-image-misothorny"></div>
+                            </div>
                         </div>
                         <div className='regionals-staff-heads-official-column2'>
                             <div className='regionals-staff-heads-official-subtitle'>Miso Thorny <span className="regionals-staff-pronouns">(she/her)</span></div>

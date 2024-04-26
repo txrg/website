@@ -33,14 +33,27 @@
 .theme-2 .regionals-staff-sectiontitle {
     color: rgb(255, 169, 38);
 }
+.regionals-staff-heads-official-column1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[class^="regionals-staff-bio-image-"] {
+    background-size: cover;
+}
+[class^="regionals-staff-bio-image-"]:not(.regionals-staff-bio-image-border) {
+    height: 80%;
+    width: 80%;
+}
 .regionals-staff-bio-image-border {
     background-image: url('../images/regionals/staff-border.png');
-    position: absolute;
-}
-[class^="regionals-staff-bio-image-"], .regionals-staff-bio-image-border {
-    width: calc(100vw - 4rem);
+    background-color: rgb(252, 222, 220);
     height: calc(100vw - 4rem);
-    background-size: cover;
+    width: calc(100vw - 4rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .regionals-staff-bio-image-darthbling {
     background-image: url('../images/regionals/staff-darthbling.jpeg');
@@ -66,12 +79,10 @@
     }
     .regionals-staff-heads-official-column1 {
         width: calc(25vw - 1rem);
-        display: flex;
-        align-items: center;
     }
-    [class^="regionals-staff-bio-image-"], .regionals-staff-bio-image-border {
+    .regionals-staff-bio-image-border {
         height: calc(25vw - 1rem);
-        width: calc(25vw - 1rem);
+        width: 100%;
     }
     .regionals-staff-heads-official-column2 {
         width: 75%;
