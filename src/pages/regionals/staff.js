@@ -142,23 +142,7 @@ const StaffAndVolunteersPage = () => {
                             <div className='regionals-staff-heads-official-subtitle'>Flannery O'Clobber <span className="regionals-staff-pronouns">(she/her)</span></div>
                             <div className="regionals-staff-heads-official-position">
                                 <details>
-                                    <summary>Tournament Organizing Co-Chair</summary>
-                                    <p>Bio coming soon!</p>
-                                </details>
-                            </div>
-                        </div>
-                    </div>
-                    <div className='regionals-staff-heads-official'>
-                        <div className='regionals-staff-heads-official-column1'>
-                            <div className="regionals-staff-bio-image-border">
-                                <div className="regionals-staff-bio-image-misothorny"></div>
-                            </div>
-                        </div>
-                        <div className='regionals-staff-heads-official-column2'>
-                            <div className='regionals-staff-heads-official-subtitle'>Miso Thorny <span className="regionals-staff-pronouns">(she/her)</span></div>
-                            <div className="regionals-staff-heads-official-position">
-                                <details>
-                                    <summary>Tournament Organizing Co-Chair</summary>
+                                    <summary>Tournament Organizing Chair</summary>
                                     <p>Bio coming soon!</p>
                                 </details>
                             </div>
