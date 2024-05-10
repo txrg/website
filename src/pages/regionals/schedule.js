@@ -9,6 +9,7 @@ import imageScheduleEurope from '../../images/regionals/schedule-bracket-europe.
 import imageScheduleNaNortheast from '../../images/regionals/schedule-bracket-nanortheast.png'
 import imageScheduleNaSouth from '../../images/regionals/schedule-bracket-nasouth.png'
 import imageScheduleNaWest from '../../images/regionals/schedule-bracket-nawest.png'
+import imageScheduleOceania from '../../images/regionals/schedule-bracket-oceania.png'
 
 const SchedulePage = () => {
     const [selectedScheduleNav, setSelectedScheduleNav] = useState('nasouth');
@@ -144,12 +145,10 @@ const SchedulePage = () => {
                             src={imageScheduleEurope}
                             alt="Europe Bracket"
                         />
-                        <div className={`regionals-schedule-brackets-details-img${selectedScheduleNav === "oceania" ? ' regionals-schedule-brackets-details-img-selected' : ''}`}>
-                            June 8-10 2024<br />
-                            Wayville, South Australia<br />
-                            Hosted at The Great Southern Slam by Adelaide Roller Derby<br />
-                            Bracket TBD
-                        </div>
+                        <img className={`regionals-schedule-brackets-details-img${selectedScheduleNav === "oceania" ? ' regionals-schedule-brackets-details-img-selected' : ''}`}
+                            src={imageScheduleOceania}
+                            alt="Oceania Bracket"
+                        />
                         <img
                             className={`regionals-schedule-brackets-details-img${selectedScheduleNav === "nawest" ? ' regionals-schedule-brackets-details-img-selected' : ''}`}
                             src={imageScheduleNaWest}
