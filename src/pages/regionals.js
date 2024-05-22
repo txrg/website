@@ -44,6 +44,7 @@ const HomePage = () => {
                 </section>
                 <section className="regionals-home-merch theme-1">
                     <div className="regionals-home-merch-title">Pre-Sale Merch Available Until May 31st!</div>
+                    <div className="regionals-home-merch-subtitle">Pickup During Tournament</div>
                     <div className="regionals-home-merch-description">
                         <a target="_blank" rel="noopener noreferrer" href="https://texasrollergirls.square.site/product/deep-in-the-heart-of-derby-2024-regionals-crop-tank/125">
                             <div className="regionals-home-merch-item">
