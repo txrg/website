@@ -174,11 +174,18 @@ const SchedulePage = () => {
                     </div>
                     <div className='regionals-schedule-bids-details'>
                         <div className='regionals-schedule-bids-subtitle'>North America Northeast</div>
-                        <ol>
-                            <li>Arch Rival All Stars</li>
-                            <li>Montréal New Skids on the Block</li>
-                            <li>Gotham All Stars</li>
-                        </ol>
+                        <div className='regionals-schedule-results'>
+                            <div>
+                                <div><b>1st Place:</b></div>
+                                <div><b>2nd Place:</b></div>
+                                <div><b>3rd Place:</b></div>
+                            </div>
+                            <div>
+                                <div>Arch Rival All Stars</div>
+                                <div>Montréal New Skids on the Block</div>
+                                <div>Gotham All Stars</div>
+                            </div>
+                        </div>
                     </div>
                     <div className='regionals-schedule-bids-details'>
                         <div className='regionals-schedule-bids-subtitle'>North America South</div>
