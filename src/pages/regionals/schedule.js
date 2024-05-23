@@ -175,9 +175,9 @@ const SchedulePage = () => {
                     <div className='regionals-schedule-bids-details'>
                         <div className='regionals-schedule-bids-subtitle'>North America Northeast</div>
                         <ol>
-                            <li>TBD</li>
-                            <li>TBD</li>
-                            <li>TBD</li>
+                            <li>Arch Rival All Stars</li>
+                            <li>Montréal New Skids on the Block</li>
+                            <li>Gotham All Stars</li>
                         </ol>
                     </div>
                     <div className='regionals-schedule-bids-details'>
