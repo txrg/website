@@ -1,29 +1,33 @@
 const axios = require('axios');
 const spaceImport = require('contentful-import');
-const { writeFileSync } = require('fs');
+const { writeFileSync, readFileSync, existsSync } = require('fs');
 const path = require('path');
 const chalk = require('chalk');
 
 const argv = require('yargs-parser')(process.argv.slice(2));
 
-const spaceId = argv.spaceId;
-const managementToken = argv.managementToken;
-const deliveryToken = argv.deliveryToken;
+const contentfulConfigFile = argv.configFile || '.contentful.json';
+const contentfulConfig = getConfigFile(contentfulConfigFile);
+const spaceId = argv.spaceId || contentfulConfig.spaceId;
+const accessToken = argv.accessToken || contentfulConfig.accessToken;
+const managementToken = argv.managementToken || contentfulConfig.managementToken;
 
 // we need all 3 variables in order to set up user's space correctly
-// spaceId and deliveryToken (CDA token) – to write into config file,
+// spaceId and accessToken (CDA token) – to write into config file,
 // and managementToken for contentful-import
-if (!spaceId || !managementToken || !deliveryToken) {
+if (!spaceId || !managementToken || !accessToken) {
   console.log('');
   console.log(
     `You have to provide ${chalk.yellow('spaceId')}, ${chalk.yellow(
       'managementToken'
     )} and ${chalk.yellow(
-      'deliveryToken'
+      'accessToken'
     )} arguments in order to set up your space correctly`
   );
   console.log(
-    'Run: npm run setup -- --spaceId YOUR_SPACE --deliveryToken YOUR_CDA_KEY --managementToken YOUR_CMA_KEY '
+    `Setup .contentful.json file with Contentful config OR run one of the following commands:\n
+    npm run setup -- --spaceId YOUR_SPACE --accessToken YOUR_CDA_KEY --managementToken YOUR_CMA_KEY\n
+    npm run setup -- --configFile PATH_TO_CONTENTFUL_CONFIG` 
   );
   console.log('');
   process.exit(1);
@@ -50,7 +54,7 @@ const fileRequest = axios({
 
 fileRequest.then(
   response => {
-    saveConfigFile({ spaceId, deliveryToken });
+    saveConfigFile({ spaceId, accessToken, managementToken });
 
     // we need to add promise handlers here, so we don't fall here from the
     // `catch` section.
@@ -74,9 +78,17 @@ fileRequest.then(
   }
 );
 
+function getConfigFile(path) {
+  const isFile = existsSync(path);
+  if (isFile) {
+    return JSON.parse(readFileSync(path, { encoding: "utf-8"}));
+  }
+  return {};
+}
+
 // we need to write a config file with a provided credentials (space id and CDA token)
 // so that `npm run dev` connects to your space.
-function saveConfigFile({ spaceId, deliveryToken }) {
+function saveConfigFile({ spaceId, accessToken }) {
   const configFilePath = path.resolve(__dirname, '.contentful.json');
   console.log('');
   console.log('Writing config file...');
@@ -86,7 +98,8 @@ function saveConfigFile({ spaceId, deliveryToken }) {
     JSON.stringify(
       {
         spaceId,
-        accessToken: deliveryToken,
+        accessToken: accessToken,
+        managementToken, 
       },
       null,
       2
