@@ -166,11 +166,18 @@ const SchedulePage = () => {
                     <div className='regionals-schedule-bids-title'>GLOBAL CHAMPIONSHIP TEAMS</div>
                     <div className='regionals-schedule-bids-details'>
                         <div className='regionals-schedule-bids-subtitle'>Europe</div>
-                        <ol>
-                            <li>TBD</li>
-                            <li>TBD</li>
-                            <li>TBD</li>
-                        </ol>
+                        <div className='regionals-schedule-results'>
+                            <div>
+                                <div><b>1st Place:</b></div>
+                                <div><b>2nd Place:</b></div>
+                                <div><b>3rd Place:</b></div>
+                            </div>
+                            <div>
+                                <div>Crime City Rollers</div>
+                                <div>Nothing Toulouse</div>
+                                <div>Nantes Les Duc.hesse.s</div>
+                            </div>
+                        </div>
                     </div>
                     <div className='regionals-schedule-bids-details'>
                         <div className='regionals-schedule-bids-subtitle'>North America Northeast</div>
@@ -196,18 +203,31 @@ const SchedulePage = () => {
                     </div>
                     <div className='regionals-schedule-bids-details'>
                         <div className='regionals-schedule-bids-subtitle'>North America West</div>
-                        <ol>
-                            <li>TBD</li>
-                            <li>TBD</li>
-                            <li>TBD</li>
-                        </ol>
+                        <div className='regionals-schedule-results'>
+                            <div>
+                                <div><b>1st Place:</b></div>
+                                <div><b>2nd Place:</b></div>
+                                <div><b>3rd Place:</b></div>
+                            </div>
+                            <div>
+                                <div>Rose City Wheels of Justice</div>
+                                <div>Denver Mile High Club</div>
+                                <div>Angel City Hollywood Scarlets</div>
+                            </div>
+                        </div>
                     </div>
                     <div className='regionals-schedule-bids-details'>
                         <div className='regionals-schedule-bids-subtitle'>Oceania</div>
-                        <ol>
-                            <li>TBD</li>
-                            <li>TBD</li>
-                        </ol>
+                        <div className='regionals-schedule-results'>
+                            <div>
+                                <div><b>1st Place:</b></div>
+                                <div><b>2nd Place:</b></div>
+                            </div>
+                            <div>
+                                <div>VRDL All Stars (VRDL A)</div>
+                                <div>Adelaide Ads (ADRD)</div>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <section className='regionals-schedule-more theme-2'>

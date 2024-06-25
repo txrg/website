@@ -9,23 +9,9 @@
 .regionals-home-overview button {
     margin-top: 24px;
 }
-.regionals-home-merch-title {
-    padding-bottom: 0 !important;
-}
-.regionals-home-merch-subtitle {
-    padding-bottom: 3rem;
-}
-.regionals-home-merch-description {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.regionals-home-merch a {
-    text-decoration: none !important;
-}
-.regionals-home-merch img {
-    height: 300px;
+.regionals-home-latam-doc {
+    width: 100%;
+    aspect-ratio: 4/3;
 }
 .regionals-home-divisions-wrapper > div {
     padding: 1rem 0 2rem;
@@ -63,12 +49,8 @@
     }
 }
 @media only screen and (min-width: 768px) {
-    .regionals-home-overview button, .regionals-home-merch button {
+    .regionals-home-overview button {
         width: auto !important;
-    }
-    .regionals-home-merch-description {
-        flex-direction: row;
-        flex-wrap: wrap;
     }
     .regionals-home-divisions-wrapper {
         display: flex;
@@ -96,5 +78,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    .regionals-home-latam-doc {
+        max-width: 850px;
     }
 }

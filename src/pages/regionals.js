@@ -3,11 +3,6 @@ import Helmet from 'react-helmet';
 import Layout from '../components/layout/layout';
 import Navigation from '../components/regionals/navigation';
 import Footer from '../components/regionals/footer';
-import merchPatchImage from '../images/regionals/home-merch-patch.png'
-import merchStickerImage from '../images/regionals/home-merch-sticker.png'
-import merchShirtImage1 from '../images/regionals/home-merch-shirt-1.png'
-import merchShirtImage2 from '../images/regionals/home-merch-shirt-2.png'
-import merchShirtImage3 from '../images/regionals/home-merch-shirt-3.png'
 
 const HomePage = () => {
     return (
@@ -29,7 +24,7 @@ const HomePage = () => {
                     <div className="regionals-home-header-image"></div>
                 </section>
                 <Navigation />
-                <section className="regionals-home-overview theme-2">
+                <section className="regionals-home-overview theme-1">
                     <div className="regionals-home-overview-wrapper">
                         <div className="regionals-home-overview-title">WELCOME HOME, Y'ALL</div>
                         <div className="regionals-home-overview-description">
@@ -42,46 +37,13 @@ const HomePage = () => {
                         </a>
                     </div>
                 </section>
-                <section className="regionals-home-merch theme-1">
-                    <div className="regionals-home-merch-title">Pre-Sale Merch Available Until May 31st!</div>
-                    <div className="regionals-home-merch-subtitle">Pickup During Tournament</div>
-                    <div className="regionals-home-merch-description">
-                        <a target="_blank" rel="noopener noreferrer" href="https://texasrollergirls.square.site/product/deep-in-the-heart-of-derby-2024-regionals-crop-tank/125">
-                            <div className="regionals-home-merch-item">
-                                <img src={merchShirtImage1} alt="T-shirt merch" />
-                                <p>T-Shirt for $25</p>
-                            </div>
-                        </a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://texasrollergirls.square.site/product/deep-in-the-heart-of-derby-2024-regionals-t-shirt/123">
-                            <div className="regionals-home-merch-item">
-                                <img src={merchShirtImage2} alt="T-shirt merch" />
-                                <p>Shirt for $25</p>
-                            </div>
-                        </a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://texasrollergirls.square.site/product/deep-in-the-heart-of-derby-2024-regionals-sleeveless-t-shirt/124">
-                            <div className="regionals-home-merch-item">
-                                <img src={merchShirtImage3} alt="T-shirt merch" />
-                                <p>Tank for $25</p>
-                            </div>
-                        </a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://texasrollergirls.square.site/product/deep-in-the-heart-of-derby-2024-regionals-patch/126">
-                            <div className="regionals-home-merch-item">
-                                <img src={merchPatchImage} alt="Patch merch" />
-                                <p>Patch for $6</p>
-                            </div>
-                        </a>
-                        <a target="_blank" rel="noopener noreferrer" href="https://texasrollergirls.square.site/product/deep-in-the-heart-of-derby-2024-regionals-sticker/127">
-                            <div className="regionals-home-merch-item">
-                                <img src={merchStickerImage} alt="Sticker merch" />
-                                <p>Sticker for $4</p>
-                            </div>
-                        </a>
-                    </div>
-                    <a target="_blank" rel="noopener noreferrer" href="https://texasrollergirls.square.site/2024-na-south-regional-championships">
-                        <button className="regionals-home-overview-tickets">Visit Our Store</button>
-                    </a>
+                <section className="regionals-home-latam theme-2">
+                    <div className="regionals-home-latam-title">The Texas Rollergirls Stand in Solidarity with LATAM Teams</div>
+                    <div className="regionals-home-latam-description">The Texas Rollergirls have written a statement in regards to WFTDA's handling of LATAM roller derby teams. The statement is linked below.</div>
+                    <iframe className="regionals-home-latam-doc" src="https://assets.ctfassets.net/hif3olwvzgwx/48QgRGG0d9uVirkfaIPUOu/09e3796d202cb249426f57b5f5f95a2f/TXRG-LATAM-Statement.pdf" title="Texas Rollergirls Statement: LATAM Teams"></iframe>
+                    
                 </section>
-                <section className="regionals-home-volunteer theme-2">
+                <section className="regionals-home-volunteer theme-3">
                     <div className="regionals-home-volunteer-wrapper">
                         <div className="regionals-home-volunteer-title">JOIN OUR STAFF</div>
                         <div className="regionals-home-volunteer-details">We're seeking volunteers to join us for the tournament weekend in a number of different roles. Apply now at the links below!</div>
@@ -104,7 +66,7 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
-                <section className="regionals-home-divisions theme-3">
+                <section className="regionals-home-divisions theme-2">
                     <div className="regionals-home-divisions-title">2024 COMPETING TEAMS</div>
                     <div className="regionals-home-divisions-wrapper">
                         <div>
