@@ -1,0 +1,97 @@
+.scorespage {
+    padding: 72px 1.2em 0;
+    text-align: center;
+    background-color: #ffffff;
+    line-height: 1em;
+}
+.scorespage-result {
+    padding: 2em 0;
+}
+.scorespage-result > div {
+    margin: 0.5em 0;
+}
+.scorespage-result-title {
+    font-weight: bold;
+    margin-bottom: 0.75em;
+}
+.scorespage-result-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+.scorespage-result-event {
+    order: 2;
+    font-size: 0.8em;
+}
+.scorespage-result-event-footage {
+    font-size: 1.2em;
+    line-height: 1.2em;
+}
+.scorespage-result-event-footage > a {
+    padding: 0.25em;
+}
+.scorespage-result-details {
+    order: 1;
+    display: grid;
+    grid-template-columns: 1fr 0.1fr 1fr;
+    gap: 0.75rem;
+}
+.scorespage-result-details-team {
+    display: flex;
+    flex-direction: column;
+}
+.scorespage-result-details-team-logo img {
+    height: 40px;
+}
+.scorespage-result-details-score {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.scorespage-result-details-team1 {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    gap: 0.5rem;
+}
+.scorespage-result-details-team1 > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.scorespage-result-details-team2 {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    gap: 0.5rem;
+}
+.scorespage-result-details-team2 > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.scorespage-result-details-delimiter {
+    display: flex;
+    align-items: center;
+}
+@media only screen and (min-width: 768px) {
+    .scorespage-result-container{
+        grid-template-columns: 1fr 1.5fr 1fr;
+        gap: 1.5rem;
+    }
+    .scorespage-result-event {
+        order: 1;
+        font-size: 1em;
+    }
+    .scorespage-result-details {
+        order: 2;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .scorespage-result-details {
+        gap: 1.5rem;
+    }
+    .scorespage-result-details-team-logo img {
+        height: 60px;
+    }
+    .scorespage-result-details-team1, .scorespage-result-details-team2 {
+        gap: 1.25rem;
+    }
+}
