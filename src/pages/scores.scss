@@ -41,7 +41,7 @@
     flex-direction: column;
 }
 .scorespage-result-details-team-logo img {
-    height: 40px;
+    height: 40px !important;
 }
 .scorespage-result-details-score {
     font-weight: bold;
@@ -89,7 +89,7 @@
         gap: 1.5rem;
     }
     .scorespage-result-details-team-logo img {
-        height: 60px;
+        height: 60px !important;
     }
     .scorespage-result-details-team1, .scorespage-result-details-team2 {
         gap: 1.25rem;
