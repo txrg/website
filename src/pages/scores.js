@@ -30,6 +30,12 @@ const ScoresPage = ({ data }) => {
 
         setBouts(filteredBouts);
 
+        filteredTeams.forEach(team => {
+            if (!teams[team]) {
+                teams[team] = 0;
+            }
+        });
+
         setTeamFilterValues(Object.entries(teams).sort((a, b) => {
             const difference = b[1] - a[1];
             if (difference !== 0) {
@@ -124,7 +130,7 @@ const ScoresPage = ({ data }) => {
                                     <div className="scorespage-result-details">
                                         <div className="scorespage-result-details-team1">
                                             <div className="scorespage-result-details-team">
-                                                <GatsbyImage className="scorespage-result-details-team-logo" alt={ teamName1 } image={ teamLogo1.gatsbyImageData } />
+                                                <GatsbyImage className="scorespage-result-details-team-logo" objectFit="contain" alt={ teamName1 } image={ teamLogo1.gatsbyImageData } />
                                                 <div>{ teamName1 }</div>
                                             </div>
                                             <div className="scorespage-result-details-score">{ teamScore1 }</div>
@@ -133,7 +139,7 @@ const ScoresPage = ({ data }) => {
                                         <div className="scorespage-result-details-team2">
                                             <div className="scorespage-result-details-score">{ teamScore2 }</div>
                                             <div className="scorespage-result-details-team">
-                                                <GatsbyImage className="scorespage-result-details-team-logo" alt={ teamName2 } image={ teamLogo2.gatsbyImageData } />
+                                                <GatsbyImage className="scorespage-result-details-team-logo" objectFit="contain" alt={ teamName2 } image={ teamLogo2.gatsbyImageData } />
                                                 <div>{ teamName2 }</div>
                                             </div>
                                         </div>
@@ -148,6 +154,7 @@ const ScoresPage = ({ data }) => {
     );
 };
 
+// TODO: Fix iphone view of images
 export const query = graphql`
     query ScoresQuery {
         allContentfulScore(sort: { date: DESC }) {

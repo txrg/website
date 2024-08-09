@@ -82,8 +82,7 @@
     display: flex;
     flex-direction: column;
 }
-.scorespage-result-details-team-logo img,
-.scorespage-result-details-team-logo picture {
+.scorespage-result-details-team-logo {
     height: 50px !important;
 }
 .scorespage-result-details-score {
@@ -161,8 +160,7 @@
         order: 1;
         gap: 1.5rem;
     }
-    .scorespage-result-details-team-logo img,
-    .scorespage-result-details-team-logo picture {
+    .scorespage-result-details-team-logo {
         height: 80px !important;
     }
     .scorespage-result-details-team1, .scorespage-result-details-team2 {
