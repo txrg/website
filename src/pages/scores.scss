@@ -4,15 +4,57 @@
     background-color: #ffffff;
     line-height: 1em;
 }
+#scorespage-filter-seasons {
+    margin: 1em 0 .25em 0;
+}
+.scorespage-filter-seasons-item-selected {
+    display: inline-block;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 4px 12px 4px 8px;
+    margin: 0 8px;
+    height: unset;
+    line-height: unset;
+    background-color: unset;
+}
+.scorespage-filter-seasons-item-selected:hover {
+    background-color: rgb(197, 187, 187);
+}
+.scorespage-filter-teams {
+    margin: 0.5em 0 0 2em;
+}
+.scorespage-filter-teams-item {
+    line-height: 1.5em;
+    text-align: left;
+    display: block;
+    font-size: 1em;
+    height: unset;
+    padding: unset;
+    margin: unset;
+    border: 0px;
+    background-color: unset;
+    color: unset;
+}
+.scorespage-filter-teams-item:hover {
+    color: black;
+    background-color: unset;
+}
+.scorespage-filter-teams-item-selected {
+    font-weight: bold;
+    background-color: unset;;
+}
 .scorespage-result {
     padding: 2em 0;
 }
 .scorespage-result > div {
     margin: 0.5em 0;
 }
-.scorespage-result-title {
+.scorespage-result-title, .scorespage-result-title-wide {
     font-weight: bold;
     margin-bottom: 0.75em;
+}
+.scorespage-result-title-wide {
+    display: none;
 }
 .scorespage-result-container {
     display: grid;
@@ -40,8 +82,9 @@
     display: flex;
     flex-direction: column;
 }
-.scorespage-result-details-team-logo img {
-    height: 40px !important;
+.scorespage-result-details-team-logo img,
+.scorespage-result-details-team-logo picture {
+    height: 50px !important;
 }
 .scorespage-result-details-score {
     font-weight: bold;
@@ -72,24 +115,55 @@
     align-items: center;
 }
 @media only screen and (min-width: 768px) {
-    .scorespage-result-container{
-        grid-template-columns: 1fr 1.5fr 1fr;
-        gap: 1.5rem;
+    #scorespage-filter-seasons {
+        margin-bottom: 1em;
+    }
+    .scorespage-filter-teams {
+        margin: 2em 0 0 5em;
     }
     .scorespage-result-event {
-        order: 1;
         font-size: 1em;
-    }
-    .scorespage-result-details {
-        order: 2;
     }
 }
 @media only screen and (min-width: 992px) {
+    .scorespage {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 5rem;
+    }
+    .scorespage-filters {
+        margin-left: 1em;
+    }
+    .scorespage-filter-seasons-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .scorespage-filter-teams {
+        margin-left: unset;
+    }
+    .scorespage-result-container{
+        grid-template-columns: 1.5fr 1fr;
+        gap: 4rem;
+    }
+    .scorespage-result-title, .scorespage-result-title-wide {
+        display: none;
+    }
+    .scorespage-result-title-wide {
+        display: block;
+    }
+    .scorespage-result-event {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
     .scorespage-result-details {
+        order: 1;
         gap: 1.5rem;
     }
-    .scorespage-result-details-team-logo img {
-        height: 60px !important;
+    .scorespage-result-details-team-logo img,
+    .scorespage-result-details-team-logo picture {
+        height: 80px !important;
     }
     .scorespage-result-details-team1, .scorespage-result-details-team2 {
         gap: 1.25rem;
