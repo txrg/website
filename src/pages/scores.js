@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout/layout';
 
-const FILTER_SEASON_YEARS = ['2024', '2023'];
+const FILTER_SEASON_YEARS = ['2024', '2023', '2020', '2019'];
 
 const ScoresPage = ({ data }) => {
     const [bouts, setBouts] = useState([]);
