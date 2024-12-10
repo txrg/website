@@ -145,7 +145,7 @@ const PageTemplate = ({ data, location }) => {
               ) : null}
               {page.title !== 'Events' ? (
                 <div className="side-events">
-                  <h2>2024 Season</h2>
+                  <h2>2025 Season</h2>
                   <EventList />
                 </div>
               ) : null}
@@ -154,7 +154,7 @@ const PageTemplate = ({ data, location }) => {
               <h1 className="intro-header">{page.title}</h1>
               {location.pathname === '/events/' ? (
                 <>
-                  <h2>2024 Season</h2>
+                  <h2>2025 Season</h2>
                   <EventList />
                 </>
               ) : null}

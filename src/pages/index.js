@@ -86,7 +86,7 @@ const RootIndex = ({ data, location }) => {
       <section className="content content-home">
         <div className="row content-intro">
           <div className="col-two">
-            <h1 className="intro-header">2024 Season</h1>
+            <h1 className="intro-header">2025 Season</h1>
           </div>
           <div className="col-ten">
            
