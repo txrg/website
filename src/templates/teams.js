@@ -73,7 +73,7 @@ export const teamQuery = graphql`
         }
       }
     }
-    allContentfulCaptain(filter: {endYear: {eq: 0}, team: {slug: {eq: $slug}}}, sort: [{role: ASC}]) {
+    allContentfulCaptain(filter: {endYear: {eq: 0}, team: {slug: {eq: $slug}}}, sort: [{role: ASC}, {member: {name: ASC}}]) {
       edges {
         node {
           member {
