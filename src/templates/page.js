@@ -74,7 +74,7 @@ const PageTemplate = ({ data, location }) => {
         </ul>
       </li>
       <li>
-        <Link to="/who-we-are/travel-team">Travel team</Link>
+        <Link to="/teams/travel-team">Travel team</Link>
       </li>
     </ul>
   );

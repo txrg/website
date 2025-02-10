@@ -12,7 +12,7 @@ See our [official Contentful getting started guide](https://www.contentful.com/d
 
 ## Development
 
-### `npm dev`
+### `npm run dev`
 
 Run the project locally with live reload in development mode.
 

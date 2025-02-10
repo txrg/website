@@ -1,10 +1,79 @@
 const Promise = require('bluebird');
 const path = require('path');
 
+exports.createSchemaCustomization = ({ actions, schema }) => {
+  const { createTypes } = actions
+  const typeDefs = [
+    schema.buildObjectType({
+      name: "ContentfulTeamMember",
+      fields: {
+        endYear: {
+          type: "Int!",
+          resolve(source, args, context, info) {
+            const { endYear } = source;
+            if (source.endYear == null) {
+              return 0; 
+            }
+            return endYear;
+          },
+        },
+      },
+    }),
+    schema.buildObjectType({
+      name: "ContentfulCaptain",
+      fields: {
+        endYear: {
+          type: "Int!",
+          resolve(source, args, context, info) {
+            if (source.endYear == null) {
+              return 0; 
+            }
+            return source.endYear;
+          },
+        },
+      },
+    }),
+  ]
+  createTypes(typeDefs)
+}
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
+    const teamsView = path.resolve('./src/templates/teams.js');
+    resolve(
+      graphql(
+        `
+          {
+            allContentfulTeam {
+              edges {
+                node {
+                  title
+                  slug
+                }
+              }
+            }
+          }
+        `
+      ).then(result => {
+        if (result.errors) {
+          console.log(result.errors);
+          reject(result.errors);
+        }
+
+        const teams = result.data.allContentfulTeam.edges.filter(({ node: { slug }}) => slug === "travel-team");
+        teams.forEach(team => {
+          createPage({
+            path: `/teams/${team.node.slug}/`,
+            component: teamsView,
+            context: {
+              slug: team.node.slug,
+            },
+          });
+        });
+      })
+    );
     const teamView = path.resolve('./src/templates/team.js');
     resolve(
       graphql(
@@ -26,7 +95,7 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors);
         }
 
-        const teams = result.data.allContentfulTeam.edges;
+        const teams = result.data.allContentfulTeam.edges.filter(({ node: { slug }}) => slug !== "travel-team");
         teams.forEach(team => {
           createPage({
             path: `/who-we-are/${team.node.slug}/`,

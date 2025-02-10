@@ -19,8 +19,6 @@ const TeamTemplate = ({ data, location }) => {
         return node.type === "volunteers";
       case "Homies":
         return !(node.details && node.details.includes('Retired')) && node.details?.includes('Homies');
-      case "Travel team":
-        return !(node.details && node.details.includes('Retired')) && node.details?.includes('Travel-team');
       default:
         return !(node.details && node.details.includes('Retired')) && team.title === node.homeTeam;
     }
