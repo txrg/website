@@ -43,7 +43,7 @@ const PageTemplate = ({ data, location }) => {
         <Link to="/who-we-are/retired">Retired Skaters</Link>
       </li>
       <li>
-        <Link to="/who-we-are/officials">Officials</Link>
+        <Link to="/teams/officials">Officials</Link>
       </li>
       <li>
         <Link to="/who-we-are/photographers">Photographers</Link>
