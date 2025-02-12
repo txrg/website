@@ -77,7 +77,7 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors);
         }
 
-        const teams = result.data.allContentfulTeam.edges.filter(({ node: { slug }}) => slug === "travel-team" || slug === "officials" || slug === "honky-tonk-heartbreakers" || slug === "hell-marys");
+        const teams = result.data.allContentfulTeam.edges.filter(({ node: { slug }}) => slug === "travel-team" || slug === "officials" || slug === "honky-tonk-heartbreakers" || slug === "hell-marys" || slug === "hotrod-honeys" || slug === "hustlers");
         teams.forEach(team => {
           createPage({
             path: `/teams/${team.node.slug}/`,
@@ -110,7 +110,7 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors);
         }
 
-        const teams = result.data.allContentfulTeam.edges.filter(({ node: { slug }}) => slug !== "travel-team" && slug !== "officials" && slug !== "honky-tonk-heartbreakers" && slug !== "hell-marys");
+        const teams = result.data.allContentfulTeam.edges.filter(({ node: { slug }}) => slug !== "travel-team" && slug !== "officials" && slug !== "honky-tonk-heartbreakers" && slug !== "hell-marys" && slug !== "hotrod-honeys" && slug !== "hustlers");
         teams.forEach(team => {
           createPage({
             path: `/who-we-are/${team.node.slug}/`,

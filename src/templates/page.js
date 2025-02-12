@@ -63,10 +63,10 @@ const PageTemplate = ({ data, location }) => {
             </Link>
           </li>
           <li>
-            <Link to="/who-we-are/hotrod-honeys">Hotrod Honeys</Link>
+            <Link to="/teams/hotrod-honeys">Hotrod Honeys</Link>
           </li>
           <li>
-            <Link to="/who-we-are/hustlers">Hustlers</Link>
+            <Link to="/teams/hustlers">Hustlers</Link>
           </li>
           <li>
             <Link to="/who-we-are/homies">Homies </Link>
