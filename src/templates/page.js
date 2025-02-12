@@ -55,7 +55,7 @@ const PageTemplate = ({ data, location }) => {
         <span>Home teams</span>
         <ul>
           <li>
-            <Link to="/who-we-are/hell-marys">Hell Marys</Link>
+            <Link to="/teams/hell-marys">Hell Marys</Link>
           </li>
           <li>
             <Link to="/teams/honky-tonk-heartbreakers">
