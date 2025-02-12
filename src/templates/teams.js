@@ -33,8 +33,8 @@ const TeamTemplate = ({ data, location }) => {
               ) : null}
             </div>
             <ul className="member-list">
-              {captains.map(({node: {name, role, member}}) => <Member key={name} role={role} details={member} />)}
-              {members.map(({node: {name, role, member}}) => <Member key={name} role={role} details={member} />)}
+              {captains.map(({node: {role, member, photo}}) => <Member key={member.name} defaultPhoto={photo} role={role} details={member} />)}
+              {members.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
             </ul>
           </div>
         </section>
@@ -43,14 +43,14 @@ const TeamTemplate = ({ data, location }) => {
   );
 };
 
-const Member = ({ role, details }) => {
-  const latestPhoto = details.photos.length - 1;
+const Member = ({ defaultPhoto, role, details }) => {
+  const headshot = defaultPhoto ? defaultPhoto.gatsbyImageData : details.photos[details.photos.length - 1].gatsbyImageData;
   return (
     <li className="member-list__item">
       <div className="member__preview  service-content">
         <div className="member__thumbnail">
         </div>
-          <GatsbyImage alt={details.name} sizes={details.photos[latestPhoto].sizes} image={details.photos[latestPhoto].gatsbyImageData} />
+          <GatsbyImage alt={details.name} sizes={headshot.sizes} image={headshot} />
         <h4 className="member__name">
           <span>{role}</span>
           {details.name}{' '}
@@ -86,6 +86,9 @@ export const teamQuery = graphql`
           team {
             slug
           }
+          photo {
+            gatsbyImageData(layout: CONSTRAINED, width: 400, height: 400)
+          }
           startYear
           endYear
         }
@@ -102,6 +105,9 @@ export const teamQuery = graphql`
           }
           team {
             slug
+          }
+          photo {
+            gatsbyImageData(layout: CONSTRAINED, width: 400, height: 400)
           }
           endYear
         }
