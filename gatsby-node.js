@@ -20,8 +20,23 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       },
     }),
     schema.buildObjectType({
+      name: "GatsbyImage",
+      fields: {
+        gatsbyImageData:  "GatsbyImageData"
+      }
+    }),
+    schema.buildObjectType({
       name: "ContentfulCaptain",
       fields: {
+        photo: {
+          type: "GatsbyImage",
+          resolve(source, args, content, info) {
+            if (source.photo == null) {
+              return null;
+            }
+            return source.photo;
+          }
+        },
         endYear: {
           type: "Int!",
           resolve(source, args, context, info) {

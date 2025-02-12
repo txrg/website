@@ -87,7 +87,7 @@ export const teamQuery = graphql`
             slug
           }
           photo {
-            gatsbyImageData(layout: CONSTRAINED, width: 400, height: 400)
+            gatsbyImageData
           }
           startYear
           endYear
