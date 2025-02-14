@@ -1,3 +1,5 @@
+@use "../styles/variables";
+
 .profile-list {
   list-style-type: none;
   display: flex;
@@ -37,7 +39,7 @@
     padding-top: 40%;
     background: rgba(0, 0, 0, 0.5);
     transition: all 0.5s ease-in-out;
-    color: $text-inverse;
+    color: variables.$text-inverse;
     text-align: center;
 
     span {

@@ -1,3 +1,5 @@
+@use "../../styles/variables";
+
 /* ===================================================================
  *  15. footer styles - (_site-layout.scss)
  *
@@ -13,20 +15,20 @@ footer {
   padding-bottom: 4.2rem;
   font-size: 1.5rem;
   line-height: 2.7rem;
-  color: $text-inverse-02;
-  background: $ui-dark;
+  color: variables.$text-inverse-02;
+  background: variables.$ui-dark;
 }
 footer a,
 footer a:visited {
-  color: $text-inverse-02;
+  color: variables.$text-inverse-02;
   text-decoration: underline;
 }
 footer a:hover,
 footer a:focus {
-  color: $text-inverse;
+  color: variables.$text-inverse;
 }
 footer h4 {
-  color: $text-inverse;
+  color: variables.$text-inverse;
   font-size: 1.5rem;
   padding-bottom: 2.4rem;
   margin-bottom: 2.4rem;
@@ -37,7 +39,7 @@ footer h4::before {
   display: block;
   width: 120px;
   height: 1px;
-  background-color: rgba($ui-light, 0.05);
+  background-color: rgba(variables.$ui-light, 0.05);
   position: absolute;
   left: 0;
   bottom: 0;
@@ -80,7 +82,7 @@ footer ul li {
   content: '|';
   display: inline-block;
   padding: 0 1rem 0 1.2rem;
-  color: rgba($ui-light, 0.1);
+  color: rgba(variables.$ui-light, 0.1);
 }
 .footer-bottom .copyright span:last-child::after {
   display: none;
@@ -138,11 +140,11 @@ footer ul li {
   }
   .footer-main ul.list-links li a {
     display: block;
-    border-bottom: 1px solid rgba($ui-light, 0.03);
+    border-bottom: 1px solid rgba(variables.$ui-light, 0.03);
     padding: 0.6rem 0;
   }
   .footer-main ul.list-links li:first-child a {
-    border-top: 1px solid rgba($ui-light, 0.03);
+    border-top: 1px solid rgba(variables.$ui-light, 0.03);
   }
   .footer-bottom {
     padding-bottom: 0.6rem;

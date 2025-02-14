@@ -1,3 +1,4 @@
+@use "sass:color";
 $ui-01: #6b0000;
 $ui-light: #fff;
 $ui-light-02: #c5c5c5;
@@ -8,4 +9,4 @@ $text-01: #595959;
 $text-02: #151515;
 $text-inverse: #fff;
 $text-inverse-02: #a3a3a3;
-$active: darken($ui-01, 3%);
+$active: color.adjust($ui-01, $lightness: -3%);

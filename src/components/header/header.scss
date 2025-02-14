@@ -1,3 +1,6 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
 /* ===================================================================
  *  09. header styles - (_site-layout.scss)
  *
@@ -6,7 +9,7 @@
 .header {
   width: 100%;
   height: 72px;
-  background-color: rgba($ui-dark, 0.9);
+  background-color: rgba(variables.$ui-dark, 0.9);
   position: fixed;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -31,7 +34,7 @@
   transition: all 1s ease-in-out;
   z-index: 501;
 
-  @include breakpoint('md') {
+  @include mixins.breakpoint('md') {
     left: 16px;
   }
 }
@@ -43,7 +46,7 @@
   outline: 0;
   border: none;
   text-shadow: none;
-  color: $text-inverse;
+  color: variables.$text-inverse;
   transition: all 0.5s ease-in-out;
   text-decoration: none;
   font-size: 2.2rem;
@@ -59,7 +62,7 @@
   width: auto;
   margin-right: 1rem;
 
-  @include breakpoint('md') {
+  @include mixins.breakpoint('md') {
     margin-right: 2rem;
   }
 }
@@ -72,7 +75,7 @@
   align-content: center;
   flex-direction: column;
   
-  @include breakpoint('md') {
+  @include mixins.breakpoint('md') {
     font-size: 24px;
   }
 }
@@ -98,14 +101,14 @@ button.header-menu-toggle {
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  color: rgba($ui-light, 0.5);
+  color: rgba(variables.$ui-light, 0.5);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 button.header-menu-toggle:hover,
 button.header-menu-toggle:focus {
-  color: $text-inverse;
+  color: variables.$text-inverse;
 }
 
 button.header-menu-toggle span {
@@ -118,7 +121,7 @@ button.header-menu-toggle span {
   top: 50%;
   right: auto;
   bottom: auto;
-  background-color: $text-inverse;
+  background-color: variables.$text-inverse;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   font: 0/0 a;
@@ -147,14 +150,14 @@ button.header-menu-toggle span::after {
 }
 
 button.header-menu-toggle.is-clicked span {
-  background-color: rgba($ui-light, 0);
+  background-color: rgba(variables.$ui-light, 0);
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
 
 button.header-menu-toggle.is-clicked span::before,
 button.header-menu-toggle.is-clicked span::after {
-  background-color: $text-inverse;
+  background-color: variables.$text-inverse;
 }
 
 button.header-menu-toggle.is-clicked span::before {
@@ -204,21 +207,21 @@ button.header-menu-toggle.is-clicked span::after {
 
 .header-nav-wrap .header-main-nav li a,
 .header-nav-wrap .header-main-nav li a:visited {
-  color: rgba($ui-light, 0.85);
+  color: rgba(variables.$ui-light, 0.85);
 }
 
 .header-nav-wrap .header-main-nav li a:hover,
 .header-nav-wrap .header-main-nav li a:focus,
 .header-nav-wrap .header-main-nav li a[aria-current='page'] {
-  color: $text-inverse;
+  color: variables.$text-inverse;
 
-  @include breakpoint('md') {
-    box-shadow: 0px -4px 0px rgba($ui-light, 0.3) inset;
+  @include mixins.breakpoint('md') {
+    box-shadow: 0px -4px 0px rgba(variables.$ui-light, 0.3) inset;
   }
 }
 
 .header-nav-wrap .header-main-nav li.current a {
-  color: $text-inverse;
+  color: variables.$text-inverse;
 }
 
 .header-nav-wrap .cta {
@@ -259,20 +262,20 @@ button.header-menu-toggle.is-clicked span::after {
     width: 100%;
     right: auto;
     left: 0;
-    background-color: $ui-dark;
+    background-color: variables.$ui-dark;
     padding: 80px 40px 54px;
   }
   .header-nav-wrap .header-main-nav {
     display: block;
     height: auto;
     margin: 0 0 4.2rem 0;
-    border-top: 1px solid rgba($ui-light, 0.03);
+    border-top: 1px solid rgba(variables.$ui-light, 0.03);
   }
   .header-nav-wrap .header-main-nav li {
     display: block;
     margin: 0;
     padding: 0;
-    border-bottom: 1px solid rgba($ui-light, 0.03);
+    border-bottom: 1px solid rgba(variables.$ui-light, 0.03);
   }
   .header-nav-wrap .header-main-nav li a {
     padding: 18px 0;

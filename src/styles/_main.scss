@@ -1,3 +1,6 @@
+@use "mixins";
+@use "variables";
+
 /* =================================================================== 
  *
  *  Dazzle v1.0 Main Stylesheet
@@ -76,7 +79,7 @@ body {
   font-family: 'muli-regular', sans-serif;
   font-size: 1.6rem;
   line-height: 1.875;
-  color: $text-01;
+  color: variables.$text-01;
   margin: 0;
   padding: 0;
   background-color: black;
@@ -108,7 +111,7 @@ body {
 
 a,
 a:visited {
-  color: $ui-01;
+  color: variables.$ui-01;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -118,18 +121,18 @@ a:visited {
 .content-home a,
 .event a {
   font-weight: bold;
-  border-bottom: 1px solid $ui-accent-02;
-  box-shadow: 0px -4px 0px $ui-accent-02 inset;
+  border-bottom: 1px solid variables.$ui-accent-02;
+  box-shadow: 0px -4px 0px variables.$ui-accent-02 inset;
 
   &:hover {
-    border-color: $ui-accent;
-    box-shadow: 0px -4px 0px $ui-accent inset;
+    border-color: variables.$ui-accent;
+    box-shadow: 0px -4px 0px variables.$ui-accent inset;
   }
 }
 
 a:hover,
 a:focus {
-  color: $active;
+  color: variables.$active;
 }
 
 /* ===================================================================
@@ -150,7 +153,7 @@ h6,
 .h05,
 .h06 {
   font-family: 'montserrat-regular', sans-serif;
-  color: $text-02;
+  color: variables.$text-02;
   font-style: normal;
   text-rendering: optimizeLegibility;
   margin-bottom: 2.4rem;
@@ -300,7 +303,7 @@ blockquote cite:before {
 
 blockquote cite a,
 blockquote cite a:visited {
-  color: $text-01;
+  color: variables.$text-01;
   border: none;
 }
 
@@ -309,7 +312,7 @@ abbr {
   font-variant: small-caps;
   text-transform: lowercase;
   letter-spacing: 0.05rem;
-  color: $text-01;
+  color: variables.$text-01;
 }
 
 var,
@@ -360,7 +363,7 @@ dfn[title] {
 
 mark {
   background: #fff49b;
-  color: $text-02;
+  color: variables.$text-02;
 }
 
 hr {
@@ -416,7 +419,7 @@ ul.disc li::before {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: $ui-01;
+  background: variables.$ui-01;
   position: absolute;
   left: -17px;
   top: 11px;
@@ -425,7 +428,7 @@ ul.disc li::before {
 
 dt {
   margin: 0;
-  color: $ui-01;
+  color: variables.$ui-01;
 }
 
 dd {
@@ -442,7 +445,7 @@ a.button {
   box-shadow: 0 0 0 !important;
 
   &:hover {
-    border-color: $ui-01;
+    border-color: variables.$ui-01;
   }
 }
 
@@ -530,7 +533,7 @@ td {
 }
 
 th {
-  color: $text-02;
+  color: variables.$text-02;
   font-family: 'montserrat-bold', sans-serif;
 }
 
@@ -571,7 +574,7 @@ input[type='button'] {
   line-height: calc(5.4rem - 0.6rem);
   padding: 0 3rem;
   margin: 0 0.3rem 1.2rem 0;
-  color: $text-02;
+  color: variables.$text-02;
   text-decoration: none;
   cursor: pointer;
 
@@ -579,8 +582,8 @@ input[type='button'] {
   border-radius: 0.5rem;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: $ui-light-02;
-  border: 0.3rem solid $ui-light-02;
+  background-color: variables.$ui-light-02;
+  border: 0.3rem solid variables.$ui-light-02;
 }
 
 .button:hover,
@@ -593,9 +596,9 @@ button:focus,
 input[type='submit']:focus,
 input[type='reset']:focus,
 input[type='button']:focus {
-  background-color: $ui-light-02;
-  border-color: $ui-light-02;
-  color: $text-02;
+  background-color: variables.$ui-light-02;
+  border-color: variables.$ui-light-02;
+  color: variables.$text-02;
   outline: 0;
 }
 
@@ -604,9 +607,9 @@ button.button-primary,
 input[type='submit'].button-primary,
 input[type='reset'].button-primary,
 input[type='button'].button-primary {
-  background-color: $ui-01;
-  border-color: $ui-01;
-  color: $text-inverse;
+  background-color: variables.$ui-01;
+  border-color: variables.$ui-01;
+  color: variables.$text-inverse;
 }
 
 .button.button-primary:hover,
@@ -619,8 +622,8 @@ button.button-primary:focus,
 input[type='submit'].button-primary:focus,
 input[type='reset'].button-primary:focus,
 input[type='button'].button-primary:focus {
-  background: $active;
-  border-color: $active;
+  background: variables.$active;
+  border-color: variables.$active;
 }
 
 button.full-width,
@@ -649,8 +652,8 @@ button.stroke,
 
 button.stroke:hover,
 .button.stroke:hover {
-  border: 0.3rem solid $ui-01;
-  color: $ui-01;
+  border: 0.3rem solid variables.$ui-01;
+  color: variables.$ui-01;
 }
 
 button.pill,
@@ -728,7 +731,7 @@ h1.intro-header {
   font-family: 'montserrat-regular', sans-serif;
   font-size: 3.4rem;
   line-height: 1.324;
-  color: $text-02;
+  color: variables.$text-02;
   position: relative;
   padding-bottom: 3.6rem;
   width: 100%;
@@ -738,7 +741,7 @@ h1.intro-header--full {
   width: 100%;
   margin: 0 auto;
 
-  @include breakpoint('md') {
+  @include mixins.breakpoint('md') {
     width: 60%;
   }
 }
@@ -748,7 +751,7 @@ h1.intro-header::before {
   content: '';
   height: 2px;
   width: 70px;
-  background-color: $ui-01;
+  background-color: variables.$ui-01;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -788,7 +791,7 @@ h1.intro-header::before {
   padding-bottom: 8rem;
   overflow: hidden;
   background-image: url('../images/splatter-light.jpg');
-  background-color: $ui-light;
+  background-color: variables.$ui-light;
   background-size: 300%;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -802,7 +805,7 @@ h1.intro-header::before {
     background-size: 150%;
   }
 
-  @include breakpoint('md') {
+  @include mixins.breakpoint('md') {
     background-size: 100%;
   }
 }
@@ -820,13 +823,13 @@ h1.intro-header::before {
   display: inline-block;
 }
 .about-features .feature .icon i {
-  color: $ui-01;
+  color: variables.$ui-01;
   font-size: 4.8rem;
 }
 .about-features .feature h3 {
   font-family: 'montserrat-regular', sans-serif;
   font-size: 1.9rem;
-  color: $text-02;
+  color: variables.$text-02;
   margin-top: 0.75rem;
 }
 .about-how {
@@ -883,13 +886,13 @@ h1.intro-header::before {
   font-family: 'muli-bold';
   font-size: 2rem;
   content: attr(data-item);
-  color: $text-inverse;
+  color: variables.$text-inverse;
   height: 54px;
   width: 54px;
   line-height: 54px;
 
   border-radius: 50%;
-  background-color: $ui-01;
+  background-color: variables.$ui-01;
   box-shadow: 0 0 0 15px #ffffff;
   z-index: 500;
   position: absolute;
@@ -998,13 +1001,13 @@ h1.intro-header::before {
  .side-events {
    display: none;
 
-   @include breakpoint('md') {
+   @include mixins.breakpoint('md') {
      display: block;
    }
  }
 
 .side-bar {
-  background-color: $ui-01;
+  background-color: variables.$ui-01;
   background-image: url('../images/splatter.jpg');
   background-size: 60%;
   background-repeat: repeat-x;
@@ -1021,7 +1024,7 @@ h1.intro-header::before {
 
 .side-bar a,
 .side-bar span {
-  color: $text-inverse;
+  color: variables.$text-inverse;
   display: block;
   padding: 0.25rem 0;
   text-transform: uppercase;
@@ -1035,11 +1038,11 @@ h1.intro-header::before {
 .side-bar a:hover,
 .side-bar a[aria-current='page'] {
   border-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 0px -4px 0px rgba($ui-light, 0.3) inset;
+  box-shadow: 0px -4px 0px rgba(variables.$ui-light, 0.3) inset;
 }
 
 .side-bar a[aria-current='page'] {
-  box-shadow: 0px -4px 0px rgba($ui-light, 0.8) inset;
+  box-shadow: 0px -4px 0px rgba(variables.$ui-light, 0.8) inset;
 }
 
 .side-bar ul ul {

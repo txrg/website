@@ -31,13 +31,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sass',
       options: {
-        implementation: require("node-sass"),
+        implementation: require("sass"),
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: 'UA-249307394-1',
+        trackingIds: ['UA-249307394-1']
       },
     },
     {

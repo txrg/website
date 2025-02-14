@@ -1,5 +1,9 @@
+@use "sass:color";
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
 .sponsors {
-  color: $text-inverse;
+  color: variables.$text-inverse;
   padding-top: 8rem;
   padding-bottom: 8rem;
   background: black;
@@ -8,7 +12,7 @@
 
 .sponsors h2 {
   padding: 3rem 0 1rem 0;
-  color: $text-inverse-02;
+  color: variables.$text-inverse-02;
 }
 
 .sponsors .row div {
@@ -16,11 +20,11 @@
 }
 
 .sponsors h1 {
-  color: $text-inverse;
+  color: variables.$text-inverse;
 }
 
 .sponsors h1::before {
-  background-color: rgba($ui-light, 0.2);
+  background-color: rgba(variables.$ui-light, 0.2);
   left: 50%;
   transform: translateX(-50%);
 }
@@ -39,7 +43,7 @@
   transition: all 0.5s ease-in-out;
   width: 50%;
 
-  @include breakpoint('sm') {
+  @include mixins.breakpoint('sm') {
     width: 25%;
   }
 
@@ -59,7 +63,7 @@
 .supporter__list {
   margin-left: 0;
 
-  @include breakpoint('md') {
+  @include mixins.breakpoint('md') {
     display: flex;
     justify-content: center;
   }
@@ -67,11 +71,11 @@
 
 .supporter__list li {
   list-style: none;
-  color: $text-02;
+  color: variables.$text-02;
   padding: 0 1rem;
   width: 100%;
 
-  @include breakpoint('md') {
+  @include mixins.breakpoint('md') {
     width: auto;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -79,12 +83,12 @@
 }
 
 .supporter__list li a {
-  color: $text-inverse;
-  box-shadow: 0px -4px 0px lighten($ui-dark, 15%) inset;
+  color: variables.$text-inverse;
+  box-shadow: 0px -4px 0px color.adjust(variables.$ui-dark, $lightness: 15%) inset;
   font-weight: bold;
   font-size: 18px;
 
   &:hover {
-    box-shadow: 0px -4px 0px lighten($ui-dark, 25%) inset;
+    box-shadow: 0px -4px 0px color.adjust(variables.$ui-dark, $lightness: 25%) inset;
   }
 }

@@ -1,3 +1,5 @@
+@use "variables";
+
 /* ===================================================================
  *  10. home - (_site-layout.scss)
  *
@@ -58,12 +60,12 @@
   font-size: 6.5rem;
   letter-spacing: -0.05rem;
   line-height: 1;
-  color: $text-02;
+  color: variables.$text-02;
 }
 .home-highlight-left .button.stroke {
-  color: $text-02 !important;
-  background-color: $text-inverse !important;
-  border-color: $text-02;
+  color: variables.$text-02 !important;
+  background-color: variables.$text-inverse !important;
+  border-color: variables.$text-02;
   min-width: 188px;
 }
 .home-highlight-left .button.stroke span[class*='icon'] {
@@ -73,8 +75,8 @@
 }
 .home-highlight-left .button.stroke:hover,
 .home-highlight-left .button.stroke:focus {
-  background-color: $ui-01 !important;
-  color: $text-inverse !important;
+  background-color: variables.$ui-01 !important;
+  color: variables.$text-inverse !important;
 }
 /* home social-list */
 .home-social-list {
@@ -96,7 +98,7 @@
   content: '';
   width: 2px;
   height: 42px;
-  background-color: rgba($ui-light, 0.15);
+  background-color: rgba(variables.$ui-light, 0.15);
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 12px;
@@ -106,12 +108,12 @@
 }
 .home-social-list li a,
 .home-social-list li a:visited {
-  color: $text-inverse;
+  color: variables.$text-inverse;
 }
 .home-social-list li a:hover,
 .home-social-list li a:focus,
 .home-social-list li a:active {
-  color: $ui-01;
+  color: variables.$ui-01;
 }
 /* ------------------------------------------------------------------- 
  * responsive:
@@ -140,9 +142,9 @@
     padding: 0;
   }
   .home-highlight-left h1 {
-    color: $text-inverse;
+    color: variables.$text-inverse;
     opacity: .8;
-    text-shadow: -1px 0 $text-02, 0 1px $text-02, 1px 0 $text-02, 0 -1px $text-02;
+    text-shadow: -1px 0 variables.$text-02, 0 1px variables.$text-02, 1px 0 variables.$text-02, 0 -1px variables.$text-02;
   }
 }
 @media only screen and (max-width: 720px) {
@@ -180,6 +182,6 @@
     font-size: 3rem;
   }
   .home-social-list li i {
-    color: $text-02;
+    color: variables.$text-02;
   }
 }

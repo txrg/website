@@ -1,3 +1,6 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
 .feature__content {
   line-height: 1;
   padding-right: 2rem;
@@ -16,23 +19,23 @@
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   font-family: 'montserrat-regular', sans-serif;
-  color: $text-02;
+  color: variables.$text-02;
   font-style: normal;
   text-rendering: optimizeLegibility;
   margin: 0.25rem 0 0rem;
 }
 
 a .feature__title {
-  color: $ui-01;
-  box-shadow: 0px -4px 0px $ui-accent-02 inset;
+  color: variables.$ui-01;
+  box-shadow: 0px -4px 0px variables.$ui-accent-02 inset;
 
   &:hover {
-    box-shadow: 0px -4px 0px $ui-accent inset;
+    box-shadow: 0px -4px 0px variables.$ui-accent inset;
   }
 }
 
 .feature__description {
-  color: $text-02;
+  color: variables.$text-02;
   line-height: 1.5;
   font-weight: normal;
   font-size: 14px;
@@ -48,7 +51,7 @@ a .feature__title {
   width: 100%;
   margin: 0 auto;
 
-  @include breakpoint('md') {
+  @include mixins.breakpoint('md') {
     width: 60%;
   }
 }

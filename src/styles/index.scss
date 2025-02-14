@@ -1,25 +1,25 @@
 //---------------------------------------
 // 🌍 Global
 //---------------------------------------
-@import 'variables';
-@import 'mixins';
+@use 'variables';
+@use 'mixins';
 
-@import 'base';
-@import 'main';
+@use 'base';
+@use 'main';
 
 //---------------------------------------
 // Pages / Templates
 //---------------------------------------
-@import 'home';
-@import '../pages/scores.scss';
-@import '../templates/teams.scss';
-@import '../templates/team.scss';
+@use 'home';
+@use '../pages/scores.scss';
+@use '../templates/teams.scss';
+@use '../templates/team.scss';
 
 //---------------------------------------
 // Components
 //---------------------------------------
-@import '../components/header/header.scss';
-@import '../components/footer/footer.scss';
-@import '../components/blog-preview/blog.scss';
-@import '../components/sponsor/sponsor.scss';
-@import '../components/eventList/event-list.scss';
+@use '../components/header/header.scss';
+@use '../components/footer/footer.scss';
+@use '../components/blog-preview/blog.scss';
+@use '../components/sponsor/sponsor.scss';
+@use '../components/eventList/event-list.scss';
