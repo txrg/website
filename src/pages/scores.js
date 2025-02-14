@@ -51,7 +51,7 @@ const ScoresPage = ({ data }) => {
             return 0;
         }));
 
-    }, [filteredSeasons, filteredTeams]);
+    }, [filteredSeasons, filteredTeams, data.allContentfulScore.edges]);
 
     const handleAddingSeasonFilter = event => {
         const year = event.target.value;
