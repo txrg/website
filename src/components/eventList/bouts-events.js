@@ -1,15 +1,16 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-export default function EventList() {
+export default function BoutEventList() {
   const data = useStaticQuery(graphql`
-    query EventListQuery {
-      allContentfulEvent(sort: {date: ASC}) {
+    query BoutEventListQuery {
+      allContentfulEvent(filter: {type: {eq: "bout"}}, sort: {date: ASC}) {
         edges {
           node {
-            title
             id
+            title
             date(formatString: "MMMM Do, YYYY h:mm A")
+            endDate(formatString: "h:mm A")
             location
             googleMaps
             ticketUrl

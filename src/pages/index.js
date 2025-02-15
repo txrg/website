@@ -4,7 +4,8 @@ import Layout from '../components/layout/layout';
 import BlogPreview from '../components/blog-preview/blog-preview';
 import PagePreview from '../components/page-preview/page-preview';
 import ProfilePreview from '../components/profile-preview/profile-preview';
-import EventList from '../components/eventList/eventList';
+import BoutEventList from '../components/eventList/bouts-events';
+import PepRallyEventList from '../components/eventList/pep-rally-events';
 import skaters from '../images/homepage.png';
 
 const RootIndex = ({ data, location }) => { 
@@ -89,8 +90,13 @@ const RootIndex = ({ data, location }) => {
             <h1 className="intro-header">2025 Season</h1>
           </div>
           <div className="col-ten">
-           
-           <EventList />
+           <BoutEventList />
+          </div>
+          <div className="col-two">
+            <h1 className="intro-header">Pep Rallies</h1>
+          </div>
+          <div className="col-ten">
+           <PepRallyEventList />
           </div>
         </div>
 

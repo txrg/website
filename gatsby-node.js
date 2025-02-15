@@ -5,6 +5,30 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions
   const typeDefs = [
     schema.buildObjectType({
+      name: "GatsbyImage",
+      fields: {
+        gatsbyImageData: {
+          type: "GatsbyImageData",
+          resolve(source, args, context, info) {
+            return source;
+          }
+        } 
+      }
+    }),
+    schema.buildObjectType({
+      name: "ContentfulEvent",
+      fields: {
+        featuredImage: {
+          type: "GatsbyImage",
+          resolve(source, args, context, info) {
+            const node = context.nodeModel.getNodeById({ id: source.featuredImage___NODE })
+            return node?.url;
+          }
+        },
+        ticketUrl: "String",
+      }
+    }),
+    schema.buildObjectType({
       name: "ContentfulTeamMember",
       fields: {
         endYear: {
@@ -18,12 +42,6 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
           },
         },
       },
-    }),
-    schema.buildObjectType({
-      name: "GatsbyImage",
-      fields: {
-        gatsbyImageData:  "GatsbyImageData"
-      }
     }),
     schema.buildObjectType({
       name: "ContentfulCaptain",

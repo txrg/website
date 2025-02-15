@@ -1,7 +1,8 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout/layout';
-import EventList from '../components/eventList/eventList';
+import BoutEventList from '../components/eventList/bouts-events';
+import PepRallyEventList from '../components/eventList/pep-rally-events';
 
 const PageTemplate = ({ data, location }) => {
   const page = data.contentfulPage;
@@ -146,7 +147,7 @@ const PageTemplate = ({ data, location }) => {
               {page.title !== 'Events' ? (
                 <div className="side-events">
                   <h2>2025 Season</h2>
-                  <EventList />
+                  <BoutEventList />
                 </div>
               ) : null}
             </div>
@@ -155,7 +156,9 @@ const PageTemplate = ({ data, location }) => {
               {location.pathname === '/events/' ? (
                 <>
                   <h2>2025 Season</h2>
-                  <EventList />
+                  <BoutEventList />
+                  <h2>Pep Rallies</h2>
+                  <PepRallyEventList />
                 </>
               ) : null}
               <div
