@@ -429,7 +429,10 @@ textarea {
   width: 8.33333%;
 }
 
-.col-two,
+.col-two {
+  width: 200px;
+}
+
 .col-1-6 {
   width: 16.66667%;
 }
@@ -467,7 +470,10 @@ textarea {
   width: 75%;
 }
 
-.col-ten,
+.col-ten {
+  width: calc(94vw - 200px);
+  max-width: 970px;
+}
 .col-5-6 {
   width: 83.33333%;
 }

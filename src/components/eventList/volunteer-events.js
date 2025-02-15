@@ -1,25 +1,32 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-export default function BoutEventList() {
+export default function VolunteerList() {
   const data = useStaticQuery(graphql`
-    query BoutEventListQuery {
-      allContentfulEvent(filter: {type: {eq: "bout"}}, sort: {date: ASC}) {
+    query VolunteerEventListQuery {
+      allContentfulEvent(filter: {type: {eq: "volunteer"}}, sort: {date: ASC}) {
         edges {
           node {
             id
             title
+            featuredImage {
+              gatsbyImageData
+            }
             date(formatString: "MMMM Do, YYYY h:mm A")
             endDate(formatString: "h:mm A")
             location
             googleMaps
             ticketUrl
+            description {
+              childMarkdownRemark {
+                rawMarkdownBody
+              }
+            }
           }
         }
       }
     }
   `)
-
   return (
     <>
       {data.allContentfulEvent.edges.map(({ node }) => {
@@ -30,7 +37,7 @@ export default function BoutEventList() {
               {
                 node.ticketUrl
                   ? <a href={node.ticketUrl} target="_blank" rel="noopener noreferrer"><span>{node.date}: {node.title}</span></a>
-                  : <span>{node.date}: {node.title}</span>
+                  : <span>{node.date} - {node.endDate}: {node.title}</span>
               }
             </h3>
             <p className="event__location">
@@ -41,6 +48,10 @@ export default function BoutEventList() {
                 {node.location}
               </a>
             </p>
+            {node?.featuredImage?.gatsbyImageData && <div className="pep-rally-graphic">
+                <img alt="pep rally banner" className="pep-rally-banner" src={`${node.featuredImage.gatsbyImageData}`}/>
+            </div>}
+            <p>{node.description.childMarkdownRemark.rawMarkdownBody}</p>
           </div>
         );
       })}

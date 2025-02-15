@@ -4,8 +4,9 @@ import Layout from '../components/layout/layout';
 import BlogPreview from '../components/blog-preview/blog-preview';
 import PagePreview from '../components/page-preview/page-preview';
 import ProfilePreview from '../components/profile-preview/profile-preview';
-import BoutEventList from '../components/eventList/bouts-events';
+import BoutEventList from '../components/eventList/bout-events';
 import PepRallyEventList from '../components/eventList/pep-rally-events';
+import VolunteerEventList from '../components/eventList/volunteer-events';
 import skaters from '../images/homepage.png';
 
 const RootIndex = ({ data, location }) => { 
@@ -97,6 +98,12 @@ const RootIndex = ({ data, location }) => {
           </div>
           <div className="col-ten">
            <PepRallyEventList />
+          </div>
+          <div className="col-two">
+            <h1 className="intro-header">Volunteer With Us</h1>
+          </div>
+          <div className="col-ten">
+           <VolunteerEventList />
           </div>
         </div>
 

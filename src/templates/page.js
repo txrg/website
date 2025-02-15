@@ -1,8 +1,9 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout/layout';
-import BoutEventList from '../components/eventList/bouts-events';
+import BoutEventList from '../components/eventList/bout-events';
 import PepRallyEventList from '../components/eventList/pep-rally-events';
+import VolunteerEventList from '../components/eventList/volunteer-events';
 
 const PageTemplate = ({ data, location }) => {
   const page = data.contentfulPage;
@@ -159,6 +160,8 @@ const PageTemplate = ({ data, location }) => {
                   <BoutEventList />
                   <h2>Pep Rallies</h2>
                   <PepRallyEventList />
+                  <h2>Volunteer With Us</h2>
+                  <VolunteerEventList />
                 </>
               ) : null}
               <div

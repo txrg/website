@@ -17,12 +17,16 @@ export default function PepRallyList() {
             location
             googleMaps
             ticketUrl
+            description {
+              childMarkdownRemark {
+                rawMarkdownBody
+              }
+            }
           }
         }
       }
     }
   `)
-  console.log(data);
   return (
     <>
       {data.allContentfulEvent.edges.map(({ node }) => {
@@ -33,7 +37,7 @@ export default function PepRallyList() {
               {
                 node.ticketUrl
                   ? <a href={node.ticketUrl} target="_blank" rel="noopener noreferrer"><span>{node.date}: {node.title}</span></a>
-                  : <span>{node.date}: {node.title}</span>
+                  : <span>{node.date} - {node.endDate}: {node.title}</span>
               }
             </h3>
             <p className="event__location">
@@ -47,6 +51,7 @@ export default function PepRallyList() {
             {node?.featuredImage?.gatsbyImageData && <div className="pep-rally-graphic">
                 <img alt="pep rally banner" className="pep-rally-banner" src={`${node.featuredImage.gatsbyImageData}`}/>
             </div>}
+            <p>{node.description.childMarkdownRemark.rawMarkdownBody}</p>
           </div>
         );
       })}
