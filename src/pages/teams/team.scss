@@ -1,6 +1,6 @@
-@use "../styles/variables";
+@use "../../styles/variables";
 
-.profile-list {
+.member-list {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
@@ -9,7 +9,7 @@
   width: 100%;
 }
 
-.profile-list__item {
+.member-list__item {
   margin: 0;
   padding: 0;
   width: 20%;
@@ -29,7 +29,7 @@
     width: 50%;
   }
 
-  .profile__name {
+  .member__name {
     padding: 0.5rem;
     position: absolute;
     width: 100%;
@@ -51,12 +51,12 @@
   &:hover {
     filter: none;
 
-    .profile__name {
+    .member__name {
       opacity: 0;
       background: transparent;
     }
 
-    .profile__thumbnail {
+    .member__thumbnail {
       transform: scale(1.05);
       transition: all 0.5s ease-in-out;
     }

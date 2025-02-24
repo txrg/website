@@ -1,45 +1,45 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import Layout from '../components/layout/layout';
+import NotFound from '../../../pages/404';
+import Layout from '../../../components/layout/layout';
 
-const TeamTemplate = ({ data, location }) => {
-  let {
-    contentfulTeam: team,
-    allContentfulCaptain: { edges: captains },
-    allContentfulTeamMember: { edges: members },
-  } = data;
+const Team = ({ data, location }) => {
+  let hasRetiredPage = false;
+  switch (data.contentfulTeam.slug) {
+    case "hell-marys":
+    case "honky-tonk-heartbreakers":
+    case "hotrod-honeys":
+    case "hustlers":
+    case "travel-team":
+      hasRetiredPage = true;
+      break;
+    default:
+      hasRetiredPage = false;
+  }
 
-  let repeatedMembers = captains.reduce((agg, {node: {member: {name}}}) => ({...agg, [name]: name}), {});
-  members = members.filter(({node: {member: {name}}}) => {
-    const isRepeated = repeatedMembers[name] != null;
-    repeatedMembers[name] = name;
-    return !isRepeated;
-  });
-
-  return (
+  return ( hasRetiredPage ?
     <Layout location={location}>
       <main className="main--team">
         <section className="content content-intro">
           <div className="row about-features">
             <div className="main-content">
-              <h1 className="intro-header">{team.title}</h1>
-              {team.pageContent ? (
+              <h1 className="intro-header">Retired {data.contentfulTeam.title}</h1>
+              {data.contentfulTeam.pageContent ? (
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: team.pageContent.childMarkdownRemark.html,
+                    __html: data.contentfulTeam.pageContent.childMarkdownRemark.html,
                   }}
                 />
               ) : null}
             </div>
             <ul className="member-list">
-              {captains.map(({node: {role, member, photo}}) => <Member key={member.name} defaultPhoto={photo} role={role} details={member} />)}
-              {members.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
+              {data.allContentfulTeamMember.edges.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
             </ul>
           </div>
         </section>
       </main>
-    </Layout>
+    </Layout> : <NotFound />
   );
 };
 
@@ -61,11 +61,12 @@ const Member = ({ defaultPhoto, role, details }) => {
 };
 
 
-export default TeamTemplate;
+export default Team;
 
 export const teamQuery = graphql`
   query TeamBySlug($slug: String! ) {
     contentfulTeam(slug: {eq: $slug}) {
+      slug
       title
       pageContent {
         childMarkdownRemark {
@@ -73,28 +74,7 @@ export const teamQuery = graphql`
         }
       }
     }
-    allContentfulCaptain(filter: {endYear: {eq: 0}, team: {slug: {eq: $slug}}}, sort: [{role: ASC}, {member: {name: ASC}}]) {
-      edges {
-        node {
-          member {
-            name
-            photos {
-              gatsbyImageData(layout: CONSTRAINED, width: 400, height: 400)
-            }
-          }
-          role
-          team {
-            slug
-          }
-          photo {
-            gatsbyImageData
-          }
-          startYear
-          endYear
-        }
-      }
-    }
-    allContentfulTeamMember(filter: {endYear: {eq: 0}, team: {slug: {eq: $slug}}}, sort: [{member: {name: ASC}}]) {
+    allContentfulTeamMember(filter: {endYear: {gt: 0}, team: {slug: {eq: $slug}}}, sort: [{endYear: DESC}, {member: {name: ASC}}]) {
       edges {
         node {
           member {

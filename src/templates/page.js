@@ -38,46 +38,21 @@ const PageTemplate = ({ data, location }) => {
 
   const subNavTeam = (
     <ul>
+      <li><Link to="/teams/founders">Founders</Link></li>
+      <li><Link to="/teams/officials">Officials</Link></li>
+      <li><Link to="/teams/announcers">Announcers</Link></li>
+      <li><Link to="/teams/photographers">Photographers</Link></li>
+      <li><Link to="/teams/travel-team">Travel team</Link></li>
       <li>
-        <Link to="/who-we-are/founders">Founders</Link>
-      </li>
-     <li>
-        <Link to="/who-we-are/retired">Retired Skaters</Link>
-      </li>
-      <li>
-        <Link to="/teams/officials">Officials</Link>
-      </li>
-      <li>
-        <Link to="/who-we-are/photographers">Photographers</Link>
-      </li>
-      <li>
-        <Link to="/who-we-are/volunteers">Volunteers</Link>
-      </li>
-      <li>
-        <span>Home teams</span>
+        <span>Home Teams</span>
         <ul>
-          <li>
-            <Link to="/teams/hell-marys">Hell Marys</Link>
-          </li>
-          <li>
-            <Link to="/teams/honky-tonk-heartbreakers">
-              Honky Tonk Heartbreakers
-            </Link>
-          </li>
-          <li>
-            <Link to="/teams/hotrod-honeys">Hotrod Honeys</Link>
-          </li>
-          <li>
-            <Link to="/teams/hustlers">Hustlers</Link>
-          </li>
-          <li>
-            <Link to="/who-we-are/homies">Homies </Link>
-          </li>
+          <li><Link to="/teams/hell-marys">Hell Marys</Link></li>
+          <li><Link to="/teams/honky-tonk-heartbreakers">Honky Tonk Heartbreakers</Link></li>
+          <li><Link to="/teams/hotrod-honeys">Hotrod Honeys</Link></li>
+          <li><Link to="/teams/hustlers">Hustlers</Link></li>
         </ul>
       </li>
-      <li>
-        <Link to="/teams/travel-team">Travel team</Link>
-      </li>
+      <li><Link to="/teams/homies">Homies</Link></li>
     </ul>
   );
 
