@@ -158,11 +158,6 @@ export const pageQuery = graphql`
           homeTeam
           type
           details
-          bio {
-            childMarkdownRemark {
-              html
-            }
-          }
           featured
           photo {
             gatsbyImageData(layout: CONSTRAINED, width: 350)

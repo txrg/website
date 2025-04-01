@@ -176,11 +176,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulTeam(sort: {order: ASC}) {
+    allContentfulTeam {
       edges {
         node {
           title
-          order
           slug
         }
       }

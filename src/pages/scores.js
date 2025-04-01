@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout/layout';
 
-const FILTER_SEASON_YEARS = ['2024', '2023', '2020', '2019', '2018', '2017', '2016'];
+const FILTER_SEASON_YEARS = ['2025', '2024', '2023', '2020', '2019', '2018', '2017', '2016'];
 
 const ScoresPage = ({ data }) => {
     const [bouts, setBouts] = useState([]);
@@ -19,12 +19,12 @@ const ScoresPage = ({ data }) => {
                 return false;
             }
 
-            if (filteredTeams.length > 0 && !filteredTeams.includes(node.teamName1) && !filteredTeams.includes(node.teamName2)) {
+            if (filteredTeams.length > 0 && !filteredTeams.includes(node.team1.name) && !filteredTeams.includes(node.team2.name)) {
                 return false;
             }
 
-            teams[node.teamName1] = teams[node.teamName1] ? teams[node.teamName1] + 1 : 1;
-            teams[node.teamName2] = teams[node.teamName2] ? teams[node.teamName2] + 1 : 1;
+            teams[node.team1.name] = teams[node.team1.name] ? teams[node.team1.name] + 1 : 1;
+            teams[node.team2.name] = teams[node.team2.name] ? teams[node.team2.name] + 1 : 1;
             return true
         });
 
@@ -106,14 +106,19 @@ const ScoresPage = ({ data }) => {
                         event,
                         footages,
                         location,
-                        teamLogo1,
-                        teamLogo2,
-                        teamName1,
-                        teamName2,
+                        team1,
                         teamScore1,
+                        team2,
                         teamScore2,
-                    } }) => (
-                        <div key={ event } className="scorespage-result">
+                    } }) => {
+                        const teamLogo1 = team1.logo && team1.logo.length > 0 ? team1.logo[0] : team1.league.logo[0];
+                        const teamLogo2 = team2.logo && team2.logo.length > 0 ? team2.logo[0] : team2.league.logo[0];
+
+                        if (team1.name == "Windy City Second Wind") {
+                            console.log(teamLogo1);
+                        }
+
+                        return (<div key={ event } className="scorespage-result">
                             <div className="scorespage-result-title">{ event }</div>
                             <div className="scorespage-result-container">
                                 <div className="scorespage-result-event">
@@ -130,8 +135,8 @@ const ScoresPage = ({ data }) => {
                                     <div className="scorespage-result-details">
                                         <div className="scorespage-result-details-team1">
                                             <div className="scorespage-result-details-team">
-                                                <GatsbyImage className="scorespage-result-details-team-logo" objectFit="contain" alt={ teamName1 } image={ teamLogo1.gatsbyImageData } />
-                                                <div>{ teamName1 }</div>
+                                                <GatsbyImage className="scorespage-result-details-team-logo" objectFit="contain" alt={ team1.name } image={ teamLogo1.gatsbyImageData } />
+                                                <div>{ team1.name }</div>
                                             </div>
                                             <div className="scorespage-result-details-score">{ teamScore1 }</div>
                                         </div>
@@ -139,15 +144,15 @@ const ScoresPage = ({ data }) => {
                                         <div className="scorespage-result-details-team2">
                                             <div className="scorespage-result-details-score">{ teamScore2 }</div>
                                             <div className="scorespage-result-details-team">
-                                                <GatsbyImage className="scorespage-result-details-team-logo" objectFit="contain" alt={ teamName2 } image={ teamLogo2.gatsbyImageData } />
-                                                <div>{ teamName2 }</div>
+                                                <GatsbyImage className="scorespage-result-details-team-logo" objectFit="contain" alt={ team2.name } image={ teamLogo2.gatsbyImageData } />
+                                                <div>{ team2.name }</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        </div>);
+                    })}
                 </div>
             </div>
         </Layout>
@@ -164,16 +169,32 @@ export const query = graphql`
                     date(formatString: "MMMM Do, YYYY h:mm A")
                     location
                     footages
-                    teamName1
+                    team1 {
+                        name
+                        league {
+                            name
+                            logo {
+                                gatsbyImageData(layout: CONSTRAINED)
+                            }
+                        }
+                        logo {
+                            gatsbyImageData(layout: CONSTRAINED)
+                        }
+                    }
                     teamScore1
-                    teamLogo1 {
-                        gatsbyImageData(layout: CONSTRAINED)
+                    team2 {
+                        name
+                        league {
+                            name
+                            logo {
+                                gatsbyImageData(layout: CONSTRAINED)
+                            }
+                        }
+                        logo {
+                            gatsbyImageData(layout: CONSTRAINED)
+                        }
                     }
-                    teamName2
                     teamScore2
-                    teamLogo2 {
-                        gatsbyImageData(layout: CONSTRAINED)
-                    }
                 }
             }
         }

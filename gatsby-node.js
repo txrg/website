@@ -44,7 +44,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       },
     }),
     schema.buildObjectType({
-      name: "ContentfulCaptain",
+      name: "ContentfulTeamLeader",
       fields: {
         photo: {
           type: "GatsbyImage",

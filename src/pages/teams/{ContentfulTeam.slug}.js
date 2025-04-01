@@ -5,7 +5,7 @@ import Layout from '../../components/layout/layout';
 
 const Team = ({ data, location }) => {
   const team = data.contentfulTeam;
-  const captains = data.allContentfulCaptain.edges;
+  const leaders = data.allContentfulTeamLeader.edges;
   
   let showRetiredMembers = false;
   switch (team.slug) {
@@ -17,7 +17,7 @@ const Team = ({ data, location }) => {
   }
 
   let members = showRetiredMembers ? data.allMembers.edges : data.currentMembers.edges;
-  let repeatedMembers = captains.reduce((agg, {node: {member: {name}}}) => ({...agg, [name]: name}), {});
+  let repeatedMembers = leaders.reduce((agg, {node: {member: {name}}}) => ({...agg, [name]: name}), {});
   members = members.filter(({node: {member: {name}}}) => {
     const isRepeated = repeatedMembers[name] != null;
     repeatedMembers[name] = name;
@@ -40,7 +40,7 @@ const Team = ({ data, location }) => {
               ) : null}
             </div>
             <ul className="member-list">
-              {captains.map(({node: {role, member, photo}}) => <Member key={member.name} defaultPhoto={photo} role={role} details={member} />)}
+              {leaders.map(({node: {role, member, photo}}) => <Member key={member.name} defaultPhoto={photo} role={role} details={member} />)}
               {members.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
             </ul>
           </div>
@@ -81,7 +81,7 @@ export const teamQuery = graphql`
         }
       }
     }
-    allContentfulCaptain(filter: {endYear: {eq: 0}, team: {slug: {eq: $slug}}}, sort: [{role: ASC}, {member: {name: ASC}}]) {
+    allContentfulTeamLeader(filter: {endYear: {eq: 0}, team: {slug: {eq: $slug}}}, sort: [{role: ASC}, {member: {name: ASC}}]) {
       edges {
         node {
           member {
