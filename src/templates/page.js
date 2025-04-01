@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/layout/layout';
 import BoutEventList from '../components/eventList/bout-events';
-import PepRallyEventList from '../components/eventList/pep-rally-events';
 import VolunteerEventList from '../components/eventList/volunteer-events';
 
 const PageTemplate = ({ data, location }) => {
@@ -133,9 +132,7 @@ const PageTemplate = ({ data, location }) => {
                 <>
                   <h2>2025 Season</h2>
                   <BoutEventList />
-                  <h2>Pep Rallies</h2>
-                  <PepRallyEventList />
-                  <h2>Volunteer With Us</h2>
+                  <h2 style={{marginTop: "2rem"}}>Volunteer With Us</h2>
                   <VolunteerEventList />
                 </>
               ) : null}

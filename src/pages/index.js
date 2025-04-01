@@ -5,7 +5,6 @@ import BlogPreview from '../components/blog-preview/blog-preview';
 import PagePreview from '../components/page-preview/page-preview';
 import ProfilePreview from '../components/profile-preview/profile-preview';
 import BoutEventList from '../components/eventList/bout-events';
-import PepRallyEventList from '../components/eventList/pep-rally-events';
 import VolunteerEventList from '../components/eventList/volunteer-events';
 import skaters from '../images/homepage.png';
 
@@ -87,22 +86,16 @@ const RootIndex = ({ data, location }) => {
 
       <section className="content content-home">
         <div className="row content-intro">
-          <div className="col-two">
+          <div className="col-three">
             <h1 className="intro-header">2025 Season</h1>
           </div>
-          <div className="col-ten">
+          <div className="col-nine">
            <BoutEventList />
           </div>
-          <div className="col-two">
-            <h1 className="intro-header">Pep Rallies</h1>
-          </div>
-          <div className="col-ten">
-           <PepRallyEventList />
-          </div>
-          <div className="col-two">
+          <div className="col-three" style={{marginTop: "2rem"}}>
             <h1 className="intro-header">Volunteer With Us</h1>
           </div>
-          <div className="col-ten">
+          <div className="col-nine" style={{marginTop: "2rem"}}>
            <VolunteerEventList />
           </div>
         </div>
