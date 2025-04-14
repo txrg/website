@@ -5,24 +5,14 @@ import Layout from '../../components/layout/layout';
 
 const Team = ({ data, location }) => {
   const team = data.contentfulTeam;
-  const leaders = data.allContentfulTeamLeader.edges;
-  
-  let showRetiredMembers = false;
-  switch (team.slug) {
-    case "founders":
-      showRetiredMembers = true;
-      break;
-    default:
-      showRetiredMembers = false;
-  }
-
-  let members = showRetiredMembers ? data.allMembers.edges : data.currentMembers.edges;
-  let repeatedMembers = leaders.reduce((agg, {node: {member: {name}}}) => ({...agg, [name]: name}), {});
-  members = members.filter(({node: {member: {name}}}) => {
+  const leaders = data.currentLeaders.edges;
+  const repeatedMembers = leaders.reduce((agg, {node: {member: {name}}}) => ({...agg, [name]: name}), {});
+  const currentMembers = data.currentMembers.edges.filter(({node: {member: {name}}}) => {
     const isRepeated = repeatedMembers[name] != null;
     repeatedMembers[name] = name;
     return !isRepeated;
   });
+  const retiredMembers = data.retiredMembers.edges;
 
   return (
     <Layout location={location}>
@@ -39,10 +29,23 @@ const Team = ({ data, location }) => {
                 />
               ) : null}
             </div>
-            <ul className="member-list">
-              {leaders.map(({node: {role, member, photo}}) => <Member key={member.name} defaultPhoto={photo} role={role} details={member} />)}
-              {members.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
-            </ul>
+            {
+              team.slug === "founders" ?
+                <ul className="member-list">
+                  {retiredMembers.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
+                </ul>
+              :
+                <>
+                  <ul className="member-list">
+                    {leaders.map(({node: {role, member, photo}}) => <Member key={member.name} defaultPhoto={photo} role={role} details={member} />)}
+                    {currentMembers.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
+                  </ul>
+                  <h1 className="intro-header" style={{marginTop: "1em"}}>Retirees</h1>
+                  <ul className="member-list">
+                    {retiredMembers.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
+                  </ul>
+                </>
+            }
           </div>
         </section>
       </main>
@@ -81,7 +84,7 @@ export const teamQuery = graphql`
         }
       }
     }
-    allContentfulTeamLeader(filter: {endYear: {eq: 0}, team: {slug: {eq: $slug}}}, sort: [{role: ASC}, {member: {name: ASC}}]) {
+    currentLeaders: allContentfulTeamLeader(filter: {endYear: {eq: 0}, team: {slug: {eq: $slug}}}, sort: [{role: ASC}, {member: {name: ASC}}]) {
       edges {
         node {
           member {
@@ -121,7 +124,7 @@ export const teamQuery = graphql`
         }
       }
     }
-    allMembers: allContentfulTeamMember(filter: {team: {slug: {eq: $slug}}}, sort: [{member: {name: ASC}}]) {
+    retiredMembers: allContentfulTeamMember(filter: {endYear: {gt: 0}, team: {slug: {eq: $slug}}}, sort: [{member: {name: ASC}}]) {
       edges {
         node {
           member {

@@ -114,10 +114,6 @@ const ScoresPage = ({ data }) => {
                         const teamLogo1 = team1.logo && team1.logo.length > 0 ? team1.logo[0] : team1.league.logo[0];
                         const teamLogo2 = team2.logo && team2.logo.length > 0 ? team2.logo[0] : team2.league.logo[0];
 
-                        if (team1.name == "Windy City Second Wind") {
-                            console.log(teamLogo1);
-                        }
-
                         return (<div key={ event } className="scorespage-result">
                             <div className="scorespage-result-title">{ event }</div>
                             <div className="scorespage-result-container">
