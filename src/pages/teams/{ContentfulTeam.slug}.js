@@ -5,14 +5,29 @@ import Layout from '../../components/layout/layout';
 
 const Team = ({ data, location }) => {
   const team = data.contentfulTeam;
-  const leaders = data.currentLeaders.edges;
+  const leaders = data.currentLeaders? data.currentLeaders.edges : [];
   const repeatedMembers = leaders.reduce((agg, {node: {member: {name}}}) => ({...agg, [name]: name}), {});
-  const currentMembers = data.currentMembers.edges.filter(({node: {member: {name}}}) => {
+  const currentMembers = data.currentMembers ? data.currentMembers.edges.filter(({node: {member: {name}}}) => {
     const isRepeated = repeatedMembers[name] != null;
     repeatedMembers[name] = name;
     return !isRepeated;
-  });
-  const retiredMembers = data.retiredMembers.edges;
+  }) : [];
+  const retiredMembers = data.retiredMembers ? data.retiredMembers.edges : [];
+  let TeamPage;
+
+  switch(team.slug) {
+    case "founders":
+      TeamPage = FoundersPage;
+      break;
+    case "photographers":
+      TeamPage = PhotographersPage;
+      break;
+    case "travel-team":
+      TeamPage = TravelTeamPage;
+      break;
+    default:
+      TeamPage = DefaultPage;
+  }
 
   return (
     <Layout location={location}>
@@ -29,29 +44,38 @@ const Team = ({ data, location }) => {
                 />
               ) : null}
             </div>
-            {
-              team.slug === "founders" ?
-                <ul className="member-list">
-                  {retiredMembers.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
-                </ul>
-              :
-                <>
-                  <ul className="member-list">
-                    {leaders.map(({node: {role, member, photo}}) => <Member key={member.name} defaultPhoto={photo} role={role} details={member} />)}
-                    {currentMembers.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
-                  </ul>
-                  <h1 className="intro-header" style={{marginTop: "1em"}}>Retirees</h1>
-                  <ul className="member-list">
-                    {retiredMembers.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
-                  </ul>
-                </>
-            }
+            <TeamPage leaders={leaders} currentMembers={currentMembers} retiredMembers={retiredMembers} />
           </div>
         </section>
       </main>
     </Layout>
   );
 };
+
+const FoundersPage = ({ retiredMembers }) => (
+  <ul className="member-list">
+    {retiredMembers.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
+  </ul>
+);
+const PhotographersPage = () => (<></>);
+const TravelTeamPage = ({ leaders, currentMembers }) => (
+  <ul className="member-list">
+    {leaders.map(({node: {role, member, photo}}) => <Member key={member.name} defaultPhoto={photo} role={role} details={member} />)}
+    {currentMembers.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
+  </ul>
+);
+const DefaultPage = ({ leaders, currentMembers, retiredMembers }) => (
+  <>
+    <ul className="member-list">
+      {leaders.map(({node: {role, member, photo}}) => <Member key={member.name} defaultPhoto={photo} role={role} details={member} />)}
+      {currentMembers.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
+    </ul>
+    <h1 className="intro-header" style={{marginTop: "1em"}}>Retirees</h1>
+    <ul className="member-list">
+      {retiredMembers.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
+    </ul>
+  </>
+);
 
 const Member = ({ defaultPhoto, role, details }) => {
   const headshot = defaultPhoto ? defaultPhoto.gatsbyImageData : details.photos[details.photos.length - 1].gatsbyImageData;
