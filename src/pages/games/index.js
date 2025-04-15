@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import Layout from '../components/layout/layout';
+import Layout from '../../components/layout/layout';
 
 const FILTER_SEASON_YEARS = ['2025', '2024', '2023', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010', '2009', '2008', '2007', '2006', '2005', '2004', '2003'];
 
-const ScoresPage = ({ data }) => {
+const ScoresPage = ({ data, location }) => {
     const [bouts, setBouts] = useState([]);
     const [filteredSeasons, setFilteredSeasons] = useState(FILTER_SEASON_YEARS.slice(0, 1));
     const [teamFilterValues, setTeamFilterValues] = useState([]);
@@ -77,7 +77,7 @@ const ScoresPage = ({ data }) => {
     };
 
     return (
-        <Layout>
+        <Layout location={location}>
             <div className="scorespage">
                 <div className="scorespage-filters">
                     <div className="scorespage-filter-seasons-container">
@@ -108,11 +108,14 @@ const ScoresPage = ({ data }) => {
                         location,
                         team1,
                         teamScore1,
+                        teamRoster1,
                         team2,
                         teamScore2,
+                        teamRoster2,
                     } }) => {
                         const teamLogo1 = team1.logo && team1.logo.length > 0 ? team1.logo[0] : team1.league.logo[0];
                         const teamLogo2 = team2.logo && team2.logo.length > 0 ? team2.logo[0] : team2.league.logo[0];
+                        const hasStats = (teamRoster1 || teamRoster2);
 
                         return (<div key={ event } className="scorespage-result">
                             <div className="scorespage-result-title">{ event }</div>
@@ -120,11 +123,10 @@ const ScoresPage = ({ data }) => {
                                 <div className="scorespage-result-event">
                                     <div>{ date }</div>
                                     <div>{ location }</div>
-                                    { footages && 
-                                        <div className="scorespage-result-event-footage">
-                                            {footages.map((url, i) => <a key={i} href={url} target="_blank" rel="noopener noreferrer" aria-label="footage link">&#127909;</a>)}
-                                        </div>
-                                    }
+                                    <div className="scorespage-result-event-links">
+                                        {hasStats && <Link to={`/games/${event.match(/[a-zA-Z0-9]+/g).join('-').toLowerCase()}`}>&#128203;</Link>}
+                                        {footages && footages.map((url, i) => <a key={i} href={url} target="_blank" rel="noopener noreferrer" aria-label="footage link">&#127909;</a>)}
+                                    </div>
                                 </div>
                                 <div className="scorespage-result-details-container">
                                     <div className="scorespage-result-title-wide">{ event }</div>
@@ -155,7 +157,6 @@ const ScoresPage = ({ data }) => {
     );
 };
 
-// TODO: Fix iphone view of images
 export const query = graphql`
     query ScoresQuery {
         allContentfulScore(sort: { date: DESC }) {
@@ -177,6 +178,9 @@ export const query = graphql`
                             gatsbyImageData(layout: CONSTRAINED)
                         }
                     }
+                    teamRoster1 {
+                        name
+                    }
                     teamScore1
                     team2 {
                         name
@@ -191,6 +195,9 @@ export const query = graphql`
                         }
                     }
                     teamScore2
+                    teamRoster2 {
+                        name
+                    }
                 }
             }
         }

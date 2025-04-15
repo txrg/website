@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../../components/layout/layout';
 
-const Team = ({ data, location }) => {
+const Team = ({ data }) => {
   const team = data.contentfulTeam;
   const leaders = data.currentLeaders? data.currentLeaders.edges : [];
   const repeatedMembers = leaders.reduce((agg, {node: {member: {name}}}) => ({...agg, [name]: name}), {});
@@ -30,7 +30,7 @@ const Team = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location}>
+    <Layout>
       <main className="main--team">
         <section className="content content-intro">
           <div className="row about-features">
@@ -57,7 +57,7 @@ const FoundersPage = ({ retiredMembers }) => (
     {retiredMembers.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
   </ul>
 );
-const PhotographersPage = () => (<></>);
+const PhotographersPage = () => (null);
 const TravelTeamPage = ({ leaders, currentMembers }) => (
   <ul className="member-list">
     {leaders.map(({node: {role, member, photo}}) => <Member key={member.name} defaultPhoto={photo} role={role} details={member} />)}

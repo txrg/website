@@ -11,7 +11,8 @@
 // Pages / Templates
 //---------------------------------------
 @use 'home';
-@use '../pages/scores.scss';
+@use '../pages/games/index.scss';
+@use '../pages/games/game.scss';
 @use '../pages/teams/team.scss';
 
 //---------------------------------------
