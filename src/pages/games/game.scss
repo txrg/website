@@ -40,39 +40,34 @@
   font-family: "montserrat-medium", sans-serif;
 }
 .gamepage-roster {
-  margin-right: 5em;
-  padding-right: 2em;
-  border-right: 2px grey solid;
+  border-right: 2px #6b0000 solid;
+  width: 200px;
 }
 .gamepage-roster-skater {
-  display: flex;
-  align-items: center;
+  padding: .25em 1em;
+  cursor: pointer;
 }
-.gamepage-roster-skater-image {
-  margin: 2em 1em;
-}
-.gamepage-roster-skater-name {
-  margin-left: 8px;
-}
-.gamepage-roster-skater-image:hover {
-  margin: 1em 0;
-  padding: 1em;
+.gamepage-roster-skater:hover {
   background-color: #6b00008b;
   border-radius: 8px;
   transition: 0.3s;
+  font-weight: bold;
 }
-.gamepage-roster-skater-image-selected {
-  margin: 1em 0;
-  padding: 1em;
+.gamepage-roster-skater-selected {
   background-color: #6b0000 !important;
   border-radius: 8px;
   transition: 0.3s;
+  color: #fff;
+  font-weight: bold;
 }
 .gamepage-skater-selector {
   display: none;
 }
 .gamepage-skater {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .gamepage-skater-stats {
   width: 12em;

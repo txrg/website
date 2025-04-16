@@ -85,15 +85,13 @@ const Roster = ({roster, skater, setSkater, setNotification }) => {
         </select>
       </div>
       <div className="gamepage-roster">
-        {roster.map(({ name, photos }) => {
-          const headshot = photos[photos.length - 1].gatsbyImageData;
-          return (
-            <div className="gamepage-roster-skater" key={name} onClick={() => setSkater(name)}>
-              <div className={`gamepage-roster-skater-image${skater === name ? " gamepage-roster-skater-image-selected" : ""}`}><GatsbyImage alt={name} sizes={headshot.sizes} image={headshot} /></div>
-              <div className={`gamepage-roster-skater-name${skater === name ? " gamepage-roster-skater-name-selected" : ""}`}>{name}</div>
-            </div>
-          );
-        })}
+        {roster.map(({ name }) => (
+          <div
+            key={name} 
+            className={`gamepage-roster-skater${skater === name ? " gamepage-roster-skater-selected" : ""}`}
+            onClick={() => setSkater(name)}
+          >{name}</div>
+        ))}
       </div>
     </>
   );
@@ -110,9 +108,7 @@ const SkaterStats = ({ skater, totalJams, gameStats, setNotification }) => {
     setNotification("There are no stats for this skater.");
     return null;
   }
-
   setNotification("");
-
   stats = stats[0].node;
 
   const playTimeStats = [
@@ -160,10 +156,12 @@ const SkaterStats = ({ skater, totalJams, gameStats, setNotification }) => {
     title = `${skater} - #${skaterNumber}`;
   }
 
+  const headshot = stats.skater.photo ? stats.skater.photo.gatsbyImageData : stats.skater.member.photos[stats.skater.member.photos.length - 1].gatsbyImageData;
   const skaterPenalties = penalties.filter(p => p.value != 0);
 
   return (
     <div className="gamepage-skater">
+      <GatsbyImage alt={skater} sizes={headshot.sizes} image={headshot} />
       <h3>{title}</h3>
       <div className="gamepage-skater-stats">
         {playTimeStats.map(({stat, value, description}) => <Stat key={stat} stat={stat} value={value} description={description} />)}
@@ -215,9 +213,6 @@ export const gameQuery = graphql`
       }
       teamRoster1 {
         name
-        photos {
-          gatsbyImageData(layout: CONSTRAINED, width: 100, height: 100)
-        }
       }
       teamScore1
       team2 {
@@ -235,9 +230,6 @@ export const gameQuery = graphql`
       teamScore2
       teamRoster2 {
           name
-          photos {
-            gatsbyImageData(layout: CONSTRAINED, width: 100, height: 100)
-          }
       }
     }
     allContentfulMemberStats(filter: {game: {event: {eq: $event}}}) {
@@ -245,8 +237,14 @@ export const gameQuery = graphql`
         node{
           skater {
             skaterNumber
+            photo {
+              gatsbyImageData(layout: CONSTRAINED, width: 250, height: 250)
+            }
             member {
               name
+              photos {
+                gatsbyImageData(layout: CONSTRAINED, width: 250, height: 250)
+              }
             }
           }
           jammer
