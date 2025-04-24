@@ -30,10 +30,9 @@ const Member = ({ data, location }) => {
                 {whammyAwards.length > 0 && <Whammys awards={whammyAwards} />}
               </div>
               {stats.map(({node}) => {
-                console.log({ node });
                 const {game: {event, date, location, footages, gamePath, team1, team2, teamScore1, teamScore2}} = node;
-                const teamLogo1= team1.logo ? team1.logo.gatsbyImageData : team1.league.logo[team1.league.logo.length - 1].gatsbyImageData;
-                const teamLogo2= team2.logo ? team2.logo.gatsbyImageData : team2.league.logo[team2.league.logo.length - 1].gatsbyImageData;
+                const teamLogo1 = team1.logo && team1.logo.length > 0 ? team1.logo[team1.logo.length - 1].gatsbyImageData : team1.league.logo[team1.league.logo.length - 1].gatsbyImageData;
+                const teamLogo2 = team2.logo && team2.logo.length > 0 ? team2.logo[team2.logo.length - 1].gatsbyImageData : team2.league.logo[team2.league.logo.length - 1].gatsbyImageData;
                 return (
                   <div className="memberpage-game">
                     <div>

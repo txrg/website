@@ -45,6 +45,9 @@
   .memberpage-game {
     grid-template-columns: 1fr;
   }
+  .memberpage-league {
+    flex-direction: column;
+  }
   .memberpage-game .skaterstatscomponent {
     margin-top: 2em;
   }
