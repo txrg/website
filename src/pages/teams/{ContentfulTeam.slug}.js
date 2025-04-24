@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../../components/layout/layout';
 
@@ -54,25 +54,25 @@ const Team = ({ data }) => {
 
 const FoundersPage = ({ retiredMembers }) => (
   <ul className="member-list">
-    {retiredMembers.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
+    {retiredMembers.map(({node: {member, photo, endYear}}) => <Member key={`${member.name}-${endYear}`} defaultPhoto={photo} details={member} />)}
   </ul>
 );
 const PhotographersPage = () => (null);
 const TravelTeamPage = ({ leaders, currentMembers }) => (
   <ul className="member-list">
-    {leaders.map(({node: {role, member, photo}}) => <Member key={member.name} defaultPhoto={photo} role={role} details={member} />)}
-    {currentMembers.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
+    {leaders.map(({node: {role, member, photo, endYear}}) => <Member key={`${member.name}-${endYear}`} defaultPhoto={photo} role={role} details={member} />)}
+    {currentMembers.map(({node: {member, photo, endYear}}) => <Member key={`${member.name}-${endYear}`} defaultPhoto={photo} details={member} />)}
   </ul>
 );
 const DefaultPage = ({ leaders, currentMembers, retiredMembers }) => (
   <>
     <ul className="member-list">
-      {leaders.map(({node: {role, member, photo}}) => <Member key={member.name} defaultPhoto={photo} role={role} details={member} />)}
-      {currentMembers.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
+      {leaders.map(({node: {role, member, photo, endYear}}) => <Member key={`${member.name}-${endYear}`} defaultPhoto={photo} role={role} details={member} />)}
+      {currentMembers.map(({node: {member, photo, endYear}}) => <Member key={`${member.name}-${endYear}`} defaultPhoto={photo} details={member} />)}
     </ul>
     <h1 className="intro-header" style={{marginTop: "1em"}}>Retirees</h1>
     <ul className="member-list">
-      {retiredMembers.map(({node: {member, photo}}) => <Member key={member.name} defaultPhoto={photo} details={member} />)}
+      {retiredMembers.map(({node: {member, photo, endYear}}) => <Member key={`${member.name}-${endYear}`} defaultPhoto={photo} details={member} />)}
     </ul>
   </>
 );
@@ -81,15 +81,17 @@ const Member = ({ defaultPhoto, role, details }) => {
   const headshot = defaultPhoto ? defaultPhoto.gatsbyImageData : details.photos[details.photos.length - 1].gatsbyImageData;
   return (
     <li className="member-list__item">
-      <div className="member__preview  service-content">
-        <div className="member__thumbnail">
+      <Link to={`${details.skaterPath}`}>
+        <div className="member__preview  service-content">
+          <div className="member__thumbnail">
+          </div>
+            <GatsbyImage alt={details.name} sizes={headshot.sizes} image={headshot} />
+          <h4 className="member__name">
+            <span>{role}</span>
+            {details.name}{' '}
+          </h4>
         </div>
-          <GatsbyImage alt={details.name} sizes={headshot.sizes} image={headshot} />
-        <h4 className="member__name">
-          <span>{role}</span>
-          {details.name}{' '}
-        </h4>
-      </div>
+      </Link>
     </li>
   );
 };
@@ -116,6 +118,7 @@ export const teamQuery = graphql`
             photos {
               gatsbyImageData(layout: CONSTRAINED, width: 400, height: 400)
             }
+            skaterPath: gatsbyPath(filePath: "/members/{ContentfulMember.name}")
           }
           role
           team {
@@ -137,6 +140,7 @@ export const teamQuery = graphql`
             photos {
               gatsbyImageData(layout: CONSTRAINED, width: 400, height: 400)
             }
+            skaterPath: gatsbyPath(filePath: "/members/{ContentfulMember.name}")
           }
           team {
             slug
@@ -156,6 +160,7 @@ export const teamQuery = graphql`
             photos {
               gatsbyImageData(layout: CONSTRAINED, width: 400, height: 400)
             }
+            skaterPath: gatsbyPath(filePath: "/members/{ContentfulMember.name}")
           }
           team {
             slug

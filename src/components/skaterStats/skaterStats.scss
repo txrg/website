@@ -1,0 +1,59 @@
+.skaterstatscomponent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.skaterstatscomponent-award {
+  font-weight: bold;
+}
+h4.skaterstatscomponent-stats-section {
+  margin-top: 2em;
+}
+.skaterstatscomponent-stat {
+  display: flex;
+  justify-content: space-between;
+  width: 12em;
+}
+.skaterstatscomponent-stat-key, .skaterstatscomponent-stat-key-tooltip {
+  position: relative;
+  display: inline-block;
+}
+.skaterstatscomponent-stat-key-tooltip {
+  border-bottom: 1px dotted black;
+}
+.skaterstatscomponent-stat-key-tooltip .skaterstatscomponent-stat-key-tooltiptext {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  border-radius: 6px;
+  line-height: 1em;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.skaterstatscomponent-stat-key-tooltip .skaterstatscomponent-stat-key-tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.skaterstatscomponent-stat-key-tooltip:hover .skaterstatscomponent-stat-key-tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

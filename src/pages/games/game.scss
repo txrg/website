@@ -1,35 +1,24 @@
 .gamepage-details {
   text-align: center;
 }
-.gamepage-score {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.gamepage .scorecomponent-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
 }
-.gamepage-score-team {
-  display: flex;
-  flex-direction: column;
-  width: 150px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  border-radius: 8px;
-  cursor: pointer;
+.gamepage .scorecomponent-event {
+  order: 1;
+  font-size: 1em;
 }
-.gamepage-score-team:hover {
+.gamepage .scorecomponent-details {
+  order: 2;
+}
+.gamepage .scorecomponent-details-team:hover {
   background-color: #000000;
   transition: 0.3s;
   color: #fff;
   font-weight: bold;
   font-family: "montserrat-medium", sans-serif;
-}
-.gamepage-score-team-name {
-  text-align: center;
-  line-height: 1em;
-  margin-top: 6px;
-}
-.gamepage-score-value {
-  margin-left: 2em;
-  margin-right: 2em;
 }
 .gamepage-stats {
   display: flex;
@@ -44,7 +33,8 @@
   width: 200px;
 }
 .gamepage-roster-skater {
-  padding: .25em 1em;
+  position: relative;
+  padding: .25em 1em .25em 2em;
   cursor: pointer;
 }
 .gamepage-roster-skater:hover {
@@ -52,6 +42,10 @@
   border-radius: 8px;
   transition: 0.3s;
   font-weight: bold;
+}
+.gamepage-roster-skater-award {
+  position: absolute;
+  left: 8px; 
 }
 .gamepage-roster-skater-selected {
   background-color: #6b0000 !important;
@@ -69,63 +63,6 @@
   flex-direction: column;
   align-items: center;
 }
-.gamepage-skater-stats {
-  width: 12em;
-}
-h4.gamepage-skater-stats-section {
-  margin-top: 2em;
-}
-.gamepage-skater-stats-item {
-  display: flex;
-  justify-content: space-between;
-}
-.gamepage-skater-stats-item-value {
-  display: inline-block;
-}
-.gamepage, .gamepage-tooltip {
-  position: relative;
-  display: inline-block;
-}
-.gamepage-tooltip {
-  border-bottom: 1px dotted black;
-}
-.gamepage-tooltip .gamepage-tooltiptext {
-  visibility: hidden;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  padding: 8px;
-  border-radius: 6px;
-  line-height: 1em;
-
-  /* Position the tooltip text */
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -60px;
-
-  /* Fade in tooltip */
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.gamepage-tooltip .gamepage-tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.gamepage-tooltip:hover .gamepage-tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
-
 @media only screen and (max-width: 768px) {
   .gamepage-roster {
     display: none;

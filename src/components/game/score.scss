@@ -1,0 +1,101 @@
+.scorecomponent > div {
+    margin: 0.5em 0;
+}
+.scorecomponent-title, .scorecomponent-title-wide {
+    font-weight: bold;
+    margin-bottom: 0.75em;
+    text-align: center;
+}
+.scorecomponent-title-wide {
+    display: none;
+}
+.scorecomponent-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+.scorecomponent-event {
+    order: 2;
+    font-size: 0.8em;
+    text-align: center;
+}
+.scorecomponent-event-links {
+    font-size: 1.2em;
+    line-height: 1.2em;
+}
+.scorecomponent-event-links > a {
+    padding: 0.25em;
+}
+.scorecomponent-details {
+    display: grid;
+    grid-template-columns: 1fr 0.1fr 1fr;
+    gap: 0.75rem;
+}
+.scorecomponent-details-team {
+    display: flex;
+    flex-direction: column;
+}
+.scorecomponent-details-team-logo {
+    height: 50px !important;
+}
+.scorecomponent-details-score {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.scorecomponent-details-team1 {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    gap: 0.5rem;
+}
+.scorecomponent-details-team1 > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.scorecomponent-details-team2 {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    gap: 0.5rem;
+}
+.scorecomponent-details-team2 > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.scorecomponent-details-delimiter {
+    display: flex;
+    align-items: center;
+}
+@media only screen and (min-width: 768px) {
+    .scorecomponent-event {
+        font-size: 1em;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .scorecomponent-container{
+        grid-template-columns: 1.5fr 1fr;
+        gap: 4rem;
+    }
+    .scorecomponent-title, .scorecomponent-title-wide {
+        display: none;
+    }
+    .scorecomponent-title-wide {
+        display: block;
+    }
+    .scorecomponent-event {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .scorecomponent-details {
+        order: 1;
+        gap: 1.5rem;
+    }
+    .scorecomponent-details-team-logo {
+        height: 80px !important;
+    }
+    .scorecomponent-details-team1, .scorecomponent-details-team2 {
+        gap: 1.25rem;
+    }
+}

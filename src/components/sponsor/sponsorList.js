@@ -30,29 +30,21 @@ export default function SponsorList() {
             <div className="sponsor__types">
               
               <ul className="sponsor__list">
-                {data.allContentfulSponsor.edges.map(({ node }) => {
+                {data.allContentfulSponsor.edges.filter(({node}) => node.type === 'sponsor').map(({ node }) => {
                   return (
-                    <>
-                      {node.type === 'sponsor' ? (
-                        <li className="sponsor__item" key={node.id}>
-                          <Sponsor sponsor={node} />
-                        </li>
-                      ) : null}
-                    </>
+                    <li className="sponsor__item" key={node.id}>
+                      <Sponsor sponsor={node} />
+                    </li>
                   );
                 })}
               </ul>
              <h1 className="intro-header">Supporters</h1>
               <ul className="supporter__list">
-                {data.allContentfulSponsor.edges.map(({ node }) => {
+                {data.allContentfulSponsor.edges.filter(({node}) => node.type === 'supporter').map(({ node }) => {
                   return (
-                    <>
-                     {node.type === 'supporter' ? (
-                        <li className="sponsor__item" key={node.id}>
-                          <a href={node.link} target="_blank" rel="noopener noreferrer">{node.name}</a>
-                        </li>
-                      ) : null}
-                    </>
+                    <li className="sponsor__item" key={node.id}>
+                      <a href={node.link} target="_blank" rel="noopener noreferrer">{node.name}</a>
+                    </li>
                   );
                 })}
               </ul>

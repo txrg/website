@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../../components/layout/layout';
+import Score from '../../components/game/score';
 
 const FILTER_SEASON_YEARS = ['2025', '2024', '2023', '2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012', '2011', '2010', '2009', '2008', '2007', '2006', '2005', '2004', '2003'];
 
@@ -105,6 +106,7 @@ const ScoresPage = ({ data, location }) => {
                         date,
                         event,
                         footages,
+                        gamePath,
                         location,
                         team1,
                         teamScore1,
@@ -118,37 +120,11 @@ const ScoresPage = ({ data, location }) => {
                         const hasStats = (teamRoster1 || teamRoster2);
 
                         return (<div key={ event } className="scorespage-result">
-                            <div className="scorespage-result-title">{ event }</div>
-                            <div className="scorespage-result-container">
-                                <div className="scorespage-result-event">
-                                    <div>{ date }</div>
-                                    <div>{ location }</div>
-                                    <div className="scorespage-result-event-links">
-                                        {hasStats && <Link to={`/games/${event.match(/[a-zA-Z0-9]+/g).join('-').toLowerCase()}`}>&#128203;</Link>}
-                                        {footages && footages.map((url, i) => <a key={i} href={url} target="_blank" rel="noopener noreferrer" aria-label="footage link">&#127909;</a>)}
-                                    </div>
-                                </div>
-                                <div className="scorespage-result-details-container">
-                                    <div className="scorespage-result-title-wide">{ event }</div>
-                                    <div className="scorespage-result-details">
-                                        <div className="scorespage-result-details-team1">
-                                            <div className="scorespage-result-details-team">
-                                                <GatsbyImage className="scorespage-result-details-team-logo" objectFit="contain" alt={ team1.name } image={ teamLogo1.gatsbyImageData } />
-                                                <div>{ team1.name }</div>
-                                            </div>
-                                            <div className="scorespage-result-details-score">{ teamScore1 }</div>
-                                        </div>
-                                        <div className="scorespage-result-details-delimiter">VS</div>
-                                        <div className="scorespage-result-details-team2">
-                                            <div className="scorespage-result-details-score">{ teamScore2 }</div>
-                                            <div className="scorespage-result-details-team">
-                                                <GatsbyImage className="scorespage-result-details-team-logo" objectFit="contain" alt={ team2.name } image={ teamLogo2.gatsbyImageData } />
-                                                <div>{ team2.name }</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <Score
+                                title={event} date={date} location={location} gamePath={hasStats ? gamePath : null} footages={footages}
+                                teamName1={team1.name} teamLogo1={teamLogo1.gatsbyImageData} teamScore1={teamScore1}
+                                teamName2={team2.name} teamLogo2={teamLogo2.gatsbyImageData} teamScore2={teamScore2}
+                            />
                         </div>);
                     })}
                 </div>
@@ -166,6 +142,7 @@ export const query = graphql`
                     date(formatString: "MMMM Do, YYYY h:mm A")
                     location
                     footages
+                    gamePath: gatsbyPath(filePath: "/games/{ContentfulScore.event}")
                     team1 {
                         name
                         league {

@@ -1,0 +1,51 @@
+.memberpage .row {
+  display: block;
+}
+.memberpage-headshots {
+  display: flex;
+  justify-content: space-evenly;
+}
+.memberpage-league {
+  display: flex;
+  justify-content: space-around;
+}
+.memberpage-whammys > h2,
+.memberpage-whammys h3,
+.memberpage-team > h2 {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+.memberpage-game {
+  margin-top: 2em;
+  padding-top: 2em;
+  border-top: 1px solid rgb(89,89,89);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.memberpage-game > h3 {
+  margin-right: 2em;
+  width: 420px;
+}
+.memberpage-game .scorecomponent-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+.memberpage-game .scorecomponent-event {
+  order: 1;
+  font-size: 1em;
+}
+.memberpage-game .scorecomponent-details {
+  order: 2;
+}
+.memberpage-game .skaterstatscomponent {
+  flex: 1;
+}
+@media only screen and (max-width: 768px) {
+  .memberpage-game {
+    grid-template-columns: 1fr;
+  }
+  .memberpage-game .skaterstatscomponent {
+    margin-top: 2em;
+  }
+}

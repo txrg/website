@@ -14,6 +14,7 @@
 @use '../pages/games/index.scss';
 @use '../pages/games/game.scss';
 @use '../pages/teams/team.scss';
+@use '../pages/members/member.scss';
 
 //---------------------------------------
 // Components
@@ -23,3 +24,5 @@
 @use '../components/blog-preview/blog.scss';
 @use '../components/sponsor/sponsor.scss';
 @use '../components/eventList/event-list.scss';
+@use '../components/skaterStats/skaterStats.scss';
+@use '../components/game/score.scss';

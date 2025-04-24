@@ -46,82 +46,12 @@
 .scorespage-result {
     padding: 2em 0;
 }
-.scorespage-result > div {
-    margin: 0.5em 0;
-}
-.scorespage-result-title, .scorespage-result-title-wide {
-    font-weight: bold;
-    margin-bottom: 0.75em;
-}
-.scorespage-result-title-wide {
-    display: none;
-}
-.scorespage-result-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-}
-.scorespage-result-event {
-    order: 2;
-    font-size: 0.8em;
-}
-.scorespage-result-event-links {
-    font-size: 1.2em;
-    line-height: 1.2em;
-}
-.scorespage-result-event-links > a {
-    padding: 0.25em;
-}
-.scorespage-result-details {
-    order: 1;
-    display: grid;
-    grid-template-columns: 1fr 0.1fr 1fr;
-    gap: 0.75rem;
-}
-.scorespage-result-details-team {
-    display: flex;
-    flex-direction: column;
-}
-.scorespage-result-details-team-logo {
-    height: 50px !important;
-}
-.scorespage-result-details-score {
-    font-weight: bold;
-    font-size: 1.5em;
-}
-.scorespage-result-details-team1 {
-    display: grid;
-    grid-template-columns: 1fr 0.5fr;
-    gap: 0.5rem;
-}
-.scorespage-result-details-team1 > div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.scorespage-result-details-team2 {
-    display: grid;
-    grid-template-columns: 0.5fr 1fr;
-    gap: 0.5rem;
-}
-.scorespage-result-details-team2 > div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.scorespage-result-details-delimiter {
-    display: flex;
-    align-items: center;
-}
 @media only screen and (min-width: 768px) {
     #scorespage-filter-seasons {
         margin-bottom: 1em;
     }
     .scorespage-filter-teams {
         margin: 2em 0 0 5em;
-    }
-    .scorespage-result-event {
-        font-size: 1em;
     }
 }
 @media only screen and (min-width: 992px) {
@@ -139,31 +69,5 @@
     }
     .scorespage-filter-teams {
         margin-left: unset;
-    }
-    .scorespage-result-container{
-        grid-template-columns: 1.5fr 1fr;
-        gap: 4rem;
-    }
-    .scorespage-result-title, .scorespage-result-title-wide {
-        display: none;
-    }
-    .scorespage-result-title-wide {
-        display: block;
-    }
-    .scorespage-result-event {
-        order: 2;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    .scorespage-result-details {
-        order: 1;
-        gap: 1.5rem;
-    }
-    .scorespage-result-details-team-logo {
-        height: 80px !important;
-    }
-    .scorespage-result-details-team1, .scorespage-result-details-team2 {
-        gap: 1.25rem;
     }
 }
