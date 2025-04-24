@@ -47,6 +47,11 @@
   }
   .memberpage-league {
     flex-direction: column;
+    text-align: center;
+  }
+  .memberpage-teams {
+    display: flex;
+    flex-direction: column;
   }
   .memberpage-game .skaterstatscomponent {
     margin-top: 2em;
