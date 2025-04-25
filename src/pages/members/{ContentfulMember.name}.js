@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import GoogleOneTap from '../../components/auth/googleOneTap';
 import Layout from '../../components/layout/layout';
 import Score from '../../components/game/score';
 import SkaterStats from '../../components/skaterStats/skaterStats';
@@ -21,7 +20,6 @@ const Member = ({ data, location }) => {
   return (
     <Layout location={location} >
       <main className="memberpage">
-        <GoogleOneTap />
         <section className="content content-intro">
           <div className="row about-features">
               <Headshots name={member.name} photos={member.photos} />

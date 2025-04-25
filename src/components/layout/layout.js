@@ -1,4 +1,6 @@
 import React from 'react';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { CookiesProvider } from 'react-cookie';
 import { useStaticQuery, graphql } from 'gatsby';
 import Header from '../header/header';
 import Footer from '../footer/footer';
@@ -42,12 +44,16 @@ export default function Template({ children }) {
         ]}>
         <html lang="en" />
       </Helmet>
-      <Header />
-      <div onClick={() => menuHideClick()}>
-        {children}
-        <SponsorList />
-        <Footer />
-      </div>
+      <GoogleOAuthProvider clientId={`${process.env.GATSBY_GOOGLE_AUTH_CLIENT_ID}`}>
+        <CookiesProvider>
+          <Header />
+          <div onClick={() => menuHideClick()}>
+            {children}
+            <SponsorList />
+            <Footer />
+          </div>
+        </CookiesProvider>
+      </GoogleOAuthProvider>
     </>
   );
 }

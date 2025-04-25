@@ -4,7 +4,7 @@ import Authorized from '../auth/authorized';
 const WrappedSkaterStats = ({ isRetired, totalJams, stats }) => (<>
   {isRetired
   ? <SkaterStats totalJams={totalJams} stats={stats}/>
-  : <Authorized><SkaterStats totalJams={totalJams} stats={stats} /></Authorized>
+  : <Authorized action="View Stats"><SkaterStats totalJams={totalJams} stats={stats} /></Authorized>
   }
 </>);
 const SkaterStats = ({ totalJams, stats }) => {

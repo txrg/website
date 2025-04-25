@@ -1,10 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class HTML extends React.Component {
-  render() {
-    return (
-      <html {...this.props.htmlAttributes}>
+const HTML = ({
+  htmlAttributes,
+  headComponents,
+  bodyAttributes,
+  preBodyComponents,
+  body,
+  postBodyComponents
+}) => {
+  return (
+    <html {...htmlAttributes}>
         <head>
         <meta name="facebook-domain-verification" content="vf34qzv42iji3x67nfu6qgam11qv22" /> 
           <meta charSet="utf-8" />
@@ -13,23 +19,24 @@ export default class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          {this.props.headComponents}
+          {headComponents}
           <script src="https://givegab.s3.amazonaws.com/donation-widget/givegab-button.js" />
           <noscript>This website requires JavaScript.</noscript>
         </head>
-        <body {...this.props.bodyAttributes}>
-          {this.props.preBodyComponents}
+        <body {...bodyAttributes}>
+          {preBodyComponents}
           <div
             key={`body`}
             id="___gatsby"
-            dangerouslySetInnerHTML={{ __html: this.props.body }}
+            dangerouslySetInnerHTML={{ __html: body }}
           />
-          {this.props.postBodyComponents}
+          {postBodyComponents}
         </body>
-      </html>
-    );
-  }
+    </html>
+  );
 }
+
+export default HTML;
 
 HTML.propTypes = {
   htmlAttributes: PropTypes.object,

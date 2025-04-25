@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import GoogleOneTap from '../../components/auth/googleOneTap';
 import Layout from '../../components/layout/layout';
 import Score from '../../components/game/score';
 import SkaterStats from '../../components/skaterStats/skaterStats';
@@ -98,7 +97,6 @@ const Game = ({ data, location }) => {
   return (
     <Layout location={location} >
       <main className="gamepage">
-        <GoogleOneTap />
         <section className="content content-intro">
           <div className="row about-features">
             <div className="main-content">
