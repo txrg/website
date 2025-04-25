@@ -15,7 +15,6 @@ export default class HTML extends React.Component {
           />
           {this.props.headComponents}
           <script src="https://givegab.s3.amazonaws.com/donation-widget/givegab-button.js" />
-
           <noscript>This website requires JavaScript.</noscript>
         </head>
         <body {...this.props.bodyAttributes}>

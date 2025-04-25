@@ -20,7 +20,7 @@
   padding-top: 2em;
   border-top: 1px solid rgb(89,89,89);
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 2fr 1fr;
 }
 .memberpage-game > h3 {
   margin-right: 2em;
@@ -38,6 +38,14 @@
 .memberpage-game .scorecomponent-details {
   order: 2;
 }
+.memberpage-game-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.memberpage-game-award {
+  font-weight: bold;
+}
 .memberpage-game .skaterstatscomponent {
   flex: 1;
 }
@@ -53,7 +61,7 @@
     display: flex;
     flex-direction: column;
   }
-  .memberpage-game .skaterstatscomponent {
+  .memberpage-game-stats {
     margin-top: 2em;
   }
 }

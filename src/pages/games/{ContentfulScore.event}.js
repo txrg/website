@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import GoogleOneTap from '../../components/auth/googleOneTap';
 import Layout from '../../components/layout/layout';
 import Score from '../../components/game/score';
 import SkaterStats from '../../components/skaterStats/skaterStats';
@@ -19,15 +20,17 @@ const Game = ({ data, location }) => {
     teamScore2,
     teamRoster2,
   } = data.contentfulScore;
+
   const gameStats = data.allContentfulMemberStats.edges;
   const awards = data.allContentfulAward.edges;
+  const currentTeamMembers = data.allContentfulTeamMember.edges;
 
   const hasGameData = (teamRoster1 && teamRoster1.length > 0) || (teamRoster2 && teamRoster2.length > 0);
 
   const [notification, setNotification] = useState(hasGameData ? "" : "There is no data for this game.");
   const [team, setTeam] = useState(team1.name);
-  const [skater1, setSkater1] = useState(teamRoster1 && teamRoster1.length > 0 ? teamRoster1[0].name : "");
-  const [skater2, setSkater2] = useState(teamRoster2 && teamRoster2.length > 0 ? teamRoster2[0].name : "");
+  const [skater1, setSkater1] = useState(teamRoster1 && teamRoster1.length > 0 ? teamRoster1.sort((a, b) => a.name.localeCompare(b.name))[0].name : "");
+  const [skater2, setSkater2] = useState(teamRoster2 && teamRoster2.length > 0 ? teamRoster2.sort((a, b) => a.name.localeCompare(b.name))[0].name : "");
 
   useEffect(() => {
     const teamRoster = team === team1.name ? teamRoster1 : teamRoster2;
@@ -90,10 +93,12 @@ const Game = ({ data, location }) => {
   }
 
   const skaterAwards = awards.filter(({node: {member: {name}}}) => team === team1.name ? skater1 === name : skater2 === name);
+  const isRetired = currentTeamMembers.filter(({node: {member: {name}}}) => name === skaterName).length === 0;
 
   return (
     <Layout location={location} >
       <main className="gamepage">
+        <GoogleOneTap />
         <section className="content content-intro">
           <div className="row about-features">
             <div className="main-content">
@@ -111,7 +116,9 @@ const Game = ({ data, location }) => {
                   {skaterStats.length > 0 &&
                     <div className="gamepage-skater">
                       {skaterPath ? <Link to={skaterPath}><GatsbyImage alt={team === team1.name ? skater1 : skater2} sizes={headshot.sizes} image={headshot} /></Link> : <GatsbyImage alt={team === team1.name ? skater1 : skater2} sizes={headshot.sizes} image={headshot} />}
-                      <SkaterStats title={title} totalJams={totalJams} stats={skaterStats[0].node} awards={skaterAwards} />
+                      <h3>{title}</h3>
+                      {skaterAwards.length > 0 && skaterAwards.map(({node: {type, team: {title}}}) => <em key={`${title}-${type}`} className="gamepage-skater-award">&#127942; {title}: {type}</em>)}
+                      <SkaterStats isRetired={isRetired} totalJams={totalJams} stats={skaterStats[0].node} />
                     </div>
                   }
                 </div>
@@ -200,6 +207,15 @@ export const gameQuery = graphql`
           type
           whammyName
           whammyYear
+          member {
+            name
+          }
+        }
+      }
+    }
+    allContentfulTeamMember(filter: {endYear: {eq: 0}}) {
+      edges {
+        node {
           member {
             name
           }

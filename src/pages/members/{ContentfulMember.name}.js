@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import GoogleOneTap from '../../components/auth/googleOneTap';
 import Layout from '../../components/layout/layout';
 import Score from '../../components/game/score';
 import SkaterStats from '../../components/skaterStats/skaterStats';
@@ -14,14 +15,13 @@ const Member = ({ data, location }) => {
     contentfulMember: member,
   } = data;
 
-
+  const isRetired = teams.filter(({node: {endYear}}) => endYear === 0).length === 0;
   const whammyAwards = awards.filter(({node: {type}}) => type === "Whammy");
-
-  // TODO: Only show stats if retired
 
   return (
     <Layout location={location} >
       <main className="memberpage">
+        <GoogleOneTap />
         <section className="content content-intro">
           <div className="row about-features">
               <Headshots name={member.name} photos={member.photos} />
@@ -33,6 +33,7 @@ const Member = ({ data, location }) => {
                 const {game: {event, date, location, footages, gamePath, team1, team2, teamScore1, teamScore2}} = node;
                 const teamLogo1 = team1.logo && team1.logo.length > 0 ? team1.logo[team1.logo.length - 1].gatsbyImageData : team1.league.logo[team1.league.logo.length - 1].gatsbyImageData;
                 const teamLogo2 = team2.logo && team2.logo.length > 0 ? team2.logo[team2.logo.length - 1].gatsbyImageData : team2.league.logo[team2.league.logo.length - 1].gatsbyImageData;
+                const gameAwards = awards.filter(({node: {score}}) => score && score.event === node.game.event);
                 return (
                   <div className="memberpage-game">
                     <div>
@@ -46,7 +47,10 @@ const Member = ({ data, location }) => {
                         teamScore2={teamScore2}
                       />
                     </div>
-                    <SkaterStats totalJams={node.game.totalJams} stats={node} awards={awards.filter(({node: {score}}) => score && score.event === node.game.event)} />
+                    <div className="memberpage-game-stats">
+                      {gameAwards.length > 0 && gameAwards.map(({node: {type, team: {title}}}) => <em key={`${title}-${type}`} className="memberpage-game-award">&#127942; {title}: {type}</em>)}
+                      <SkaterStats isRetired={isRetired} totalJams={node.game.totalJams} stats={node} />
+                    </div>
                   </div>
                 );
               })}

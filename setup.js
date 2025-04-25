@@ -2,34 +2,40 @@ const axios = require('axios');
 const spaceImport = require('contentful-import');
 const { writeFileSync, readFileSync, existsSync } = require('fs');
 const path = require('path');
-const chalk = require('chalk');
 
 const argv = require('yargs-parser')(process.argv.slice(2));
 
-const contentfulConfigFile = argv.configFile || '.contentful.json';
+const contentfulConfigFile = argv.contentfulConfigFile || '.contentful.json';
 const contentfulConfig = getConfigFile(contentfulConfigFile);
 const spaceId = argv.spaceId || contentfulConfig.spaceId;
 const accessToken = argv.accessToken || contentfulConfig.accessToken;
 const managementToken = argv.managementToken || contentfulConfig.managementToken;
 
-// we need all 3 variables in order to set up user's space correctly
-// spaceId and accessToken (CDA token) – to write into config file,
-// and managementToken for contentful-import
-if (!spaceId || !managementToken || !accessToken) {
-  console.log('');
+const googleConfigFile = argv.googleConfigFile || '.google.json';
+const googleConfig = getConfigFile(googleConfigFile);
+const clientId = argv.clientId || googleConfig.clientId;
+const apiKey = argv.apiKey || googleConfig.apiKey;
+
+// To setup Contentful, we need all 3 variables
+// * spaceId and accessToken (CDA token) – to write into config file,
+// * and managementToken for contentful-import
+// To setup Google Auth, we need all 2 variables
+// * clientId
+// * apiKey
+if (!spaceId || !managementToken || !accessToken || !clientId || !apiKey) {
   console.log(
-    `You have to provide ${chalk.yellow('spaceId')}, ${chalk.yellow(
-      'managementToken'
-    )} and ${chalk.yellow(
-      'accessToken'
-    )} arguments in order to set up your space correctly`
+    `To setup Contentful, you have to provide
+  * spaceId'
+  * managementToken
+  * accessToken
+To setup Google Auth, you have to provide
+  * clientId
+  * apiKey
+
+Setup .contentful.json and .google.json files with configs OR run one of the following commands:
+  npm run setup -- --spaceId YOUR_SPACE --accessToken YOUR_CDA_KEY --managementToken YOUR_CMA_KEY --clientId YOUR_CLIENT_ID --apiKey YOUR_API_KEY
+  npm run setup -- --contentfulConfigFile PATH_TO_CONTENTFUL_CONFIG --googleConfigFile PATH_TO_GOOGLE_CONFIG`
   );
-  console.log(
-    `Setup .contentful.json file with Contentful config OR run one of the following commands:\n
-    npm run setup -- --spaceId YOUR_SPACE --accessToken YOUR_CDA_KEY --managementToken YOUR_CMA_KEY\n
-    npm run setup -- --configFile PATH_TO_CONTENTFUL_CONFIG` 
-  );
-  console.log('');
   process.exit(1);
 }
 
@@ -60,13 +66,7 @@ fileRequest.then(
     // `catch` section.
     spaceImport({ spaceId, managementToken, content: response.data })
       .then(() => {
-        console.log('');
-        console.log(
-          `All set! You can now run ${chalk.yellow(
-            'npm run dev'
-          )} to see it in action.`
-        );
-        console.log('');
+        console.log(`All set! You can now run 'npm run dev' to see it in action.`);
       })
       .catch(error => console.error(error));
   },
@@ -90,9 +90,7 @@ function getConfigFile(path) {
 // so that `npm run dev` connects to your space.
 function saveConfigFile({ spaceId, accessToken }) {
   const configFilePath = path.resolve(__dirname, '.contentful.json');
-  console.log('');
-  console.log('Writing config file...');
-  console.log('');
+  console.log("Writing config file...");
   writeFileSync(
     configFilePath,
     JSON.stringify(
@@ -106,6 +104,5 @@ function saveConfigFile({ spaceId, accessToken }) {
     )
   );
 
-  console.log(`Config file ${chalk.yellow(configFilePath)} written`);
-  console.log('');
+  console.log(`Config file ${configFilePath} written`);
 }

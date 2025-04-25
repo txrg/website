@@ -65,3 +65,6 @@ public
 
 # contentful config file
 .contentful.json
+
+# google auth config file
+.google.json

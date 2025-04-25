@@ -20,7 +20,26 @@ if (!spaceId || !accessToken) {
   );
 }
 
-const path = require('path');
+try {
+  // Load the google authentication config from the .google.json
+  googleAuthConfig = require('./.google');
+} catch (_) {}
+
+// Overwrite the google authentication config with environment variables if they exist
+googleAuthConfig = {
+  clientId: process.env.GOOGLE_AUTH_CLIENT_ID || googleAuthConfig.clientId,
+  apiKey: process.env.GOOGLE_AUTH_API_KEY || googleAuthConfig.apiKey,
+};
+
+const { clientId, apiKey } = googleAuthConfig;
+
+if (!clientId || !apiKey) {
+  throw new Error(
+    'Google Auth client ID and API key need to be provided.'
+  );
+}
+
+process.env.GATSBY_GOOGLE_AUTH_CLIENT_ID = clientId;
 
 module.exports = {
   siteMetadata: {
@@ -68,8 +87,7 @@ module.exports = {
         icon: `src/images/favicon-32.png`, // This path is relative to the root of the site.
       },
     },
-
     'gatsby-plugin-offline',
-    'gatsby-plugin-image'
+    'gatsby-plugin-image',
   ],
 };

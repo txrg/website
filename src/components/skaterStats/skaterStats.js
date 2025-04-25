@@ -1,6 +1,13 @@
 import React from 'react';
+import Authorized from '../auth/authorized';
 
-const SkaterStats = ({ title, totalJams, stats, awards }) => {
+const WrappedSkaterStats = ({ isRetired, totalJams, stats }) => (<>
+  {isRetired
+  ? <SkaterStats totalJams={totalJams} stats={stats}/>
+  : <Authorized><SkaterStats totalJams={totalJams} stats={stats} /></Authorized>
+  }
+</>);
+const SkaterStats = ({ totalJams, stats }) => {
   const {
     playTimeStats,
     jammerStats,
@@ -12,8 +19,6 @@ const SkaterStats = ({ title, totalJams, stats, awards }) => {
 
   return (
     <div className="skaterstatscomponent">
-      {title && <h3>{title}</h3>}
-      {awards.length > 0 && awards.map(({node: {type, team: {title}}}) => <em key={`${title}-${type}`} className="skaterstatscomponent-award">&#127942; {title}: {type}</em>)}
       <div className="skaterstatscomponent-stats">
         {playTimeStats.map(({stat, value, description}) => <Stat key={stat} stat={stat} value={value} description={description} />)}
         <h4 className="skaterstatscomponent-stats-section">Points</h4>
@@ -87,4 +92,4 @@ function getStats(stats, totalJams) {
   };
 }
 
-export default SkaterStats;
+export default WrappedSkaterStats;

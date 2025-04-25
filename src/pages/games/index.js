@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, graphql } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { graphql } from 'gatsby';
 import Layout from '../../components/layout/layout';
 import Score from '../../components/game/score';
 
