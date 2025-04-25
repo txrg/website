@@ -61,7 +61,7 @@ const Member = ({ data, location }) => {
 
 const Headshots = ({ name, photos }) => (
   <>
-    <h1 className="intro-header skaterpage">{name}</h1>
+    <h1 className="intro-header">{name}</h1>
     <div className="memberpage-headshots">
       {photos.map(({ gatsbyImageData }, i) => <GatsbyImage key={`${name}-${i}`} objectFit="contain" alt={`${name} Photo`} image={gatsbyImageData} />)}
     </div>

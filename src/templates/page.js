@@ -38,6 +38,7 @@ const PageTemplate = ({ data, location }) => {
   const subNavTeam = (
     <ul>
       <li><Link to="/teams/founders">Founders</Link></li>
+      <li><Link to="/teams/retired-numbers">Retired Numbers</Link></li>
       <li><Link to="/teams/officials">Officials</Link></li>
       <li><Link to="/teams/announcers">Announcers</Link></li>
       <li><Link to="/teams/photographers">Photographers</Link></li>

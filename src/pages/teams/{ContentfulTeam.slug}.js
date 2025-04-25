@@ -85,7 +85,7 @@ const Member = ({ defaultPhoto, role, details }) => {
         <div className="member__preview  service-content">
           <div className="member__thumbnail">
           </div>
-            <GatsbyImage alt={details.name} sizes={headshot.sizes} image={headshot} />
+          <GatsbyImage alt={details.name} sizes={headshot.sizes} image={headshot} />
           <h4 className="member__name">
             <span>{role}</span>
             {details.name}{' '}

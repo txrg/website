@@ -59,7 +59,7 @@ function getStats(stats, totalJams) {
     { stat: "Lead", value: stats.leadJammer, description: "Number of times awarded lead." },
     { stat: "No Initial Trip", value: stats.noInitialTrip, description: "Number of times did not complete an initial trip in a jam." },
     { stat: "Star Pass Received", value: stats.starPassesReceived, description: "Number of times successfully received the star." },
-    ...(stats.leadPercentage ? [{ stat: "Lead Percentage", value: stats.leadPercentage, description: "Percentage of jams awarded lead when fielded as a jammer." }] : []),
+    ...(stats.leadPercentage ? [{ stat: "Lead Percentage", value: `${stats.leadPercentage}%`, description: "Percentage of jams awarded lead when fielded as a jammer." }] : []),
   ];
 
   const points = [
