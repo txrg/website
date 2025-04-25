@@ -14,15 +14,13 @@ const managementToken = argv.managementToken || contentfulConfig.managementToken
 const googleConfigFile = argv.googleConfigFile || '.google.json';
 const googleConfig = getConfigFile(googleConfigFile);
 const clientId = argv.clientId || googleConfig.clientId;
-const apiKey = argv.apiKey || googleConfig.apiKey;
 
 // To setup Contentful, we need all 3 variables
 // * spaceId and accessToken (CDA token) – to write into config file,
 // * and managementToken for contentful-import
-// To setup Google Auth, we need all 2 variables
+// To setup Google Auth, we need 1 variable
 // * clientId
-// * apiKey
-if (!spaceId || !managementToken || !accessToken || !clientId || !apiKey) {
+if (!spaceId || !managementToken || !accessToken || !clientId) {
   console.log(
     `To setup Contentful, you have to provide
   * spaceId'
@@ -30,10 +28,9 @@ if (!spaceId || !managementToken || !accessToken || !clientId || !apiKey) {
   * accessToken
 To setup Google Auth, you have to provide
   * clientId
-  * apiKey
 
 Setup .contentful.json and .google.json files with configs OR run one of the following commands:
-  npm run setup -- --spaceId YOUR_SPACE --accessToken YOUR_CDA_KEY --managementToken YOUR_CMA_KEY --clientId YOUR_CLIENT_ID --apiKey YOUR_API_KEY
+  npm run setup -- --spaceId YOUR_SPACE --accessToken YOUR_CDA_KEY --managementToken YOUR_CMA_KEY --clientId YOUR_CLIENT_ID
   npm run setup -- --contentfulConfigFile PATH_TO_CONTENTFUL_CONFIG --googleConfigFile PATH_TO_GOOGLE_CONFIG`
   );
   process.exit(1);

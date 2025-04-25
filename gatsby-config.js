@@ -28,14 +28,13 @@ try {
 // Overwrite the google authentication config with environment variables if they exist
 googleAuthConfig = {
   clientId: process.env.GOOGLE_AUTH_CLIENT_ID || googleAuthConfig.clientId,
-  apiKey: process.env.GOOGLE_AUTH_API_KEY || googleAuthConfig.apiKey,
 };
 
-const { clientId, apiKey } = googleAuthConfig;
+const { clientId } = googleAuthConfig;
 
-if (!clientId || !apiKey) {
+if (!clientId) {
   throw new Error(
-    'Google Auth client ID and API key need to be provided.'
+    'Google Auth client ID need to be provided.'
   );
 }
 
