@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import ReactImageGallery from 'react-image-gallery';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../../components/layout/layout';
 import Score from '../../components/game/score';
@@ -59,14 +60,24 @@ const Member = ({ data, location }) => {
   );
 };
 
-const Headshots = ({ name, photos }) => (
-  <>
-    <h1 className="intro-header">{name}</h1>
-    <div className="memberpage-headshots">
-      {photos.map(({ gatsbyImageData }, i) => <GatsbyImage key={`${name}-${i}`} objectFit="contain" alt={`${name} Photo`} image={gatsbyImageData} />)}
-    </div>
-  </>
-);
+const Headshots = ({ name, photos }) => {
+  const items = photos.reverse().map(({gatsbyImageData: {images: {fallback: {src}}}}) => ({ original: src, thumbnail: src }));
+  return (
+    <>
+      <h1 className="intro-header">{name}</h1>
+      <div className="memberpage-headshots">
+        {photos.length < 2 
+          ? photos.map(({ gatsbyImageData }, i) => <GatsbyImage key={`${name}-${i}`} objectFit="contain" alt={`${name} Photo`} image={gatsbyImageData} />)
+          : <ReactImageGallery
+              items={items}
+              showFullscreenButton={false}
+              showPlayButton={false}
+            />
+        }
+      </div>
+    </>
+  );
+};
 
 const Teams = ({ teams, positions }) => {
   let travelTeamHistory = [];
@@ -191,7 +202,7 @@ export const memberQuery = graphql`
       contentfulMember(name: {eq: $name}) {
         name
         photos {
-          gatsbyImageData(layout: CONSTRAINED, width: 400, height: 400)
+          gatsbyImageData(layout: CONSTRAINED, height: 400)
         }
       }
       allContentfulTeamMember(filter: {member: {name: {eq: $name}}}) {

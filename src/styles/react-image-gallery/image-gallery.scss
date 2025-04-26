@@ -1,0 +1,221 @@
+@use "sass:color";
+
+$ig-small-screen: 768px !default;
+$ig-xsmall-screen: 480px !default;
+$ig-white: #fff !default;
+$ig-black: #000 !default;
+$ig-blue: #337ab7 !default;
+$ig-background-black: rgba(0, 0, 0, 0.4) !default;
+$ig-transparent: rgba(0, 0, 0, 0) !default;
+$ig-shadow: 0 2px 2px color.adjust($ig-black, $lightness: 10%);
+
+@mixin vendor-prefix($name, $value) {
+  @each $vendor in ("-webkit-", "-moz-", "-ms-", "-o-", "") {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
+// SVG ICON STYLES
+.image-gallery-icon {
+  color: $ig-white;
+  transition: all 0.3s ease-out;
+  appearance: none;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  z-index: 4;
+  filter: drop-shadow($ig-shadow);
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: $ig-blue;
+      .image-gallery-svg {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &:focus {
+    // a11y support
+    outline: 2px solid $ig-blue;
+  }
+}
+
+.image-gallery-using-mouse {
+  .image-gallery-icon {
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.image-gallery-left-nav,
+.image-gallery-right-nav {
+  height: 120px;
+  padding: 0px 10px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  .image-gallery-svg {
+    height: 120px;
+    width: 60px;
+  }
+
+  &[disabled] {
+    cursor: disabled;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  @media (max-width: $ig-small-screen) {
+    height: 72px;
+
+    .image-gallery-svg {
+      height: 72px;
+      width: 36px;
+    }
+  }
+
+  @media (max-width: $ig-xsmall-screen) {
+    height: 48px;
+
+    .image-gallery-svg {
+      height: 48px;
+      width: 24px;
+    }
+  }
+}
+
+.image-gallery-left-nav {
+  left: 0;
+}
+
+.image-gallery-right-nav {
+  right: 0;
+}
+// End of Icon styles
+
+.image-gallery {
+  @include vendor-prefix("user-select", none);
+  -webkit-tap-highlight-color: $ig-transparent;
+  position: relative;
+
+  @media (max-width: $ig-small-screen) {
+    width: 100%;
+  }
+}
+
+.image-gallery-content {
+  position: relative;
+  line-height: 0;
+  top: 0;
+
+  .image-gallery-slide .image-gallery-image {
+    height: 400px;
+  }
+}
+
+.image-gallery-slide-wrapper {
+  position: relative;
+}
+
+.image-gallery-slides {
+  line-height: 0;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  text-align: center;
+  touch-action: none; // prevent scrolling when touching gallery
+}
+
+.image-gallery-slide {
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  &.image-gallery-center {
+    position: relative;
+  }
+
+  .image-gallery-image {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.image-gallery-thumbnails-wrapper {
+  position: relative;
+
+  &.thumbnails-swipe-horizontal {
+    touch-action: pan-y;
+  }
+}
+
+.image-gallery-thumbnails {
+  overflow: hidden;
+  padding: 5px 0;
+
+  @media (max-width: $ig-small-screen) {
+    padding: 3px 0;
+  }
+
+  .image-gallery-thumbnails-container {
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+  }
+}
+
+.image-gallery-thumbnail {
+  display: inline-block;
+  border: 4px solid transparent;
+  transition: border 0.3s ease-out;
+  background: transparent;
+  padding: 0;
+  height: 100px;
+
+  @media (max-width: $ig-small-screen) {
+    border: 3px solid transparent;
+  }
+
+  + .image-gallery-thumbnail {
+    margin-left: 2px;
+  }
+
+  .image-gallery-thumbnail-inner {
+    display: block;
+    position: relative;
+    height: 100%;
+  }
+
+  .image-gallery-thumbnail-image {
+    vertical-align: middle;
+    height: 100%;
+    max-width: 100px;
+    line-height: 0;
+  }
+
+  &.active,
+  &:focus {
+    outline: none;
+    border: 4px solid $ig-blue;
+
+    @media (max-width: $ig-small-screen) {
+      border: 3px solid $ig-blue;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      outline: none;
+      border: 4px solid $ig-blue;
+
+      @media (max-width: $ig-small-screen) {
+        border: 3px solid $ig-blue;
+      }
+    }
+  }
+}

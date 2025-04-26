@@ -5,7 +5,6 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 const RetiredNumbers = ({ data, location }) => {
     const teams = data.allContentfulRetiredJerseyNumbers.group
-    console.log({ teams });
     return (
         <Layout location={location}>
             <main className="retirednumberspage">
