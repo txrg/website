@@ -8,15 +8,15 @@ import SkaterStats from '../../components/skaterStats/skaterStats';
 
 const Member = ({ data, location }) => {
   const {
-    allContentfulAward: { edges: awards },
     allContentfulMemberStats: { edges: stats },
     allContentfulTeamLeader: { edges: positions },
     allContentfulTeamMember: { edges: teams },
     contentfulMember: member,
+    scoreAwards: { edges: scoreAwards },
+    whammyAwards: { group: whammyAwards },
   } = data;
 
   const isRetired = teams.filter(({node: {endYear}}) => endYear === 0).length === 0;
-  const whammyAwards = awards.filter(({node: {type}}) => type === "Whammy");
 
   return (
     <Layout location={location} >
@@ -32,7 +32,7 @@ const Member = ({ data, location }) => {
                 const {game: {event, date, location, footages, gamePath, team1, team2, teamScore1, teamScore2}} = node;
                 const teamLogo1 = team1.logo && team1.logo.length > 0 ? team1.logo[team1.logo.length - 1].gatsbyImageData : team1.league.logo[team1.league.logo.length - 1].gatsbyImageData;
                 const teamLogo2 = team2.logo && team2.logo.length > 0 ? team2.logo[team2.logo.length - 1].gatsbyImageData : team2.league.logo[team2.league.logo.length - 1].gatsbyImageData;
-                const gameAwards = awards.filter(({node: {score}}) => score && score.event === node.game.event);
+                const gameAwards = scoreAwards.filter(({node: {score}}) => score.event === node.game.event);
                 return (
                   <div className="memberpage-game">
                     <div>
@@ -161,39 +161,17 @@ function sortHistory(a, b) {
   }
 }
 
-const Whammys = ({ awards }) => {
-  const whammys = awards.reduce((list, { node }) => {
-    if (!list[node.whammyYear]) {
-      list[node.whammyYear] = { league: [], team: [] };
-    }
-
-    if (node.team) {
-      list[node.whammyYear].team.push(`${node.team.title}: ${node.whammyName}`);
-    } else {
-      list[node.whammyYear].league.push(`${node.whammyName}`);
-    }
-
-    return list;
-  }, {});
-
-  const years = Object.keys(whammys).sort().reverse();
-  return (
-    <div className="memberpage-whammys">
-      {years.length > 0 &&
-        <>
-          <h2>The Whammy Awards</h2>
-          {years.map(year => (
-            <div key={`whammy-${year}`}>
-              <h3>{year}</h3>
-              {whammys[year].league.map(award => <div key={`whammy-${year}-league-${award}`}>{award}</div>)}
-              {whammys[year].team.map(award => <div key={`whammy-${year}-team-${award}`}>{award}</div>)}
-            </div>
-          ))}
-        </>
-      }
-    </div>
-  );
-};
+const Whammys = ({ awards }) => (
+  <div className="memberpage-whammys">
+    <h2>The Whammy Awards</h2>
+    <div>{awards.map(({ fieldValue: year, edges }) => (
+      <div key={`whammy-${year}`}>
+        <h3>{year}</h3>
+        {edges.map(({node: {team, whammyName, whammyYear}}) => <div key={`whammy-${year}-${whammyName}`}>{team && `${team.title}: `}{whammyName}</div>)}
+      </div>
+    ))}</div>
+  </div>
+);
 
 export default Member;
 
@@ -302,19 +280,31 @@ export const memberQuery = graphql`
           }
         }
       }
-      allContentfulAward(filter: {member: {name: {eq: $name}}}, sort: [{score: {date: DESC}}]) {
+      scoreAwards: allContentfulAward(filter: {member: {name: {eq: $name}}, type: {ne: "Whammy"}}, sort: [{score: {date: DESC}}]) {
         edges {
           node {
             score {
               event
-              footages
             }
             team {
               title
             }
             type
-            whammyName
-            whammyYear
+          }
+        }
+      }
+      whammyAwards: allContentfulAward(filter: {member: {name: {eq: $name}}, type: {eq: "Whammy"}}, sort: [{whammyYear: DESC}, {team: {title: ASC}}, {whammyName: ASC}]) {
+        group(field: { whammyYear: SELECT }) {
+          fieldValue
+          edges {
+            node {
+              team {
+                title
+              }
+              type
+              whammyName
+              whammyYear
+            }
           }
         }
       }

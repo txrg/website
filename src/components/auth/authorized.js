@@ -10,6 +10,7 @@ const Authorized = ({ action, children }) => {
     useEffect(() => {
         if (cookies['txrg_state']) {
             axios.get(`https://oauth2.googleapis.com/tokeninfo?access_token=${cookies.txrg_state}`)
+            // TODO: options https-only and secure
                 .then(({data}) => {
                     const isVerified = data.email_verified === "true";
                     if (isVerified) {
