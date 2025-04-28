@@ -3,19 +3,23 @@ import { Link, graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../../components/layout/layout';
 
-const Team = ({ data }) => {
+const Team = ({ pageContext: { slug }, data, location }) => {
   const team = data.contentfulTeam;
   const leaders = data.currentLeaders? data.currentLeaders.edges : [];
-  const repeatedMembers = leaders.reduce((agg, {node: {member: {name}}}) => ({...agg, [name]: name}), {});
-  const currentMembers = data.currentMembers ? data.currentMembers.edges.filter(({node: {member: {name}}}) => {
-    const isRepeated = repeatedMembers[name] != null;
-    repeatedMembers[name] = name;
-    return !isRepeated;
-  }) : [];
+  const leaderNames = leaders.map(({node: {member: {name}}}) => name);
+
+  const currentMembers = data.currentMembers.group.reduce((members, { fieldValue, edges }) => {
+    const leaderIndex = leaderNames.indexOf(fieldValue);
+    if (leaderIndex > -1) {
+      return members;
+    }
+    return [...members, edges[0]];
+  }, []);
+
   const retiredMembers = data.retiredMembers ? data.retiredMembers.edges : [];
   let TeamPage;
 
-  switch(team.slug) {
+  switch(slug) {
     case "founders":
       TeamPage = FoundersPage;
       break;
@@ -30,7 +34,7 @@ const Team = ({ data }) => {
   }
 
   return (
-    <Layout>
+    <Layout location={location}>
       <main className="main--team">
         <section className="content content-intro">
           <div className="row about-features">
@@ -54,25 +58,25 @@ const Team = ({ data }) => {
 
 const FoundersPage = ({ retiredMembers }) => (
   <ul className="member-list">
-    {retiredMembers.map(({node: {member, photo, endYear}}) => <Member key={`${member.name}-${endYear}`} defaultPhoto={photo} details={member} />)}
+    {retiredMembers.map(({node: {teamMember, member, photo,}}) => <Member key={teamMember} defaultPhoto={photo} details={member} />)}
   </ul>
 );
 const PhotographersPage = () => (null);
 const TravelTeamPage = ({ leaders, currentMembers }) => (
   <ul className="member-list">
-    {leaders.map(({node: {role, member, photo, endYear}}) => <Member key={`${member.name}-${endYear}`} defaultPhoto={photo} role={role} details={member} />)}
-    {currentMembers.map(({node: {member, photo, endYear}}) => <Member key={`${member.name}-${endYear}`} defaultPhoto={photo} details={member} />)}
+    {leaders.map(({node: {teamLeader, role, member, photo}}) => <Member key={teamLeader} defaultPhoto={photo} role={role} details={member} />)}
+    {currentMembers.map(({node: {teamMember, member, photo}}) => <Member key={teamMember} defaultPhoto={photo} details={member} />)}
   </ul>
 );
 const DefaultPage = ({ leaders, currentMembers, retiredMembers }) => (
   <>
     <ul className="member-list">
-      {leaders.map(({node: {role, member, photo, endYear}}) => <Member key={`${member.name}-${endYear}`} defaultPhoto={photo} role={role} details={member} />)}
-      {currentMembers.map(({node: {member, photo, endYear}}) => <Member key={`${member.name}-${endYear}`} defaultPhoto={photo} details={member} />)}
+      {leaders.map(({node: {teamLeader, role, member, photo}}) => <Member key={teamLeader} defaultPhoto={photo} role={role} details={member} />)}
+      {currentMembers.map(({node: {teamMember, member, photo}}) => <Member key={teamMember} defaultPhoto={photo} details={member} />)}
     </ul>
     <h1 className="intro-header" style={{marginTop: "1em"}}>Retirees</h1>
     <ul className="member-list">
-      {retiredMembers.map(({node: {member, photo, endYear}}) => <Member key={`${member.name}-${endYear}`} defaultPhoto={photo} details={member} />)}
+      {retiredMembers.map(({node: {teamMember, member, photo}}) => <Member key={teamMember} defaultPhoto={photo} details={member} />)}
     </ul>
   </>
 );
@@ -102,7 +106,6 @@ export default Team;
 export const teamQuery = graphql`
   query TeamBySlug($slug: String! ) {
     contentfulTeam(slug: {eq: $slug}) {
-      slug
       title
       pageContent {
         childMarkdownRemark {
@@ -113,48 +116,45 @@ export const teamQuery = graphql`
     currentLeaders: allContentfulTeamLeader(filter: {endYear: {eq: 0}, team: {slug: {eq: $slug}}}, sort: [{role: ASC}, {member: {name: ASC}}]) {
       edges {
         node {
+          teamLeader
           member {
             name
             photos {
               gatsbyImageData(layout: CONSTRAINED, width: 400, height: 400)
             }
             skaterPath: gatsbyPath(filePath: "/members/{ContentfulMember.name}")
-          }
-          role
-          team {
-            slug
           }
           photo {
             gatsbyImageData
           }
-          startYear
-          endYear
+          role
         }
       }
     }
-    currentMembers: allContentfulTeamMember(filter: {endYear: {eq: 0}, team: {slug: {eq: $slug}}}, sort: [{member: {name: ASC}}]) {
-      edges {
-        node {
-          member {
-            name
-            photos {
+    currentMembers: allContentfulTeamMember(filter: {endYear: {eq: 0}, team: {slug: {eq: $slug}}}, sort: [{member: {name: ASC}}, {startYear: DESC}]) {
+      group(field: {member: {name: SELECT}}) {
+        fieldValue
+        edges {
+          node {
+            teamMember
+            member {
+              name
+              photos {
+                gatsbyImageData(layout: CONSTRAINED, width: 400, height: 400)
+              }
+              skaterPath: gatsbyPath(filePath: "/members/{ContentfulMember.name}")
+            }
+            photo {
               gatsbyImageData(layout: CONSTRAINED, width: 400, height: 400)
             }
-            skaterPath: gatsbyPath(filePath: "/members/{ContentfulMember.name}")
           }
-          team {
-            slug
-          }
-          photo {
-            gatsbyImageData(layout: CONSTRAINED, width: 400, height: 400)
-          }
-          endYear
         }
       }
     }
     retiredMembers: allContentfulTeamMember(filter: {endYear: {gt: 0}, team: {slug: {eq: $slug}}}, sort: [{member: {name: ASC}}]) {
       edges {
         node {
+          teamMember
           member {
             name
             photos {
@@ -162,13 +162,9 @@ export const teamQuery = graphql`
             }
             skaterPath: gatsbyPath(filePath: "/members/{ContentfulMember.name}")
           }
-          team {
-            slug
-          }
           photo {
             gatsbyImageData(layout: CONSTRAINED, width: 400, height: 400)
           }
-          endYear
         }
       }
     }
