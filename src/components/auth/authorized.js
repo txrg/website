@@ -28,7 +28,7 @@ const Authorized = ({ action, children }) => {
 
     const onLoginSuccess = (setCookie, removeCookie, setIsAuthorized) => res => {
         if (res.hd === "texasrollergirls.org" && res.expires_in > 0) {
-            setCookie('txrg_state', res.access_token, {maxAge: res.expires_in});
+            setCookie('txrg_state', res.access_token, {maxAge: res.expires_in, path: '/'});
         } else {
             removeCookie('txrg_state');
             setIsAuthorized(false);
