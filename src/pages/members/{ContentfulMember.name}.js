@@ -61,7 +61,7 @@ const Member = ({ data, location }) => {
 };
 
 const Headshots = ({ name, photos }) => {
-  const items = photos.reverse().map(({gatsbyImageData: {images: {fallback: {src}}}}) => ({ original: src, thumbnail: src }));
+  const items = photos.slice().reverse().map(({gatsbyImageData: {images: {fallback: {src}}}}) => ({ original: src, thumbnail: src }));
   return (
     <>
       <h1 className="intro-header">{name}</h1>
@@ -164,10 +164,10 @@ function sortHistory(a, b) {
 const Whammys = ({ awards }) => (
   <div className="memberpage-whammys">
     <h2>The Whammy Awards</h2>
-    <div>{awards.map(({ fieldValue: year, edges }) => (
-      <div key={`whammy-${year}`}>
-        <h3>{year}</h3>
-        {edges.map(({node: {team, whammyName, whammyYear}}) => <div key={`whammy-${year}-${whammyName}`}>{team && `${team.title}: `}{whammyName}</div>)}
+    <div>{awards.slice(0).reverse().map(({ fieldValue: whammyYear, edges }) => (
+      <div key={`whammy-${whammyYear}`}>
+        <h3>{whammyYear}</h3>
+        {edges.map(({node: {team, whammyName}}) => <div key={`whammy-${whammyYear}-${whammyName}`}>{team && `${team.title}: `}{whammyName}</div>)}
       </div>
     ))}</div>
   </div>
@@ -293,7 +293,7 @@ export const memberQuery = graphql`
           }
         }
       }
-      whammyAwards: allContentfulAward(filter: {member: {name: {eq: $name}}, type: {eq: "Whammy"}}, sort: [{whammyYear: DESC}, {team: {title: ASC}}, {whammyName: ASC}]) {
+      whammyAwards: allContentfulAward(filter: {member: {name: {eq: $name}}, type: {eq: "Whammy"}}, sort: [{team: {title: ASC}}, {whammyName: ASC}]) {
         group(field: { whammyYear: SELECT }) {
           fieldValue
           edges {
