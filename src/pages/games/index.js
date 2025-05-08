@@ -105,6 +105,7 @@ const ScoresPage = ({ data, location }) => {
                         date,
                         event,
                         footages,
+                        footageIsPrivate,
                         gamePath,
                         location,
                         team1,
@@ -120,7 +121,7 @@ const ScoresPage = ({ data, location }) => {
 
                         return (<div key={ event } className="scorespage-result">
                             <Score
-                                title={event} date={date} location={location} gamePath={hasStats ? gamePath : null} footages={footages}
+                                title={event} date={date} location={location} gamePath={hasStats ? gamePath : null} footages={footages} footageIsPrivate={footageIsPrivate}
                                 teamName1={team1.name} teamLogo1={teamLogo1.gatsbyImageData} teamScore1={teamScore1}
                                 teamName2={team2.name} teamLogo2={teamLogo2.gatsbyImageData} teamScore2={teamScore2}
                             />
@@ -141,6 +142,7 @@ export const query = graphql`
                     date(formatString: "MMMM Do, YYYY h:mm A")
                     location
                     footages
+                    footageIsPrivate
                     gamePath: gatsbyPath(filePath: "/games/{ContentfulScore.event}")
                     team1 {
                         name

@@ -10,6 +10,7 @@ const Game = ({ data, location }) => {
     date,
     event,
     footages,
+    footageIsPrivate,
     totalJams,
     location: gameLocation,
     team1,
@@ -118,7 +119,7 @@ const Game = ({ data, location }) => {
             <div className="main-content">
               <h1 className="intro-header gamepage">{event}</h1>
               <Score
-                date={date} location={gameLocation} footages={footages} setTeam={setTeam}
+                date={date} location={gameLocation} footages={footages} footageIsPrivate={footageIsPrivate} setTeam={setTeam}
                 teamName1={team1.name} teamLogo1={teamLogo1.gatsbyImageData} teamScore1={teamScore1}
                 teamName2={team2.name} teamLogo2={teamLogo2.gatsbyImageData} teamScore2={teamScore2}
               />
@@ -176,6 +177,7 @@ export const gameQuery = graphql`
       date(formatString: "MMMM Do, YYYY h:mm A")
       location
       footages
+      footageIsPrivate
       totalJams
       team1 {
           name

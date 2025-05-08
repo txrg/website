@@ -29,7 +29,7 @@ const Member = ({ data, location }) => {
                 {whammyAwards.length > 0 && <Whammys awards={whammyAwards} />}
               </div>
               {stats.map(({node}) => {
-                const {game: {event, date, location, footages, gamePath, team1, team2, teamScore1, teamScore2}} = node;
+                const {game: {event, date, location, footages, footageIsPrivate, gamePath, team1, team2, teamScore1, teamScore2}} = node;
                 const teamLogo1 = team1.logo && team1.logo.length > 0 ? team1.logo[team1.logo.length - 1].gatsbyImageData : team1.league.logo[team1.league.logo.length - 1].gatsbyImageData;
                 const teamLogo2 = team2.logo && team2.logo.length > 0 ? team2.logo[team2.logo.length - 1].gatsbyImageData : team2.league.logo[team2.league.logo.length - 1].gatsbyImageData;
                 const gameAwards = scoreAwards.filter(({node: {score}}) => score.event === node.game.event);
@@ -37,7 +37,7 @@ const Member = ({ data, location }) => {
                   <div key={event} className="memberpage-game">
                     <div>
                       <Score
-                        title={event} date={date} location={location} footages={footages} gamePath={gamePath}
+                        title={event} date={date} location={location} footages={footages} footageIsPrivate={footageIsPrivate} gamePath={gamePath}
                         teamName1={team1.name}
                         teamLogo1={teamLogo1}
                         teamScore1={teamScore1}
@@ -221,6 +221,7 @@ export const memberQuery = graphql`
               date(formatString: "MMMM Do, YYYY h:mm A")
               location
               footages
+              footageIsPrivate
               gamePath: gatsbyPath(filePath: "/games/{ContentfulScore.event}")
               totalJams
               team1 {

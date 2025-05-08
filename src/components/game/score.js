@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import Authorized from '../auth/authorized';
 
 const Score = ({
     title,
@@ -8,6 +9,7 @@ const Score = ({
     location,
     gamePath,
     footages,
+    footageIsPrivate,
     setTeam,
     teamName1,
     teamLogo1,
@@ -16,6 +18,7 @@ const Score = ({
     teamLogo2,
     teamScore2
 }) => {
+    console.log({ footageIsPrivate });
     return (<div className="scorecomponent">
         {title && <div className="scorecomponent-title">{ title }</div>}
         <div className="scorecomponent-container">
@@ -24,7 +27,13 @@ const Score = ({
                 <div>{ location }</div>
                 <div className="scorecomponent-event-links">
                     {gamePath && <Link to={gamePath}>&#128203;</Link>}
-                    {footages && footages.map((url, i) => <a key={i} href={url} target="_blank" rel="noopener noreferrer" aria-label="footage link">&#127909;</a>)}
+                    {footageIsPrivate === "True" ?
+                        <Authorized action="View Footage">
+                            {footages && footages.map((url, i) => <a key={i} href={url} target="_blank" rel="noopener noreferrer" aria-label="footage link">&#127909;</a>)}
+                        </Authorized>
+                    :
+                        <>{footages && footages.map((url, i) => <a key={i} href={url} target="_blank" rel="noopener noreferrer" aria-label="footage link">&#127909;</a>)}</>
+                    }
                 </div>
             </div>
                 <div className="scorecomponent-details-container">
