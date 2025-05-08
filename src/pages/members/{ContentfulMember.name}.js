@@ -105,8 +105,6 @@ const Teams = ({ teams, positions }) => {
     }
   }
 
-  travelTeamHistory = travelTeamHistory.sort(sortHistory)
-
   for (let i = 0; i < positions.length; i++) {
     const position = positions[i].node;
     let teamName = position.team.title;
@@ -121,22 +119,27 @@ const Teams = ({ teams, positions }) => {
       endYear: position.endYear === 9999 ? "unknown" : position.endYear,
     };
 
-    homeTeamHistory.push(details);
+    if (position.travelTeam) {
+      travelTeamHistory.push(details);
+    } else {
+      homeTeamHistory.push(details);
+    }
   }
 
+  travelTeamHistory = travelTeamHistory.sort(sortHistory)
   homeTeamHistory = homeTeamHistory.sort(sortHistory);
 
   return (
     <div className="memberpage-teams">
       {travelTeamHistory.map((details) => (
-        <div key={`${details.teamName}-${details.startYear}-${details.endYear}`} className="memberpage-team">
-          <h2>{details.teamName}</h2>
+        <div key={`${details.teamName}${details.position && "-" + details.position}-${details.startYear}-${details.endYear}`} className="memberpage-team">
+          <h2>{details.teamName}{details.position && ` - ${details.position}`}</h2>
           <div>Seasons: {details.startYear} - {details.endYear === 0 ? <>present</> : <>{details.endYear}</>}</div>
-          <div>Skater Numbers: {details.numbers.join(", ")}</div>
+          {details.numbers && <div>Skater Numbers: {details.numbers.join(", ")}</div>}
         </div>
       ))}
       {homeTeamHistory.map((details) => (
-        <div key={`${details.teamName}-${details.startYear}-${details.endYear}`} className="memberpage-team">
+        <div key={`${details.teamName}${details.position && "-" + details.position}-${details.startYear}-${details.endYear}`} className="memberpage-team">
           <h2>{details.teamName}{details.position && ` - ${details.position}`}</h2>
           <div>Seasons: {details.startYear} - {details.endYear === 0 ? <>present</> : <>{details.endYear}</>}</div>
           {details.numbers && <div>Skater Numbers: {details.numbers.join(", ")}</div>}
