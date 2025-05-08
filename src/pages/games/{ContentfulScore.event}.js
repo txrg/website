@@ -27,11 +27,21 @@ const Game = ({ data, location }) => {
   const hasGameData = (teamRoster1 && teamRoster1.length > 0) || (teamRoster2 && teamRoster2.length > 0);
 
   const [notification, setNotification] = useState(hasGameData ? "" : "There is no data for this game.");
-  const [team, setTeam] = useState(team1.name);
-  const [skater1, setSkater1] = useState(teamRoster1 && teamRoster1.length > 0 ? teamRoster1.sort((a, b) => a.name.localeCompare(b.name))[0].name : "");
-  const [skater2, setSkater2] = useState(teamRoster2 && teamRoster2.length > 0 ? teamRoster2.sort((a, b) => a.name.localeCompare(b.name))[0].name : "");
+
+  const params = new URLSearchParams(location.search);
+  const initialTeam = params.get('team') || team1.name;
+  const initialSkater1 = params.get('team') === team1.name && params.get('skater') ? params.get('skater') : (teamRoster1 && teamRoster1.length > 0 ? teamRoster1.sort((a, b) => a.name.localeCompare(b.name))[0].name : "");
+  const initialSkater2 = params.get('team') === team2.name && params.get('skater') ? params.get('skater') : (teamRoster2 && teamRoster2.length > 0 ? teamRoster2.sort((a, b) => a.name.localeCompare(b.name))[0].name : "");
+
+  const [team, setTeam] = useState(initialTeam);
+  const [skater1, setSkater1] = useState(initialSkater1);
+  const [skater2, setSkater2] = useState(initialSkater2);
 
   useEffect(() => {
+    if (typeof window !== undefined) {
+      window.history.pushState({}, "", `${location.pathname}?team=${team}`);
+    }
+
     const teamRoster = team === team1.name ? teamRoster1 : teamRoster2;
     const teamSkaters = teamRoster ? teamRoster.map(({name}) => name) : [];
     const teamStats = gameStats.filter(({node: {skater: {member: {name}}}}) => teamSkaters.includes(name));
@@ -47,10 +57,16 @@ const Game = ({ data, location }) => {
   }, [team]);
 
   useEffect(() => {
+    const skaterName = team === team1.name ? skater1 : skater2;
+
+    if (typeof window !== undefined && skaterName) {
+      window.history.pushState({}, "", `${location.pathname}?team=${team}&skater=${skaterName}`);
+    }
+
     const teamRoster = team === team1.name ? teamRoster1 : teamRoster2;
     const teamSkaters = teamRoster ? teamRoster.map(({name}) => name) : [];
     const teamStats = gameStats.filter(({node: {skater: {member: {name}}}}) => teamSkaters.includes(name));
-    const skaterStats = gameStats.filter(({node: {skater: {member: {name}}}}) => team === team1.name ? name === skater1 : name === skater2);
+    const skaterStats = gameStats.filter(({node: {skater: {member: {name}}}}) => name === skaterName);
 
     if (teamStats.length > 0 && skaterStats.length === 0) {
       setNotification("There are no stats for this skater for this game.");
