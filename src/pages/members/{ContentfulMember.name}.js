@@ -167,7 +167,7 @@ const Whammys = ({ awards }) => (
     <div>{awards.slice(0).reverse().map(({ fieldValue: whammyYear, edges }) => (
       <div key={`whammy-${whammyYear}`}>
         <h3>{whammyYear}</h3>
-        {edges.map(({node: {team, whammyName}}) => <div key={`whammy-${whammyYear}-${whammyName}`}>{team && `${team.title}: `}{whammyName}</div>)}
+        {edges.map(({node: {whammyCategory, whammyName}}) => <div key={`whammy-${whammyYear}-${whammyCategory}-${whammyName}`}>{`${whammyCategory}: `}{whammyName}</div>)}
       </div>
     ))}</div>
   </div>
@@ -293,15 +293,13 @@ export const memberQuery = graphql`
           }
         }
       }
-      whammyAwards: allContentfulAward(filter: {member: {name: {eq: $name}}, type: {eq: "Whammy"}}, sort: [{team: {title: ASC}}, {whammyName: ASC}]) {
+      whammyAwards: allContentfulAward(filter: {member: {name: {eq: $name}}, type: {eq: "Whammy"}}, sort: [{whammyCategory: ASC}, {whammyName: ASC}]) {
         group(field: { whammyYear: SELECT }) {
           fieldValue
           edges {
             node {
-              team {
-                title
-              }
               type
+              whammyCategory
               whammyName
               whammyYear
             }

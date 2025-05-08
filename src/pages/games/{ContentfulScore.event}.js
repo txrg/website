@@ -203,8 +203,6 @@ export const gameQuery = graphql`
             title
           }
           type
-          whammyName
-          whammyYear
           member {
             name
           }
