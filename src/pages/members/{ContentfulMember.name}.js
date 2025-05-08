@@ -34,7 +34,7 @@ const Member = ({ data, location }) => {
                 const teamLogo2 = team2.logo && team2.logo.length > 0 ? team2.logo[team2.logo.length - 1].gatsbyImageData : team2.league.logo[team2.league.logo.length - 1].gatsbyImageData;
                 const gameAwards = scoreAwards.filter(({node: {score}}) => score.event === node.game.event);
                 return (
-                  <div className="memberpage-game">
+                  <div key={event} className="memberpage-game">
                     <div>
                       <Score
                         title={event} date={date} location={location} footages={footages} gamePath={gamePath}

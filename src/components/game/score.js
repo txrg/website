@@ -16,7 +16,7 @@ const Score = ({
     teamLogo2,
     teamScore2
 }) => {
-    return (<div key={ title } className="scorecomponent">
+    return (<div className="scorecomponent">
         {title && <div className="scorecomponent-title">{ title }</div>}
         <div className="scorecomponent-container">
             <div className="scorecomponent-event">
