@@ -48,20 +48,22 @@ const Authorized = ({ action, children }) => {
     return <>
         {isAuthorized ?
         <div>{children}</div>:
-        <button
-            onClick={login}
-            style={{
-                backgroundColor: '#4285F4',
-                color: 'white',
-                padding: '10px 20px',
-                border: 'none',
-                borderRadius: '5px',
-                cursor: 'pointer',
-                whiteSpace: 'normal',
-                height: '8.4rem',
-                lineHeight: '2rem',
-            }}
-        >Texas Rollergirls Sign-in<br/>to<br/>{action ? action : "Access"}</button>
+        <div>
+            <button
+                onClick={login}
+                style={{
+                    backgroundColor: '#4285F4',
+                    color: 'white',
+                    padding: '10px 20px',
+                    border: 'none',
+                    borderRadius: '5px',
+                    cursor: 'pointer',
+                    whiteSpace: 'normal',
+                    height: '8.4rem',
+                    lineHeight: '2rem',
+                }}
+            >Texas Rollergirls Sign-in<br/>to<br/>{action ? action : "Access"}</button>
+        </div>
         }
     </>;
 };

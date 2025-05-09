@@ -18,7 +18,6 @@ const Score = ({
     teamLogo2,
     teamScore2
 }) => {
-    console.log({ footageIsPrivate });
     return (<div className="scorecomponent">
         {title && <div className="scorecomponent-title">{ title }</div>}
         <div className="scorecomponent-container">
