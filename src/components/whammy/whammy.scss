@@ -1,0 +1,24 @@
+.whammy {
+    display: flex;
+}
+.whammy-filter-selected {
+    border-radius: 5px;
+    background-color: rgb(91.7, 0, 0);
+    color: white;
+    padding: 1rem;
+}
+.whammy-filter-year div {
+    margin-right: 2rem;
+    padding: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.whammy-category {
+    margin-bottom: 2rem;
+}
+.whammy-award, .whammy-recipient {
+    display: inline-block;
+}
+.whammy-award {
+    width: 400px;
+}

@@ -22,7 +22,7 @@ const Game = ({ data, location }) => {
   } = data.contentfulScore;
 
   const gameStats = data.allContentfulMemberStats.edges;
-  const awards = data.allContentfulAward.edges;
+  const awards = data.allContentfulScoreMvp.edges;
   const currentTeamMembers = data.allContentfulTeamMember.edges;
 
   const hasGameData = (teamRoster1 && teamRoster1.length > 0) || (teamRoster2 && teamRoster2.length > 0);
@@ -108,7 +108,7 @@ const Game = ({ data, location }) => {
     headshot = skaterStats[0].node.skater.member.photos[skaterStats[0].node.skater.member.photos.length - 1].gatsbyImageData;
   }
 
-  const skaterAwards = awards.filter(({node: {member: {name}}}) => team === team1.name ? skater1 === name : skater2 === name);
+  const skaterAwards = awards.filter(({node: {recipient: {name}}}) => team === team1.name ? skater1 === name : skater2 === name);
   const isRetired = currentTeamMembers.filter(({node: {member: {name}}}) => name === skaterName).length === 0;
 
   return (
@@ -160,7 +160,7 @@ const Roster = ({roster, awards, skater, setSkater }) => (
           className={`gamepage-roster-skater${skater === name ? " gamepage-roster-skater-selected" : ""}`}
           onClick={() => setSkater(name)}
         >
-          {awards.filter(({ node: { member: { name: recipient }}}) => name === recipient).length > 0 && <span className="gamepage-roster-skater-award">&#127942;</span>}
+          {awards.filter(({ node: { recipient: { name: recipient }}}) => name === recipient).length > 0 && <span className="gamepage-roster-skater-award">&#127942;</span>}
           <span className="gamepage-roster-skater-name">{name}</span>
         </div>
       ))}
@@ -214,14 +214,14 @@ export const gameQuery = graphql`
           skaterPath: gatsbyPath(filePath: "/members/{ContentfulMember.name}")
       }
     }
-    allContentfulAward(filter: {score: {event: {eq: $event}}}){
+    allContentfulScoreMvp(filter: {game: {event: {eq: $event}}}) {
       edges {
         node {
           team {
             title
           }
-          type
-          member {
+          category 
+          recipient {
             name
           }
         }

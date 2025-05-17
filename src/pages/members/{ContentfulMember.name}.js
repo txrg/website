@@ -32,7 +32,7 @@ const Member = ({ data, location }) => {
                 const {game: {event, date, location, footages, footageIsPrivate, gamePath, team1, team2, teamScore1, teamScore2}} = node;
                 const teamLogo1 = team1.logo && team1.logo.length > 0 ? team1.logo[team1.logo.length - 1].gatsbyImageData : team1.league.logo[team1.league.logo.length - 1].gatsbyImageData;
                 const teamLogo2 = team2.logo && team2.logo.length > 0 ? team2.logo[team2.logo.length - 1].gatsbyImageData : team2.league.logo[team2.league.logo.length - 1].gatsbyImageData;
-                const gameAwards = scoreAwards.filter(({node: {score}}) => score.event === node.game.event);
+                const gameAwards = scoreAwards.filter(({node: {game}}) => game.event === node.game.event);
                 return (
                   <div key={event} className="memberpage-game">
                     <div>
@@ -47,7 +47,7 @@ const Member = ({ data, location }) => {
                       />
                     </div>
                     <div className="memberpage-game-stats">
-                      {gameAwards.length > 0 && gameAwards.map(({node: {type, team: {title}}}) => <em key={`${title}-${type}`} className="memberpage-game-award">&#127942; {title}: {type}</em>)}
+                      {gameAwards.length > 0 && gameAwards.map(({node: {category, team: {title}}}) => <em key={`${title}-${category}`} className="memberpage-game-award">&#127942; {title}: {category}</em>)}
                       <SkaterStats isRetired={isRetired} totalJams={node.game.totalJams} stats={node} />
                     </div>
                   </div>
@@ -167,10 +167,10 @@ function sortHistory(a, b) {
 const Whammys = ({ awards }) => (
   <div className="memberpage-whammys">
     <h2>The Whammy Awards</h2>
-    <div>{awards.slice(0).reverse().map(({ fieldValue: whammyYear, edges }) => (
-      <div key={`whammy-${whammyYear}`}>
-        <h3>{whammyYear}</h3>
-        {edges.map(({node: {whammyCategory, whammyName}}) => <div key={`whammy-${whammyYear}-${whammyCategory}-${whammyName}`}>{`${whammyCategory}: `}{whammyName}</div>)}
+    <div>{awards.slice(0).reverse().map(({ fieldValue: year, edges }) => (
+      <div key={`whammy-${year}`}>
+        <h3>{year}</h3>
+        {edges.map(({node: {category, award}}) => <div key={`whammy-${year}-${category}-${award}`}>{`${category}: ${award}`}</div>)}
       </div>
     ))}</div>
   </div>
@@ -284,28 +284,26 @@ export const memberQuery = graphql`
           }
         }
       }
-      scoreAwards: allContentfulAward(filter: {member: {name: {eq: $name}}, type: {ne: "Whammy"}}, sort: [{score: {date: DESC}}]) {
+      scoreAwards: allContentfulScoreMvp(filter: {recipient: {name: {eq: $name}}}, sort: [{game: {date: DESC}}]) {
         edges {
           node {
-            score {
+            game {
               event
             }
             team {
               title
             }
-            type
+            category
           }
         }
       }
-      whammyAwards: allContentfulAward(filter: {member: {name: {eq: $name}}, type: {eq: "Whammy"}}, sort: [{whammyCategory: ASC}, {whammyName: ASC}]) {
-        group(field: { whammyYear: SELECT }) {
+      whammyAwards: allContentfulWhammy(filter: {recipient: {name: {eq: $name}}}, sort: [{category: ASC}, {award: ASC}]) {
+        group(field: { year: SELECT }) {
           fieldValue
           edges {
             node {
-              type
-              whammyCategory
-              whammyName
-              whammyYear
+              category
+              award
             }
           }
         }

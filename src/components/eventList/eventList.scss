@@ -13,6 +13,10 @@
   span {
     font-weight: bold;
   }
+  
+  p {
+    margin: 0;
+  }
 
   .icon-calendar {
     font-weight: normal;
@@ -24,6 +28,10 @@
 
 .event__location {
   margin-bottom: 1rem;
+}
+
+.event-description p {
+  margin: 1rem;
 }
 
 .col-four .event {

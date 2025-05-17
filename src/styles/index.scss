@@ -16,6 +16,8 @@
 // Pages / Templates
 //---------------------------------------
 @use 'home';
+@use '../pages/root.scss';
+@use '../pages/blog.scss';
 @use '../pages/games/index.scss';
 @use '../pages/games/game.scss';
 @use '../pages/teams/team.scss';
@@ -27,8 +29,8 @@
 //---------------------------------------
 @use '../components/header/header.scss';
 @use '../components/footer/footer.scss';
-@use '../components/blog-preview/blog.scss';
 @use '../components/sponsor/sponsor.scss';
-@use '../components/eventList/event-list.scss';
+@use '../components/eventList/eventList.scss';
 @use '../components/skaterStats/skaterStats.scss';
 @use '../components/game/score.scss';
+@use '../components/whammy/whammy.scss';

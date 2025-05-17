@@ -9,8 +9,13 @@ export default function Footer() {
       allContentfulEvent(sort: {date: ASC}) {
         edges {
           node {
-            title
+            title {
+              childMarkdownRemark {
+                html
+              }
+            }
             id
+            type
             date(formatString: "MMMM DD, YYYY")
             location
           }
@@ -91,10 +96,13 @@ export default function Footer() {
             <div className="col-five md-1-3 tab-full footer-info">
               <h4>2025 Season</h4>
               <ul className="event-list">
-                {data.allContentfulEvent.edges.map(({ node }) => {
+                {data.allContentfulEvent.edges.filter(({node: {type}}) => type === "bout").map(({ node }) => {
                   return (
                     <li key={node.id} className="event-list">
-                      <strong>{node.date}</strong>: {node.title}
+                      <strong>{node.date}</strong><span
+                        dangerouslySetInnerHTML={{
+                          __html: node.title.childMarkdownRemark.html
+                        }}></span>
                     </li>
                   );
                 })}

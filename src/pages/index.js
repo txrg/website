@@ -1,17 +1,12 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout/layout';
-import BlogPreview from '../components/blog-preview/blog-preview';
-import PagePreview from '../components/page-preview/page-preview';
-import ProfilePreview from '../components/profile-preview/profile-preview';
-import BoutEventList from '../components/eventList/bout-events';
-import VolunteerEventList from '../components/eventList/volunteer-events';
+import EventList from '../components/eventList/eventList';
 import skaters from '../images/homepage.png';
 
 const RootIndex = ({ data, location }) => { 
-  const blogs = data.allContentfulBlogPost.edges;
-  const pages = data.allContentfulPage.edges;
-  const profiles = data.allContentfulProfile.edges;
+  const featured = data.allContentfulFeatured.edges;
 
   return (
     <Layout location={location}>
@@ -86,53 +81,38 @@ const RootIndex = ({ data, location }) => {
 
       <section className="content content-home">
         <div className="row content-intro">
-          <div className="col-three">
-            <h1 className="intro-header">2025 Season</h1>
-          </div>
-          <div className="col-nine">
-           <BoutEventList />
-          </div>
-          <div className="col-three" style={{marginTop: "2rem"}}>
-            <h1 className="intro-header">Volunteer With Us</h1>
-          </div>
-          <div className="col-nine" style={{marginTop: "2rem"}}>
-           <VolunteerEventList />
-          </div>
+          <EventList type="bout" isDynamic={true} />
+        </div>
+        <div className="row content-intro" style={{marginTop: "2rem"}}>
+          <EventList type="volunteer" isDynamic={true} />
+        </div>
+        <div className="row content-intro" style={{marginTop: "2rem"}}>
+          <EventList type="pep-rally" isDynamic={true} />
         </div>
 
-        <div className="row about-features">
+        <div className="row about-features" style={{textAlign: "center"}}>
           <div className="features-list block-1-4 block-m-1-3 block-mob-full group">
-            {pages.map(({ node }) => {
-              const FeaturedPage = node.featured;
-              return (
-                <>
-                  {FeaturedPage ? (
-                    <PagePreview page={node} key={node.id} />
-                  ) : null}
-                </>
-              );
-            })}
-            {profiles.map(({ node }) => {
-              return (
-                <>
-                  {node.featured != null ? (
-                    <div className="bgrid feature" key={node.id}>
-                      <ProfilePreview profile={node} />
-                    </div>
-                  ) : null}
-                </>
-              );
-            })}
-            {blogs.map(({ node }) => {
-              const featuredBlog = node.featured;
-              return (
-                <>
-                  {featuredBlog ? (
-                    <BlogPreview blog={node} key={node.id} />
-                  ) : null}
-                </>
-              );
-            })}
+          {featured.map(({node: {title, image, link, description}}) => (
+            <div className="bgrid feature">
+              <div className="feature__preview service-content">
+                <Link className="feature__header" to={link}>
+                  <div className="feature__thumbnail">
+                    <GatsbyImage alt={title} image={image.gatsbyImageData} />
+                  </div>
+                  <div className="feature__content">
+                    <h4 className="feature__title">{title}</h4>
+                    <p
+                      className="feature__description"
+                      dangerouslySetInnerHTML={{
+                        __html: description.childMarkdownRemark.html,
+                      }}
+                    >
+                    </p>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          ))}
           </div>
         </div>
       </section>
@@ -144,59 +124,15 @@ export default RootIndex;
 
 export const pageQuery = graphql`
   query HomeQuery {
-    allContentfulProfile(sort: {name: ASC}) {
+    allContentfulFeatured {
       edges {
         node {
-          name
-          homeTeam
-          type
-          details
-          featured
-          photo {
+          title
+          image {
             gatsbyImageData(layout: CONSTRAINED, width: 350)
           }
-          featureDescription {
-            childMarkdownRemark {
-              rawMarkdownBody
-            }
-          }
-        }
-      }
-    }
-    allContentfulBlogPost(sort: {publishDate: DESC}) {
-      edges {
-        node {
-          title
-          slug
-          publishDate(formatString: "MMMM Do, YYYY")
-          featured
-          featureImage {
-            gatsbyImageData(layout: CONSTRAINED, width: 350, height: 350)
-          }
+          link
           description {
-            childMarkdownRemark {
-              rawMarkdownBody
-            }
-          }
-        }
-      }
-    }
-    allContentfulPage {
-      edges {
-        node {
-          title
-          slug
-          section
-          featured
-          featureImage {
-            gatsbyImageData(layout: CONSTRAINED, width: 350, height: 350)
-          }
-          featureDescription {
-            childMarkdownRemark {
-              rawMarkdownBody
-            }
-          }
-          pageContent {
             childMarkdownRemark {
               html
             }
