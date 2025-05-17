@@ -29,7 +29,7 @@ export default function Whammy() {
 
     return <>
         <div className="whammy-filter-selector">
-          <select defaultValue={whammyYear} onChange={(e) => setWhammyYear(e.target.value)}>
+          <select value={whammyYear} onChange={(e) => setWhammyYear(e.target.value)}>
             {whammies.map(({ fieldValue: year }) => <option key={year} value={year}>{year}</option>)}
           </select>
         </div>

@@ -149,7 +149,7 @@ const Game = ({ data, location }) => {
 const Roster = ({roster, awards, skater, setSkater }) => (
   <>
     <div className="gamepage-skater-selector">
-      <select defaultValue={skater} onChange={(e) => setSkater(e.target.value)}>
+      <select value={skater} onChange={(e) => setSkater(e.target.value)}>
         {roster.map(({ name }) => <option key={name} value={name}>{name}</option>)}
       </select>
     </div>
