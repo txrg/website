@@ -7,6 +7,9 @@
     color: white;
     padding: 1rem;
 }
+.whammy-filter-selector {
+    display: none;
+}
 .whammy-filter-year div {
     margin-right: 2rem;
     padding: 1rem;
@@ -21,4 +24,13 @@
 }
 .whammy-award {
     width: 400px;
+}
+@media only screen and (max-width: 768px) {
+    .whammy-filter-selector {
+        display: flex;
+        justify-content: center;
+    }
+    .whammy-filter-year {
+        display: none;
+    }
 }
