@@ -36,6 +36,7 @@ export default function Whammy() {
         <div className="whammy">
             <div className="whammy-filter-year">{whammies.map(({fieldValue: year}) => (
                 <div
+                    key={year}
                     className={whammyYear === year ? "whammy-filter-selected" : ""}
                     onClick={() => setWhammyYear(year)}
                 >{year}</div>
@@ -56,8 +57,11 @@ export default function Whammy() {
                                 <div key={`${year}-${category}`} className="whammy-category">
                                     <h3>{category}</h3>
                                     {awards.map(({award, recipient, recipientCustom}) => (
-                                        <div key={`${year}-${category}-${award}-${recipient?.name ? recipient.name : recipientCustom}`}>
-                                            <div className="whammy-award">{award}</div>
+                                        <div
+                                          key={`${year}-${category}-${award}-${recipient?.name ? recipient.name : recipientCustom}`}
+                                          className="whammy-entry"
+                                        >
+                                            <div className="whammy-award">{award}:&nbsp;</div>
                                             <div className="whammy-recipient">{recipient ? <Link to={recipient.recipientPath}>{recipient.name}</Link> : <strong>{recipientCustom}</strong>}</div>
                                         </div>
                                     ))}

@@ -10,11 +10,14 @@
 .whammy-filter-selector {
     display: none;
 }
-.whammy-filter-year div {
-    margin-right: 2rem;
-    padding: 1rem;
-    font-weight: bold;
-    cursor: pointer;
+.whammy-filter-year {
+    div {
+        border-right: solid gray 1px;
+        padding: 1rem;
+        margin-right: 2rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
 }
 .whammy-category {
     margin-bottom: 2rem;
@@ -29,8 +32,22 @@
     .whammy-filter-selector {
         display: flex;
         justify-content: center;
+
+        select {
+            width: 100%;
+        }
     }
     .whammy-filter-year {
         display: none;
+    }
+    .whammy-entry {
+        display: flex;
+        justify-content: space-between;
+    }
+    .whammy-award {
+        width: unset;
+    }
+    .whammy-recipient {
+        text-align: right;
     }
 }

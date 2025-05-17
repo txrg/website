@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../../components/layout/layout';
+import Search from '../../components/search/search';
+import SearchIcon from '../../components/search/searchIcon';
 
 const Team = ({ pageContext: { slug }, data, location }) => {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
   const team = data.contentfulTeam;
   const leaders = data.currentLeaders? data.currentLeaders.edges : [];
   const leaderNames = leaders.map(({node: {member: {name}}}) => name);
@@ -39,7 +43,13 @@ const Team = ({ pageContext: { slug }, data, location }) => {
         <section className="content content-intro">
           <div className="row about-features">
             <div className="main-content">
-              <h1 className="intro-header">{team.title}</h1>
+              <h1 className="intro-header">
+                {team.title}&nbsp;
+                <SearchIcon className="team-search-icon" isSearchOpen={isSearchOpen} setIsSearchOpen={setIsSearchOpen} />
+                <div className="team-search">
+                  <Search placeholder="Member Search" isSearchOpen={isSearchOpen} />
+                </div>
+              </h1>
               {team.pageContent ? (
                 <div
                   dangerouslySetInnerHTML={{

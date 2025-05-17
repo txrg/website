@@ -80,65 +80,40 @@ const Headshots = ({ name, photos }) => {
 };
 
 const Teams = ({ teams, positions }) => {
-  let travelTeamHistory = [];
-  let homeTeamHistory = [];
-
-  for (let i = 0; i < teams.length; i++) {
-    const team = teams[i].node;
-
-    let teamName = team.team.title;
-    if (team.travelTeam) {
-      teamName += `: ${team.travelTeam}`;
+  let histories = teams.map(({node}) => {
+    let teamName = node.team.title;
+    if (node.travelTeam) {
+      teamName += `: ${node.travelTeam}`;
     }
-
-    const details = {
+    
+    return {
       teamName,
-      startYear: team.startYear === 9999 ? "unknown": team.startYear,
-      endYear: team.endYear === 9999 ? "unknown" : team.endYear,
-      numbers: team.skaterNumber,
+      startYear: node.startYear === 9999 ? "unknown": node.startYear,
+      endYear: node.endYear === 9999 ? "unknown" : node.endYear,
+      numbers: node.skaterNumber,
     };
+  });
 
-    if (team.travelTeam) {
-      travelTeamHistory.push(details);
-    } else {
-      homeTeamHistory.push(details);
+  histories = histories.concat(positions.map(({node}) => {
+    let teamName = node.team.title;
+    if (node.travelTeam) {
+      teamName += `: ${node.travelTeam}`;
     }
-  }
-
-  for (let i = 0; i < positions.length; i++) {
-    const position = positions[i].node;
-    let teamName = position.team.title;
-    if (position.travelTeam) {
-      teamName += `: ${position.travelTeam}`;
-    }
-
-    const details = {
+    
+    return {
       teamName,
-      position: position.role,
-      startYear: position.startYear === 9999 ? "unknown" : position.startYear,
-      endYear: position.endYear === 9999 ? "unknown" : position.endYear,
-    };
-
-    if (position.travelTeam) {
-      travelTeamHistory.push(details);
-    } else {
-      homeTeamHistory.push(details);
+      position: node.role,
+      startYear: node.startYear === 9999 ? "unknown" : node.startYear,
+      endYear: node.endYear === 9999 ? "unknown" : node.endYear,
     }
-  }
 
-  travelTeamHistory = travelTeamHistory.sort(sortHistory)
-  homeTeamHistory = homeTeamHistory.sort(sortHistory);
+  }));
+
+  histories = histories.sort(sortHistory);
 
   return (
     <div className="memberpage-teams">
-      {travelTeamHistory.map((details) => (
-        <div key={`${details.teamName}${details.position && "-" + details.position}-${details.startYear}-${details.endYear}`} className="memberpage-team">
-          <h2>{details.teamName}{details.position && ` - ${details.position}`}</h2>
-          <div>Seasons: {details.startYear} - {details.endYear === 0 ? <>present</> : <>{details.endYear}</>}</div>
-          {details.numbers && <div>Skater Numbers: {details.numbers.join(", ")}</div>}
-        </div>
-      ))}
-      {homeTeamHistory.map((details) => (
+      {histories.map((details) => (
         <div key={`${details.teamName}${details.position && "-" + details.position}-${details.startYear}-${details.endYear}`} className="memberpage-team">
           <h2>{details.teamName}{details.position && ` - ${details.position}`}</h2>
           <div>Seasons: {details.startYear} - {details.endYear === 0 ? <>present</> : <>{details.endYear}</>}</div>
@@ -160,7 +135,7 @@ function sortHistory(a, b) {
   } else if (aStartYear && bStartYear && aStartYear !== bStartYear) {
     return bStartYear - aStartYear;
   } else {
-    return 0;
+    return a.teamName.localeCompare(b.teamName);
   }
 }
 

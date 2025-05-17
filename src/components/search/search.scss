@@ -1,0 +1,25 @@
+.search {
+    width: 100%;
+    transition: width .2s linear;
+    position: relative;
+
+    input {
+        border-radius: 20px;
+        padding: 0 6rem 0 2rem;
+    }
+}
+
+.search-enter {
+    position: absolute;
+    cursor: pointer;
+}
+
+.search.is-invisible {
+  width: 0;
+  transition: width .2s linear, visibility .2s;
+
+  input {
+    visibility: hidden;
+    transition: visibility .2s;
+  }
+}
