@@ -193,10 +193,10 @@ function sortHistory(a, b) {
   const aStartYear = Number(a.startYear);
   const bStartYear = Number(b.startYear);
 
-  if (aEndYear && bEndYear && aEndYear !== bEndYear) {
-    return bEndYear - aEndYear;
-  } else if (aStartYear && bStartYear && aStartYear !== bStartYear) {
+  if (aStartYear && bStartYear && aStartYear !== bStartYear) {
     return bStartYear - aStartYear;
+  } else if (aEndYear && bEndYear && aEndYear !== bEndYear) {
+    return bEndYear - aEndYear;
   } else {
     return a.teamName.localeCompare(b.teamName);
   }
