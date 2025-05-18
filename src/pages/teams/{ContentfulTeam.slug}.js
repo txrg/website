@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link, graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../../components/layout/layout';
@@ -7,9 +7,21 @@ import SearchIcon from '../../components/search/searchIcon';
 
 const Team = ({ pageContext: { slug }, data, location }) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [memberSearch, setMemberSearch] = useState("");
+
+  const searchInputRef = useRef(null);
+
+  const searchMembers = ({node: {member: {name}}}) => {
+    if (memberSearch === "") {
+      return true;
+    }
+    
+    const query = new RegExp("(" + memberSearch + ")", "i");
+    return query.test(name);
+  };
 
   const team = data.contentfulTeam;
-  const leaders = data.currentLeaders? data.currentLeaders.edges : [];
+  const leaders = data.currentLeaders? data.currentLeaders.edges.filter(searchMembers) : [];
   const leaderNames = leaders.map(({node: {member: {name}}}) => name);
 
   const currentMembers = data.currentMembers.group.reduce((members, { fieldValue, edges }) => {
@@ -18,9 +30,10 @@ const Team = ({ pageContext: { slug }, data, location }) => {
       return members;
     }
     return [...members, edges[0]];
-  }, []);
+  }, []).filter(searchMembers);
 
-  const retiredMembers = data.retiredMembers ? data.retiredMembers.edges : [];
+  const retiredMembers = data.retiredMembers ? data.retiredMembers.edges.filter(searchMembers) : [];
+
   let TeamPage;
 
   switch(slug) {
@@ -47,7 +60,7 @@ const Team = ({ pageContext: { slug }, data, location }) => {
                 {team.title}&nbsp;
                 <SearchIcon className="team-search-icon" isSearchOpen={isSearchOpen} setIsSearchOpen={setIsSearchOpen} />
                 <div className="team-search">
-                  <Search placeholder="Member Search" isSearchOpen={isSearchOpen} />
+                  <Search placeholder="Member Search" inputRef={searchInputRef} isSearchOpen={isSearchOpen} setIsSearchOpen={setIsSearchOpen} setSearch={setMemberSearch} />
                 </div>
               </h1>
               {team.pageContent ? (
