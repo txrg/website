@@ -15,7 +15,6 @@ const Search = ({placeholder, inputRef, isSearchOpen, setIsSearchOpen, setSearch
     const escapeRegex = (string) => (string.replace(/[/\-\\^$*+?.()|[\]{}]/g, '\\$&'));
 
     const handleKeyDown = (e) => {
-        console.log({ e });
         const sanitizedQuery = escapeRegex(query);
         if (e.code === "Enter") {
             setSearch(sanitizedQuery);
@@ -31,6 +30,9 @@ const Search = ({placeholder, inputRef, isSearchOpen, setIsSearchOpen, setSearch
 
     return (
         <div className={`search${!isSearchOpen ? " is-invisible" : ""}`} >
+            <div className="search-enter">
+                <i className="fa-solid fa-circle-chevron-right" onClick={handleClick}></i>
+            </div>
             <input
                 type='text'
                 placeholder={placeholder}
@@ -39,7 +41,6 @@ const Search = ({placeholder, inputRef, isSearchOpen, setIsSearchOpen, setSearch
                 onKeyDown={handleKeyDown}
                 onChange={(e) => setQuery(e.target.value)}
             ></input>
-            <i className="fa-solid fa-circle-chevron-right search-enter" onClick={handleClick}></i>
         </div>
     );
 };
