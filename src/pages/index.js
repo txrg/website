@@ -93,7 +93,7 @@ const RootIndex = ({ data, location }) => {
         <div className="row about-features" style={{textAlign: "center"}}>
           <div className="features-list block-1-4 block-m-1-3 block-mob-full group">
           {featured.map(({node: {title, image, link, description}}) => (
-            <div className="bgrid feature">
+            <div key={title} className="bgrid feature">
               <div className="feature__preview service-content">
                 <Link className="feature__header" to={link}>
                   <div className="feature__thumbnail">

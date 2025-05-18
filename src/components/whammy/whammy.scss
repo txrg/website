@@ -19,6 +19,14 @@
         cursor: pointer;
     }
 }
+.whammy-content {
+    flex: auto;
+    display: flex;
+    justify-content: center;
+}
+.whammy-content-year {
+    display: inline-block;
+}
 .whammy-category {
     margin-bottom: 2rem;
 }

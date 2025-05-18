@@ -38,12 +38,13 @@
   height: 100%;
   width: 50%;
   right: 0;
+  overflow: hidden;
 }
 .home-highlight-right > img {
   width: 100%;
   max-width: unset;
-  height: 100%;
-  object-fit: cover;
+  min-height: 100%;
+  object-fit: contain;
   object-position: top;
 }
 .home-highlight-left {
@@ -159,6 +160,10 @@
   }
   .home-highlight-right {
     width: 100%;
+
+    img {
+      object-fit: cover;
+    }
   }
   .home-highlight-left {
     width: 100%;

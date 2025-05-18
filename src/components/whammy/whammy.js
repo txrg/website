@@ -41,7 +41,7 @@ export default function Whammy() {
                     onClick={() => setWhammyYear(year)}
                 >{year}</div>
             ))}</div>
-            <div>{whammies.filter(({fieldValue: year}) => year === whammyYear).map(({fieldValue: year, edges}) => {
+            <div className="whammy-content">{whammies.filter(({fieldValue: year}) => year === whammyYear).map(({fieldValue: year, edges}) => {
                 const categories = edges.reduce((awards, {node}) => {
                     if (awards[node.category]) {
                         return {...awards, [node.category]: [...awards[node.category], node]};
@@ -50,7 +50,7 @@ export default function Whammy() {
                 }, {});
 
                 return (
-                    <div key={year}>
+                    <div key={year} className="whammy-content-year">
                         <h2>{year}</h2>
                         <div>
                             {Object.entries(categories).map(([category, awards]) => (
