@@ -15,6 +15,7 @@ const Search = ({placeholder, inputRef, isSearchOpen, setIsSearchOpen, setSearch
     const escapeRegex = (string) => (string.replace(/[/\-\\^$*+?.()|[\]{}]/g, '\\$&'));
 
     const handleKeyDown = (e) => {
+        console.log({ e });
         const sanitizedQuery = escapeRegex(query);
         if (e.code === "Enter") {
             setSearch(sanitizedQuery);
