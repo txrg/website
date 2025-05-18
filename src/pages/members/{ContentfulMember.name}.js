@@ -6,15 +6,75 @@ import Layout from '../../components/layout/layout';
 import Score from '../../components/game/score';
 import SkaterStats from '../../components/skaterStats/skaterStats';
 
+const getDate = (date) => {
+  let [month, day, year, time, period] = date.split(" ");
+
+  const monthMap = {
+    "January": "00",
+    "February": "01",
+    "March": "02",
+    "April": "03",
+    "May": "04",
+    "June": "05",
+    "July": "06",
+    "August": "07",
+    "September": "08",
+    "October": "09",
+    "November": "10",
+    "December": "11",
+  }
+  month = monthMap[month];
+
+  day = /^\d{1,2}/.exec(day)[0];
+  day = day.length === 1 ? "0" + day : day;
+
+  let [hr, min] = time.split(":");
+  if (hr === "12" && period === "AM") {
+    hr = "00";
+  } else if (Number(hr) < 12 && period === "PM") {
+    hr = (Number(hr) + 12).toString();
+  }
+
+  return new Date(`${year}-${month}-${day}T${hr}:${min}`);
+};
+
 const Member = ({ data, location }) => {
   const {
     allContentfulMemberStats: { edges: stats },
     allContentfulTeamLeader: { edges: positions },
     allContentfulTeamMember: { edges: teams },
     contentfulMember: member,
+    roster1Games: { edges: roster1Games },
+    roster2Games: { edges: roster2Games },
     scoreAwards: { edges: scoreAwards },
     whammyAwards: { group: whammyAwards },
   } = data;
+
+  let games = stats.reduce((agg, {node}) => {
+    let teamName = node.skater.team.title;
+    if (teamName === "Travel Team") {
+      teamName = "Texas " + node.skater.travelTeam;
+    }
+
+    return {
+      ...agg,
+      [node.game.event]: {
+        ...node,
+        skater: { team: { title: teamName } },
+      },
+    };
+  }, {});
+  games = roster1Games.reduce((agg, {node}) => (
+    agg[node.event] ? agg : {...agg, [node.event]: {game: node, skater: {team: {title: node.team1.name}}}}
+  ), games);
+  games = roster2Games.reduce((agg, {node}) => (
+    agg[node.event] ? agg : {...agg, [node.event]: {game: node, skater: {team: {title: node.team2.name}}}}
+  ), games);
+  games = Object.values(games).sort((a, b) => {
+    const dateB = getDate(b.game.date);
+    const dateA = getDate(a.game.date);
+    return dateB - dateA;
+  });
 
   const isRetired = teams.filter(({node: {endYear}}) => endYear === 0).length === 0;
 
@@ -28,8 +88,8 @@ const Member = ({ data, location }) => {
                 <Teams teams={teams} positions={positions} />
                 {whammyAwards.length > 0 && <Whammys awards={whammyAwards} />}
               </div>
-              {stats.map(({node}) => {
-                const {game: {event, date, location, footages, footageIsPrivate, gamePath, team1, team2, teamScore1, teamScore2}} = node;
+              {games.map((node) => {
+                const {game: {event, date, location, footages, footageIsPrivate, gamePath, team1, team2, teamScore1, teamScore2}, skater: {team}} = node;
                 const teamLogo1 = team1.logo && team1.logo.length > 0 ? team1.logo[team1.logo.length - 1].gatsbyImageData : team1.league.logo[team1.league.logo.length - 1].gatsbyImageData;
                 const teamLogo2 = team2.logo && team2.logo.length > 0 ? team2.logo[team2.logo.length - 1].gatsbyImageData : team2.league.logo[team2.league.logo.length - 1].gatsbyImageData;
                 const gameAwards = scoreAwards.filter(({node: {game}}) => game.event === node.game.event);
@@ -47,8 +107,11 @@ const Member = ({ data, location }) => {
                       />
                     </div>
                     <div className="memberpage-game-stats">
-                      {gameAwards.length > 0 && gameAwards.map(({node: {category, team: {title}}}) => <em key={`${title}-${category}`} className="memberpage-game-award">&#127942; {title}: {category}</em>)}
-                      <SkaterStats isRetired={isRetired} totalJams={node.game.totalJams} stats={node} />
+                      {gameAwards.length > 0 
+                        ? gameAwards.map(({node: {category, team: {title}}}) => <em key={`${title}-${category}`} className="memberpage-game-award">&#127942; {title}: {category}</em>)
+                        : <em className="memberpage-game-award">{team.title}</em>
+                      }
+                      {node.totalJamsPlayed ? <SkaterStats isRetired={isRetired} totalJams={node.game.totalJams} stats={node} /> : <div>No Stats Available</div>}
                     </div>
                   </div>
                 );
@@ -188,6 +251,106 @@ export const memberQuery = graphql`
           }
         }
       }
+      whammyAwards: allContentfulWhammy(filter: {recipient: {name: {eq: $name}}}, sort: [{category: ASC}, {award: ASC}]) {
+        group(field: { year: SELECT }) {
+          fieldValue
+          edges {
+            node {
+              category
+              award
+            }
+          }
+        }
+      }
+      scoreAwards: allContentfulScoreMvp(filter: {recipient: {name: {eq: $name}}}, sort: [{game: {date: DESC}}]) {
+        edges {
+          node {
+            game {
+              event
+            }
+            team {
+              title
+            }
+            category
+          }
+        }
+      }
+      roster1Games: allContentfulScore(filter: {teamRoster1: {elemMatch: {name: {eq: $name}}}}, sort: {date: DESC}) {
+        edges {
+          node {
+            event
+            date(formatString: "MMMM Do, YYYY h:mm A")
+            location
+            footages
+            footageIsPrivate
+            gamePath: gatsbyPath(filePath: "/games/{ContentfulScore.event}")
+            team1 {
+                name
+                league {
+                    name
+                    logo {
+                        gatsbyImageData(layout: CONSTRAINED)
+                    }
+                }
+                logo {
+                    gatsbyImageData(layout: CONSTRAINED)
+                }
+            }
+            teamScore1
+            team2 {
+                name
+                league {
+                    name
+                    logo {
+                        gatsbyImageData(layout: CONSTRAINED)
+                    }
+                }
+                logo {
+                    gatsbyImageData(layout: CONSTRAINED)
+                }
+            }
+            teamScore2
+          }
+        }
+      }
+      roster2Games: allContentfulScore(filter: {teamRoster2: {elemMatch: {name: {eq: $name}}}}, sort: {date: DESC}) {
+        edges {
+          node {
+            event
+            date(formatString: "MMMM Do, YYYY h:mm A")
+            location
+            footages
+            footageIsPrivate
+            gamePath: gatsbyPath(filePath: "/games/{ContentfulScore.event}")
+            team1 {
+                name
+                league {
+                    name
+                    logo {
+                        gatsbyImageData(layout: CONSTRAINED)
+                    }
+                }
+                logo {
+                    gatsbyImageData(layout: CONSTRAINED)
+                }
+            }
+            teamScore1
+            team2 {
+                name
+                league {
+                    name
+                    logo {
+                        gatsbyImageData(layout: CONSTRAINED)
+                    }
+                }
+                logo {
+                    gatsbyImageData(layout: CONSTRAINED)
+                }
+            }
+            teamScore2
+          }
+        }
+      }
       allContentfulMemberStats(filter: {skater: {member: {name: {eq: $name}}}}, sort: {game: {date: DESC}}) {
         edges {
           node {
@@ -230,6 +393,7 @@ export const memberQuery = graphql`
               team {
                 title
               }
+              travelTeam
             }
             jammer
             pivot
@@ -256,30 +420,6 @@ export const memberQuery = graphql`
             penaltyX
             penaltyN
             penaltyI
-          }
-        }
-      }
-      scoreAwards: allContentfulScoreMvp(filter: {recipient: {name: {eq: $name}}}, sort: [{game: {date: DESC}}]) {
-        edges {
-          node {
-            game {
-              event
-            }
-            team {
-              title
-            }
-            category
-          }
-        }
-      }
-      whammyAwards: allContentfulWhammy(filter: {recipient: {name: {eq: $name}}}, sort: [{category: ASC}, {award: ASC}]) {
-        group(field: { year: SELECT }) {
-          fieldValue
-          edges {
-            node {
-              category
-              award
-            }
           }
         }
       }
