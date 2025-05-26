@@ -37,8 +37,8 @@ const Team = ({ pageContext: { slug }, data, location }) => {
   let TeamPage;
 
   switch(slug) {
-    case "founders":
-      TeamPage = FoundersPage;
+    case "emeriti":
+      TeamPage = EmeritiPage;
       break;
     case "photographers":
       TeamPage = PhotographersPage;
@@ -79,7 +79,7 @@ const Team = ({ pageContext: { slug }, data, location }) => {
   );
 };
 
-const FoundersPage = ({ retiredMembers }) => (
+const EmeritiPage = ({ retiredMembers }) => (
   <ul className="member-list">
     {retiredMembers.map(({node: {teamMember, member, photo,}}) => <Member key={teamMember} defaultPhoto={photo} details={member} />)}
   </ul>

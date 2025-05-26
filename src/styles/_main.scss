@@ -1000,8 +1000,8 @@ h1.intro-header::before {
  .side-events {
    display: none;
 
-   @include mixins.breakpoint('md') {
-     display: block;
+   @media only screen and (min-width: 1024px) {
+    display: block;
    }
  }
 

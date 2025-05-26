@@ -30,7 +30,7 @@ const PageTemplate = ({ data, location }) => {
 
   const TeamsNav = () => (
     <>
-      <li><Link to={`/teams/${teamSlugs.Founders}`}>Founders</Link></li>
+      <li><Link to={`/teams/${teamSlugs.Emeriti}`}>Emeriti</Link></li>
       <li><Link to={`/teams/retired-numbers`}>Retired Numbers</Link></li>
       <li><Link to={`/teams/${teamSlugs.Officials}`}>Officials</Link></li>
       <li><Link to={`/teams/${teamSlugs.Announcers}`}>Announcers</Link></li>

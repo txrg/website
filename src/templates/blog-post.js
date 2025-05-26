@@ -31,9 +31,6 @@ export const pageQuery = graphql`
     contentfulBlogPost(slug: { eq: $slug }) {
       title
       publishDate(formatString: "MMMM Do, YYYY")
-      featureImage {
-        gatsbyImageData(layout: CONSTRAINED, width: 1180, backgroundColor: "rgb:000000")
-      }
       body {
         childMarkdownRemark {
           html

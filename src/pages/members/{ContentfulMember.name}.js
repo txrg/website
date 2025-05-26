@@ -147,6 +147,8 @@ const Teams = ({ teams, positions }) => {
     let teamName = node.team.title;
     if (node.travelTeam) {
       teamName += `: ${node.travelTeam}`;
+    } else if (node.emeritusClass) {
+      teamName = node.emeritusClass === "founder" ? "Founder" : "Emeritus";
     }
     
     return {
@@ -235,6 +237,7 @@ export const memberQuery = graphql`
             startYear
             endYear
             travelTeam
+            emeritusClass
           }
         }
       }

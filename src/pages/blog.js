@@ -47,9 +47,6 @@ export const pageQuery = graphql`
           title
           slug
           publishDate(formatString: "MMMM Do, YYYY")
-          featureImage {
-            gatsbyImageData(layout: CONSTRAINED, width: 350, height: 350)
-          }
           description {
             childMarkdownRemark {
               rawMarkdownBody

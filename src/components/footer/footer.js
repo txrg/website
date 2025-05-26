@@ -118,6 +118,9 @@ export default function Footer() {
                   <Link to="/mission">Mission</Link>
                 </li>
                 <li>
+                  <Link to="/code-of-conduct">Code of Conduct</Link>
+                </li>
+                <li>
                   <Link to="/donate">Donate</Link>
                 </li>
                 <li>
