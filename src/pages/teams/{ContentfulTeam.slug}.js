@@ -80,10 +80,18 @@ const Team = ({ pageContext: { slug }, data, location }) => {
 };
 
 const EmeritiPage = ({ retiredMembers }) => (
-  <ul className="member-list">
-    {retiredMembers.map(({node: {teamMember, member, photo,}}) => <Member key={teamMember} defaultPhoto={photo} details={member} />)}
-  </ul>
+  <>
+    <h1 className="intro-header">Founders</h1>
+    <ul className="member-list">
+      {retiredMembers.filter(({node: {emeritusClass}}) => emeritusClass === "founder").map(({node: {teamMember, member, photo,}}) => <Member key={teamMember} defaultPhoto={photo} details={member} />)}
+    </ul>
+    <h1 className="intro-header" style={{marginTop: "1em"}}>Emeriti</h1>
+    <ul className="member-list">
+      {retiredMembers.filter(({node: {emeritusClass}}) => emeritusClass === "emeritus").map(({node: {teamMember, member, photo,}}) => <Member key={teamMember} defaultPhoto={photo} details={member} />)}
+    </ul>
+  </>
 );
+
 const PhotographersPage = () => (null);
 const TravelTeamPage = ({ leaders, currentMembers }) => (
   <ul className="member-list">
@@ -188,6 +196,7 @@ export const teamQuery = graphql`
           photo {
             gatsbyImageData(layout: CONSTRAINED, width: 400, height: 400)
           }
+          emeritusClass
         }
       }
     }
