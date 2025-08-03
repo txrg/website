@@ -12,23 +12,19 @@ const BlogIndex = ({ data, location }) => {
           <div className="row">
             <h1 className="intro-header intro-header--full">Blog</h1>
             <ul className="blog-list">
-              {posts.map(({ node }) => {
-                return (
-                  <>
-                    <li className="blog-list__item" key={node.id} >
-                      <Link className="blog__header" to={`/blog/${node.slug}`}>
-                        <div className="feature__content">
-                          <h4 className="feature__title">{node.title}</h4>
-                          <p className="feature__date">{node.publishDate}</p>
-                          <p className="feature__description">
-                            {node.description.childMarkdownRemark.rawMarkdownBody}
-                          </p>
-                        </div>
-                      </Link>
-                    </li>
-                  </>
-                );
-              })}
+              {posts.map(({ node }) =>
+                <li className="blog-list__item" key={node.slug} >
+                  <Link className="blog__header" to={`/blog/${node.slug}`}>
+                    <div className="feature__content">
+                      <h4 className="feature__title">{node.title}</h4>
+                      <p className="feature__date">{node.publishDate}</p>
+                      <p className="feature__description">
+                        {node.description?.childMarkdownRemark.rawMarkdownBody}
+                      </p>
+                    </div>
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
         </section>
