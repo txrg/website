@@ -6,7 +6,7 @@ export default function EventList({showDescription, isSide, isDynamic, type}) {
 
   switch (type) {
     case 'bout':
-      header = '2025 Season';
+      header = '2026 Season';
       break;
     case 'pep-rally':
       header = 'Pep Rallies';
