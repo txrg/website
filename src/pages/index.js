@@ -7,7 +7,6 @@ import skaters from '../images/homepage.png';
 
 const RootIndex = ({ data, location }) => { 
   const featured = data.allContentfulFeatured.edges;
-
   return (
     <Layout location={location}>
       <section className="home">
@@ -81,13 +80,13 @@ const RootIndex = ({ data, location }) => {
 
       <section className="content content-home">
         <div className="row content-intro">
-          <EventList type="bout" isDynamic={true} />
+          <EventList type="bout" pathname={`${location.pathname}`} />
         </div>
         <div className="row content-intro" style={{marginTop: "2rem"}}>
-          <EventList type="volunteer" isDynamic={true} />
+          <EventList type="volunteer" pathname={`${location.pathname}`} />
         </div>
         <div className="row content-intro" style={{marginTop: "2rem"}}>
-          <EventList type="pep-rally" isDynamic={true} />
+          <EventList type="pep-rally" pathname={`${location.pathname}`} />
         </div>
 
         <div className="row about-features" style={{textAlign: "center"}}>

@@ -53,23 +53,6 @@ const PageTemplate = ({ data, location }) => {
     ? <><DefaultNav /><TeamsNav /></>
     : <DefaultNav />;
 
-  
-  const PageContent = () => {
-    switch (location.pathname) {
-      case '/events/bouts/':
-        return <EventList type="bout" showDescription={true}/>;
-      case '/events/community-events/':
-        return <>
-          <EventList type="volunteer" showDescription={true}/>
-          <EventList type="pep-rally" showDescription={true}/>
-        </>;
-      case '/who-we-are/whammys/':
-        return <Whammy />;
-      default:
-        return null;
-    }
-  };
-
   return (
     <Layout location={location}>
       <main className="main--page">
@@ -83,17 +66,22 @@ const PageTemplate = ({ data, location }) => {
                   </nav>
                 </aside>
               }
-              <div className='side-events'><EventList type="bout" isSide={true} /></div>
+              <div className='side-events'><EventList type="bout" pathname={`${location.pathname}`} isSide={true} /></div>
             </div>
             <div className="col-eight">
               <h1 className="intro-header">{page.title}</h1>
+              {location.pathname === '/events/bouts/' && <EventList type="bout" pathname={`${location.pathname}`} />}
               <div
                 className="main-content"
                 dangerouslySetInnerHTML={{
                   __html: page.pageContent.childMarkdownRemark.html,
                 }}
               />
-              <PageContent />
+              {location.pathname === '/events/community-events' && <>
+                <EventList type="volunteer" pathname={`${location.pathname}`} />
+                <EventList type="pep-rally" pathname={`${location.pathname}`} />
+              </>}
+              {location.pathname === '/who-we-are/whammys/' && <Whammy />}
             </div>
           </div>
         </section>
